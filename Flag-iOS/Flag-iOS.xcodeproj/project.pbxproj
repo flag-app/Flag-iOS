@@ -15,6 +15,8 @@
 		7B51C5802A6124600016B418 /* TextLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C57F2A6124600016B418 /* TextLiterals.swift */; };
 		7B51C5832A61248D0016B418 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5822A61248D0016B418 /* ImageLiterals.swift */; };
 		7B51C5852A61249C0016B418 /* FontLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5842A61249C0016B418 /* FontLiterals.swift */; };
+		7B51C5882A61258B0016B418 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B51C5872A61258B0016B418 /* SnapKit */; };
+		7B51C58B2A61261A0016B418 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 7B51C58A2A61261A0016B418 /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B51C58B2A61261A0016B418 /* Moya in Frameworks */,
+				7B51C5882A61258B0016B418 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +237,10 @@
 			dependencies = (
 			);
 			name = "Flag-iOS";
+			packageProductDependencies = (
+				7B51C5872A61258B0016B418 /* SnapKit */,
+				7B51C58A2A61261A0016B418 /* Moya */,
+			);
 			productName = "Flag-iOS";
 			productReference = 7B51C5562A61008A0016B418 /* Flag-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -261,6 +269,10 @@
 				Base,
 			);
 			mainGroup = 7B51C54D2A61008A0016B418;
+			packageReferences = (
+				7B51C5862A61258B0016B418 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7B51C5892A61261A0016B418 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 7B51C5572A61008A0016B418 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -498,6 +510,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7B51C5862A61258B0016B418 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		7B51C5892A61261A0016B418 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7B51C5872A61258B0016B418 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B51C5862A61258B0016B418 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		7B51C58A2A61261A0016B418 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B51C5892A61261A0016B418 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7B51C54E2A61008A0016B418 /* Project object */;
 }
