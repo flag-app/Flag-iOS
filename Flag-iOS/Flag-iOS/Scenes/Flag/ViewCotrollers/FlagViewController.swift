@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+final class FlagViewController: BaseViewController {
+    
+    // MARK: - Life Cycle
+    
+    override func viewDidLoad() {
+        self.view.backgroundColor = .green
+    }
+    
+}

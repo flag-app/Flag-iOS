@@ -9,6 +9,10 @@ import UIKit
 
 enum TextLiterals {
     
-    // MARK:
+    // MARK: tabBar
+    
+    static let home: String = "홈"
+    static let flag: String = "플래그"
+    static let flex: String = "플렉스"
     
 }

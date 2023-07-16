@@ -18,6 +18,13 @@
 		7B51C5882A61258B0016B418 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B51C5872A61258B0016B418 /* SnapKit */; };
 		7B51C58B2A61261A0016B418 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 7B51C58A2A61261A0016B418 /* Moya */; };
 		7B51C5A92A63F33B0016B418 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5A82A63F33B0016B418 /* BaseViewController.swift */; };
+		7B51C5AB2A63F6650016B418 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5AA2A63F6650016B418 /* BaseTabBarController.swift */; };
+		7B51C5AD2A63F7790016B418 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5AC2A63F7790016B418 /* HomeViewController.swift */; };
+		7B51C5AF2A63F7EB0016B418 /* FlagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5AE2A63F7EB0016B418 /* FlagViewController.swift */; };
+		7B51C5B12A63F8120016B418 /* FlexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B02A63F8120016B418 /* FlexViewController.swift */; };
+		7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B22A63F8840016B418 /* UIStackView+.swift */; };
+		7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B42A63F8E70016B418 /* UIView+.swift */; };
+		7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B62A6429B00016B418 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +39,13 @@
 		7B51C5822A61248D0016B418 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		7B51C5842A61249C0016B418 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		7B51C5A82A63F33B0016B418 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7B51C5AA2A63F6650016B418 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		7B51C5AC2A63F7790016B418 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7B51C5AE2A63F7EB0016B418 /* FlagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagViewController.swift; sourceTree = "<group>"; };
+		7B51C5B02A63F8120016B418 /* FlexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexViewController.swift; sourceTree = "<group>"; };
+		7B51C5B22A63F8840016B418 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		7B51C5B42A63F8E70016B418 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		7B51C5B62A6429B00016B418 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +167,7 @@
 		7B51C5752A6122C00016B418 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7B51C5AC2A63F7790016B418 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -167,6 +182,7 @@
 		7B51C5772A6122D20016B418 /* ViewCotrollers */ = {
 			isa = PBXGroup;
 			children = (
+				7B51C5AE2A63F7EB0016B418 /* FlagViewController.swift */,
 			);
 			path = ViewCotrollers;
 			sourceTree = "<group>";
@@ -181,6 +197,7 @@
 		7B51C5792A6122DB0016B418 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7B51C5B02A63F8120016B418 /* FlexViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -203,6 +220,9 @@
 			isa = PBXGroup;
 			children = (
 				7B51C5842A61249C0016B418 /* UIFont+.swift */,
+				7B51C5B22A63F8840016B418 /* UIStackView+.swift */,
+				7B51C5B42A63F8E70016B418 /* UIView+.swift */,
+				7B51C5B62A6429B00016B418 /* UIColor+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -228,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				7B51C5A82A63F33B0016B418 /* BaseViewController.swift */,
+				7B51C5AA2A63F6650016B418 /* BaseTabBarController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -310,13 +331,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B51C5AB2A63F6650016B418 /* BaseTabBarController.swift in Sources */,
 				7B51C55E2A61008A0016B418 /* ViewController.swift in Sources */,
+				7B51C5AF2A63F7EB0016B418 /* FlagViewController.swift in Sources */,
 				7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */,
 				7B51C5852A61249C0016B418 /* UIFont+.swift in Sources */,
 				7B51C5832A61248D0016B418 /* ImageLiterals.swift in Sources */,
+				7B51C5AD2A63F7790016B418 /* HomeViewController.swift in Sources */,
+				7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */,
 				7B51C5802A6124600016B418 /* TextLiterals.swift in Sources */,
 				7B51C5A92A63F33B0016B418 /* BaseViewController.swift in Sources */,
+				7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */,
+				7B51C5B12A63F8120016B418 /* FlexViewController.swift in Sources */,
 				7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */,
+				7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

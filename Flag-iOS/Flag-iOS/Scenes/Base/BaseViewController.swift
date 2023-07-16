@@ -27,7 +27,7 @@ class BaseViewController: UIViewController {
     // MARK: - Custom Method
     
     func setUI() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .gray100
     }
     
     func setLayout() {}
