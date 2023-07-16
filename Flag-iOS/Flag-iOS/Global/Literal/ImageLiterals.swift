@@ -9,7 +9,14 @@ import UIKit
 
 enum ImageLiterals {
     
-    // MARK:
+    // MARK: tabBarIcon
+    
+    static var home: UIImage { .load(name: "home")}
+    static var homeFill: UIImage { .load(name: "homeFill")}
+    static var flag: UIImage { .load(name: "flag")}
+    static var flagFill: UIImage { .load(name: "flagFill")}
+    static var flex: UIImage { .load(name: "flex")}
+    static var flexFill: UIImage { .load(name: "flexFill")}
     
 }
 
