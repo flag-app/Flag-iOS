@@ -7,7 +7,7 @@
 
 import SnapKit
 
-class OnboardingViewController: BaseViewController {
+class OnboardingViewController: BaseUIViewController {
     
     // MARK: - Properties
     
