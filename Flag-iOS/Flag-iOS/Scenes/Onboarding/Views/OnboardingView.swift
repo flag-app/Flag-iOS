@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-class OnboardingView: UIView {
+class OnboardingView: BaseUIView {
     
     // MARK: - UI Components
     
@@ -31,26 +31,15 @@ class OnboardingView: UIView {
         return button
     }()
     
-    // MARK: - Life Cycle
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setUI()
-        setLayout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setUI() {
+    // MARK: - Custom Method
+
+    override func setUI() {
         self.addSubviews(onboardingImageView,
                          signInButton,
                          signUpButton)
     }
     
-    func setLayout() {
+    override func setLayout() {
         onboardingImageView.snp.makeConstraints { make in
             make.top.equalTo(self.safeAreaLayoutGuide).inset(139)
             make.centerX.equalToSuperview()
