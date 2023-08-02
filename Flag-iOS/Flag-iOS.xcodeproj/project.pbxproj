@@ -31,6 +31,9 @@
 		7B9998C92A7A95F50043C592 /* BaseEmptyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C82A7A95F50043C592 /* BaseEmptyButton.swift */; };
 		7B9998CB2A7A995D0043C592 /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998CA2A7A995D0043C592 /* BaseUIView.swift */; };
 		7B9998CD2A7A9B530043C592 /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998CC2A7A9B530043C592 /* BaseUIViewController.swift */; };
+		7B9998CF2A7A9BEF0043C592 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998CE2A7A9BEF0043C592 /* SignInViewController.swift */; };
+		7B9998D12A7A9D9C0043C592 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D02A7A9D9C0043C592 /* UITextField+.swift */; };
+		7B9998D32A7AA0330043C592 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D22A7AA0330043C592 /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		7B9998C82A7A95F50043C592 /* BaseEmptyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEmptyButton.swift; sourceTree = "<group>"; };
 		7B9998CA2A7A995D0043C592 /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
 		7B9998CC2A7A9B530043C592 /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
+		7B9998CE2A7A9BEF0043C592 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		7B9998D02A7A9D9C0043C592 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		7B9998D22A7AA0330043C592 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +243,7 @@
 				7B51C5B42A63F8E70016B418 /* UIView+.swift */,
 				7B51C5B62A6429B00016B418 /* UIColor+.swift */,
 				7B9998C42A7A93B30043C592 /* UIButton+.swift */,
+				7B9998D02A7A9D9C0043C592 /* UITextField+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -283,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */,
+				7B9998CE2A7A9BEF0043C592 /* SignInViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -291,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */,
+				7B9998D22A7AA0330043C592 /* SignInView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -387,12 +396,15 @@
 				7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */,
 				7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */,
 				7B51C5802A6124600016B418 /* TextLiterals.swift in Sources */,
+				7B9998CF2A7A9BEF0043C592 /* SignInViewController.swift in Sources */,
+				7B9998D32A7AA0330043C592 /* SignInView.swift in Sources */,
 				7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */,
 				7B9998CB2A7A995D0043C592 /* BaseUIView.swift in Sources */,
 				7B51C5B12A63F8120016B418 /* FlexViewController.swift in Sources */,
 				7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */,
 				7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */,
 				7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */,
+				7B9998D12A7A9D9C0043C592 /* UITextField+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
