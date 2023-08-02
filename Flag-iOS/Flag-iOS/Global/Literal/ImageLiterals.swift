@@ -18,6 +18,10 @@ enum ImageLiterals {
     static var flex: UIImage { .load(name: "flex")}
     static var flexFill: UIImage { .load(name: "flexFill")}
     
+    // MARK: Onboarding
+    
+    static var onboardingLogo: UIImage { .load(name: "OnboardingLogo")}
+    
 }
 
 extension UIImage {

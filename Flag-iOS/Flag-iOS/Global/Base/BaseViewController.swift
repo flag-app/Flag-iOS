@@ -17,7 +17,8 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .systemBackground
+
         setUI()
         setLayout()
         addTarget()
@@ -26,9 +27,7 @@ class BaseViewController: UIViewController {
     
     // MARK: - Custom Method
     
-    func setUI() {
-        view.backgroundColor = .gray100
-    }
+    func setUI() {}
     
     func setLayout() {}
     
