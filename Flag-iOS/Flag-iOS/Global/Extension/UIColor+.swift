@@ -8,25 +8,25 @@
 import UIKit
 
 extension UIColor {
-    static var purpleBackground: UIColor {
+    static var purple100: UIColor {
         return UIColor(hex: "#F5F2FF")
     }
-    static var purpleDefault: UIColor {
+    static var purple200: UIColor {
         return UIColor(hex: "#8E6FFF")
     }
-    static var purpleDark: UIColor {
+    static var purple300: UIColor {
         return UIColor(hex: "#6041FF")
     }
-    static var grayDefault: UIColor {
+    static var gray100: UIColor {
         return UIColor(hex: "FAFAFA")
     }
-    static var grayDark1: UIColor {
+    static var gray200: UIColor {
         return UIColor(hex: "#D9D9D9")
     }
-    static var grayDark2: UIColor {
+    static var gray300: UIColor {
         return UIColor(hex: "#B0B0B0")
     }
-    static var grayDark3: UIColor {
+    static var gray400: UIColor {
         return UIColor(hex: "#7A7A7A")
     }
     static var purple1: UIColor {
