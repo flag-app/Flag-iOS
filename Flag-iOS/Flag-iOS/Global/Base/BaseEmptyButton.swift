@@ -21,7 +21,7 @@ class BaseEmptyButton: UIButton {
     }
     
     func setupEmptyButton() {
-        self.addTitleAttribute(title: "", titleColor: .purpleDefault, fontName: .title1)
-        self.setRoundBorder(borderColor: .purpleDefault, borderWidth: 1.0, cornerRadius: 16)
+        self.addTitleAttribute(title: "", titleColor: .purple200, fontName: .title1)
+        self.setRoundBorder(borderColor: .purple200, borderWidth: 1.0, cornerRadius: 16)
     }
 }

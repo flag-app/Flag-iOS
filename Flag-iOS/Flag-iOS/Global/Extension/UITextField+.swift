@@ -19,7 +19,7 @@ extension UITextField {
     /// border 설정
     func setRoundBorder() {
         layer.masksToBounds = true
-        layer.borderColor = UIColor.grayDark1.cgColor
+        layer.borderColor = UIColor.gray200.cgColor
         layer.borderWidth = 1.0
         layer.cornerRadius = 9
     }

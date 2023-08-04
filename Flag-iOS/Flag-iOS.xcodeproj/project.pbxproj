@@ -34,6 +34,11 @@
 		7B9998CF2A7A9BEF0043C592 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998CE2A7A9BEF0043C592 /* SignInViewController.swift */; };
 		7B9998D12A7A9D9C0043C592 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D02A7A9D9C0043C592 /* UITextField+.swift */; };
 		7B9998D32A7AA0330043C592 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D22A7AA0330043C592 /* SignInView.swift */; };
+		7B9998D52A7B856E0043C592 /* BaseUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D42A7B856E0043C592 /* BaseUITextField.swift */; };
+		7B9998D92A7C56140043C592 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D82A7C56140043C592 /* SignUpViewController.swift */; };
+		7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DA2A7C562E0043C592 /* SignUpView.swift */; };
+		7B9998DD2A7CAA230043C592 /* SetNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DC2A7CAA230043C592 /* SetNicknameViewController.swift */; };
+		7B9998DF2A7CAA490043C592 /* SetNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DE2A7CAA490043C592 /* SetNicknameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +69,11 @@
 		7B9998CE2A7A9BEF0043C592 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		7B9998D02A7A9D9C0043C592 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		7B9998D22A7AA0330043C592 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		7B9998D42A7B856E0043C592 /* BaseUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITextField.swift; sourceTree = "<group>"; };
+		7B9998D82A7C56140043C592 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7B9998DA2A7C562E0043C592 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		7B9998DC2A7CAA230043C592 /* SetNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameViewController.swift; sourceTree = "<group>"; };
+		7B9998DE2A7CAA490043C592 /* SetNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +283,7 @@
 				7B9998C82A7A95F50043C592 /* BaseEmptyButton.swift */,
 				7B9998CA2A7A995D0043C592 /* BaseUIView.swift */,
 				7B9998CC2A7A9B530043C592 /* BaseUIViewController.swift */,
+				7B9998D42A7B856E0043C592 /* BaseUITextField.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -291,6 +302,8 @@
 			children = (
 				7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */,
 				7B9998CE2A7A9BEF0043C592 /* SignInViewController.swift */,
+				7B9998D82A7C56140043C592 /* SignUpViewController.swift */,
+				7B9998DC2A7CAA230043C592 /* SetNicknameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -300,6 +313,8 @@
 			children = (
 				7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */,
 				7B9998D22A7AA0330043C592 /* SignInView.swift */,
+				7B9998DA2A7C562E0043C592 /* SignUpView.swift */,
+				7B9998DE2A7CAA490043C592 /* SetNicknameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -386,12 +401,16 @@
 				7B51C55E2A61008A0016B418 /* ViewController.swift in Sources */,
 				7B51C5AF2A63F7EB0016B418 /* FlagViewController.swift in Sources */,
 				7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */,
+				7B9998D92A7C56140043C592 /* SignUpViewController.swift in Sources */,
 				7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */,
 				7B9998CD2A7A9B530043C592 /* BaseUIViewController.swift in Sources */,
 				7B9998C92A7A95F50043C592 /* BaseEmptyButton.swift in Sources */,
+				7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */,
+				7B9998DF2A7CAA490043C592 /* SetNicknameView.swift in Sources */,
 				7B51C5852A61249C0016B418 /* UIFont+.swift in Sources */,
 				7B51C5832A61248D0016B418 /* ImageLiterals.swift in Sources */,
 				7B51C5AD2A63F7790016B418 /* HomeViewController.swift in Sources */,
+				7B9998DD2A7CAA230043C592 /* SetNicknameViewController.swift in Sources */,
 				7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */,
 				7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */,
 				7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */,
@@ -400,6 +419,7 @@
 				7B9998D32A7AA0330043C592 /* SignInView.swift in Sources */,
 				7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */,
 				7B9998CB2A7A995D0043C592 /* BaseUIView.swift in Sources */,
+				7B9998D52A7B856E0043C592 /* BaseUITextField.swift in Sources */,
 				7B51C5B12A63F8120016B418 /* FlexViewController.swift in Sources */,
 				7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */,
 				7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */,

@@ -22,7 +22,7 @@ class BaseFillButton: UIButton {
     
     func setupFillButton() {
         self.addTitleAttribute(title: "", titleColor: .white, fontName: .title1)
-        self.backgroundColor = .purpleDefault
+        self.backgroundColor = .purple200
         self.layer.cornerRadius = 16
     }
 }
