@@ -11,12 +11,13 @@ enum ImageLiterals {
     
     // MARK: tabBarIcon
     
-    static var home: UIImage { .load(name: "home")}
-    static var homeFill: UIImage { .load(name: "homeFill")}
+    static var home: UIImage { .load(name: "set")}
+    static var homeFill: UIImage { .load(name: "setFill")}
     static var flag: UIImage { .load(name: "flag")}
     static var flagFill: UIImage { .load(name: "flagFill")}
-    static var flex: UIImage { .load(name: "flex")}
-    static var flexFill: UIImage { .load(name: "flexFill")}
+    static var flex: UIImage { .load(name: "person")}
+    static var flexFill: UIImage { .load(name: "personFill")}
+    static var backButtonIcon: UIImage { .load(name: "backButtonIcon")}
     
     // MARK: Onboarding
     

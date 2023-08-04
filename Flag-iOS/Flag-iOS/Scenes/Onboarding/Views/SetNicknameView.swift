@@ -12,6 +12,12 @@ import SnapKit
 class SetNicknameView: BaseUIView {
     
     // MARK: - UI Components
+    private let label: UILabel = {
+        let label = UILabel()
+        label.text = "Flag 가입하기"
+        label.font = .head1
+        return label
+    }()
     
     private let nicknameLabel: UILabel = {
         let label = UILabel()
@@ -34,12 +40,17 @@ class SetNicknameView: BaseUIView {
     // MARK: - Custom Method
 
     override func setUI() {
-        self.addSubviews(nicknameLabel,
+        self.addSubviews(label,
+                         nicknameLabel,
                          emailTextField,
                          signUpNextButton)
     }
     
     override func setLayout() {
+        label.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide).offset(5)
+            $0.centerX.equalToSuperview()
+        }
         nicknameLabel.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).offset(93)
             $0.leading.equalToSuperview().offset(25)

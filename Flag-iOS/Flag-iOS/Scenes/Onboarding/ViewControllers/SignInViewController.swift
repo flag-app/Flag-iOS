@@ -7,6 +7,7 @@
 import Foundation
 
 import SnapKit
+import UIKit
 
 class SignInViewController: BaseUIViewController {
     
@@ -16,6 +17,10 @@ class SignInViewController: BaseUIViewController {
     private let signInView = SignInView()
     
     // MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
     
     // MARK: - Custom Method
     
