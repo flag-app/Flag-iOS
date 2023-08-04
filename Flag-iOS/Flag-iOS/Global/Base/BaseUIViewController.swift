@@ -1,13 +1,13 @@
 //
-//  BaseViewController.swift
+//  BaseUIViewController.swift
 //  Flag-iOS
 //
-//  Created by 최지우 on 2023/07/16.
+//  Created by 최지우 on 2023/08/02.
 //
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class BaseUIViewController: UIViewController {
     
     // MARK: - Properties
     
@@ -17,6 +17,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         
         setUI()
         setLayout()
@@ -26,9 +27,7 @@ class BaseViewController: UIViewController {
     
     // MARK: - Custom Method
     
-    func setUI() {
-        view.backgroundColor = .gray100
-    }
+    func setUI() {}
     
     func setLayout() {}
     

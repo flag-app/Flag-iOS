@@ -8,8 +8,17 @@
 import UIKit
 
 extension UIColor {
+    static var purple100: UIColor {
+        return UIColor(hex: "#F5F2FF")
+    }
+    static var purple200: UIColor {
+        return UIColor(hex: "#8E6FFF")
+    }
+    static var purple300: UIColor {
+        return UIColor(hex: "#6041FF")
+    }
     static var gray100: UIColor {
-        return UIColor(hex: "#FAFAFA")
+        return UIColor(hex: "FAFAFA")
     }
     static var gray200: UIColor {
         return UIColor(hex: "#D9D9D9")
@@ -20,6 +29,22 @@ extension UIColor {
     static var gray400: UIColor {
         return UIColor(hex: "#7A7A7A")
     }
+    static var purple1: UIColor {
+        return UIColor(hex: "#DDD4FF")
+    }
+    static var purple2: UIColor {
+        return UIColor(hex: "#BDABFF")
+    }
+    static var purple3: UIColor {
+        return UIColor(hex: "#997DFF")
+    }
+    static var purple4: UIColor {
+        return UIColor(hex: "#7955FE")
+    }
+    static var purple5: UIColor {
+        return UIColor(hex: "#6439FF")
+    }
+    
 }
 
 extension UIColor {

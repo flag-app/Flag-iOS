@@ -17,7 +17,6 @@
 		7B51C5852A61249C0016B418 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5842A61249C0016B418 /* UIFont+.swift */; };
 		7B51C5882A61258B0016B418 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B51C5872A61258B0016B418 /* SnapKit */; };
 		7B51C58B2A61261A0016B418 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 7B51C58A2A61261A0016B418 /* Moya */; };
-		7B51C5A92A63F33B0016B418 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5A82A63F33B0016B418 /* BaseViewController.swift */; };
 		7B51C5AB2A63F6650016B418 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5AA2A63F6650016B418 /* BaseTabBarController.swift */; };
 		7B51C5AD2A63F7790016B418 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5AC2A63F7790016B418 /* HomeViewController.swift */; };
 		7B51C5AF2A63F7EB0016B418 /* FlagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5AE2A63F7EB0016B418 /* FlagViewController.swift */; };
@@ -25,6 +24,21 @@
 		7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B22A63F8840016B418 /* UIStackView+.swift */; };
 		7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B42A63F8E70016B418 /* UIView+.swift */; };
 		7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B62A6429B00016B418 /* UIColor+.swift */; };
+		7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */; };
+		7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */; };
+		7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C42A7A93B30043C592 /* UIButton+.swift */; };
+		7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C62A7A95930043C592 /* BaseFillButton.swift */; };
+		7B9998C92A7A95F50043C592 /* BaseEmptyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C82A7A95F50043C592 /* BaseEmptyButton.swift */; };
+		7B9998CB2A7A995D0043C592 /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998CA2A7A995D0043C592 /* BaseUIView.swift */; };
+		7B9998CD2A7A9B530043C592 /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998CC2A7A9B530043C592 /* BaseUIViewController.swift */; };
+		7B9998CF2A7A9BEF0043C592 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998CE2A7A9BEF0043C592 /* SignInViewController.swift */; };
+		7B9998D12A7A9D9C0043C592 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D02A7A9D9C0043C592 /* UITextField+.swift */; };
+		7B9998D32A7AA0330043C592 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D22A7AA0330043C592 /* SignInView.swift */; };
+		7B9998D52A7B856E0043C592 /* BaseUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D42A7B856E0043C592 /* BaseUITextField.swift */; };
+		7B9998D92A7C56140043C592 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D82A7C56140043C592 /* SignUpViewController.swift */; };
+		7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DA2A7C562E0043C592 /* SignUpView.swift */; };
+		7B9998DD2A7CAA230043C592 /* SetNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DC2A7CAA230043C592 /* SetNicknameViewController.swift */; };
+		7B9998DF2A7CAA490043C592 /* SetNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DE2A7CAA490043C592 /* SetNicknameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +52,6 @@
 		7B51C57F2A6124600016B418 /* TextLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLiterals.swift; sourceTree = "<group>"; };
 		7B51C5822A61248D0016B418 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		7B51C5842A61249C0016B418 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
-		7B51C5A82A63F33B0016B418 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7B51C5AA2A63F6650016B418 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		7B51C5AC2A63F7790016B418 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7B51C5AE2A63F7EB0016B418 /* FlagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +59,21 @@
 		7B51C5B22A63F8840016B418 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		7B51C5B42A63F8E70016B418 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		7B51C5B62A6429B00016B418 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		7B9998C42A7A93B30043C592 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		7B9998C62A7A95930043C592 /* BaseFillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFillButton.swift; sourceTree = "<group>"; };
+		7B9998C82A7A95F50043C592 /* BaseEmptyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEmptyButton.swift; sourceTree = "<group>"; };
+		7B9998CA2A7A995D0043C592 /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
+		7B9998CC2A7A9B530043C592 /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
+		7B9998CE2A7A9BEF0043C592 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		7B9998D02A7A9D9C0043C592 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		7B9998D22A7AA0330043C592 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		7B9998D42A7B856E0043C592 /* BaseUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITextField.swift; sourceTree = "<group>"; };
+		7B9998D82A7C56140043C592 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7B9998DA2A7C562E0043C592 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		7B9998DC2A7CAA230043C592 /* SetNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameViewController.swift; sourceTree = "<group>"; };
+		7B9998DE2A7CAA490043C592 /* SetNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +129,7 @@
 		7B51C56E2A6102A80016B418 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				7B51C58C2A6128BD0016B418 /* Base */,
 				7B51C57D2A6123D20016B418 /* Literal */,
 				7B51C57E2A6123DE0016B418 /* Resource */,
 				7B51C57C2A6122F30016B418 /* Extension */,
@@ -112,7 +141,7 @@
 		7B51C56F2A6102B10016B418 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				7B51C58C2A6128BD0016B418 /* Base */,
+				7B9998BD2A7A7E2E0043C592 /* Onboarding */,
 				7B51C5722A6103030016B418 /* Home */,
 				7B51C5712A6102F30016B418 /* Flag */,
 				7B51C5702A6102F00016B418 /* Flex */,
@@ -223,6 +252,8 @@
 				7B51C5B22A63F8840016B418 /* UIStackView+.swift */,
 				7B51C5B42A63F8E70016B418 /* UIView+.swift */,
 				7B51C5B62A6429B00016B418 /* UIColor+.swift */,
+				7B9998C42A7A93B30043C592 /* UIButton+.swift */,
+				7B9998D02A7A9D9C0043C592 /* UITextField+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -247,10 +278,45 @@
 		7B51C58C2A6128BD0016B418 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				7B51C5A82A63F33B0016B418 /* BaseViewController.swift */,
 				7B51C5AA2A63F6650016B418 /* BaseTabBarController.swift */,
+				7B9998C62A7A95930043C592 /* BaseFillButton.swift */,
+				7B9998C82A7A95F50043C592 /* BaseEmptyButton.swift */,
+				7B9998CA2A7A995D0043C592 /* BaseUIView.swift */,
+				7B9998CC2A7A9B530043C592 /* BaseUIViewController.swift */,
+				7B9998D42A7B856E0043C592 /* BaseUITextField.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		7B9998BD2A7A7E2E0043C592 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				7B9998BF2A7A7E6A0043C592 /* Views */,
+				7B9998BE2A7A7E630043C592 /* ViewControllers */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		7B9998BE2A7A7E630043C592 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */,
+				7B9998CE2A7A9BEF0043C592 /* SignInViewController.swift */,
+				7B9998D82A7C56140043C592 /* SignUpViewController.swift */,
+				7B9998DC2A7CAA230043C592 /* SetNicknameViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7B9998BF2A7A7E6A0043C592 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */,
+				7B9998D22A7AA0330043C592 /* SignInView.swift */,
+				7B9998DA2A7C562E0043C592 /* SignUpView.swift */,
+				7B9998DE2A7CAA490043C592 /* SetNicknameView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,16 +401,30 @@
 				7B51C55E2A61008A0016B418 /* ViewController.swift in Sources */,
 				7B51C5AF2A63F7EB0016B418 /* FlagViewController.swift in Sources */,
 				7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */,
+				7B9998D92A7C56140043C592 /* SignUpViewController.swift in Sources */,
+				7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */,
+				7B9998CD2A7A9B530043C592 /* BaseUIViewController.swift in Sources */,
+				7B9998C92A7A95F50043C592 /* BaseEmptyButton.swift in Sources */,
+				7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */,
+				7B9998DF2A7CAA490043C592 /* SetNicknameView.swift in Sources */,
 				7B51C5852A61249C0016B418 /* UIFont+.swift in Sources */,
 				7B51C5832A61248D0016B418 /* ImageLiterals.swift in Sources */,
 				7B51C5AD2A63F7790016B418 /* HomeViewController.swift in Sources */,
+				7B9998DD2A7CAA230043C592 /* SetNicknameViewController.swift in Sources */,
+				7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */,
+				7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */,
 				7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */,
 				7B51C5802A6124600016B418 /* TextLiterals.swift in Sources */,
-				7B51C5A92A63F33B0016B418 /* BaseViewController.swift in Sources */,
+				7B9998CF2A7A9BEF0043C592 /* SignInViewController.swift in Sources */,
+				7B9998D32A7AA0330043C592 /* SignInView.swift in Sources */,
 				7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */,
+				7B9998CB2A7A995D0043C592 /* BaseUIView.swift in Sources */,
+				7B9998D52A7B856E0043C592 /* BaseUITextField.swift in Sources */,
 				7B51C5B12A63F8120016B418 /* FlexViewController.swift in Sources */,
+				7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */,
 				7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */,
 				7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */,
+				7B9998D12A7A9D9C0043C592 /* UITextField+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +563,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HZ8WU7PA4J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flag-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -512,6 +593,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HZ8WU7PA4J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flag-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class FlexViewController: BaseViewController {
+final class FlexViewController: BaseUIViewController {
     
     // MARK: - Life Cycle
     

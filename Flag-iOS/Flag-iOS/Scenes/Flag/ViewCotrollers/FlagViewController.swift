@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class FlagViewController: BaseViewController {
+final class FlagViewController: BaseUIViewController {
     
     // MARK: - Life Cycle
     
