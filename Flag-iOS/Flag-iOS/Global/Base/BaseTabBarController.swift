@@ -43,8 +43,8 @@ class BaseTabBarController: UITabBarController {
     
     private func setViewController() {
         flagViewController.tabBarItem = setTabbarItem(title: TextLiterals.flag, image: ImageLiterals.flag, selectedImage: ImageLiterals.flagFill)
-        homeViewController.tabBarItem = setTabbarItem(title: TextLiterals.home, image: ImageLiterals.home, selectedImage: ImageLiterals.homeFill)
-        flexViewController.tabBarItem = setTabbarItem(title: TextLiterals.flex, image: ImageLiterals.flex, selectedImage: ImageLiterals.flexFill)
+        homeViewController.tabBarItem = setTabbarItem(title: "약속잡기", image: ImageLiterals.home, selectedImage: ImageLiterals.homeFill)
+        flexViewController.tabBarItem = setTabbarItem(title: "마이페이지", image: ImageLiterals.flex, selectedImage: ImageLiterals.flexFill)
     }
     
     private func setTabbarItem(title: String, image: UIImage, selectedImage: UIImage) -> UITabBarItem {

@@ -12,6 +12,12 @@ import SnapKit
 class SignUpView: BaseUIView {
     
     // MARK: - UI Components
+    private let label: UILabel = {
+        let label = UILabel()
+        label.text = "Flag 가입하기"
+        label.font = .head1
+        return label
+    }()
     
     private let emailLabel: UILabel = {
         let label = UILabel()
@@ -58,7 +64,8 @@ class SignUpView: BaseUIView {
     // MARK: - Custom Method
     
     override func setUI() {
-        self.addSubviews(emailLabel,
+        self.addSubviews(label,
+                         emailLabel,
                          emailTextField,
                          passwordLabel,
                          passwordTextField,
@@ -68,6 +75,10 @@ class SignUpView: BaseUIView {
     }
     
     override func setLayout() {
+        label.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide).offset(5)
+            $0.centerX.equalToSuperview()
+        }
         emailLabel.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).offset(93)
             $0.leading.equalToSuperview().offset(25)
