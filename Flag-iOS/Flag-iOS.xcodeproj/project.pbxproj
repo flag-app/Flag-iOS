@@ -46,6 +46,10 @@
 		E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA9C2A7E299500FC918A /* FriendsViewController.swift */; };
 		E593AA9F2A7E2C3F00FC918A /* DatePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA9E2A7E2C3F00FC918A /* DatePickView.swift */; };
 		E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */; };
+		E593AAA42A7E991600FC918A /* LoactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAA32A7E991500FC918A /* LoactionView.swift */; };
+		E593AAA72A7E992D00FC918A /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAA62A7E992D00FC918A /* LocationViewController.swift */; };
+		E593AAA92A7EA03900FC918A /* TimeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAA82A7EA03900FC918A /* TimeScrollView.swift */; };
+		E593AAAB2A7EA0AD00FC918A /* TimeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAAA2A7EA0AD00FC918A /* TimeScrollViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +92,10 @@
 		E593AA9C2A7E299500FC918A /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		E593AA9E2A7E2C3F00FC918A /* DatePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatePickView.swift; path = "Flag-iOS/Scenes/Home/ViewControllers/DatePickView.swift"; sourceTree = SOURCE_ROOT; };
 		E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickViewController.swift; sourceTree = "<group>"; };
+		E593AAA32A7E991500FC918A /* LoactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoactionView.swift; sourceTree = "<group>"; };
+		E593AAA62A7E992D00FC918A /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		E593AAA82A7EA03900FC918A /* TimeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScrollView.swift; sourceTree = "<group>"; };
+		E593AAAA2A7EA0AD00FC918A /* TimeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScrollViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +222,8 @@
 				E593AA982A7E1F9500FC918A /* SetNameViewController.swift */,
 				E593AA9C2A7E299500FC918A /* FriendsViewController.swift */,
 				E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */,
+				E593AAA62A7E992D00FC918A /* LocationViewController.swift */,
+				E593AAAA2A7EA0AD00FC918A /* TimeScrollViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -225,6 +235,8 @@
 				E593AA962A7E1F8100FC918A /* SetNameView.swift */,
 				E593AA9A2A7E298400FC918A /* FriendsView.swift */,
 				E593AA9E2A7E2C3F00FC918A /* DatePickView.swift */,
+				E593AAA32A7E991500FC918A /* LoactionView.swift */,
+				E593AAA82A7EA03900FC918A /* TimeScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -426,12 +438,15 @@
 				7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */,
 				7B9998CD2A7A9B530043C592 /* BaseUIViewController.swift in Sources */,
 				7B9998C92A7A95F50043C592 /* BaseEmptyButton.swift in Sources */,
+				E593AAA92A7EA03900FC918A /* TimeScrollView.swift in Sources */,
 				7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */,
 				7B9998DF2A7CAA490043C592 /* SetNicknameView.swift in Sources */,
 				7B51C5852A61249C0016B418 /* UIFont+.swift in Sources */,
 				7B51C5832A61248D0016B418 /* ImageLiterals.swift in Sources */,
 				7B51C5AD2A63F7790016B418 /* HomeViewController.swift in Sources */,
+				E593AAA42A7E991600FC918A /* LoactionView.swift in Sources */,
 				7B9998DD2A7CAA230043C592 /* SetNicknameViewController.swift in Sources */,
+				E593AAA72A7E992D00FC918A /* LocationViewController.swift in Sources */,
 				7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */,
 				7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */,
 				E593AA9F2A7E2C3F00FC918A /* DatePickView.swift in Sources */,
@@ -446,6 +461,7 @@
 				7B9998CB2A7A995D0043C592 /* BaseUIView.swift in Sources */,
 				7B9998D52A7B856E0043C592 /* BaseUITextField.swift in Sources */,
 				7B51C5B12A63F8120016B418 /* FlexViewController.swift in Sources */,
+				E593AAAB2A7EA0AD00FC918A /* TimeScrollViewController.swift in Sources */,
 				7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */,
 				E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */,
 				E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */,

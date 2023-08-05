@@ -36,7 +36,6 @@ final class DatePickView: BaseUIView {
         return label
     }()
    
-
     lazy var popButton: UIButton = {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = 16

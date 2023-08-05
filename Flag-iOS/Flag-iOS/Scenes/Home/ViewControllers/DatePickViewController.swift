@@ -13,6 +13,7 @@ final class DatePickViewController: BaseUIViewController {
     // MARK: - Properties
     
     var selectedDates: [Date] = []
+    var selcetedTime: Int = -1
     
     // MARK: - UI Components
     
@@ -44,7 +45,10 @@ final class DatePickViewController: BaseUIViewController {
     
     @objc
     func didTappedNextButton() {
-        let homeVC = BaseTabBarController()
+        let homeVC = LocationViewController()
+        homeVC.selectedDates = selectedDates
+        homeVC.selcetedTime = selcetedTime
+        _ = Calendar.current
         self.navigationController?.pushViewController(homeVC, animated: true)
     }
 }
