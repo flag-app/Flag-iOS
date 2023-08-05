@@ -26,7 +26,7 @@ class BaseUIViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
-//        setupNavigationBar()
+        setupNavigationBar()
         setUI()
         setLayout()
         addTarget()
@@ -39,16 +39,12 @@ class BaseUIViewController: UIViewController {
     
     func setLayout() {}
     
-//    func setupNavigationBar() {
-////        self.navigationController?.navigationBar.tintColor = .black
-////        self.navigationController?.navigationBar.topItem?.title = ""
-////        self.navigationItem.leftBarButtonItem = backButton
-//        navigationController?.navigationBar.tintColor = .blue
-//        navigationController?.navigationBar.barTintColor = .black
-//        let backButton: UIBarButtonItem = UIBarButtonItem()
-//        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.title1]
-//    }
+    func setupNavigationBar() {
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.head1]
+        self.navigationItem.leftBarButtonItem = backButton
+    }
     
     @objc
     func backButtonTapped() {
