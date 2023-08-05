@@ -39,6 +39,13 @@
 		7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DA2A7C562E0043C592 /* SignUpView.swift */; };
 		7B9998DD2A7CAA230043C592 /* SetNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DC2A7CAA230043C592 /* SetNicknameViewController.swift */; };
 		7B9998DF2A7CAA490043C592 /* SetNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DE2A7CAA490043C592 /* SetNicknameView.swift */; };
+		E593AA952A7E1CAF00FC918A /* FlagOnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA942A7E1CAF00FC918A /* FlagOnBoardView.swift */; };
+		E593AA972A7E1F8100FC918A /* SetNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA962A7E1F8100FC918A /* SetNameView.swift */; };
+		E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA982A7E1F9500FC918A /* SetNameViewController.swift */; };
+		E593AA9B2A7E298400FC918A /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA9A2A7E298400FC918A /* FriendsView.swift */; };
+		E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA9C2A7E299500FC918A /* FriendsViewController.swift */; };
+		E593AA9F2A7E2C3F00FC918A /* DatePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA9E2A7E2C3F00FC918A /* DatePickView.swift */; };
+		E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +81,13 @@
 		7B9998DA2A7C562E0043C592 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		7B9998DC2A7CAA230043C592 /* SetNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameViewController.swift; sourceTree = "<group>"; };
 		7B9998DE2A7CAA490043C592 /* SetNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameView.swift; sourceTree = "<group>"; };
+		E593AA942A7E1CAF00FC918A /* FlagOnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FlagOnBoardView.swift; path = "Flag-iOS/Scenes/Home/ViewControllers/FlagOnBoardView.swift"; sourceTree = SOURCE_ROOT; };
+		E593AA962A7E1F8100FC918A /* SetNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetNameView.swift; path = "Flag-iOS/Scenes/Home/ViewControllers/SetNameView.swift"; sourceTree = SOURCE_ROOT; };
+		E593AA982A7E1F9500FC918A /* SetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameViewController.swift; sourceTree = "<group>"; };
+		E593AA9A2A7E298400FC918A /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsView.swift; path = "Flag-iOS/Scenes/Home/ViewControllers/FriendsView.swift"; sourceTree = SOURCE_ROOT; };
+		E593AA9C2A7E299500FC918A /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		E593AA9E2A7E2C3F00FC918A /* DatePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatePickView.swift; path = "Flag-iOS/Scenes/Home/ViewControllers/DatePickView.swift"; sourceTree = SOURCE_ROOT; };
+		E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +211,9 @@
 			isa = PBXGroup;
 			children = (
 				7B51C5AC2A63F7790016B418 /* HomeViewController.swift */,
+				E593AA982A7E1F9500FC918A /* SetNameViewController.swift */,
+				E593AA9C2A7E299500FC918A /* FriendsViewController.swift */,
+				E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -204,6 +221,10 @@
 		7B51C5762A6122CC0016B418 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E593AA942A7E1CAF00FC918A /* FlagOnBoardView.swift */,
+				E593AA962A7E1F8100FC918A /* SetNameView.swift */,
+				E593AA9A2A7E298400FC918A /* FriendsView.swift */,
+				E593AA9E2A7E2C3F00FC918A /* DatePickView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -413,7 +434,11 @@
 				7B9998DD2A7CAA230043C592 /* SetNicknameViewController.swift in Sources */,
 				7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */,
 				7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */,
+				E593AA9F2A7E2C3F00FC918A /* DatePickView.swift in Sources */,
+				E593AA952A7E1CAF00FC918A /* FlagOnBoardView.swift in Sources */,
 				7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */,
+				E593AA9B2A7E298400FC918A /* FriendsView.swift in Sources */,
+				E593AA972A7E1F8100FC918A /* SetNameView.swift in Sources */,
 				7B51C5802A6124600016B418 /* TextLiterals.swift in Sources */,
 				7B9998CF2A7A9BEF0043C592 /* SignInViewController.swift in Sources */,
 				7B9998D32A7AA0330043C592 /* SignInView.swift in Sources */,
@@ -422,7 +447,10 @@
 				7B9998D52A7B856E0043C592 /* BaseUITextField.swift in Sources */,
 				7B51C5B12A63F8120016B418 /* FlexViewController.swift in Sources */,
 				7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */,
+				E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */,
+				E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */,
 				7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */,
+				E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */,
 				7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */,
 				7B9998D12A7A9D9C0043C592 /* UITextField+.swift in Sources */,
 			);

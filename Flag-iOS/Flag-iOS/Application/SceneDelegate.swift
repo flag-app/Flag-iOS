@@ -21,6 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController.isNavigationBarHidden = true
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
+        
+        
+        
         // 다크 모드 해제
         window?.overrideUserInterfaceStyle = .light
     }

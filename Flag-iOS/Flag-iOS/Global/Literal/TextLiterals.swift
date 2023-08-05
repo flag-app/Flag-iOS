@@ -29,5 +29,11 @@ enum TextLiterals {
     static let nicknameText: String = "닉네임"
     static let nicknameHintText: String = "닉네임 최소 2자 ~ 최대 7자"
     static let completeOnboardingText: String = "가입 완료하기"
-    
+    static let flagNameText: String = "약속 이름을 정해 주세요."
+    static let flagNameHintText: String = "최대 15자"
+    static let flagFriendsText: String = "누구와 잡는 약속인가요?"
+    static let flagFriendsHintText: String = "🔍 검색"
+    static let flagDateText: String = "날짜를 선택해 주세요. (최대 5일 선택 가능)"
+    static let flagTimeText: String = "약속 시간대를 설정해 주세요"
+
 }
