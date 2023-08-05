@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 final class SetNameViewController: BaseUIViewController {
     
     // MARK: - Properties

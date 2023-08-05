@@ -4,11 +4,12 @@
 //
 //  Created by 성현주 on 2023/08/05.
 //
-import Foundation
 import UIKit
+
 import SnapKit
 
 final class FlagOnboardView: BaseUIView {
+    
     // MARK: - UI Components
     
     lazy var nextButton: BaseFillButton = {

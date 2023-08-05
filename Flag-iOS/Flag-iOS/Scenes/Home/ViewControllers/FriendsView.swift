@@ -4,11 +4,10 @@
 //
 //  Created by 성현주 on 2023/08/05.
 //
-
-import Foundation
 import UIKit
 
 final class FriendsNameView: BaseUIView {
+    
     // MARK: - UI Components
     
     lazy var nextButton: BaseFillButton = {
@@ -16,12 +15,14 @@ final class FriendsNameView: BaseUIView {
         button.setTitle(TextLiterals.nextText, for: .normal)
         return button
     }()
+    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.flagFriendsText
         label.font = .title1
         return label
     }()
+   
     private let nameTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.flagFriendsHintText
@@ -30,7 +31,9 @@ final class FriendsNameView: BaseUIView {
     
     // MARK: - Custom Method
     override func setUI() {
-        self.addSubviews(nextButton,nameTextField,nameLabel)
+        self.addSubviews(nextButton,
+                         nameTextField,
+                         nameLabel)
         
     }
     override func setLayout() {

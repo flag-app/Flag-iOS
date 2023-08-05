@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 final class FriendsViewController: BaseUIViewController {
     
     // MARK: - Properties

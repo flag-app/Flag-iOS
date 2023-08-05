@@ -4,8 +4,6 @@
 //
 //  Created by 성현주 on 2023/08/05.
 //
-
-import Foundation
 import UIKit
 
 final class SetNameView: BaseUIView {
@@ -16,12 +14,14 @@ final class SetNameView: BaseUIView {
         button.setTitle(TextLiterals.nextText, for: .normal)
         return button
     }()
+    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.flagNameText
         label.font = .title1
         return label
     }()
+    
     private let nameTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.flagNameHintText
@@ -30,7 +30,9 @@ final class SetNameView: BaseUIView {
     
     // MARK: - Custom Method
     override func setUI() {
-        self.addSubviews(nextButton,nameTextField,nameLabel)
+        self.addSubviews(nextButton,
+                         nameTextField,
+                         nameLabel)
         
     }
     override func setLayout() {
