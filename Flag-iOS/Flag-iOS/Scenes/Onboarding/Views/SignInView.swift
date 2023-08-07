@@ -12,13 +12,7 @@ import SnapKit
 class SignInView: BaseUIView {
     
     // MARK: - UI Components
-    private let label: UILabel = {
-        let label = UILabel()
-        label.text = "로그인"
-        label.font = .head1
-        return label
-    }()
-    
+
     private let emailInputTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.inputEmailText
@@ -68,8 +62,7 @@ class SignInView: BaseUIView {
         userInfoSettingStackView.addArrangedSubviews(resetPasswordButton,
                                                      separateLabel,
                                                      signUpButton)
-        self.addSubviews(label,
-                         emailInputTextField,
+        self.addSubviews(emailInputTextField,
                          passwordInputTextField,
                          signInButton,
                          userInfoSettingStackView)
@@ -77,10 +70,6 @@ class SignInView: BaseUIView {
     }
     
     override func setLayout() {
-        label.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(5)
-            $0.centerX.equalToSuperview()
-        }
         emailInputTextField.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide).offset(161)
             $0.horizontalEdges.equalToSuperview().inset(25)

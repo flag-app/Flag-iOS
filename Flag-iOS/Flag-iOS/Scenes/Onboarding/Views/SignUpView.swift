@@ -103,8 +103,7 @@ class SignUpView: BaseUIView {
     }
     
     override func setUI() {
-        self.addSubviews(signUpTitleLabel,
-                         emailLabel,
+        self.addSubviews(emailLabel,
                          emailTextField,
                          passwordLabel,
                          passwordTextField,
@@ -117,10 +116,6 @@ class SignUpView: BaseUIView {
     }
     
     override func setLayout() {
-        signUpTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(93)
-            $0.leading.equalToSuperview().offset(25)
-        }
         emailLabel.snp.makeConstraints {
             $0.top.equalTo(signUpTitleLabel.snp.bottom).offset(24)
             $0.leading.equalToSuperview().offset(25)
