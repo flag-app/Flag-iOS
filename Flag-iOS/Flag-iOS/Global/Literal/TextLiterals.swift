@@ -39,5 +39,6 @@ enum TextLiterals {
     static let flagMinimumTimeHintText: String = "최소__시간은 만나야 해요"
     static let flagLocationText: String = "약속 장소를 입력해 주세요"
     static let flagMemoText: String = "약속 메모를 입력해 주세요"
+    static let flagTimeScrollText: String = "가능한 시간을 스크롤해서 입력해주세요"
 
 }
