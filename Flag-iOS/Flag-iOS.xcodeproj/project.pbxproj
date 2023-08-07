@@ -142,20 +142,20 @@
 			isa = PBXGroup;
 			children = (
 				7B9998BD2A7A7E2E0043C592 /* Onboarding */,
-				7B51C5722A6103030016B418 /* Home */,
+				7B51C5722A6103030016B418 /* FlagPlus */,
 				7B51C5712A6102F30016B418 /* Flag */,
-				7B51C5702A6102F00016B418 /* Flex */,
+				7B51C5702A6102F00016B418 /* MyPage */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		7B51C5702A6102F00016B418 /* Flex */ = {
+		7B51C5702A6102F00016B418 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
 				7B51C57A2A6122DF0016B418 /* Views */,
 				7B51C5792A6122DB0016B418 /* ViewControllers */,
 			);
-			path = Flex;
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 		7B51C5712A6102F30016B418 /* Flag */ = {
@@ -167,13 +167,13 @@
 			path = Flag;
 			sourceTree = "<group>";
 		};
-		7B51C5722A6103030016B418 /* Home */ = {
+		7B51C5722A6103030016B418 /* FlagPlus */ = {
 			isa = PBXGroup;
 			children = (
 				7B51C5762A6122CC0016B418 /* Views */,
 				7B51C5752A6122C00016B418 /* ViewControllers */,
 			);
-			path = Home;
+			path = FlagPlus;
 			sourceTree = "<group>";
 		};
 		7B51C5732A6103220016B418 /* Application */ = {
