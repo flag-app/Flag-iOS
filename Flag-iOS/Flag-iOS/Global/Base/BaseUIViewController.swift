@@ -13,12 +13,6 @@ class BaseUIViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private lazy var backButton = UIBarButtonItem(
-            image: ImageLiterals.backButtonIcon,
-            style: .plain,
-            target: self,
-            action: #selector(backButtonTapped)
-        )
     
     // MARK: - Life Cycle
     
@@ -27,16 +21,10 @@ class BaseUIViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         setupNavigationBar()
-        setupNavigationPopGesture()
         setUI()
         setLayout()
         addTarget()
         setDelegate()
-    }
-    
-    public override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.isHidden = true
     }
     
     // MARK: - Custom Method
@@ -46,23 +34,12 @@ class BaseUIViewController: UIViewController {
     func setLayout() {}
     
     func setupNavigationBar() {
-//        navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.tintColor = .black
-        navigationController?.navigationBar.topItem?.title = ""
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.head1]
-        navigationItem.leftBarButtonItem = backButton
+        let backButton: UIBarButtonItem = UIBarButtonItem()
+        backButton.title = ""
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
-    
-    func setupNavigationPopGesture() {
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        navigationController?.interactivePopGestureRecognizer?.delegate = nil
-    }
-    
-    @objc
-    func backButtonTapped() {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     
     // MARK: - Action Method
     

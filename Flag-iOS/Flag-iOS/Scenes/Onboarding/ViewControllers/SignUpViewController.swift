@@ -18,9 +18,7 @@ class SignUpViewController: BaseUIViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        
-        navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.topItem?.title = TextLiterals.signUpTitleText
+        navigationItem.title = TextLiterals.signUpTitleText
     }
     
     override func setUI() {

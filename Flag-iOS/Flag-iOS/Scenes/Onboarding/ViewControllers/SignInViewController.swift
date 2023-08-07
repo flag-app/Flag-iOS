@@ -16,19 +16,12 @@ class SignInViewController: BaseUIViewController {
     private let signInView = SignInView()
     
     // MARK: - Life Cycle
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        navigationController?.navigationBar.isHidden = false
-//        navigationController?.navigationBar.topItem?.title = TextLiterals.signIn
-//    }
 
     // MARK: - Custom Method
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.topItem?.title = TextLiterals.signIn
-
+        navigationItem.title = TextLiterals.signIn
     }
 
     override func setUI() {
