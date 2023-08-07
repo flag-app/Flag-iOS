@@ -33,7 +33,7 @@ class SignUpView: BaseUIView {
         return label
     }()
     
-    private let emailTextField: BaseUITextField = {
+    let emailTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.emailHintText
         return textField
@@ -72,7 +72,7 @@ class SignUpView: BaseUIView {
         return label
     }()
     
-    private let nicknameTextField: BaseUITextField = {
+    let nicknameTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.nicknameHintText
         return textField
@@ -92,6 +92,15 @@ class SignUpView: BaseUIView {
     }()
     
     // MARK: - Custom Method
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addTarget()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func setUI() {
         self.addSubviews(signUpTitleLabel,
@@ -160,6 +169,28 @@ class SignUpView: BaseUIView {
             $0.horizontalEdges.equalToSuperview().inset(25)
             $0.height.equalTo(49)
         }
+    }
+    
+    func addTarget() {
+        nicknameTextField.addTarget(self, action: #selector(nicknameInputChanged), for: .editingChanged)
+    }
+    
+    @objc
+    func nicknameInputChanged(_ textField: UITextField) {
+        if let userNickname = textField.text, (userNickname.count>1 && userNickname.count<6) {
+            nicknameDoubleCheckButton.isEnabled = true
+            signUpNextButton.isEnabled = true
+        } else {
+            nicknameDoubleCheckButton.isEnabled = false
+            signUpNextButton.isEnabled = false
+        }
+    }
+    
+    /// 이메일 형식 검사
+    func isValidEmail(testStr:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
     }
     
 }

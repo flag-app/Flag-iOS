@@ -7,6 +7,7 @@
 import Foundation
 
 import SnapKit
+import UIKit
 
 class SignUpViewController: BaseUIViewController {
     
@@ -33,9 +34,14 @@ class SignUpViewController: BaseUIViewController {
         signUpView.signUpNextButton.addTarget(self, action: #selector(didTappedNextButton), for: .touchUpInside)
     }
     
+   
+    
     @objc
     func didTappedNextButton() {
         let setNicknameViewController = SetNicknameViewController()
         self.navigationController?.pushViewController(setNicknameViewController, animated: true)
     }
+    
+    
+    
 }

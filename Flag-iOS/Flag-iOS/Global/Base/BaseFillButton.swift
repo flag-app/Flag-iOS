@@ -35,11 +35,11 @@ class BaseFillButton: UIButton {
     
     func setEnableButton() {
         isUserInteractionEnabled = true
-        backgroundColor = .purple2
+        backgroundColor = .purple200
     }
     
     func setDisableButton() {
         isUserInteractionEnabled = false
-        backgroundColor = .gray200
+        backgroundColor = .purple2
     }
 }
