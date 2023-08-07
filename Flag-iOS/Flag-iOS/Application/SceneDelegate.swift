@@ -17,12 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
-        let navigationController = UINavigationController(rootViewController: DatePickViewController())
+        let navigationController = UINavigationController(rootViewController: OnboardingViewController())
         navigationController.isNavigationBarHidden = true
+
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         // 다크 모드 해제
         window?.overrideUserInterfaceStyle = .light
+        // navi hidden처리
+//        navigationController.isNavigationBarHidden = true
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
