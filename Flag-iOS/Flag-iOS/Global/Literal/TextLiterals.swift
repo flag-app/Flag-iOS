@@ -11,9 +11,9 @@ enum TextLiterals {
     
     // MARK: tabBar
     
-    static let home: String = "홈"
     static let flag: String = "플래그"
-    static let flex: String = "플렉스"
+    static let flagPlus: String = "약속잡기"
+    static let myPage: String = "마이페이지"
     
     // MARK: Onboarding
     
