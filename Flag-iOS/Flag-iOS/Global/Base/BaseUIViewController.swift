@@ -27,10 +27,16 @@ class BaseUIViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         setupNavigationBar()
+        setupNavigationPopGesture()
         setUI()
         setLayout()
         addTarget()
         setDelegate()
+    }
+    
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = true
     }
     
     // MARK: - Custom Method
@@ -40,16 +46,23 @@ class BaseUIViewController: UIViewController {
     func setLayout() {}
     
     func setupNavigationBar() {
-        self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.topItem?.title = ""
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.head1]
-        self.navigationItem.leftBarButtonItem = backButton
+//        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.topItem?.title = ""
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.head1]
+        navigationItem.leftBarButtonItem = backButton
+    }
+    
+    func setupNavigationPopGesture() {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     
     @objc
     func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
     }
+    
     
     // MARK: - Action Method
     

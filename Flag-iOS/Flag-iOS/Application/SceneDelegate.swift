@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 다크 모드 해제
         window?.overrideUserInterfaceStyle = .light
         // navi hidden처리
-        navigationController.isNavigationBarHidden = true
+//        navigationController.isNavigationBarHidden = true
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

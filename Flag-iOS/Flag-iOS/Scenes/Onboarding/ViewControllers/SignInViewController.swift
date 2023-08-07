@@ -10,20 +10,27 @@ import SnapKit
 import UIKit
 
 class SignInViewController: BaseUIViewController {
-    
-    // MARK: - Properties
-    
+        
     // MARK: - UI Components
+    
     private let signInView = SignInView()
     
     // MARK: - Life Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        navigationController?.navigationBar.isHidden = false
+//        navigationController?.navigationBar.topItem?.title = TextLiterals.signIn
+//    }
 
-    
     // MARK: - Custom Method
     
+    override func setupNavigationBar() {
+        super.setupNavigationBar()
+        navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.topItem?.title = TextLiterals.signIn
+
+    }
+
     override func setUI() {
         view.addSubviews(signInView)
     }

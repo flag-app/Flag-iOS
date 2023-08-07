@@ -9,14 +9,11 @@ import Foundation
 import SnapKit
 
 class OnboardingViewController: BaseUIViewController {
-    
-    // MARK: - Properties
-    
+        
     // MARK: - UI Components
+    
     private let onboardingView = OnboardingView()
-    
-    // MARK: - Life Cycle
-    
+        
     // MARK: - Custom Method
     
     override func setUI() {
