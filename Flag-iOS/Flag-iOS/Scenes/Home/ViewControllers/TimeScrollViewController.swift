@@ -13,6 +13,11 @@ final class TimeScrollViewController: BaseUIViewController {
     // MARK: - Properties
     var selectedDates: [Date] = []
     var selcetedTime: Int = 0
+    var labels: [UILabel] = []
+    var selectedIndexPaths: [IndexPath] = []
+    var previouslySelectedIndexPaths: Set<IndexPath> = []
+    var panGestureRecognizer: UIPanGestureRecognizer!
+    var touchGestureRecognizer: UITapGestureRecognizer!
     
     // MARK: - UI Components
     private let timeScrollView = TimeScrollView()
@@ -39,14 +44,62 @@ final class TimeScrollViewController: BaseUIViewController {
         timeScrollView.collectionView.dataSource = self
         timeScrollView.collectionView.delegate = self
         timeScrollView.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        // 팬 제스처 인식기 생성 및 델리게이트 설정
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+        panGestureRecognizer.delegate = self
+        timeScrollView.collectionView.addGestureRecognizer(panGestureRecognizer)
+        
+        // 터치 제스처 인식기 생성 및 델리게이트 설정
+        touchGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTouchGesture(_:)))
+        touchGestureRecognizer.delegate = self
+        timeScrollView.collectionView.addGestureRecognizer(touchGestureRecognizer)
+        
+    }
+    
+    @objc
+    private func handlePanGesture(_ recognizer: UIPanGestureRecognizer) {
+        let touchLocation = recognizer.location(in: timeScrollView.collectionView)
+        if let indexPath = timeScrollView.collectionView.indexPathForItem(at: touchLocation) {
+            if indexPath.row >= selectedDates.count {
+                
+                if recognizer.state == .changed {
+                    if !previouslySelectedIndexPaths.contains(indexPath) {
+                        // 셀 선택
+                        timeScrollView.collectionView.cellForItem(at: indexPath)?.backgroundColor = .purple200
+                        previouslySelectedIndexPaths.insert(indexPath)
+                    }
+                }
+            }
+        }
+    }
+    
+    @objc
+    private func handleTouchGesture(_ recognizer: UITapGestureRecognizer) {
+        let touchLocation = recognizer.location(in: timeScrollView.collectionView)
+        if let indexPath = timeScrollView.collectionView.indexPathForItem(at: touchLocation) {
+            if indexPath.row >= selectedDates.count {
+                    if previouslySelectedIndexPaths.contains(indexPath) {
+                        // 셀 선택 해제
+                        timeScrollView.collectionView.cellForItem(at: indexPath)?.backgroundColor = .white
+                        previouslySelectedIndexPaths.remove(indexPath)
+                    } else {
+                        // 셀 선택
+                        timeScrollView.collectionView.cellForItem(at: indexPath)?.backgroundColor = .purple200
+                        previouslySelectedIndexPaths.insert(indexPath)
+                    }
+            }
+        }
     }
 
+    
     
     @objc
     func didTappedNextButton() {
         let homeVC = BaseTabBarController()
         self.navigationController?.pushViewController(homeVC, animated: true)
     }
+    
+    
     
 }
      // MARK: - CollectionViewDataSource
@@ -105,5 +158,10 @@ extension TimeScrollViewController: UICollectionViewDataSource, UICollectionView
     }
 }
 
-
+extension TimeScrollViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        // 다른 제스처 인식기와 함께 사용할 수 있도록 하는코드
+        return true
+    }
+}
 

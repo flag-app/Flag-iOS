@@ -27,9 +27,9 @@ final class TimeScrollView: BaseUIView {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         return collectionView
     }()
     // MARK: - Custom Method
