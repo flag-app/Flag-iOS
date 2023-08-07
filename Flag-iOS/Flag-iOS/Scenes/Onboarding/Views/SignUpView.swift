@@ -11,17 +11,25 @@ import SnapKit
 
 class SignUpView: BaseUIView {
     
+    // MARK: - Properties
+    private var userEmail: String = ""
+    private var userPassword: String = ""
+    private var userDoubleCheckPassword: String = ""
+    private var userNickname: String = ""
+    
     // MARK: - UI Components
-    private let label: UILabel = {
+    private let signUpTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Flag 가입하기"
-        label.font = .head1
+        label.text = TextLiterals.signUpTitleText
+        label.font = .title1
+        label.numberOfLines = 0
         return label
     }()
     
     private let emailLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.inputEmailText
+        label.font = .subTitle3
         return label
     }()
     
@@ -34,6 +42,7 @@ class SignUpView: BaseUIView {
     private let passwordLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.inputPasswordText
+        label.font = .subTitle3
         return label
     }()
     
@@ -46,6 +55,7 @@ class SignUpView: BaseUIView {
     private let passwordCheckLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.doubleCheckPasswordText
+        label.font = .subTitle3
         return label
     }()
     
@@ -53,6 +63,26 @@ class SignUpView: BaseUIView {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.passwordHintText
         return textField
+    }()
+    
+    private let nicknameLabel: UILabel = {
+        let label = UILabel()
+        label.text = TextLiterals.nicknameText
+        label.font = .subTitle3
+        return label
+    }()
+    
+    private let nicknameTextField: BaseUITextField = {
+        let textField = BaseUITextField()
+        textField.placeholder = TextLiterals.nicknameHintText
+        return textField
+    }()
+    
+    lazy var nicknameDoubleCheckButton: BaseFillButton = {
+        let button = BaseFillButton()
+        button.addTitleAttribute(title: TextLiterals.doubleCheck, titleColor: .white, fontName: .subTitle3)
+        button.layer.cornerRadius = 9.0
+        return button
     }()
     
     lazy var signUpNextButton: BaseFillButton = {
@@ -64,23 +94,26 @@ class SignUpView: BaseUIView {
     // MARK: - Custom Method
     
     override func setUI() {
-        self.addSubviews(label,
+        self.addSubviews(signUpTitleLabel,
                          emailLabel,
                          emailTextField,
                          passwordLabel,
                          passwordTextField,
                          passwordCheckLabel,
                          passwordCheckTextField,
+                         nicknameLabel,
+                         nicknameTextField,
+                         nicknameDoubleCheckButton,
                          signUpNextButton)
     }
     
     override func setLayout() {
-        label.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(5)
-            $0.centerX.equalToSuperview()
+        signUpTitleLabel.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide).offset(93)
+            $0.leading.equalToSuperview().offset(25)
         }
         emailLabel.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(93)
+            $0.top.equalTo(signUpTitleLabel.snp.bottom).offset(24)
             $0.leading.equalToSuperview().offset(25)
         }
         emailTextField.snp.makeConstraints {
@@ -89,7 +122,7 @@ class SignUpView: BaseUIView {
             $0.height.equalTo(41)
         }
         passwordLabel.snp.makeConstraints {
-            $0.top.equalTo(emailTextField.snp.bottom).offset(20)
+            $0.top.equalTo(emailTextField.snp.bottom).offset(30)
             $0.leading.equalToSuperview().offset(25)
         }
         passwordTextField.snp.makeConstraints {
@@ -98,12 +131,28 @@ class SignUpView: BaseUIView {
             $0.height.equalTo(41)
         }
         passwordCheckLabel.snp.makeConstraints {
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(20)
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(30)
             $0.leading.equalToSuperview().offset(25)
         }
         passwordCheckTextField.snp.makeConstraints {
             $0.top.equalTo(passwordCheckLabel.snp.bottom).offset(7)
             $0.horizontalEdges.equalToSuperview().inset(25)
+            $0.height.equalTo(41)
+        }
+        nicknameLabel.snp.makeConstraints {
+            $0.top.equalTo(passwordCheckTextField.snp.bottom).offset(30)
+            $0.leading.equalToSuperview().offset(25)
+        }
+        nicknameTextField.snp.makeConstraints {
+            $0.top.equalTo(nicknameLabel.snp.bottom).offset(7)
+            $0.leading.equalToSuperview().offset(25)
+            $0.width.equalTo(255)
+            $0.height.equalTo(41)
+        }
+        nicknameDoubleCheckButton.snp.makeConstraints {
+            $0.top.equalTo(nicknameLabel.snp.bottom).offset(7)
+            $0.leading.equalTo(nicknameTextField.snp.trailing).offset(12)
+            $0.trailing.equalToSuperview().inset(25)
             $0.height.equalTo(41)
         }
         signUpNextButton.snp.makeConstraints {
