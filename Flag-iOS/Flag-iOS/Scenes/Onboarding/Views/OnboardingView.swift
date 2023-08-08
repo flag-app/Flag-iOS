@@ -22,12 +22,14 @@ class OnboardingView: BaseUIView {
     lazy var signInButton: BaseFillButton = {
         let button = BaseFillButton()
         button.setTitle(TextLiterals.signIn, for: .normal)
+        button.isEnabled = true
         return button
     }()
     
     lazy var signUpButton: BaseEmptyButton = {
         let button = BaseEmptyButton()
         button.setTitle(TextLiterals.signUp, for: .normal)
+        button.isEnabled = true
         return button
     }()
     

@@ -28,19 +28,8 @@ class SignInView: BaseUIView {
     lazy var signInButton: BaseFillButton = {
         let button = BaseFillButton()
         button.setTitle(TextLiterals.signIn, for: .normal)
+        button.isEnabled = true
         return button
-    }()
-    
-    lazy var resetPasswordButton: UIButton = {
-        let button = UIButton()
-        button.addTitleAttribute(title: TextLiterals.resetPassword, titleColor: .black, fontName: .body2)
-        return button
-    }()
-    
-    private let separateLabel: UILabel = {
-        let label = UILabel()
-        label.text = "|"
-        return label
     }()
     
     lazy var signUpButton: UIButton = {
@@ -49,23 +38,13 @@ class SignInView: BaseUIView {
         return button
     }()
     
-    private let userInfoSettingStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 30
-        return stackView
-    }()
-    
     // MARK: - Custom Method
 
     override func setUI() {
-        userInfoSettingStackView.addArrangedSubviews(resetPasswordButton,
-                                                     separateLabel,
-                                                     signUpButton)
         self.addSubviews(emailInputTextField,
                          passwordInputTextField,
                          signInButton,
-                         userInfoSettingStackView)
+                         signUpButton)
 
     }
     
@@ -85,13 +64,10 @@ class SignInView: BaseUIView {
             $0.horizontalEdges.equalToSuperview().inset(25)
             $0.height.equalTo(49)
         }
-        userInfoSettingStackView.snp.makeConstraints {
+        signUpButton.snp.makeConstraints {
             $0.top.equalTo(signInButton.snp.bottom).offset(31)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(26)
-        }
-        separateLabel.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
         }
     }
 }
