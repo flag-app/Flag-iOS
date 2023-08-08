@@ -22,8 +22,6 @@ enum TextLiterals {
     static let inputEmailText: String = "이메일"
     static let inputPasswordText: String = "비밀번호"
     static let signUpTitleText: String = "FLAG 가입하기"
-    static let inputEmailText: String = "이메일을 입력해 주세요"
-    static let inputPasswordText: String = "비밀번호를 입력해 주세요"
     static let resetPassword: String = "비밀번호 재설정"
     static let doubleCheckPasswordText: String = "비밀번호 확인"
     static let emailHintText: String = "ex) abc123@email.com"
@@ -43,6 +41,6 @@ enum TextLiterals {
     static let flagLocationText: String = "약속 장소를 입력해 주세요"
     static let flagMemoText: String = "약속 메모를 입력해 주세요"
     static let flagTimeScrollText: String = "가능한 시간을 스크롤해서 입력해주세요"
-    static let signUpTitleText: String = "안녕하세요 FLAG 입니다!\n가입 정보를 기입해 주세요."
+    //static let signUpTitleText: String = "안녕하세요 FLAG 입니다!\n가입 정보를 기입해 주세요."
     static let doubleCheck: String = "중복확인"
 }

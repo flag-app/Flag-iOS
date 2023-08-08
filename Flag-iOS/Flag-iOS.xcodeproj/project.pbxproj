@@ -39,16 +39,18 @@
 		7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DA2A7C562E0043C592 /* SignUpView.swift */; };
 		7B9998DD2A7CAA230043C592 /* SetNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DC2A7CAA230043C592 /* SetNicknameViewController.swift */; };
 		7B9998DF2A7CAA490043C592 /* SetNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DE2A7CAA490043C592 /* SetNicknameView.swift */; };
-		E593AA952A7E1CAF00FC918A /* FlagOnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA942A7E1CAF00FC918A /* FlagOnBoardView.swift */; };
-		E593AA972A7E1F8100FC918A /* SetNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA962A7E1F8100FC918A /* SetNameView.swift */; };
+		E535869C2A82016B007D053D /* FlagPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869B2A82016B007D053D /* FlagPlusView.swift */; };
+		E535869E2A820175007D053D /* SetNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869D2A820175007D053D /* SetNameView.swift */; };
+		E53586A02A82017E007D053D /* FreindsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869F2A82017E007D053D /* FreindsView.swift */; };
+		E53586A22A82018F007D053D /* DatePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586A12A82018F007D053D /* DatePickView.swift */; };
+		E53586A42A82019A007D053D /* LoactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586A32A82019A007D053D /* LoactionView.swift */; };
+		E53586A62A8201A1007D053D /* TimeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586A52A8201A1007D053D /* TimeScrollView.swift */; };
+		E53586A92A820251007D053D /* File1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586A82A820251007D053D /* File1.swift */; };
+		E53586AC2A820284007D053D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586AB2A820284007D053D /* File.swift */; };
 		E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA982A7E1F9500FC918A /* SetNameViewController.swift */; };
-		E593AA9B2A7E298400FC918A /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA9A2A7E298400FC918A /* FriendsView.swift */; };
 		E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA9C2A7E299500FC918A /* FriendsViewController.swift */; };
-		E593AA9F2A7E2C3F00FC918A /* DatePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA9E2A7E2C3F00FC918A /* DatePickView.swift */; };
 		E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */; };
-		E593AAA42A7E991600FC918A /* LoactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAA32A7E991500FC918A /* LoactionView.swift */; };
 		E593AAA72A7E992D00FC918A /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAA62A7E992D00FC918A /* LocationViewController.swift */; };
-		E593AAA92A7EA03900FC918A /* TimeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAA82A7EA03900FC918A /* TimeScrollView.swift */; };
 		E593AAAB2A7EA0AD00FC918A /* TimeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAAA2A7EA0AD00FC918A /* TimeScrollViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,16 +87,18 @@
 		7B9998DA2A7C562E0043C592 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		7B9998DC2A7CAA230043C592 /* SetNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameViewController.swift; sourceTree = "<group>"; };
 		7B9998DE2A7CAA490043C592 /* SetNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameView.swift; sourceTree = "<group>"; };
-		E593AA942A7E1CAF00FC918A /* FlagOnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FlagOnBoardView.swift; path = "Flag-iOS/Scenes/Home/ViewControllers/FlagOnBoardView.swift"; sourceTree = SOURCE_ROOT; };
-		E593AA962A7E1F8100FC918A /* SetNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetNameView.swift; path = "Flag-iOS/Scenes/Home/ViewControllers/SetNameView.swift"; sourceTree = SOURCE_ROOT; };
+		E535869B2A82016B007D053D /* FlagPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPlusView.swift; sourceTree = "<group>"; };
+		E535869D2A820175007D053D /* SetNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameView.swift; sourceTree = "<group>"; };
+		E535869F2A82017E007D053D /* FreindsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsView.swift; sourceTree = "<group>"; };
+		E53586A12A82018F007D053D /* DatePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickView.swift; sourceTree = "<group>"; };
+		E53586A32A82019A007D053D /* LoactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoactionView.swift; sourceTree = "<group>"; };
+		E53586A52A8201A1007D053D /* TimeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScrollView.swift; sourceTree = "<group>"; };
+		E53586A82A820251007D053D /* File1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File1.swift; sourceTree = "<group>"; };
+		E53586AB2A820284007D053D /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		E593AA982A7E1F9500FC918A /* SetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameViewController.swift; sourceTree = "<group>"; };
-		E593AA9A2A7E298400FC918A /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsView.swift; path = "Flag-iOS/Scenes/Home/ViewControllers/FriendsView.swift"; sourceTree = SOURCE_ROOT; };
 		E593AA9C2A7E299500FC918A /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
-		E593AA9E2A7E2C3F00FC918A /* DatePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatePickView.swift; path = "Flag-iOS/Scenes/Home/ViewControllers/DatePickView.swift"; sourceTree = SOURCE_ROOT; };
 		E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickViewController.swift; sourceTree = "<group>"; };
-		E593AAA32A7E991500FC918A /* LoactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoactionView.swift; sourceTree = "<group>"; };
 		E593AAA62A7E992D00FC918A /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		E593AAA82A7EA03900FC918A /* TimeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScrollView.swift; sourceTree = "<group>"; };
 		E593AAAA2A7EA0AD00FC918A /* TimeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScrollViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,30 +136,21 @@
 			children = (
 				7B51C5732A6103220016B418 /* Application */,
 				7B51C56F2A6102B10016B418 /* Scenes */,
-				7B51C5742A6103800016B418 /* Data */,
 				7B51C56E2A6102A80016B418 /* Global */,
-				7B51C56D2A61027C0016B418 /* Network */,
 				7B51C55D2A61008A0016B418 /* ViewController.swift */,
 				7B51C5672A61008C0016B418 /* Info.plist */,
 			);
 			path = "Flag-iOS";
 			sourceTree = "<group>";
 		};
-		7B51C56D2A61027C0016B418 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		7B51C56E2A6102A80016B418 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				E53586AA2A82027C007D053D /* Data */,
 				7B51C58C2A6128BD0016B418 /* Base */,
 				7B51C57D2A6123D20016B418 /* Literal */,
 				7B51C57E2A6123DE0016B418 /* Resource */,
 				7B51C57C2A6122F30016B418 /* Extension */,
-				7B51C57B2A6122EF0016B418 /* Protocol */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -183,7 +178,7 @@
 		7B51C5712A6102F30016B418 /* Flag */ = {
 			isa = PBXGroup;
 			children = (
-				7B51C5782A6122D70016B418 /* Views */,
+				E53586A72A820249007D053D /* Views */,
 				7B51C5772A6122D20016B418 /* ViewCotrollers */,
 			);
 			path = Flag;
@@ -192,7 +187,7 @@
 		7B51C5722A6103030016B418 /* FlagPlus */ = {
 			isa = PBXGroup;
 			children = (
-				7B51C5762A6122CC0016B418 /* Views */,
+				E535869A2A82015A007D053D /* Views */,
 				7B51C5752A6122C00016B418 /* ViewControllers */,
 			);
 			path = FlagPlus;
@@ -208,18 +203,10 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		7B51C5742A6103800016B418 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		7B51C5752A6122C00016B418 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				7B51C5AC2A63F7790016B418 /* FlagPlusViewController.swift */,
-				7B51C5AC2A63F7790016B418 /* HomeViewController.swift */,
 				E593AA982A7E1F9500FC918A /* SetNameViewController.swift */,
 				E593AA9C2A7E299500FC918A /* FriendsViewController.swift */,
 				E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */,
@@ -229,32 +216,12 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		7B51C5762A6122CC0016B418 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E593AA942A7E1CAF00FC918A /* FlagOnBoardView.swift */,
-				E593AA962A7E1F8100FC918A /* SetNameView.swift */,
-				E593AA9A2A7E298400FC918A /* FriendsView.swift */,
-				E593AA9E2A7E2C3F00FC918A /* DatePickView.swift */,
-				E593AAA32A7E991500FC918A /* LoactionView.swift */,
-				E593AAA82A7EA03900FC918A /* TimeScrollView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		7B51C5772A6122D20016B418 /* ViewCotrollers */ = {
 			isa = PBXGroup;
 			children = (
 				7B51C5AE2A63F7EB0016B418 /* FlagViewController.swift */,
 			);
 			path = ViewCotrollers;
-			sourceTree = "<group>";
-		};
-		7B51C5782A6122D70016B418 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		7B51C5792A6122DB0016B418 /* ViewControllers */ = {
@@ -270,13 +237,6 @@
 			children = (
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		7B51C57B2A6122EF0016B418 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		7B51C57C2A6122F30016B418 /* Extension */ = {
@@ -351,6 +311,35 @@
 				7B9998DE2A7CAA490043C592 /* SetNicknameView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E535869A2A82015A007D053D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E535869B2A82016B007D053D /* FlagPlusView.swift */,
+				E535869D2A820175007D053D /* SetNameView.swift */,
+				E535869F2A82017E007D053D /* FreindsView.swift */,
+				E53586A12A82018F007D053D /* DatePickView.swift */,
+				E53586A32A82019A007D053D /* LoactionView.swift */,
+				E53586A52A8201A1007D053D /* TimeScrollView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E53586A72A820249007D053D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E53586A82A820251007D053D /* File1.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E53586AA2A82027C007D053D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E53586AB2A820284007D053D /* File.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B51C5AB2A63F6650016B418 /* BaseTabBarController.swift in Sources */,
+				E53586A42A82019A007D053D /* LoactionView.swift in Sources */,
 				7B51C55E2A61008A0016B418 /* ViewController.swift in Sources */,
 				7B51C5AF2A63F7EB0016B418 /* FlagViewController.swift in Sources */,
 				7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */,
@@ -439,35 +429,36 @@
 				7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */,
 				7B9998CD2A7A9B530043C592 /* BaseUIViewController.swift in Sources */,
 				7B9998C92A7A95F50043C592 /* BaseEmptyButton.swift in Sources */,
-				E593AAA92A7EA03900FC918A /* TimeScrollView.swift in Sources */,
 				7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */,
 				7B9998DF2A7CAA490043C592 /* SetNicknameView.swift in Sources */,
 				7B51C5852A61249C0016B418 /* UIFont+.swift in Sources */,
 				7B51C5832A61248D0016B418 /* ImageLiterals.swift in Sources */,
 				7B51C5AD2A63F7790016B418 /* FlagPlusViewController.swift in Sources */,
-				7B51C5AD2A63F7790016B418 /* HomeViewController.swift in Sources */,
-				E593AAA42A7E991600FC918A /* LoactionView.swift in Sources */,
+				7B51C5AD2A63F7790016B418 /* FlagPlusViewController.swift in Sources */,
 				7B9998DD2A7CAA230043C592 /* SetNicknameViewController.swift in Sources */,
 				E593AAA72A7E992D00FC918A /* LocationViewController.swift in Sources */,
 				7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */,
 				7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */,
-				E593AA9F2A7E2C3F00FC918A /* DatePickView.swift in Sources */,
-				E593AA952A7E1CAF00FC918A /* FlagOnBoardView.swift in Sources */,
 				7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */,
-				E593AA9B2A7E298400FC918A /* FriendsView.swift in Sources */,
-				E593AA972A7E1F8100FC918A /* SetNameView.swift in Sources */,
+				E535869E2A820175007D053D /* SetNameView.swift in Sources */,
 				7B51C5802A6124600016B418 /* TextLiterals.swift in Sources */,
 				7B9998CF2A7A9BEF0043C592 /* SignInViewController.swift in Sources */,
 				7B9998D32A7AA0330043C592 /* SignInView.swift in Sources */,
+				E535869C2A82016B007D053D /* FlagPlusView.swift in Sources */,
 				7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */,
 				7B9998CB2A7A995D0043C592 /* BaseUIView.swift in Sources */,
 				7B9998D52A7B856E0043C592 /* BaseUITextField.swift in Sources */,
+				E53586A62A8201A1007D053D /* TimeScrollView.swift in Sources */,
 				7B51C5B12A63F8120016B418 /* MyPageViewController.swift in Sources */,
-				7B51C5B12A63F8120016B418 /* FlexViewController.swift in Sources */,
+				E53586A22A82018F007D053D /* DatePickView.swift in Sources */,
+				7B51C5B12A63F8120016B418 /* MyPageViewController.swift in Sources */,
 				E593AAAB2A7EA0AD00FC918A /* TimeScrollViewController.swift in Sources */,
 				7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */,
 				E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */,
+				E53586A02A82017E007D053D /* FreindsView.swift in Sources */,
 				E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */,
+				E53586AC2A820284007D053D /* File.swift in Sources */,
+				E53586A92A820251007D053D /* File1.swift in Sources */,
 				7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */,
 				E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */,
 				7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */,
