@@ -33,11 +33,9 @@ class BaseEmptyButton: UIButton {
     
     func setEnableButton() {
         isUserInteractionEnabled = true
-        backgroundColor = .purple2
     }
     
     func setDisableButton() {
         isUserInteractionEnabled = false
-        backgroundColor = .gray200
     }
 }
