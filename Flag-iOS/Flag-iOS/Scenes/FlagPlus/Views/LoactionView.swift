@@ -16,6 +16,7 @@ class LoactionView: BaseUIView {
     private let minimumTimeLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.flagMinimumTimeText
+        label.font = .title1
         return label
     }()
     
@@ -28,6 +29,7 @@ class LoactionView: BaseUIView {
     private let locationLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.flagLocationText
+        label.font = .title1
         return label
     }()
     
@@ -39,6 +41,7 @@ class LoactionView: BaseUIView {
     private let memoLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.flagMemoText
+        label.font = .title1
         return label
     }()
     
@@ -68,7 +71,7 @@ class LoactionView: BaseUIView {
     
     override func setLayout() {
         minimumTimeLabel.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(93)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(40)
             $0.leading.equalToSuperview().offset(25)
         }
         minimumTimeTextField.snp.makeConstraints {

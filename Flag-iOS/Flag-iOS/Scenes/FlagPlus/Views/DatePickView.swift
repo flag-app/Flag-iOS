@@ -59,6 +59,20 @@ final class DatePickView: BaseUIView {
         return button
     }()
 
+    lazy var displayLabel : UILabel = {
+        let label = UILabel()
+        label.text = "Tip:무더운 여름엔 오후에 약속을 잡는건 어때요?"
+        return label
+    }()
+    
+    lazy var dateView: UICalendarView = {
+        let view = UICalendarView()
+        view.wantsDateDecorations = true
+        return view
+    }()
+    
+    //MARK: - Func
+    
     func selectTimeAction(_ time: Int, _ label: String) -> UIActionHandler {
         return { [weak self] _ in
             self?.selcetedTime = time
@@ -88,19 +102,7 @@ final class DatePickView: BaseUIView {
         alertController.addAction(cancelAction)
         self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
     }
-   
-    lazy var displayLabel : UILabel = {
-        let label = UILabel()
-        label.text = "Tip:무더운 여름엔 오후에 약속을 잡는건 어때요?"
-        return label
-    }()
     
-    lazy var dateView: UICalendarView = {
-        let view = UICalendarView()
-        view.wantsDateDecorations = true
-        return view
-    }()
-  
     // MARK: - Custom Method
     override func setUI() {
         self.addSubviews(nextButton,
@@ -118,7 +120,7 @@ final class DatePickView: BaseUIView {
             $0.height.equalTo(49)
         }
         dateLabel.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(93)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(40)
             $0.leading.equalToSuperview().offset(25)
         }
         dateView.snp.makeConstraints { make in
