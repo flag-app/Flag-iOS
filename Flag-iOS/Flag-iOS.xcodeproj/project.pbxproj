@@ -37,8 +37,6 @@
 		7B9998D52A7B856E0043C592 /* BaseUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D42A7B856E0043C592 /* BaseUITextField.swift */; };
 		7B9998D92A7C56140043C592 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D82A7C56140043C592 /* SignUpViewController.swift */; };
 		7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DA2A7C562E0043C592 /* SignUpView.swift */; };
-		7B9998DD2A7CAA230043C592 /* SetNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DC2A7CAA230043C592 /* SetNicknameViewController.swift */; };
-		7B9998DF2A7CAA490043C592 /* SetNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DE2A7CAA490043C592 /* SetNicknameView.swift */; };
 		E535869C2A82016B007D053D /* FlagPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869B2A82016B007D053D /* FlagPlusView.swift */; };
 		E535869E2A820175007D053D /* SetNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869D2A820175007D053D /* SetNameView.swift */; };
 		E53586A02A82017E007D053D /* FreindsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869F2A82017E007D053D /* FreindsView.swift */; };
@@ -85,8 +83,6 @@
 		7B9998D42A7B856E0043C592 /* BaseUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITextField.swift; sourceTree = "<group>"; };
 		7B9998D82A7C56140043C592 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7B9998DA2A7C562E0043C592 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		7B9998DC2A7CAA230043C592 /* SetNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameViewController.swift; sourceTree = "<group>"; };
-		7B9998DE2A7CAA490043C592 /* SetNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameView.swift; sourceTree = "<group>"; };
 		E535869B2A82016B007D053D /* FlagPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPlusView.swift; sourceTree = "<group>"; };
 		E535869D2A820175007D053D /* SetNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameView.swift; sourceTree = "<group>"; };
 		E535869F2A82017E007D053D /* FreindsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsView.swift; sourceTree = "<group>"; };
@@ -297,7 +293,6 @@
 				7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */,
 				7B9998CE2A7A9BEF0043C592 /* SignInViewController.swift */,
 				7B9998D82A7C56140043C592 /* SignUpViewController.swift */,
-				7B9998DC2A7CAA230043C592 /* SetNicknameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -308,7 +303,6 @@
 				7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */,
 				7B9998D22A7AA0330043C592 /* SignInView.swift */,
 				7B9998DA2A7C562E0043C592 /* SignUpView.swift */,
-				7B9998DE2A7CAA490043C592 /* SetNicknameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -430,12 +424,10 @@
 				7B9998CD2A7A9B530043C592 /* BaseUIViewController.swift in Sources */,
 				7B9998C92A7A95F50043C592 /* BaseEmptyButton.swift in Sources */,
 				7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */,
-				7B9998DF2A7CAA490043C592 /* SetNicknameView.swift in Sources */,
 				7B51C5852A61249C0016B418 /* UIFont+.swift in Sources */,
 				7B51C5832A61248D0016B418 /* ImageLiterals.swift in Sources */,
 				7B51C5AD2A63F7790016B418 /* FlagPlusViewController.swift in Sources */,
 				7B51C5AD2A63F7790016B418 /* FlagPlusViewController.swift in Sources */,
-				7B9998DD2A7CAA230043C592 /* SetNicknameViewController.swift in Sources */,
 				E593AAA72A7E992D00FC918A /* LocationViewController.swift in Sources */,
 				7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */,
 				7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */,

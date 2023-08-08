@@ -16,11 +16,12 @@ class SignUpView: BaseUIView {
     private var userPassword: String = ""
     private var userDoubleCheckPassword: String = ""
     private var userNickname: String = ""
+    private let leadingWidth = 25
     
     // MARK: - UI Components
     private let signUpTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = TextLiterals.signUpTitleText
+        label.text = TextLiterals.signUpAlertText
         label.font = .title1
         label.numberOfLines = 0
         return label
@@ -103,7 +104,8 @@ class SignUpView: BaseUIView {
     }
     
     override func setUI() {
-        self.addSubviews(emailLabel,
+        self.addSubviews(signUpTitleLabel,
+                         emailLabel,
                          emailTextField,
                          passwordLabel,
                          passwordTextField,
@@ -116,52 +118,56 @@ class SignUpView: BaseUIView {
     }
     
     override func setLayout() {
+        signUpTitleLabel.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide).offset(40)
+            $0.leading.equalToSuperview().offset(leadingWidth)
+        }
         emailLabel.snp.makeConstraints {
-            $0.top.equalTo(signUpTitleLabel.snp.bottom).offset(24)
-            $0.leading.equalToSuperview().offset(25)
+            $0.top.equalTo(signUpTitleLabel.snp.bottom).offset(35)
+            $0.leading.equalToSuperview().offset(leadingWidth)
         }
         emailTextField.snp.makeConstraints {
             $0.top.equalTo(emailLabel.snp.bottom).offset(7)
-            $0.horizontalEdges.equalToSuperview().inset(25)
+            $0.horizontalEdges.equalToSuperview().inset(leadingWidth)
             $0.height.equalTo(41)
         }
         passwordLabel.snp.makeConstraints {
             $0.top.equalTo(emailTextField.snp.bottom).offset(30)
-            $0.leading.equalToSuperview().offset(25)
+            $0.leading.equalToSuperview().offset(leadingWidth)
         }
         passwordTextField.snp.makeConstraints {
             $0.top.equalTo(passwordLabel.snp.bottom).offset(7)
-            $0.horizontalEdges.equalToSuperview().inset(25)
+            $0.horizontalEdges.equalToSuperview().inset(leadingWidth)
             $0.height.equalTo(41)
         }
         passwordCheckLabel.snp.makeConstraints {
             $0.top.equalTo(passwordTextField.snp.bottom).offset(30)
-            $0.leading.equalToSuperview().offset(25)
+            $0.leading.equalToSuperview().offset(leadingWidth)
         }
         passwordCheckTextField.snp.makeConstraints {
             $0.top.equalTo(passwordCheckLabel.snp.bottom).offset(7)
-            $0.horizontalEdges.equalToSuperview().inset(25)
+            $0.horizontalEdges.equalToSuperview().inset(leadingWidth)
             $0.height.equalTo(41)
         }
         nicknameLabel.snp.makeConstraints {
             $0.top.equalTo(passwordCheckTextField.snp.bottom).offset(30)
-            $0.leading.equalToSuperview().offset(25)
+            $0.leading.equalToSuperview().offset(leadingWidth)
         }
         nicknameTextField.snp.makeConstraints {
             $0.top.equalTo(nicknameLabel.snp.bottom).offset(7)
-            $0.leading.equalToSuperview().offset(25)
+            $0.leading.equalToSuperview().offset(leadingWidth)
             $0.width.equalTo(255)
             $0.height.equalTo(41)
         }
         nicknameDoubleCheckButton.snp.makeConstraints {
             $0.top.equalTo(nicknameLabel.snp.bottom).offset(7)
             $0.leading.equalTo(nicknameTextField.snp.trailing).offset(12)
-            $0.trailing.equalToSuperview().inset(25)
+            $0.trailing.equalToSuperview().inset(leadingWidth)
             $0.height.equalTo(41)
         }
         signUpNextButton.snp.makeConstraints {
             $0.bottom.equalTo(safeAreaLayoutGuide).inset(21)
-            $0.horizontalEdges.equalToSuperview().inset(25)
+            $0.horizontalEdges.equalToSuperview().inset(leadingWidth)
             $0.height.equalTo(49)
         }
     }

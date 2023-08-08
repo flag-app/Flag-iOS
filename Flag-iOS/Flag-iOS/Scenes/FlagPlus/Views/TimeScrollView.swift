@@ -14,6 +14,7 @@ final class TimeScrollView: BaseUIView {
     lazy var nextButton: BaseFillButton = {
         let button = BaseFillButton()
         button.setTitle(TextLiterals.nextText, for: .normal)
+        button.isEnabled = true
         return button
     }()
     

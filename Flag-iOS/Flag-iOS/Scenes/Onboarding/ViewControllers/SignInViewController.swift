@@ -15,8 +15,6 @@ class SignInViewController: BaseUIViewController {
     
     private let signInView = SignInView()
     
-    // MARK: - Life Cycle
-
     // MARK: - Custom Method
     
     override func setupNavigationBar() {
