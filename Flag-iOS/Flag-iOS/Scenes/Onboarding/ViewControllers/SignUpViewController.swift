@@ -7,17 +7,20 @@
 import Foundation
 
 import SnapKit
+import UIKit
 
 class SignUpViewController: BaseUIViewController {
-    
-    // MARK: - Properties
-    
+        
     // MARK: - UI Components
+    
     private let signUpView = SignUpView()
-    
-    // MARK: - Life Cycle
-    
+        
     // MARK: - Custom Method
+    
+    override func setupNavigationBar() {
+        super.setupNavigationBar()
+        navigationItem.title = TextLiterals.signUpTitleText
+    }
     
     override func setUI() {
         view.addSubviews(signUpView)
@@ -33,9 +36,14 @@ class SignUpViewController: BaseUIViewController {
         signUpView.signUpNextButton.addTarget(self, action: #selector(didTappedNextButton), for: .touchUpInside)
     }
     
+   
+    
     @objc
     func didTappedNextButton() {
         let setNicknameViewController = SetNicknameViewController()
         self.navigationController?.pushViewController(setNicknameViewController, animated: true)
     }
+    
+    
+    
 }

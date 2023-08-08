@@ -11,6 +11,12 @@ import SnapKit
 
 class BaseEmptyButton: UIButton {
     
+    override var isEnabled: Bool {
+        didSet {
+            isEnabled ? setEnableButton() : setDisableButton()
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupEmptyButton()
@@ -23,5 +29,15 @@ class BaseEmptyButton: UIButton {
     func setupEmptyButton() {
         self.addTitleAttribute(title: "", titleColor: .purple200, fontName: .title1)
         self.setRoundBorder(borderColor: .purple200, borderWidth: 1.0, cornerRadius: 16)
+    }
+    
+    func setEnableButton() {
+        isUserInteractionEnabled = true
+        backgroundColor = .purple2
+    }
+    
+    func setDisableButton() {
+        isUserInteractionEnabled = false
+        backgroundColor = .gray200
     }
 }

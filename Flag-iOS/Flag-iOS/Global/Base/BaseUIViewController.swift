@@ -13,12 +13,6 @@ class BaseUIViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private lazy var backButton = UIBarButtonItem(
-            image: ImageLiterals.backButtonIcon,
-            style: .plain,
-            target: self,
-            action: #selector(backButtonTapped)
-        )
     
     // MARK: - Life Cycle
     
@@ -26,7 +20,7 @@ class BaseUIViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
-//        setupNavigationBar()
+        setupNavigationBar()
         setUI()
         setLayout()
         addTarget()
@@ -39,20 +33,12 @@ class BaseUIViewController: UIViewController {
     
     func setLayout() {}
     
-//    func setupNavigationBar() {
-////        self.navigationController?.navigationBar.tintColor = .black
-////        self.navigationController?.navigationBar.topItem?.title = ""
-////        self.navigationItem.leftBarButtonItem = backButton
-//        navigationController?.navigationBar.tintColor = .blue
-//        navigationController?.navigationBar.barTintColor = .black
-//        let backButton: UIBarButtonItem = UIBarButtonItem()
-//        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.title1]
-//    }
-    
-    @objc
-    func backButtonTapped() {
-        self.navigationController?.popViewController(animated: true)
+    func setupNavigationBar() {
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.head1]
+        let backButton: UIBarButtonItem = UIBarButtonItem()
+        backButton.title = ""
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     // MARK: - Action Method

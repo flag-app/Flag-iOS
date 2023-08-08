@@ -19,10 +19,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: windowScene)
         let navigationController = UINavigationController(rootViewController: OnboardingViewController())
         navigationController.isNavigationBarHidden = true
+
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         // 다크 모드 해제
         window?.overrideUserInterfaceStyle = .light
+        // navi hidden처리
+//        navigationController.isNavigationBarHidden = true
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

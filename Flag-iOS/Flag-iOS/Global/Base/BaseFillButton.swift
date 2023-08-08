@@ -11,6 +11,12 @@ import SnapKit
 
 class BaseFillButton: UIButton {
     
+    override var isEnabled: Bool {
+        didSet {
+            isEnabled ? setEnableButton() : setDisableButton()
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupFillButton()
@@ -24,5 +30,16 @@ class BaseFillButton: UIButton {
         self.addTitleAttribute(title: "", titleColor: .white, fontName: .title1)
         self.backgroundColor = .purple200
         self.layer.cornerRadius = 16
+        self.isEnabled = false
+    }
+    
+    func setEnableButton() {
+        isUserInteractionEnabled = true
+        backgroundColor = .purple200
+    }
+    
+    func setDisableButton() {
+        isUserInteractionEnabled = false
+        backgroundColor = .purple2
     }
 }
