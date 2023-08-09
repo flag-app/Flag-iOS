@@ -1,18 +1,18 @@
 //
-//  TimeScrollView.swift
+//  ProgressView.swift
 //  Flag-iOS
 //
-//  Created by 성현주 on 2023/08/06.
+//  Created by 성현주 on 2023/08/09.
 //
 
 import UIKit
 
-final class TimeScrollView: BaseUIView {
+final class ProgressView: BaseUIView {
     
     // MARK: - Properties
     
     var labels: [UILabel] = []
-   
+    
     // MARK: - UI Components
     
     lazy var nextButton: BaseFillButton = {
@@ -24,8 +24,9 @@ final class TimeScrollView: BaseUIView {
     
     private let TimeLabel: UILabel = {
         let label = UILabel()
-        label.text = TextLiterals.flagTimeScrollText
+        label.text = TextLiterals.flagPossibleList
         label.font = .title1
+        label.numberOfLines = 0
         return label
     }()
     
@@ -36,7 +37,14 @@ final class TimeScrollView: BaseUIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.isScrollEnabled = false
         return collectionView
+    }()
+    
+    private let indicatorImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = ImageLiterals.colorIndicator
+        return imageView
     }()
     
     lazy var stackview: UIStackView = {
@@ -49,27 +57,10 @@ final class TimeScrollView: BaseUIView {
         stackview = UIStackView(arrangedSubviews: labels)
         self.addSubviews(TimeLabel,
                          collectionView,
+                         indicatorImageView,
                          stackview,
                          nextButton)
     }
-    
-    func setLabels(_ labels: [UILabel]) {
-            self.labels = labels
-            updateStackView()
-        }
-        
-    private func updateStackView() {
-        stackview.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        labels.forEach { label in
-            stackview.addArrangedSubview(label)
-        }
-        stackview.axis = .vertical
-        stackview.alignment = .center
-        stackview.distribution = .equalSpacing
-        //더미
-        stackview.spacing = 76
-    }
-
     
     override func setLayout() {
         TimeLabel.snp.makeConstraints {
@@ -87,9 +78,33 @@ final class TimeScrollView: BaseUIView {
             make.top.equalTo(TimeLabel.snp.bottom)
             make.bottom.equalTo(nextButton.snp.top).offset(-20)
         }
+        indicatorImageView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).offset(40)
+            make.left.equalTo(TimeLabel.snp.right).offset(10)
+            make.trailing.equalTo(safeAreaLayoutGuide).inset(10)
+            make.bottom.equalTo(TimeLabel.snp.bottom)
+        }
         stackview.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(7)
             make.top.equalTo(collectionView.snp.top).offset(40)
         }
     }
+    
+    func setLabels(_ labels: [UILabel]) {
+            self.labels = labels
+            updateStackView()
+        }
+        
+    private func updateStackView() {
+        stackview.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        labels.forEach { label in
+            stackview.addArrangedSubview(label)
+        }
+        stackview.axis = .vertical
+        stackview.alignment = .center
+        stackview.distribution = .equalSpacing
+        //더미
+        stackview.spacing = 72
+    }
 }
+

@@ -23,6 +23,10 @@ enum ImageLiterals {
     
     static var onboardingLogo: UIImage { .load(name: "OnboardingLogo")}
     
+    // MARK: Flag
+    
+    static var colorIndicator: UIImage { .load(name: "colorIndicator")}
+    
 }
 
 extension UIImage {

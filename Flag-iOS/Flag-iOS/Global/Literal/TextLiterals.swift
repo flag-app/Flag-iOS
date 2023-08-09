@@ -58,6 +58,7 @@ enum TextLiterals {
     static let flagDirectInputHint: String = "직접 시간을 입력해주세요.ex)13"
     static let flagConfirmText: String = "확인"
     static let flagCancelText: String = "취소"
+    static let flagPossibleList: String = "가능한 일정 목록이에요!\n약속을 확정해 주세요."
     
     //여기 온보딩이면 확인하고 옮겨주세요!
     static let signUpAlertText: String = "안녕하세요 FLAG 입니다!\n가입 정보를 기입해 주세요."
