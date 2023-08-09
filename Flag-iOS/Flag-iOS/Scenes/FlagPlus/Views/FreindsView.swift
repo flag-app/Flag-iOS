@@ -44,7 +44,7 @@ final class FriendsNameView: BaseUIView {
             $0.height.equalTo(49)
         }
         nameLabel.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(93)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(40)
             $0.leading.equalToSuperview().offset(25)
         }
         nameTextField.snp.makeConstraints {

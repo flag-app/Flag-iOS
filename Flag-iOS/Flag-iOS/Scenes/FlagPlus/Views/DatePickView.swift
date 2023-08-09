@@ -36,21 +36,21 @@ final class DatePickView: BaseUIView {
         label.font = .title1
         return label
     }()
-   
+    
     lazy var popButton: UIButton = {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = 16
         button.showsMenuAsPrimaryAction = true
         
         let times: [UIAction] = [
-            UIAction(title: "새벽(24:00~5:59)", handler: selectTimeAction(0, "새벽🌚")),
-            UIAction(title: "저녁(18:00~23:59)", handler: selectTimeAction(18, "저녁🌙")),
-            UIAction(title: "오후(12:00~17:59)", handler: selectTimeAction(12, "오후🌞")),
-            UIAction(title: "오전(6:00~11:59)", handler: selectTimeAction(6, "오전🌅")),
-            UIAction(title: "직접입력", handler: directInputAction)
+            UIAction(title: TextLiterals.flagDawnText, handler: selectTimeAction(0, TextLiterals.flagDawnImage)),
+            UIAction(title: TextLiterals.flagDinnerText, handler: selectTimeAction(18, TextLiterals.flagDinnerImage)),
+            UIAction(title: TextLiterals.flagAfternoonText, handler: selectTimeAction(12, TextLiterals.flagAfternoonImage)),
+            UIAction(title: TextLiterals.flagMorningText, handler: selectTimeAction(6, TextLiterals.flagMorningImage)),
+            UIAction(title: TextLiterals.flagDirectInput, handler: directInputAction)
         ]
         
-        button.menu = UIMenu(title: "시간대를 골라주세요",
+        button.menu = UIMenu(title: TextLiterals.flagTimePickText,
                              identifier: nil,
                              options: .displayInline,
                              children: times)
@@ -58,40 +58,10 @@ final class DatePickView: BaseUIView {
         button.changesSelectionAsPrimaryAction = true
         return button
     }()
-
-    func selectTimeAction(_ time: Int, _ label: String) -> UIActionHandler {
-        return { [weak self] _ in
-            self?.selcetedTime = time
-            self?.displayLabel.text = label
-            self?.displayLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        }
-    }
     
-    func directInputAction(_ action: UIAction) {
-        let alertController = UIAlertController(title: "직접 입력", message: nil, preferredStyle: .alert)
-        alertController.addTextField { textField in
-            textField.placeholder = "직접 시간을 입력해주세요.ex)13"
-            textField.keyboardType = .numberPad
-        }
-        let confirmAction = UIAlertAction(title: "확인", style: .default) { _ in
-            if let timeString = alertController.textFields?.first?.text,
-               let selectedTime = Int(timeString) {
-                self.selcetedTime = selectedTime
-            } else {
-                self.selcetedTime = -1
-            }
-            let endtime = self.selcetedTime + 5
-            self.displayLabel.text = "\(self.selcetedTime):00 ~ \(endtime):59"
-        }
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        alertController.addAction(confirmAction)
-        alertController.addAction(cancelAction)
-        self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
-    }
-   
     lazy var displayLabel : UILabel = {
         let label = UILabel()
-        label.text = "Tip:무더운 여름엔 오후에 약속을 잡는건 어때요?"
+        label.text = TextLiterals.flagTipText
         return label
     }()
     
@@ -100,7 +70,7 @@ final class DatePickView: BaseUIView {
         view.wantsDateDecorations = true
         return view
     }()
-  
+    
     // MARK: - Custom Method
     override func setUI() {
         self.addSubviews(nextButton,
@@ -118,7 +88,7 @@ final class DatePickView: BaseUIView {
             $0.height.equalTo(49)
         }
         dateLabel.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(93)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(40)
             $0.leading.equalToSuperview().offset(25)
         }
         dateView.snp.makeConstraints { make in
@@ -141,5 +111,35 @@ final class DatePickView: BaseUIView {
             make.leading.equalToSuperview().inset(31)
         }
     }
-
+    
+    func selectTimeAction(_ time: Int, _ label: String) -> UIActionHandler {
+        return { [weak self] _ in
+            self?.selcetedTime = time
+            self?.displayLabel.text = label
+            self?.displayLabel.font = .head1
+        }
+    }
+    
+    func directInputAction(_ action: UIAction) {
+        let alertController = UIAlertController(title: TextLiterals.flagDirectInput, message: nil, preferredStyle: .alert)
+        alertController.addTextField { textField in
+            textField.placeholder = TextLiterals.flagDirectInputHint
+            textField.keyboardType = .numberPad
+        }
+        let confirmAction = UIAlertAction(title: TextLiterals.flagConfirmText, style: .default) { _ in
+            if let timeString = alertController.textFields?.first?.text,
+               let selectedTime = Int(timeString) {
+                self.selcetedTime = selectedTime
+            } else {
+                self.selcetedTime = -1
+            }
+            let endtime = self.selcetedTime + 5
+            self.displayLabel.text = "\(self.selcetedTime):00 ~ \(endtime):59"
+        }
+        let cancelAction = UIAlertAction(title: TextLiterals.flagCancelText, style: .cancel, handler: nil)
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+        
+    }
 }

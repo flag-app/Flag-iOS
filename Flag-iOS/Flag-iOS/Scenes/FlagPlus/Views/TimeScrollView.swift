@@ -21,6 +21,7 @@ final class TimeScrollView: BaseUIView {
     private let TimeLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.flagTimeScrollText
+        label.font = .title1
         return label
     }()
     
@@ -42,7 +43,7 @@ final class TimeScrollView: BaseUIView {
     
     override func setLayout() {
         TimeLabel.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(93)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(40)
             $0.leading.equalToSuperview().offset(25)
         }
         nextButton.snp.makeConstraints {
