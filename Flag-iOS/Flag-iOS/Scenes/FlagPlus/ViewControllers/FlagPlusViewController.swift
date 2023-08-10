@@ -9,6 +9,7 @@ import UIKit
 final class FlagPlusViewController: BaseUIViewController {
     
     // MARK: - UI Components
+   
     private let flagOnBoardView = FlagOnboardView()
     
     // MARK: - Life Cycle
@@ -19,6 +20,7 @@ final class FlagPlusViewController: BaseUIViewController {
     }
     
     // MARK: - Custom Method
+    
     override func setUI() {
         view.addSubviews(flagOnBoardView)
     }
@@ -32,7 +34,9 @@ final class FlagPlusViewController: BaseUIViewController {
     override func addTarget() {
         flagOnBoardView.nextButton.addTarget(self, action: #selector(didTappedNextButton), for: .touchUpInside)
     }
-    @objc func didTappedNextButton() {
+    
+    @objc
+    func didTappedNextButton() {
         let setNameViewController =
             SetNameViewController()
         self.navigationController?

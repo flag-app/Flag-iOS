@@ -31,6 +31,7 @@ final class FriendsNameView: BaseUIView {
     }()
     
     // MARK: - Custom Method
+    
     override func setUI() {
         self.addSubviews(nextButton,
                          nameTextField,

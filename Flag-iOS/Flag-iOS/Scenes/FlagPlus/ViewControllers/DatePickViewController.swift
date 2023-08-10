@@ -5,7 +5,6 @@
 //  Created by 성현주 on 2023/08/05.
 //
 
-
 import UIKit
 
 final class DatePickViewController: BaseUIViewController {
@@ -34,7 +33,7 @@ final class DatePickViewController: BaseUIViewController {
     }
     
     override func addTarget() {
-        datePickView.nextButton.addTarget(self, action: #selector(didTappedNextButton), for: .touchUpInside)
+        datePickView.nextButton.addTarget(self, action: #selector(didTappedNextButton), for: .touchUpInside)            
     }
     
     override func setDelegate(){
@@ -47,7 +46,7 @@ final class DatePickViewController: BaseUIViewController {
     func didTappedNextButton() {
         let homeVC = LocationViewController()
         homeVC.selectedDates = selectedDates
-        homeVC.selcetedTime = selcetedTime
+        homeVC.selcetedTime = datePickView.selcetedTime
         _ = Calendar.current
         self.navigationController?.pushViewController(homeVC, animated: true)
     }

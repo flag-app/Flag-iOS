@@ -12,10 +12,12 @@ import SnapKit
 class LocationViewController: BaseUIViewController {
     
     // MARK: - Properties
+    
     var selectedDates: [Date] = []
     var selcetedTime: Int = 0
     
     // MARK: - UI Components
+    
     private let locationView = LoactionView()
     
     // MARK: - Life Cycle

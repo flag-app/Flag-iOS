@@ -1,14 +1,15 @@
 //
-//  NameView.swift
+//  File.swift
 //  Flag-iOS
 //
-//  Created by 성현주 on 2023/08/05.
+//  Created by 성현주 on 2023/08/08.
 //
+
 import UIKit
 
 import SnapKit
 
-final class FlagOnboardView: BaseUIView {
+final class FlagView: BaseUIView {
     
     // MARK: - UI Components
     
@@ -21,10 +22,8 @@ final class FlagOnboardView: BaseUIView {
     
     
     // MARK: - Custom Method
-    
     override func setUI() {
         self.addSubviews(nextButton)
-        
     }
     
     override func setLayout() {

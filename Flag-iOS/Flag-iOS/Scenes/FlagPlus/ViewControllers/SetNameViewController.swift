@@ -12,9 +12,11 @@ final class SetNameViewController: BaseUIViewController {
     // MARK: - Properties
     
     // MARK: - UI Components
+   
     private let setNameView = SetNameView()
     
     // MARK: - Life Cycle
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
