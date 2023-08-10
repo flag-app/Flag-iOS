@@ -37,6 +37,9 @@
 		7B9998D52A7B856E0043C592 /* BaseUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D42A7B856E0043C592 /* BaseUITextField.swift */; };
 		7B9998D92A7C56140043C592 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D82A7C56140043C592 /* SignUpViewController.swift */; };
 		7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DA2A7C562E0043C592 /* SignUpView.swift */; };
+		7B9999002A85142B0043C592 /* FlagMainMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998FF2A85142B0043C592 /* FlagMainMenuBar.swift */; };
+		7B9999022A852BED0043C592 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999012A852BED0043C592 /* BaseCollectionViewCell.swift */; };
+		7B9999042A852C6D0043C592 /* FlagMainMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999032A852C6D0043C592 /* FlagMainMenuCollectionViewCell.swift */; };
 		E535869C2A82016B007D053D /* FlagPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869B2A82016B007D053D /* FlagPlusView.swift */; };
 		E535869E2A820175007D053D /* SetNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869D2A820175007D053D /* SetNameView.swift */; };
 		E53586A02A82017E007D053D /* FreindsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869F2A82017E007D053D /* FreindsView.swift */; };
@@ -85,6 +88,9 @@
 		7B9998D42A7B856E0043C592 /* BaseUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITextField.swift; sourceTree = "<group>"; };
 		7B9998D82A7C56140043C592 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7B9998DA2A7C562E0043C592 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		7B9998FF2A85142B0043C592 /* FlagMainMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMainMenuBar.swift; sourceTree = "<group>"; };
+		7B9999012A852BED0043C592 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		7B9999032A852C6D0043C592 /* FlagMainMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMainMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		E535869B2A82016B007D053D /* FlagPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPlusView.swift; sourceTree = "<group>"; };
 		E535869D2A820175007D053D /* SetNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameView.swift; sourceTree = "<group>"; };
 		E535869F2A82017E007D053D /* FreindsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsView.swift; sourceTree = "<group>"; };
@@ -219,7 +225,7 @@
 		7B51C5772A6122D20016B418 /* ViewCotrollers */ = {
 			isa = PBXGroup;
 			children = (
-				7B51C5AE2A63F7EB0016B418 /* FlagViewController.swift */,
+				7B9998FE2A8513E60043C592 /* FlagMain */,
 				E5DA6F872A83599200FC825F /* ProgressViewController.swift */,
 			);
 			path = ViewCotrollers;
@@ -279,6 +285,7 @@
 				7B9998CA2A7A995D0043C592 /* BaseUIView.swift */,
 				7B9998CC2A7A9B530043C592 /* BaseUIViewController.swift */,
 				7B9998D42A7B856E0043C592 /* BaseUITextField.swift */,
+				7B9999012A852BED0043C592 /* BaseCollectionViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -312,6 +319,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		7B9998FD2A8513CD0043C592 /* FlagMain */ = {
+			isa = PBXGroup;
+			children = (
+				E53586A82A820251007D053D /* FlagView.swift */,
+				7B9998FF2A85142B0043C592 /* FlagMainMenuBar.swift */,
+				7B9999032A852C6D0043C592 /* FlagMainMenuCollectionViewCell.swift */,
+			);
+			path = FlagMain;
+			sourceTree = "<group>";
+		};
+		7B9998FE2A8513E60043C592 /* FlagMain */ = {
+			isa = PBXGroup;
+			children = (
+				7B51C5AE2A63F7EB0016B418 /* FlagViewController.swift */,
+			);
+			path = FlagMain;
+			sourceTree = "<group>";
+		};
 		E535869A2A82015A007D053D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,7 +353,7 @@
 		E53586A72A820249007D053D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E53586A82A820251007D053D /* FlagView.swift */,
+				7B9998FD2A8513CD0043C592 /* FlagMain */,
 				E5DA6F852A83598500FC825F /* ProgressView.swift */,
 			);
 			path = Views;
@@ -435,10 +460,12 @@
 				7B51C5832A61248D0016B418 /* ImageLiterals.swift in Sources */,
 				7B51C5AD2A63F7790016B418 /* FlagPlusViewController.swift in Sources */,
 				7B51C5AD2A63F7790016B418 /* FlagPlusViewController.swift in Sources */,
+				7B9999002A85142B0043C592 /* FlagMainMenuBar.swift in Sources */,
 				E593AAA72A7E992D00FC918A /* LocationViewController.swift in Sources */,
 				7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */,
 				7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */,
 				7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */,
+				7B9999022A852BED0043C592 /* BaseCollectionViewCell.swift in Sources */,
 				E535869E2A820175007D053D /* SetNameView.swift in Sources */,
 				7B51C5802A6124600016B418 /* TextLiterals.swift in Sources */,
 				7B9998CF2A7A9BEF0043C592 /* SignInViewController.swift in Sources */,
@@ -452,6 +479,7 @@
 				E53586A22A82018F007D053D /* DatePickView.swift in Sources */,
 				7B51C5B12A63F8120016B418 /* MyPageViewController.swift in Sources */,
 				E5DA6F882A83599200FC825F /* ProgressViewController.swift in Sources */,
+				7B9999042A852C6D0043C592 /* FlagMainMenuCollectionViewCell.swift in Sources */,
 				E593AAAB2A7EA0AD00FC918A /* TimeScrollViewController.swift in Sources */,
 				7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */,
 				E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */,

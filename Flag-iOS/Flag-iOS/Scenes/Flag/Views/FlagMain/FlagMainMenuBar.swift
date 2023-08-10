@@ -53,7 +53,7 @@ class MainMenuBar: BaseUIView {
     }
     
     func setCollectionView() {
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(FlagMainMenuCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
     }
     
 }
@@ -67,7 +67,6 @@ extension MainMenuBar: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .blue
         return cell
     }
     

@@ -62,4 +62,7 @@ enum TextLiterals {
     static let flagCancelText: String = "취소"
     static let flagPossibleList: String = "가능한 일정 목록이에요!\n약속을 확정해 주세요."
     
+    // MARK: Flag
+    
+    
 }

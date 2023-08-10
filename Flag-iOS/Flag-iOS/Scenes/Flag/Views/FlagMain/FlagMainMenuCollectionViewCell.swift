@@ -5,4 +5,21 @@
 //  Created by 최지우 on 2023/08/10.
 //
 
-import Foundation
+import UIKit
+
+class FlagMainMenuCollectionViewCell: BaseCollectionViewCell {
+    
+    // MARK: - Properties
+    
+    // MARK: - UI Components
+    
+    // MARK: - Custom Method
+    
+    override func setUI() {
+        backgroundColor = .yellow
+    }
+    
+    override func setLayout() {
+        
+    }
+}
