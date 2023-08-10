@@ -30,6 +30,8 @@ enum TextLiterals {
     static let nicknameText: String = "닉네임"
     static let nicknameHintText: String = "닉네임 최소 2자 ~ 최대 5자"
     static let completeOnboardingText: String = "가입 완료하기"
+    static let signUpAlertText: String = "안녕하세요 FLAG 입니다!\n가입 정보를 기입해 주세요."
+    static let doubleCheck: String = "중복확인"
     
     // MARK: FlagPlus
     
@@ -60,7 +62,4 @@ enum TextLiterals {
     static let flagCancelText: String = "취소"
     static let flagPossibleList: String = "가능한 일정 목록이에요!\n약속을 확정해 주세요."
     
-    //여기 온보딩이면 확인하고 옮겨주세요!
-    static let signUpAlertText: String = "안녕하세요 FLAG 입니다!\n가입 정보를 기입해 주세요."
-    static let doubleCheck: String = "중복확인"
 }
