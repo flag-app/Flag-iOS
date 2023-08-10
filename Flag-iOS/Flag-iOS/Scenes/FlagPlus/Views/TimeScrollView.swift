@@ -12,8 +12,11 @@ final class TimeScrollView: BaseUIView {
     // MARK: - Properties
     
     var labels: [UILabel] = []
-   
+    var stakcViewSpace = 0
+    
     // MARK: - UI Components
+    
+    let sectionCount = 14
     
     lazy var nextButton: BaseFillButton = {
         let button = BaseFillButton()
@@ -57,6 +60,12 @@ final class TimeScrollView: BaseUIView {
             self.labels = labels
             updateStackView()
         }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        stakcViewSpace = Int((collectionView.bounds.height / CGFloat(sectionCount) - 2))
+        updateStackView()
+    }
         
     private func updateStackView() {
         stackview.arrangedSubviews.forEach { $0.removeFromSuperview() }
@@ -66,8 +75,7 @@ final class TimeScrollView: BaseUIView {
         stackview.axis = .vertical
         stackview.alignment = .center
         stackview.distribution = .equalSpacing
-        //더미
-        stackview.spacing = 76
+        stackview.spacing = CGFloat(stakcViewSpace * 2)
     }
 
     
@@ -89,7 +97,7 @@ final class TimeScrollView: BaseUIView {
         }
         stackview.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(7)
-            make.top.equalTo(collectionView.snp.top).offset(40)
+            make.top.equalTo(TimeLabel.snp.bottom).offset(39)
         }
     }
 }

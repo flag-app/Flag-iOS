@@ -12,8 +12,11 @@ final class ProgressView: BaseUIView {
     // MARK: - Properties
     
     var labels: [UILabel] = []
+    var stakcViewSpace = 0
     
     // MARK: - UI Components
+    
+    let sectionCount = 14
     
     lazy var nextButton: BaseFillButton = {
         let button = BaseFillButton()
@@ -86,8 +89,14 @@ final class ProgressView: BaseUIView {
         }
         stackview.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(7)
-            make.top.equalTo(collectionView.snp.top).offset(40)
+            make.top.equalTo(collectionView.snp.top).offset(39)
         }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        stakcViewSpace = Int((collectionView.bounds.height / CGFloat(sectionCount) - 2))
+        updateStackView()
     }
     
     func setLabels(_ labels: [UILabel]) {
@@ -103,8 +112,7 @@ final class ProgressView: BaseUIView {
         stackview.axis = .vertical
         stackview.alignment = .center
         stackview.distribution = .equalSpacing
-        //더미
-        stackview.spacing = 72
+        stackview.spacing = CGFloat(stakcViewSpace * 2)
     }
 }
 
