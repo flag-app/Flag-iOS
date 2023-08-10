@@ -11,6 +11,7 @@ import SnapKit
 final class TimeScrollViewController: BaseUIViewController {
     
     // MARK: - Properties
+    
     var selectedDates: [Date] = []
     var selcetedTime: Int = 0
     var labels: [UILabel] = []
@@ -21,6 +22,7 @@ final class TimeScrollViewController: BaseUIViewController {
     
     
     // MARK: - UI Components
+   
     private let timeScrollView = TimeScrollView()
     
     // MARK: - Life Cycle

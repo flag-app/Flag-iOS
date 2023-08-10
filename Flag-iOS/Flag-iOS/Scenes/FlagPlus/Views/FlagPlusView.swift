@@ -21,10 +21,12 @@ final class FlagOnboardView: BaseUIView {
     
     
     // MARK: - Custom Method
+    
     override func setUI() {
         self.addSubviews(nextButton)
         
     }
+    
     override func setLayout() {
         nextButton.snp.makeConstraints {
             $0.center.equalToSuperview()

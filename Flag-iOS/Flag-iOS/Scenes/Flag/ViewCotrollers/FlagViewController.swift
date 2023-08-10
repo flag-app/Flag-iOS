@@ -10,6 +10,7 @@ import UIKit
 final class FlagViewController: BaseUIViewController {
     
     // MARK: - UI Components
+    
     private let flagView = FlagView()
     
     // MARK: - Life Cycle
@@ -20,6 +21,7 @@ final class FlagViewController: BaseUIViewController {
     }
     
     // MARK: - Custom Method
+    
     override func setUI() {
         view.addSubviews(flagView)
         self.view.backgroundColor = .green
@@ -34,7 +36,8 @@ final class FlagViewController: BaseUIViewController {
     override func addTarget() {
         flagView.nextButton.addTarget(self, action: #selector(didTappedNextButton), for: .touchUpInside)
     }
-    @objc func didTappedNextButton() {
+    @objc
+    func didTappedNextButton() {
         let progressViewController =
             ProgressViewController()
         self.navigationController?

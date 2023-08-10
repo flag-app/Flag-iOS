@@ -12,9 +12,11 @@ final class FriendsViewController: BaseUIViewController {
     // MARK: - Properties
     
     // MARK: - UI Components
+    
     private let friendsNameView = FriendsNameView()
     
     // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

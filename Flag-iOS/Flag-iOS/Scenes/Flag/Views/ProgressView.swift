@@ -22,7 +22,7 @@ final class ProgressView: BaseUIView {
         return button
     }()
     
-    private let TimeLabel: UILabel = {
+    private let timeLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.flagPossibleList
         label.font = .title1
@@ -55,7 +55,7 @@ final class ProgressView: BaseUIView {
     
     override func setUI() {
         stackview = UIStackView(arrangedSubviews: labels)
-        self.addSubviews(TimeLabel,
+        self.addSubviews(timeLabel,
                          collectionView,
                          indicatorImageView,
                          stackview,
@@ -63,7 +63,7 @@ final class ProgressView: BaseUIView {
     }
     
     override func setLayout() {
-        TimeLabel.snp.makeConstraints {
+        timeLabel.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).offset(40)
             $0.leading.equalToSuperview().offset(25)
         }
@@ -75,14 +75,14 @@ final class ProgressView: BaseUIView {
         collectionView.snp.makeConstraints { make in
             make.trailing.equalTo(safeAreaLayoutGuide).inset(10)
             make.leading.equalTo(safeAreaLayoutGuide).inset(20)
-            make.top.equalTo(TimeLabel.snp.bottom)
+            make.top.equalTo(timeLabel.snp.bottom)
             make.bottom.equalTo(nextButton.snp.top).offset(-20)
         }
         indicatorImageView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(40)
-            make.left.equalTo(TimeLabel.snp.right).offset(10)
+            make.left.equalTo(timeLabel.snp.right).offset(10)
             make.trailing.equalTo(safeAreaLayoutGuide).inset(10)
-            make.bottom.equalTo(TimeLabel.snp.bottom)
+            make.bottom.equalTo(timeLabel.snp.bottom)
         }
         stackview.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(7)
