@@ -12,6 +12,7 @@ class MainMenuBar: BaseUIView {
     // MARK: - Properties
     
     let cellId = "cellId"
+    private let flagMenuTitle = [TextLiterals.confirmedFlag, TextLiterals.progressFlag]
     
     // MARK: - UI Component
     
@@ -19,7 +20,7 @@ class MainMenuBar: BaseUIView {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        view.backgroundColor = .gray300
+//        view.backgroundColor = .gray300
         view.showsHorizontalScrollIndicator = false
         return view
     }()
@@ -31,6 +32,7 @@ class MainMenuBar: BaseUIView {
         
         setDelegate()
         setCollectionView()
+        setBeginningIndex()
     }
     
     required init?(coder: NSCoder) {
@@ -53,7 +55,12 @@ class MainMenuBar: BaseUIView {
     }
     
     func setCollectionView() {
-        collectionView.register(FlagMainMenuCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(MainMenuCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+    }
+    
+    func setBeginningIndex() {
+        let selectedIndexPath = IndexPath(item: 0, section: 0)
+        collectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .top)
     }
     
 }
@@ -66,7 +73,8 @@ extension MainMenuBar: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MainMenuCollectionViewCell
+        cell.titleLabel.text = flagMenuTitle[indexPath.item]
         return cell
     }
     
