@@ -22,9 +22,14 @@ final class FlagViewController: BaseUIViewController {
     
     // MARK: - Custom Method
     
+    override func setupNavigationBar() {
+        super.setupNavigationBar()
+        navigationItem.title = TextLiterals.flag
+    }
+    
     override func setUI() {
         view.addSubviews(flagView)
-        self.view.backgroundColor = .green
+  
     }
     
     override func setLayout() {
@@ -34,14 +39,6 @@ final class FlagViewController: BaseUIViewController {
     }
     
     override func addTarget() {
-        flagView.nextButton.addTarget(self, action: #selector(didTappedNextButton), for: .touchUpInside)
     }
-    @objc
-    func didTappedNextButton() {
-        let progressViewController =
-            ProgressViewController()
-        self.navigationController?
-            .pushViewController(progressViewController, animated: true)
-        
-    }
+
 }
