@@ -64,5 +64,7 @@ enum TextLiterals {
     
     // MARK: Flag
     
+    static let confirmedFlag: String = "확정된 약속"
+    static let progressFlag: String = "진행 중인 약속"
     
 }

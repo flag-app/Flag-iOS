@@ -26,6 +26,7 @@ enum ImageLiterals {
     // MARK: Flag
     
     static var colorIndicator: UIImage { .load(name: "colorIndicator")}
+    static var flagIcon: UIImage { .load(name: "flagIcon")}
     
 }
 
