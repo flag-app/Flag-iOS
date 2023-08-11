@@ -27,7 +27,6 @@ class FlagCell: BaseTableViewCell {
         let label = UILabel()
         label.text = "광고론 팀플 회의"
         label.font = .head2
-//        label.backgroundColor = .gray200
         return label
     }()
     
@@ -35,7 +34,6 @@ class FlagCell: BaseTableViewCell {
         let label = UILabel()
         label.text = "2023년 7월 18일 19:00 - 21:00"
         label.font = .subTitle3
-//        label.backgroundColor = .blue
         return label
     }()
     
@@ -43,7 +41,6 @@ class FlagCell: BaseTableViewCell {
         let label = UILabel()
         label.text = "중앙도서관 세미나실 2"
         label.font = .body2
-//        label.backgroundColor = .green
         return label
     }()
     
@@ -51,18 +48,35 @@ class FlagCell: BaseTableViewCell {
         let label = UILabel()
         label.text = "노키 외 3명"
         label.font = .body2
-//        label.backgroundColor = .red
+        return label
+    }()
+    
+    let dDayView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .purple300
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
+        return view
+    }()
+    
+    let dDayLabel: UILabel = {
+        let label = UILabel()
+        label.text = "D-2"
+        label.font = .title2
+        label.textColor = .white
         return label
     }()
     
     // MARK: - Custom Method
     
     override func setUI() {
+        dDayView.addSubview(dDayLabel)
         addSubviews(flagImage,
                     nameLabel,
                     dateLabel,
                     locationLabel,
-                    participantLabel)
+                    participantLabel,
+                    dDayView)
     }
     
     override func setLayout() {
@@ -86,6 +100,15 @@ class FlagCell: BaseTableViewCell {
             $0.top.equalTo(locationLabel.snp.bottom).offset(4)
             $0.leading.equalToSuperview().offset(19)
             $0.bottom.equalToSuperview().inset(33)
+        }
+        dDayView.snp.makeConstraints {
+            $0.top.equalTo(nameLabel)
+            $0.trailing.equalToSuperview().inset(17)
+            $0.width.equalTo(60)
+            $0.height.equalTo(21)
+        }
+        dDayLabel.snp.makeConstraints {
+            $0.center.equalTo(dDayView)
         }
     }
 }
