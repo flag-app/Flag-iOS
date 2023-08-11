@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol HomeMenuBarDelegate: AnyObject {
+    func didSelectMenuBarItem(didSelectItemAt item: Int)
+}
+
 class MainMenuBar: BaseUIView {
     
     // MARK: - Properties
     
     let cellId = "cellId"
+    var menuHorizontalBarLeading: CGFloat = 26
+    var delegate: HomeMenuBarDelegate?
     private let flagMenuTitle = [TextLiterals.confirmedFlag, TextLiterals.progressFlag]
     
     // MARK: - UI Component
@@ -20,8 +26,13 @@ class MainMenuBar: BaseUIView {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-//        view.backgroundColor = .gray300
         view.showsHorizontalScrollIndicator = false
+        return view
+    }()
+    
+    let menuHorizontalBarView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .purple300
         return view
     }()
     
@@ -40,12 +51,19 @@ class MainMenuBar: BaseUIView {
     }
     
     override func setUI() {
-        addSubviews(collectionView)
+        addSubviews(collectionView,
+                    menuHorizontalBarView)
     }
     
     override func setLayout() {
         collectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        menuHorizontalBarView.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(menuHorizontalBarLeading)
+            $0.bottom.equalToSuperview()
+            $0.width.equalTo(170)
+            $0.height.equalTo(3)
         }
     }
     
@@ -60,7 +78,9 @@ class MainMenuBar: BaseUIView {
     
     func setBeginningIndex() {
         let selectedIndexPath = IndexPath(item: 0, section: 0)
-        collectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .top)
+        collectionView.selectItem(at: selectedIndexPath,
+                                  animated: false,
+                                  scrollPosition: .top)
     }
     
 }
@@ -84,7 +104,15 @@ extension MainMenuBar: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 
 extension MainMenuBar: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
+        
+        let x = CGFloat(indexPath.item) * frame.width / 2
+        menuHorizontalBarLeading = x
+        
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, animations: { self.layoutIfNeeded() })
+        delegate?.didSelectMenuBarItem(didSelectItemAt: indexPath.item)
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
