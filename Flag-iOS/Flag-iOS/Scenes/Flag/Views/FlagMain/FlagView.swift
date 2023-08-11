@@ -21,7 +21,7 @@ final class FlagView: BaseUIView {
         let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         view.showsHorizontalScrollIndicator = false
         view.isPagingEnabled = true
-        view.backgroundColor = .gray300
+        view.backgroundColor = .gray100
         return view
     }()
 
