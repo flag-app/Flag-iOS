@@ -28,7 +28,7 @@ class MainMenuBar: BaseUIView {
     
     // MARK: - UI Component
     
-    private var collectionView: UICollectionView = {
+    var menuCollectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
@@ -57,12 +57,12 @@ class MainMenuBar: BaseUIView {
     }
     
     override func setUI() {
-        addSubviews(collectionView,
+        addSubviews(menuCollectionView,
                     menuHorizontalBarView)
     }
     
     override func setLayout() {
-        collectionView.snp.makeConstraints {
+        menuCollectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
         menuHorizontalBarView.snp.makeConstraints {
@@ -74,17 +74,17 @@ class MainMenuBar: BaseUIView {
     }
     
     func setDelegate() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        menuCollectionView.dataSource = self
+        menuCollectionView.delegate = self
     }
     
     func setCollectionView() {
-        collectionView.register(MainMenuCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        menuCollectionView.register(MainMenuCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
     }
     
     func setBeginningIndex() {
         let selectedIndexPath = IndexPath(item: 0, section: 0)
-        collectionView.selectItem(at: selectedIndexPath,
+        menuCollectionView.selectItem(at: selectedIndexPath,
                                   animated: false,
                                   scrollPosition: .top)
     }
@@ -94,7 +94,7 @@ class MainMenuBar: BaseUIView {
         guard let index else { return }
         let indexPath = IndexPath(item: index, section: 0)
 
-        collectionView.selectItem(at: indexPath,
+        menuCollectionView.selectItem(at: indexPath,
                                   animated: true,
                                   scrollPosition: .centeredHorizontally)
 

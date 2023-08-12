@@ -10,6 +10,7 @@ import UIKit
 class FlagCollectionViewCell: BaseCollectionViewCell {
     
     // MARK: - Properties
+    
     static let identifier = "FlagCollectionViewCell"
     
     // MARK: - UI Components
