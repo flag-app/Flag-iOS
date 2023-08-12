@@ -27,6 +27,11 @@ class CustomTableViewCell: UITableViewCell {
 
         }
     
+    override func prepareForReuse() {
+            super.prepareForReuse()
+            actionButton.setImage(UIImage(named: "check"), for: .normal)
+        }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -39,7 +44,7 @@ class CustomTableViewCell: UITableViewCell {
         
         actionButton.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
-            make.centerY.equalToSuperview()
+            make.top.equalToSuperview().offset(8)
         }
         
         titleLabel.snp.makeConstraints { make in

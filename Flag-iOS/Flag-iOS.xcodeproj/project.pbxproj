@@ -39,7 +39,7 @@
 		7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DA2A7C562E0043C592 /* SignUpView.swift */; };
 		E50CEE472A8768A000101E4B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE462A8768A000101E4B /* ListView.swift */; };
 		E50CEE492A8768AD00101E4B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE482A8768AD00101E4B /* ListViewController.swift */; };
-		E50CEE4B2A8776A600101E4B /* cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE4A2A8776A600101E4B /* cell.swift */; };
+		E50CEE4B2A8776A600101E4B /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE4A2A8776A600101E4B /* CustomTableViewCell.swift */; };
 		E535869C2A82016B007D053D /* FlagPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869B2A82016B007D053D /* FlagPlusView.swift */; };
 		E535869E2A820175007D053D /* SetNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869D2A820175007D053D /* SetNameView.swift */; };
 		E53586A02A82017E007D053D /* FreindsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869F2A82017E007D053D /* FreindsView.swift */; };
@@ -90,7 +90,7 @@
 		7B9998DA2A7C562E0043C592 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		E50CEE462A8768A000101E4B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		E50CEE482A8768AD00101E4B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		E50CEE4A2A8776A600101E4B /* cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cell.swift; sourceTree = "<group>"; };
+		E50CEE4A2A8776A600101E4B /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		E535869B2A82016B007D053D /* FlagPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPlusView.swift; sourceTree = "<group>"; };
 		E535869D2A820175007D053D /* SetNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameView.swift; sourceTree = "<group>"; };
 		E535869F2A82017E007D053D /* FreindsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsView.swift; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 				E53586A82A820251007D053D /* FlagView.swift */,
 				E5DA6F852A83598500FC825F /* ProgressView.swift */,
 				E50CEE462A8768A000101E4B /* ListView.swift */,
-				E50CEE4A2A8776A600101E4B /* cell.swift */,
+				E50CEE4A2A8776A600101E4B /* CustomTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -468,7 +468,7 @@
 				E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */,
 				E53586A02A82017E007D053D /* FreindsView.swift in Sources */,
 				E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */,
-				E50CEE4B2A8776A600101E4B /* cell.swift in Sources */,
+				E50CEE4B2A8776A600101E4B /* CustomTableViewCell.swift in Sources */,
 				E53586AC2A820284007D053D /* File.swift in Sources */,
 				E53586A92A820251007D053D /* FlagView.swift in Sources */,
 				7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */,

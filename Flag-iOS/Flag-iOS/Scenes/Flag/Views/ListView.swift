@@ -38,9 +38,6 @@ final class ListView: BaseUIView {
         return tableView
     }()
 
-    
-    
-    
     // MARK: - Custom Method
     
     override func setUI() {

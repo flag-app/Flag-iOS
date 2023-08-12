@@ -196,11 +196,6 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
 
 }
 
-extension ProgressViewController: UISheetPresentationControllerDelegate {
-    func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
-    }
-}
-
 extension ProgressViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row >= selectedDates.count {
@@ -211,9 +206,13 @@ extension ProgressViewController: UICollectionViewDelegate {
             } else {
                 cell?.backgroundColor = .red
                 previouslySelectedIndexPaths.insert(indexPath)
-                print(indexPath.row)
+                print("선택된 셀 번호 : \(indexPath.row)")
             }
         }
     }
 }
 
+extension ProgressViewController: UISheetPresentationControllerDelegate {
+    func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
+    }
+}

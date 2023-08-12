@@ -64,7 +64,7 @@ final class ProgressView: BaseUIView {
     
     lazy var modalButton: BaseFillButton = {
         let button = BaseFillButton()
-        button.setTitle(TextLiterals.nextText, for: .normal)
+        button.setTitle("나와라 모달!", for: .normal)
         button.isEnabled = true
         return button
     }()

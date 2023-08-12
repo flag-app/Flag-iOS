@@ -12,8 +12,8 @@ final class ListViewController: BaseUIViewController {
     // MARK: - UI Components
    
     private let listView = ListView()
-    var buttonSelectedStates = [Bool](repeating: false, count: 10)
-    
+    var selectedCellIndex: Int? = nil
+
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -47,50 +47,46 @@ final class ListViewController: BaseUIViewController {
         print("tap")
     }
     
-    @objc func buttonTapped(_ sender: UIButton) {
-            guard let cell = sender.superview?.superview as? CustomTableViewCell,
-                  let indexPath = listView.tableView.indexPath(for: cell) else {
-                return
-            }
-            
-            let checkFillImage = UIImage(named: "checkFill")
-            let uncheckImage = UIImage(named: "check")
-            
-            if !buttonSelectedStates[indexPath.row] {
-                for (index, isSelected) in buttonSelectedStates.enumerated() {
-                    if index != indexPath.row && isSelected {
-                        return
-                    }
-                }
-
-                sender.setImage(checkFillImage, for: .normal)
-                print("선택 \(indexPath.row)번 셀")
-                buttonSelectedStates[indexPath.row] = true
-            } else {
-                sender.setImage(uncheckImage, for: .normal)
-                print("취소 \(indexPath.row)번 셀")
-                buttonSelectedStates[indexPath.row] = false
-            }
+    @objc
+    func buttonTapped(_ sender: UIButton) {
+        guard let cell = sender.superview?.superview as? CustomTableViewCell,
+              let indexPath = listView.tableView.indexPath(for: cell) else {
+            return
         }
-
-
-
+        
+        if selectedCellIndex == indexPath.row {
+            selectedCellIndex = nil
+        } else {
+            selectedCellIndex = indexPath.row
+            print("선택된 날짜리스트 : \(indexPath.row)")
+        }
+        listView.tableView.reloadData()
+    }
 }
 
+// MARK: - TableViewDataSource
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomTableViewCell
         
-        cell.titleLabel.text = "Custom Row \(indexPath.row + 1)"
-        cell.subtitleLabel.text = "Subtitle for Row \(indexPath.row + 1)"
-        cell.actionButton.setTitle("Button", for: .normal)
+        cell.titleLabel.text = "제목들어갈 자리, 셀번호 : \(indexPath.row + 1)"
+        cell.subtitleLabel.text = "날짜들어갈 자리, 셀번호 : \(indexPath.row + 1)"
         cell.actionButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         cell.selectionStyle = .none
+        
+        let checkFillImage = UIImage(named: "checkFill")
+        let uncheckImage = UIImage(named: "check")
+        if let selectedCellIndex = selectedCellIndex, selectedCellIndex == indexPath.row {
+            cell.actionButton.setImage(checkFillImage, for: .normal)
+        } else {
+            cell.actionButton.setImage(uncheckImage, for: .normal)
+        }
+        
         return cell
     }
 }
