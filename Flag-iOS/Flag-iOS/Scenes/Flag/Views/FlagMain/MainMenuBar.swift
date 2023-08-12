@@ -17,8 +17,15 @@ class MainMenuBar: BaseUIView {
     
     let cellId = "cellId"
     var menuHorizontalBarLeading: CGFloat = 26
-    var delegate: HomeMenuBarDelegate?
     private let flagMenuTitle = [TextLiterals.confirmedFlag, TextLiterals.progressFlag]
+    
+    var delegate: HomeMenuBarDelegate?
+    
+    var selectedItem: Int? {
+        didSet {
+            updateBar(from: selectedItem)
+        }
+    }
     
     // MARK: - UI Component
     
@@ -83,21 +90,46 @@ class MainMenuBar: BaseUIView {
                                   scrollPosition: .top)
     }
     
+    
+    func updateBar(from index: Int?) {
+        guard let index else { return }
+        let indexPath = IndexPath(item: index, section: 0)
+
+//        collectionView.selectItem(at: indexPath,
+//                                  animated: true,
+//                                  scrollPosition: .centeredHorizontally)
+
+        updateMenuHorizontalBar(index: index)
+    }
+
+    func updateMenuHorizontalBar(index: Int) {
+        let x = CGFloat(index) * frame.width / 2
+//        print("X:\(x)")
+        
+        menuHorizontalBarView.snp.updateConstraints {
+            $0.leading.equalToSuperview().offset(x)
+        }
+
+        UIView.animate(withDuration: 0.3) {
+            self.layoutIfNeeded()
+        }
+    }
+    
 }
 
 // MARK: - UICollectionViewDataSource
 
 extension MainMenuBar: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MainMenuCollectionViewCell
+        print("indexPath.item: \(indexPath.item)")
         cell.titleLabel.text = flagMenuTitle[indexPath.item]
         return cell
     }
-    
     
 }
 
@@ -105,13 +137,8 @@ extension MainMenuBar: UICollectionViewDataSource {
 
 extension MainMenuBar: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
-        
-        let x = CGFloat(indexPath.item) * frame.width / 2
-        menuHorizontalBarLeading = x
-        
-        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, animations: { self.layoutIfNeeded() })
-        delegate?.didSelectMenuBarItem(didSelectItemAt: indexPath.item)
+        selectedItem = indexPath.item
+
     }
 }
 

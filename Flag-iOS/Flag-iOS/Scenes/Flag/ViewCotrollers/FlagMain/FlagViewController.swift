@@ -51,13 +51,13 @@ final class FlagViewController: BaseUIViewController {
         flagView.flagCollectionView.register(FlagCollectionViewCell.self, forCellWithReuseIdentifier: FlagCollectionViewCell.identifier)
     }
     
-    func scrollToMenuIndex(menuIndex: Int) {
-        let indexPath = IndexPath(item: menuIndex, section: 0)
-        flagView.flagCollectionView.scrollToItem(at: indexPath,
-                                                 at: .centeredHorizontally,
-                                                 animated: true)
-        print("indexPath")
-    }
+//    func scrollToMenuIndex(menuIndex: Int) {
+//        let indexPath = IndexPath(item: menuIndex, section: 0)
+//        flagView.flagCollectionView.scrollToItem(at: indexPath,
+//                                                 at: .centeredHorizontally,
+//                                                 animated: true)
+//        print("indexPath")
+//    }
 
 }
 
@@ -104,7 +104,7 @@ extension FlagViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - HomeMenuBarDelegate
 extension FlagViewController: HomeMenuBarDelegate {
     func didSelectMenuBarItem(didSelectItemAt item: Int) {
-        scrollToMenuIndex(menuIndex: item)
+//        scrollToMenuIndex(menuIndex: item)
         print("menuIndex: \(item)")
     }
 }

@@ -16,7 +16,6 @@ class FlagCollectionViewCell: BaseCollectionViewCell {
     
     let flagTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
-//        tableView.backgroundColor = .yellow
         tableView.separatorStyle = .none
         tableView.contentInset = UIEdgeInsets(top: 90, left: 0, bottom: 0, right: 0)
         return tableView
