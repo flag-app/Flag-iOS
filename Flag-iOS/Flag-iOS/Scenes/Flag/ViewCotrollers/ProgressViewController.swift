@@ -127,10 +127,11 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
         
         if indexPath.row < selectedDates.count  {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "E\nMM/dd"
+            dateFormatter.dateFormat = "E\nMM.dd"
             let dateLabel = UILabel(frame: cell.bounds)
             dateLabel.textAlignment = .center
             dateLabel.textColor = .black
+            dateLabel.font = .body2
             dateLabel.numberOfLines = 0
             dateLabel.text = dateFormatter.string(from: selectedDates[indexPath.row])
             cell.contentView.addSubview(dateLabel)
