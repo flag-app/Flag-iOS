@@ -20,6 +20,14 @@ class CustomTableViewCell: UITableViewCell {
         return button
     }()
     
+    var isButtonToggled = false {
+            didSet {
+                let imageName = isButtonToggled ? "checkFill" : "check"
+                actionButton.setImage(UIImage(named: imageName), for: .normal)
+            }
+
+        }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         

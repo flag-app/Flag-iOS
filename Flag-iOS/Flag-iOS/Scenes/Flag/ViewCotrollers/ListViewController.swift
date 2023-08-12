@@ -53,10 +53,19 @@ final class ListViewController: BaseUIViewController {
         }
         
         let checkFillImage = UIImage(named: "checkFill")
-        sender.setImage(checkFillImage, for: .normal)
-
-        print("Button tapped in row \(indexPath.row + 1)")
+        let uncheckImage = UIImage(named: "check")
+        
+        if cell.isButtonToggled {
+            sender.setImage(uncheckImage, for: .normal)
+            print("취소 \(indexPath.row + 1)번 셀")
+        } else {
+            sender.setImage(checkFillImage, for: .normal)
+            print("선택 \(indexPath.row + 1)번 셀")
+        }
+        
+        cell.isButtonToggled.toggle()
     }
+
 
 }
 
