@@ -27,6 +27,7 @@ final class ProgressViewController: BaseUIViewController {
     
     var labels: [UILabel] = []
     var frequencyDict: [Int: Int] = [:]
+    var selectedIndexPath: IndexPath?
     var one: [Int] = []
     var two: [Int] = []
     var three : [Int] = []
@@ -197,20 +198,22 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
 }
 
 extension ProgressViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row >= selectedDates.count {
-            let cell = collectionView.cellForItem(at: indexPath)
-            if previouslySelectedIndexPaths.contains(indexPath) {
-                cell?.backgroundColor = getColorForIndexPath(indexPath)
-                previouslySelectedIndexPaths.remove(indexPath)
-            } else {
-                cell?.backgroundColor = .red
-                previouslySelectedIndexPaths.insert(indexPath)
-                print("선택된 셀 번호 : \(indexPath.row)")
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            if indexPath.row >= selectedDates.count {
+                if selectedIndexPath != indexPath {
+                    if let previouslySelectedIndexPath = selectedIndexPath {
+                        let cell = collectionView.cellForItem(at: previouslySelectedIndexPath)
+                        cell?.backgroundColor = getColorForIndexPath(previouslySelectedIndexPath)
+                    }
+
+                    let cell = collectionView.cellForItem(at: indexPath)
+                    cell?.backgroundColor = .red
+                    selectedIndexPath = indexPath
+                    print("선택된 셀 번호 : \(indexPath.row)")
+                }
             }
         }
     }
-}
 
 extension ProgressViewController: UISheetPresentationControllerDelegate {
     func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
