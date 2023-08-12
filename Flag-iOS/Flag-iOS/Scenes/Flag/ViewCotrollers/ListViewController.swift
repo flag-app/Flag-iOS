@@ -9,17 +9,14 @@ import UIKit
 
 final class ListViewController: BaseUIViewController {
     
-    // MARK: - UI Components
-   
+    // MARK: - Properties
+    
     private let listView = ListView()
     var selectedCellIndex: Int? = nil
+    
+    // MARK: - UI Components
 
     // MARK: - Life Cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
     
     // MARK: - Custom Method
     
