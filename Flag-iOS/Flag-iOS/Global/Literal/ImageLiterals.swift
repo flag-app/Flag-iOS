@@ -27,7 +27,9 @@ enum ImageLiterals {
     
     static var colorIndicator: UIImage { .load(name: "colorIndicator")}
     static var flagIcon: UIImage { .load(name: "flagIcon")}
-    
+    static var check: UIImage { .load(name: "check")}
+    static var checkFill: UIImage { .load(name: "checkFill")}
+
 }
 
 extension UIImage {
