@@ -56,7 +56,8 @@ final class FlagViewController: BaseUIViewController {
     }
     
     func setCollectionView() {
-        flagView.flagCollectionView.register(FlagCollectionViewCell.self, forCellWithReuseIdentifier: FlagCollectionViewCell.identifier)
+        flagView.flagCollectionView.register(FlagCollectionViewCell.self,
+                                             forCellWithReuseIdentifier: FlagCollectionViewCell.identifier)
     }
     
     func scrollToMenuIndex(menuIndex: Int) {
@@ -75,7 +76,8 @@ final class FlagViewController: BaseUIViewController {
 // MARK: - UICollectionViewDataSource
 
 extension FlagViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         return 2
     }
     
@@ -83,7 +85,6 @@ extension FlagViewController: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FlagCollectionViewCell.identifier,
                                                       for: indexPath)
-        
         return cell
     }
 }
@@ -97,13 +98,17 @@ extension FlagViewController: UICollectionViewDelegate {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension FlagViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         // FIXME: 레이아웃 수정 필요
 //        return CGSize(width: view.frame.width, height: view.frame.height)
         return CGSize(width: view.frame.width, height: 560)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
@@ -117,13 +122,15 @@ extension FlagViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        print(targetContentOffset.pointee.x / view.frame.width)
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+                                   withVelocity velocity: CGPoint,
+                                   targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
         let index = targetContentOffset.pointee.x / view.frame.width
         
         let indexPath = IndexPath(item: Int(index), section: 0)
-        flagView.menuBar.menuCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        flagView.menuBar.menuCollectionView.selectItem(at: indexPath, animated: true,
+                                                       scrollPosition: .centeredHorizontally)
     }
 }
 

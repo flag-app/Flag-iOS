@@ -103,7 +103,6 @@ class MainMenuBar: BaseUIView {
 
     func updateMenuHorizontalBar(index: Int) {
         let x = CGFloat(index) * frame.width / 2
-//        print("X:\(x)")
         
         menuHorizontalBarView.snp.updateConstraints {
             $0.leading.equalToSuperview().offset(x)
@@ -120,13 +119,14 @@ class MainMenuBar: BaseUIView {
 // MARK: - UICollectionViewDataSource
 
 extension MainMenuBar: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         return 2
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MainMenuCollectionViewCell
-        print("indexPath.item: \(indexPath.item)")
         cell.titleLabel.text = flagMenuTitle[indexPath.item]
         return cell
     }

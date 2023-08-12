@@ -23,6 +23,7 @@ class FlagCollectionViewCell: BaseCollectionViewCell {
     }()
     
     // MARK: - Life Cycle
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -64,7 +65,8 @@ extension FlagCollectionViewCell: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FlagCell.identifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: FlagCell.identifier,
+                                                 for: indexPath)
         return cell
     }
 }
