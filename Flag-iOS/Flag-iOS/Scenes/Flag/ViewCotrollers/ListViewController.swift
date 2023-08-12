@@ -12,6 +12,7 @@ final class ListViewController: BaseUIViewController {
     // MARK: - UI Components
    
     private let listView = ListView()
+    var buttonSelectedStates = [Bool](repeating: false, count: 10)
     
     // MARK: - Life Cycle
     
@@ -47,24 +48,31 @@ final class ListViewController: BaseUIViewController {
     }
     
     @objc func buttonTapped(_ sender: UIButton) {
-        guard let cell = sender.superview?.superview as? CustomTableViewCell,
-              let indexPath = listView.tableView.indexPath(for: cell) else {
-            return
+            guard let cell = sender.superview?.superview as? CustomTableViewCell,
+                  let indexPath = listView.tableView.indexPath(for: cell) else {
+                return
+            }
+            
+            let checkFillImage = UIImage(named: "checkFill")
+            let uncheckImage = UIImage(named: "check")
+            
+            if !buttonSelectedStates[indexPath.row] {
+                for (index, isSelected) in buttonSelectedStates.enumerated() {
+                    if index != indexPath.row && isSelected {
+                        return
+                    }
+                }
+
+                sender.setImage(checkFillImage, for: .normal)
+                print("선택 \(indexPath.row)번 셀")
+                buttonSelectedStates[indexPath.row] = true
+            } else {
+                sender.setImage(uncheckImage, for: .normal)
+                print("취소 \(indexPath.row)번 셀")
+                buttonSelectedStates[indexPath.row] = false
+            }
         }
-        
-        let checkFillImage = UIImage(named: "checkFill")
-        let uncheckImage = UIImage(named: "check")
-        
-        if cell.isButtonToggled {
-            sender.setImage(uncheckImage, for: .normal)
-            print("취소 \(indexPath.row + 1)번 셀")
-        } else {
-            sender.setImage(checkFillImage, for: .normal)
-            print("선택 \(indexPath.row + 1)번 셀")
-        }
-        
-        cell.isButtonToggled.toggle()
-    }
+
 
 
 }
@@ -72,7 +80,7 @@ final class ListViewController: BaseUIViewController {
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,7 +90,7 @@ extension ListViewController: UITableViewDataSource {
         cell.subtitleLabel.text = "Subtitle for Row \(indexPath.row + 1)"
         cell.actionButton.setTitle("Button", for: .normal)
         cell.actionButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        
+        cell.selectionStyle = .none
         return cell
     }
 }

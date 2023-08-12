@@ -14,9 +14,8 @@ class CustomTableViewCell: UITableViewCell {
     let subtitleLabel = UILabel()
    
     lazy var actionButton: UIButton = {
-        let button = UIButton(type: .custom) // Use custom button type
-        button.setImage(UIImage(named: "check"), for: .normal) // Set image for normal state
-        button.isEnabled = true
+        let button = UIButton()
+        button.setImage(UIImage(named: "check"), for: .normal) 
         return button
     }()
     

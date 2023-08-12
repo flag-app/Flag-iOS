@@ -32,6 +32,8 @@ final class ProgressViewController: BaseUIViewController {
     var three : [Int] = []
     var four : [Int] = []
     var five : [Int] = []
+    var previouslySelectedIndexPaths: Set<IndexPath> = []
+    var touchGestureRecognizer: UITapGestureRecognizer!
     
     // MARK: - UI Components
     
@@ -81,7 +83,6 @@ final class ProgressViewController: BaseUIViewController {
         
         if let sheet = vc.sheetPresentationController {
             
-            //지원할 크기 지정
             sheet.detents = [.medium(), .large()]
             sheet.delegate = self
             sheet.prefersGrabberVisible = true
@@ -125,6 +126,22 @@ final class ProgressViewController: BaseUIViewController {
             labels.append(label)
         }
     }
+    
+    func getColorForIndexPath(_ indexPath: IndexPath) -> UIColor {
+        if one.contains(indexPath.row) {
+            return .purple1
+        } else if two.contains(indexPath.row) {
+            return .purple2
+        } else if three.contains(indexPath.row) {
+            return .purple3
+        } else if four.contains(indexPath.row) {
+            return .purple4
+        } else if five.contains(indexPath.row) {
+            return .purple5
+        } else {
+            return .white
+        }
+    }
 }
 
      // MARK: - CollectionViewDataSource
@@ -162,21 +179,7 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
         } else {
             cell.layer.borderColor = UIColor.systemGray4.cgColor
         }
-        if one.contains(indexPath.row) {
-                cell.backgroundColor = .purple1
-            }
-        if two.contains(indexPath.row) {
-                cell.backgroundColor = .purple2
-            }
-        if three.contains(indexPath.row) {
-                cell.backgroundColor = .purple3
-            }
-        if four.contains(indexPath.row) {
-                cell.backgroundColor = .purple4
-            }
-        if five.contains(indexPath.row) {
-                cell.backgroundColor = .purple5
-            }
+        cell.backgroundColor = getColorForIndexPath(indexPath)
         cell.layer.borderWidth = 1.0
         return cell
     }
@@ -198,4 +201,19 @@ extension ProgressViewController: UISheetPresentationControllerDelegate {
     }
 }
 
+extension ProgressViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row >= selectedDates.count {
+            let cell = collectionView.cellForItem(at: indexPath)
+            if previouslySelectedIndexPaths.contains(indexPath) {
+                cell?.backgroundColor = getColorForIndexPath(indexPath)
+                previouslySelectedIndexPaths.remove(indexPath)
+            } else {
+                cell?.backgroundColor = .red
+                previouslySelectedIndexPaths.insert(indexPath)
+                print(indexPath.row)
+            }
+        }
+    }
+}
 

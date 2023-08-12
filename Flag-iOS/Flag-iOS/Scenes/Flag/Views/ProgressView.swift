@@ -33,6 +33,14 @@ final class ProgressView: BaseUIView {
         return label
     }()
     
+    private let friendDisplayLabel: UILabel = {
+        let label = UILabel()
+        label.text = TextLiterals.flagFriendDisplayText
+        label.font = .title1
+        label.numberOfLines = 0
+        return label
+    }()
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 0
@@ -67,6 +75,7 @@ final class ProgressView: BaseUIView {
     override func setUI() {
         stackview = UIStackView(arrangedSubviews: labels)
         self.addSubviews(timeLabel,
+                         friendDisplayLabel,
                          collectionView,
                          indicatorImageView,
                          stackview,
@@ -77,6 +86,10 @@ final class ProgressView: BaseUIView {
     override func setLayout() {
         timeLabel.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).offset(40)
+            $0.leading.equalToSuperview().offset(25)
+        }
+        friendDisplayLabel.snp.makeConstraints {
+            $0.top.equalTo(collectionView.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(25)
         }
         nextButton.snp.makeConstraints {
