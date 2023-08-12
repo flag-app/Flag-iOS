@@ -54,6 +54,14 @@ final class ProgressView: BaseUIView {
         return stackview
     }()
     
+    lazy var modalButton: BaseFillButton = {
+        let button = BaseFillButton()
+        button.setTitle(TextLiterals.nextText, for: .normal)
+        button.isEnabled = true
+        return button
+    }()
+    
+    
     // MARK: - Custom Method
     
     override func setUI() {
@@ -62,7 +70,8 @@ final class ProgressView: BaseUIView {
                          collectionView,
                          indicatorImageView,
                          stackview,
-                         nextButton)
+                         nextButton,
+                         modalButton)
     }
     
     override func setLayout() {
@@ -74,6 +83,11 @@ final class ProgressView: BaseUIView {
             $0.bottom.equalTo(safeAreaLayoutGuide).inset(21)
             $0.horizontalEdges.equalToSuperview().inset(25)
             $0.height.equalTo(49)
+        }
+        modalButton.snp.makeConstraints { make in
+            make.bottom.equalTo(nextButton.snp.top).offset(-40)
+            make.horizontalEdges.equalToSuperview().inset(25)
+            make.height.equalTo(49)
         }
         collectionView.snp.makeConstraints { make in
             make.trailing.equalTo(safeAreaLayoutGuide).inset(10)

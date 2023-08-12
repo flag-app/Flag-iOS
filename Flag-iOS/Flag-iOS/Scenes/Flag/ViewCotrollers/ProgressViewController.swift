@@ -57,6 +57,7 @@ final class ProgressViewController: BaseUIViewController {
     
     override func addTarget() {
         progressView.nextButton.addTarget(self, action: #selector(didTappedNextButton), for: .touchUpInside)
+        progressView.modalButton.addTarget(self, action: #selector(presentModalBtnTap), for: .touchUpInside)
     }
     
     override func setDelegate(){
@@ -69,6 +70,25 @@ final class ProgressViewController: BaseUIViewController {
     func didTappedNextButton() {
         let homeVC = BaseTabBarController()
         self.navigationController?.pushViewController(homeVC, animated: true)
+    }
+    
+    @objc
+    private func presentModalBtnTap() {
+        
+        let vc = ListViewController()
+        
+        vc.modalPresentationStyle = .pageSheet
+        
+        if let sheet = vc.sheetPresentationController {
+            
+            //지원할 크기 지정
+            sheet.detents = [.medium(), .large()]
+            sheet.delegate = self
+            sheet.prefersGrabberVisible = true
+            
+        }
+        
+        present(vc, animated: true, completion: nil)
     }
     
     func categorizeNumbers() {
@@ -173,5 +193,9 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
 
 }
 
+extension ProgressViewController: UISheetPresentationControllerDelegate {
+    func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
+    }
+}
 
 
