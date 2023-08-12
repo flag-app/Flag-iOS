@@ -33,6 +33,14 @@ final class ProgressView: BaseUIView {
         return label
     }()
     
+    private let friendDisplayLabel: UILabel = {
+        let label = UILabel()
+        label.text = TextLiterals.flagFriendDisplayText
+        label.font = .title1
+        label.numberOfLines = 0
+        return label
+    }()
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 0
@@ -54,15 +62,25 @@ final class ProgressView: BaseUIView {
         return stackview
     }()
     
+    lazy var modalButton: BaseFillButton = {
+        let button = BaseFillButton()
+        button.setTitle("나와라 모달!", for: .normal)
+        button.isEnabled = true
+        return button
+    }()
+    
+    
     // MARK: - Custom Method
     
     override func setUI() {
         stackview = UIStackView(arrangedSubviews: labels)
         self.addSubviews(timeLabel,
+                         friendDisplayLabel,
                          collectionView,
                          indicatorImageView,
                          stackview,
-                         nextButton)
+                         nextButton,
+                         modalButton)
     }
     
     override func setLayout() {
@@ -70,16 +88,25 @@ final class ProgressView: BaseUIView {
             $0.top.equalTo(safeAreaLayoutGuide).offset(40)
             $0.leading.equalToSuperview().offset(25)
         }
+        friendDisplayLabel.snp.makeConstraints {
+            $0.top.equalTo(collectionView.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().offset(25)
+        }
         nextButton.snp.makeConstraints {
             $0.bottom.equalTo(safeAreaLayoutGuide).inset(21)
             $0.horizontalEdges.equalToSuperview().inset(25)
             $0.height.equalTo(49)
         }
+        modalButton.snp.makeConstraints { make in
+            make.bottom.equalTo(nextButton.snp.top).offset(-40)
+            make.horizontalEdges.equalToSuperview().inset(25)
+            make.height.equalTo(49)
+        }
         collectionView.snp.makeConstraints { make in
             make.trailing.equalTo(safeAreaLayoutGuide).inset(10)
             make.leading.equalTo(safeAreaLayoutGuide).inset(20)
             make.top.equalTo(timeLabel.snp.bottom)
-            make.bottom.equalTo(nextButton.snp.top).offset(-20)
+            make.bottom.equalTo(nextButton.snp.top).offset(-160)
         }
         indicatorImageView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(40)
@@ -89,7 +116,7 @@ final class ProgressView: BaseUIView {
         }
         stackview.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(7)
-            make.top.equalTo(collectionView.snp.top).offset(39)
+            make.top.equalTo(collectionView.snp.top).offset(23)
         }
     }
     

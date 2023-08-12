@@ -27,11 +27,14 @@ final class ProgressViewController: BaseUIViewController {
     
     var labels: [UILabel] = []
     var frequencyDict: [Int: Int] = [:]
+    var selectedIndexPath: IndexPath?
     var one: [Int] = []
     var two: [Int] = []
     var three : [Int] = []
     var four : [Int] = []
     var five : [Int] = []
+    var previouslySelectedIndexPaths: Set<IndexPath> = []
+    var touchGestureRecognizer: UITapGestureRecognizer!
     
     // MARK: - UI Components
     
@@ -57,6 +60,7 @@ final class ProgressViewController: BaseUIViewController {
     
     override func addTarget() {
         progressView.nextButton.addTarget(self, action: #selector(didTappedNextButton), for: .touchUpInside)
+        progressView.modalButton.addTarget(self, action: #selector(presentModalBtnTap), for: .touchUpInside)
     }
     
     override func setDelegate(){
@@ -69,6 +73,24 @@ final class ProgressViewController: BaseUIViewController {
     func didTappedNextButton() {
         let homeVC = BaseTabBarController()
         self.navigationController?.pushViewController(homeVC, animated: true)
+    }
+    
+    @objc
+    private func presentModalBtnTap() {
+        
+        let vc = ListViewController()
+        
+        vc.modalPresentationStyle = .pageSheet
+        
+        if let sheet = vc.sheetPresentationController {
+            
+            sheet.detents = [.medium(), .large()]
+            sheet.delegate = self
+            sheet.prefersGrabberVisible = true
+            
+        }
+        
+        present(vc, animated: true, completion: nil)
     }
     
     func categorizeNumbers() {
@@ -105,6 +127,22 @@ final class ProgressViewController: BaseUIViewController {
             labels.append(label)
         }
     }
+    
+    func getColorForIndexPath(_ indexPath: IndexPath) -> UIColor {
+        if one.contains(indexPath.row) {
+            return .purple1
+        } else if two.contains(indexPath.row) {
+            return .purple2
+        } else if three.contains(indexPath.row) {
+            return .purple3
+        } else if four.contains(indexPath.row) {
+            return .purple4
+        } else if five.contains(indexPath.row) {
+            return .purple5
+        } else {
+            return .white
+        }
+    }
 }
 
      // MARK: - CollectionViewDataSource
@@ -127,10 +165,11 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
         
         if indexPath.row < selectedDates.count  {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "E\nMM/dd"
+            dateFormatter.dateFormat = "E\nMM.dd"
             let dateLabel = UILabel(frame: cell.bounds)
             dateLabel.textAlignment = .center
             dateLabel.textColor = .black
+            dateLabel.font = .body2
             dateLabel.numberOfLines = 0
             dateLabel.text = dateFormatter.string(from: selectedDates[indexPath.row])
             cell.contentView.addSubview(dateLabel)
@@ -141,21 +180,7 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
         } else {
             cell.layer.borderColor = UIColor.systemGray4.cgColor
         }
-        if one.contains(indexPath.row) {
-                cell.backgroundColor = .purple1
-            }
-        if two.contains(indexPath.row) {
-                cell.backgroundColor = .purple2
-            }
-        if three.contains(indexPath.row) {
-                cell.backgroundColor = .purple3
-            }
-        if four.contains(indexPath.row) {
-                cell.backgroundColor = .purple4
-            }
-        if five.contains(indexPath.row) {
-                cell.backgroundColor = .purple5
-            }
+        cell.backgroundColor = getColorForIndexPath(indexPath)
         cell.layer.borderWidth = 1.0
         return cell
     }
@@ -172,5 +197,25 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
 
 }
 
+extension ProgressViewController: UICollectionViewDelegate {
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            if indexPath.row >= selectedDates.count {
+                if selectedIndexPath != indexPath {
+                    if let previouslySelectedIndexPath = selectedIndexPath {
+                        let cell = collectionView.cellForItem(at: previouslySelectedIndexPath)
+                        cell?.backgroundColor = getColorForIndexPath(previouslySelectedIndexPath)
+                    }
 
+                    let cell = collectionView.cellForItem(at: indexPath)
+                    cell?.backgroundColor = .red
+                    selectedIndexPath = indexPath
+                    print("선택된 셀 번호 : \(indexPath.row)")
+                }
+            }
+        }
+    }
 
+extension ProgressViewController: UISheetPresentationControllerDelegate {
+    func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
+    }
+}
