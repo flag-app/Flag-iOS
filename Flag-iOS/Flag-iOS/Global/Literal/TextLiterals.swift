@@ -59,7 +59,7 @@ enum TextLiterals {
     static let flagConfirmText: String = "확인"
     static let flagCancelText: String = "취소"
     static let flagPossibleList: String = "가능한 일정 목록이에요!\n약속을 확정해 주세요."
-    
+    static let flagConfirmedText: String = "약속 확정하기"
     //여기 온보딩이면 확인하고 옮겨주세요!
     static let signUpAlertText: String = "안녕하세요 FLAG 입니다!\n가입 정보를 기입해 주세요."
     static let doubleCheck: String = "중복확인"
