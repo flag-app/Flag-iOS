@@ -11,12 +11,6 @@ class MainMenuCollectionViewCell: BaseCollectionViewCell {
     
     // MARK: - Properties
     
-//    var selectedItem: Int? {
-//        didSet {
-//            updateBar(from: selectedItem)
-//        }
-//    }
-    
     override var isHighlighted: Bool {
         didSet {
             titleLabel.textColor = isSelected ? .purple300 : .gray300
@@ -36,14 +30,12 @@ class MainMenuCollectionViewCell: BaseCollectionViewCell {
         label.textColor = .gray300
         label.font = .head2
         label.textAlignment = .center
-//        label.backgroundColor = .blue
         return label
     }()
     
     // MARK: - Custom Method
     
     override func setUI() {
-//        backgroundColor = .yellow
         addSubview(titleLabel)
     }
     
@@ -53,8 +45,5 @@ class MainMenuCollectionViewCell: BaseCollectionViewCell {
             $0.verticalEdges.equalToSuperview()
         }
     }
-    
-//    func updateBar(from index: Int?) {
-//
-//    }
+
 }

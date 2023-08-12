@@ -9,6 +9,13 @@ import UIKit
 import SnapKit
 
 final class FlagViewController: BaseUIViewController {
+    
+    // MARK: - Properties
+    private var currentIndex: Int = 0 {
+           didSet {
+               changeItem(index: currentIndex)
+           }
+       }
 
     // MARK: - UI Components
     
@@ -21,6 +28,13 @@ final class FlagViewController: BaseUIViewController {
         super.viewDidLoad()
 
         setCollectionView()
+        flagView.button.addTarget(self, action: #selector(tap), for: .touchUpInside)
+    }
+    
+    @objc
+    func tap() {
+        scrollToMenuIndex(menuIndex: 1)
+        print("tapp")
     }
 
     // MARK: - Custom Method
@@ -51,13 +65,19 @@ final class FlagViewController: BaseUIViewController {
         flagView.flagCollectionView.register(FlagCollectionViewCell.self, forCellWithReuseIdentifier: FlagCollectionViewCell.identifier)
     }
     
-//    func scrollToMenuIndex(menuIndex: Int) {
-//        let indexPath = IndexPath(item: menuIndex, section: 0)
-//        flagView.flagCollectionView.scrollToItem(at: indexPath,
-//                                                 at: .centeredHorizontally,
-//                                                 animated: true)
-//        print("indexPath")
-//    }
+    func scrollToMenuIndex(menuIndex: Int) {
+        let indexPath = IndexPath(item: menuIndex, section: 0)
+        flagView.flagCollectionView.scrollToItem(at: indexPath,
+                                                 at: .centeredHorizontally,
+                                                 animated: true)
+        
+
+        print("indexPath: \(menuIndex)")
+    }
+    
+    func changeItem(index: Int) {
+        flagView.menuBar.selectedItem = index
+    }
 
 }
 
@@ -70,8 +90,6 @@ extension FlagViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FlagCollectionViewCell.identifier, for: indexPath)
-        let color: [UIColor] = [.orange, .blue]
-        cell.backgroundColor = color[indexPath.item]
         
         return cell
     }
@@ -89,22 +107,32 @@ extension FlagViewController: UICollectionViewDelegate {
 
 extension FlagViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
+//        return CGSize(width: view.frame.width, height: view.frame.height)
+        return CGSize(width: view.frame.width, height: 560)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        <#code#>
-//    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.x / 2)
+        
+        flagView.menuBar.menuHorizontalBarView.snp.updateConstraints {
+            $0.leading.equalTo(scrollView.contentOffset.x / 2)
+        }
+
+        UIView.animate(withDuration: 0.3) {
+            self.flagView.layoutIfNeeded()
+        }
+        
+    }
 }
 
 // MARK: - HomeMenuBarDelegate
 extension FlagViewController: HomeMenuBarDelegate {
     func didSelectMenuBarItem(didSelectItemAt item: Int) {
-//        scrollToMenuIndex(menuIndex: item)
+        scrollToMenuIndex(menuIndex: item)
         print("menuIndex: \(item)")
     }
 }

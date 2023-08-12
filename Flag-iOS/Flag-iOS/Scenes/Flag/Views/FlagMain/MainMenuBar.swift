@@ -16,7 +16,6 @@ class MainMenuBar: BaseUIView {
     // MARK: - Properties
     
     let cellId = "cellId"
-    var menuHorizontalBarLeading: CGFloat = 26
     private let flagMenuTitle = [TextLiterals.confirmedFlag, TextLiterals.progressFlag]
     
     var delegate: HomeMenuBarDelegate?
@@ -67,7 +66,7 @@ class MainMenuBar: BaseUIView {
             $0.edges.equalToSuperview()
         }
         menuHorizontalBarView.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(menuHorizontalBarLeading)
+            $0.leading.equalToSuperview().offset(36)
             $0.bottom.equalToSuperview()
             $0.width.equalTo(170)
             $0.height.equalTo(3)
@@ -95,9 +94,9 @@ class MainMenuBar: BaseUIView {
         guard let index else { return }
         let indexPath = IndexPath(item: index, section: 0)
 
-//        collectionView.selectItem(at: indexPath,
-//                                  animated: true,
-//                                  scrollPosition: .centeredHorizontally)
+        collectionView.selectItem(at: indexPath,
+                                  animated: true,
+                                  scrollPosition: .centeredHorizontally)
 
         updateMenuHorizontalBar(index: index)
     }
@@ -113,6 +112,7 @@ class MainMenuBar: BaseUIView {
         UIView.animate(withDuration: 0.3) {
             self.layoutIfNeeded()
         }
+        
     }
     
 }
@@ -138,7 +138,7 @@ extension MainMenuBar: UICollectionViewDataSource {
 extension MainMenuBar: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedItem = indexPath.item
-
+        delegate?.didSelectMenuBarItem(didSelectItemAt: indexPath.item)
     }
 }
 
