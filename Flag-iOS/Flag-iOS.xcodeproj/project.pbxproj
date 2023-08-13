@@ -19,7 +19,6 @@
 		7B51C58B2A61261A0016B418 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 7B51C58A2A61261A0016B418 /* Moya */; };
 		7B51C5AB2A63F6650016B418 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5AA2A63F6650016B418 /* BaseTabBarController.swift */; };
 		7B51C5AD2A63F7790016B418 /* FlagPlusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5AC2A63F7790016B418 /* FlagPlusViewController.swift */; };
-		7B51C5AF2A63F7EB0016B418 /* FlagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5AE2A63F7EB0016B418 /* FlagViewController.swift */; };
 		7B51C5B12A63F8120016B418 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B02A63F8120016B418 /* MyPageViewController.swift */; };
 		7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B22A63F8840016B418 /* UIStackView+.swift */; };
 		7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B42A63F8E70016B418 /* UIView+.swift */; };
@@ -37,6 +36,15 @@
 		7B9998D52A7B856E0043C592 /* BaseUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D42A7B856E0043C592 /* BaseUITextField.swift */; };
 		7B9998D92A7C56140043C592 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998D82A7C56140043C592 /* SignUpViewController.swift */; };
 		7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998DA2A7C562E0043C592 /* SignUpView.swift */; };
+		7B9999002A85142B0043C592 /* MainMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998FF2A85142B0043C592 /* MainMenuBar.swift */; };
+		7B9999022A852BED0043C592 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999012A852BED0043C592 /* BaseCollectionViewCell.swift */; };
+		7B9999042A852C6D0043C592 /* MainMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999032A852C6D0043C592 /* MainMenuCollectionViewCell.swift */; };
+		7B9999062A85306E0043C592 /* FlagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999052A85306E0043C592 /* FlagViewController.swift */; };
+		7B99990F2A86896C0043C592 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99990E2A86896C0043C592 /* Flag.swift */; };
+		7B9999122A868CF90043C592 /* DataTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999112A868CF90043C592 /* DataTypeProtocol.swift */; };
+		7B9999142A868E2D0043C592 /* FlagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999132A868E2D0043C592 /* FlagTableViewCell.swift */; };
+		7B9999162A868E640043C592 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999152A868E640043C592 /* BaseTableViewCell.swift */; };
+		7B9999182A8692780043C592 /* FlagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999172A8692780043C592 /* FlagCollectionViewCell.swift */; };
 		E50CEE472A8768A000101E4B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE462A8768A000101E4B /* ListView.swift */; };
 		E50CEE492A8768AD00101E4B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE482A8768AD00101E4B /* ListViewController.swift */; };
 		E50CEE4B2A8776A600101E4B /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE4A2A8776A600101E4B /* CustomTableViewCell.swift */; };
@@ -70,7 +78,6 @@
 		7B51C5842A61249C0016B418 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		7B51C5AA2A63F6650016B418 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		7B51C5AC2A63F7790016B418 /* FlagPlusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPlusViewController.swift; sourceTree = "<group>"; };
-		7B51C5AE2A63F7EB0016B418 /* FlagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagViewController.swift; sourceTree = "<group>"; };
 		7B51C5B02A63F8120016B418 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		7B51C5B22A63F8840016B418 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		7B51C5B42A63F8E70016B418 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -88,6 +95,15 @@
 		7B9998D42A7B856E0043C592 /* BaseUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITextField.swift; sourceTree = "<group>"; };
 		7B9998D82A7C56140043C592 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7B9998DA2A7C562E0043C592 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		7B9998FF2A85142B0043C592 /* MainMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuBar.swift; sourceTree = "<group>"; };
+		7B9999012A852BED0043C592 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		7B9999032A852C6D0043C592 /* MainMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		7B9999052A85306E0043C592 /* FlagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagViewController.swift; sourceTree = "<group>"; };
+		7B99990E2A86896C0043C592 /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
+		7B9999112A868CF90043C592 /* DataTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeProtocol.swift; sourceTree = "<group>"; };
+		7B9999132A868E2D0043C592 /* FlagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagTableViewCell.swift; sourceTree = "<group>"; };
+		7B9999152A868E640043C592 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		7B9999172A8692780043C592 /* FlagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagCollectionViewCell.swift; sourceTree = "<group>"; };
 		E50CEE462A8768A000101E4B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		E50CEE482A8768AD00101E4B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		E50CEE4A2A8776A600101E4B /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -152,6 +168,7 @@
 		7B51C56E2A6102A80016B418 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				7B9999102A868BD00043C592 /* Proto */,
 				E53586AA2A82027C007D053D /* Data */,
 				7B51C58C2A6128BD0016B418 /* Base */,
 				7B51C57D2A6123D20016B418 /* Literal */,
@@ -184,6 +201,7 @@
 		7B51C5712A6102F30016B418 /* Flag */ = {
 			isa = PBXGroup;
 			children = (
+				7B99990D2A86895A0043C592 /* Model */,
 				E53586A72A820249007D053D /* Views */,
 				7B51C5772A6122D20016B418 /* ViewCotrollers */,
 			);
@@ -225,7 +243,7 @@
 		7B51C5772A6122D20016B418 /* ViewCotrollers */ = {
 			isa = PBXGroup;
 			children = (
-				7B51C5AE2A63F7EB0016B418 /* FlagViewController.swift */,
+				7B9998FE2A8513E60043C592 /* FlagMain */,
 				E5DA6F872A83599200FC825F /* ProgressViewController.swift */,
 				E50CEE482A8768AD00101E4B /* ListViewController.swift */,
 			);
@@ -286,6 +304,8 @@
 				7B9998CA2A7A995D0043C592 /* BaseUIView.swift */,
 				7B9998CC2A7A9B530043C592 /* BaseUIViewController.swift */,
 				7B9998D42A7B856E0043C592 /* BaseUITextField.swift */,
+				7B9999012A852BED0043C592 /* BaseCollectionViewCell.swift */,
+				7B9999152A868E640043C592 /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -319,6 +339,42 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		7B9998FD2A8513CD0043C592 /* FlagMain */ = {
+			isa = PBXGroup;
+			children = (
+				E53586A82A820251007D053D /* FlagView.swift */,
+				7B9998FF2A85142B0043C592 /* MainMenuBar.swift */,
+				7B9999032A852C6D0043C592 /* MainMenuCollectionViewCell.swift */,
+				7B9999132A868E2D0043C592 /* FlagTableViewCell.swift */,
+				7B9999172A8692780043C592 /* FlagCollectionViewCell.swift */,
+			);
+			path = FlagMain;
+			sourceTree = "<group>";
+		};
+		7B9998FE2A8513E60043C592 /* FlagMain */ = {
+			isa = PBXGroup;
+			children = (
+				7B9999052A85306E0043C592 /* FlagViewController.swift */,
+			);
+			path = FlagMain;
+			sourceTree = "<group>";
+		};
+		7B99990D2A86895A0043C592 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7B99990E2A86896C0043C592 /* Flag.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B9999102A868BD00043C592 /* Proto */ = {
+			isa = PBXGroup;
+			children = (
+				7B9999112A868CF90043C592 /* DataTypeProtocol.swift */,
+			);
+			path = Proto;
+			sourceTree = "<group>";
+		};
 		E535869A2A82015A007D053D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,7 +391,7 @@
 		E53586A72A820249007D053D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E53586A82A820251007D053D /* FlagView.swift */,
+				7B9998FD2A8513CD0043C592 /* FlagMain */,
 				E5DA6F852A83598500FC825F /* ProgressView.swift */,
 				E50CEE462A8768A000101E4B /* ListView.swift */,
 				E50CEE4A2A8776A600101E4B /* CustomTableViewCell.swift */,
@@ -431,8 +487,8 @@
 			files = (
 				7B51C5AB2A63F6650016B418 /* BaseTabBarController.swift in Sources */,
 				E53586A42A82019A007D053D /* LoactionView.swift in Sources */,
+				7B9999062A85306E0043C592 /* FlagViewController.swift in Sources */,
 				7B51C55E2A61008A0016B418 /* ViewController.swift in Sources */,
-				7B51C5AF2A63F7EB0016B418 /* FlagViewController.swift in Sources */,
 				7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */,
 				7B9998D92A7C56140043C592 /* SignUpViewController.swift in Sources */,
 				7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */,
@@ -445,15 +501,22 @@
 				7B51C5832A61248D0016B418 /* ImageLiterals.swift in Sources */,
 				7B51C5AD2A63F7790016B418 /* FlagPlusViewController.swift in Sources */,
 				7B51C5AD2A63F7790016B418 /* FlagPlusViewController.swift in Sources */,
+				7B9999122A868CF90043C592 /* DataTypeProtocol.swift in Sources */,
+				7B9999002A85142B0043C592 /* MainMenuBar.swift in Sources */,
 				E593AAA72A7E992D00FC918A /* LocationViewController.swift in Sources */,
 				7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */,
+				7B9999142A868E2D0043C592 /* FlagTableViewCell.swift in Sources */,
 				7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */,
 				7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */,
+				7B9999022A852BED0043C592 /* BaseCollectionViewCell.swift in Sources */,
+				7B99990F2A86896C0043C592 /* Flag.swift in Sources */,
 				E535869E2A820175007D053D /* SetNameView.swift in Sources */,
 				7B51C5802A6124600016B418 /* TextLiterals.swift in Sources */,
 				7B9998CF2A7A9BEF0043C592 /* SignInViewController.swift in Sources */,
 				E50CEE492A8768AD00101E4B /* ListViewController.swift in Sources */,
 				7B9998D32A7AA0330043C592 /* SignInView.swift in Sources */,
+				7B9999182A8692780043C592 /* FlagCollectionViewCell.swift in Sources */,
+				7B9999162A868E640043C592 /* BaseTableViewCell.swift in Sources */,
 				E535869C2A82016B007D053D /* FlagPlusView.swift in Sources */,
 				7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */,
 				7B9998CB2A7A995D0043C592 /* BaseUIView.swift in Sources */,
@@ -463,6 +526,7 @@
 				E53586A22A82018F007D053D /* DatePickView.swift in Sources */,
 				7B51C5B12A63F8120016B418 /* MyPageViewController.swift in Sources */,
 				E5DA6F882A83599200FC825F /* ProgressViewController.swift in Sources */,
+				7B9999042A852C6D0043C592 /* MainMenuCollectionViewCell.swift in Sources */,
 				E593AAAB2A7EA0AD00FC918A /* TimeScrollViewController.swift in Sources */,
 				7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */,
 				E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */,

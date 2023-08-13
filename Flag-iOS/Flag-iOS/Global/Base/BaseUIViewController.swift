@@ -37,7 +37,7 @@ class BaseUIViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.head1]
         let backButton: UIBarButtonItem = UIBarButtonItem()
-        backButton.title = ""
+//        backButton.title = ""
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
