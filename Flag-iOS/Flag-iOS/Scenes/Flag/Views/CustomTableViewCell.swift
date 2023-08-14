@@ -10,8 +10,13 @@ import UIKit
 import SnapKit
 
 class CustomTableViewCell: UITableViewCell {
+    
+    // MARK: - Properties
+    
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
+   
+    // MARK: - UI Components
    
     lazy var actionButton: UIButton = {
         let button = UIButton()
@@ -27,6 +32,8 @@ class CustomTableViewCell: UITableViewCell {
 
         }
     
+    // MARK: - Custom Method
+
     override func prepareForReuse() {
             super.prepareForReuse()
             actionButton.setImage(UIImage(named: "check"), for: .normal)
