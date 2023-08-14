@@ -42,6 +42,9 @@ final class MyPageViewController: BaseUIViewController {
     }
     
 }
+
+    //MARK: - TableViewDataSource
+
 extension MyPageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myPageMenu.count
@@ -79,10 +82,8 @@ extension MyPageViewController: UITableViewDelegate{
             case 1:
                 let termsViewController = TermsViewController()
                 navigationController?.pushViewController(termsViewController, animated: true)
-//            case 2: // "로그아웃"
-//                // 로그아웃 로직을 구현하거나 필요한 동작을 수행하세요.
-//            case 3: // "탈퇴하기"
-//                // 탈퇴 로직을 구현하거나 필요한 동작을 수행하세요.
+//            case 2: // 로그아웃
+//            case 3: // 탈퇴하기
             default:
                 break
             }
