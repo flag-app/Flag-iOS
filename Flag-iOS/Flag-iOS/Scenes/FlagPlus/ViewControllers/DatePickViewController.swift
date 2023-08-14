@@ -47,6 +47,7 @@ final class DatePickViewController: BaseUIViewController {
         let homeVC = LocationViewController()
         homeVC.selectedDates = selectedDates
         homeVC.selcetedTime = datePickView.selcetedTime
+        homeVC.minTime = datePickView.minTime
         _ = Calendar.current
         self.navigationController?.pushViewController(homeVC, animated: true)
     }

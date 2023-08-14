@@ -12,19 +12,6 @@ import SnapKit
 class LoactionView: BaseUIView {
     
     // MARK: - UI Components
-
-    private let minimumTimeLabel: UILabel = {
-        let label = UILabel()
-        label.text = TextLiterals.flagMinimumTimeText
-        label.font = .title1
-        return label
-    }()
-    
-    private let minimumTimeTextField: BaseUITextField = {
-        let textField = BaseUITextField()
-        textField.placeholder = TextLiterals.flagMinimumTimeHintText
-        return textField
-    }()
     
     private let locationLabel: UILabel = {
         let label = UILabel()
@@ -60,9 +47,7 @@ class LoactionView: BaseUIView {
     // MARK: - Custom Method
     
     override func setUI() {
-        self.addSubviews(minimumTimeLabel,
-                         minimumTimeTextField,
-                         locationLabel,
+        self.addSubviews(locationLabel,
                          locationTextField,
                          memoLabel,
                          memoTextField,
@@ -70,17 +55,8 @@ class LoactionView: BaseUIView {
     }
     
     override func setLayout() {
-        minimumTimeLabel.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(40)
-            $0.leading.equalToSuperview().offset(25)
-        }
-        minimumTimeTextField.snp.makeConstraints {
-            $0.top.equalTo(minimumTimeLabel.snp.bottom).offset(7)
-            $0.horizontalEdges.equalToSuperview().inset(25)
-            $0.height.equalTo(41)
-        }
         locationLabel.snp.makeConstraints {
-            $0.top.equalTo(minimumTimeTextField.snp.bottom).offset(20)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(40)
             $0.leading.equalToSuperview().offset(25)
         }
         locationTextField.snp.makeConstraints {

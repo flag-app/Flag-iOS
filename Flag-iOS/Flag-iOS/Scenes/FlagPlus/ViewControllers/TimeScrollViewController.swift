@@ -14,6 +14,7 @@ final class TimeScrollViewController: BaseUIViewController {
     
     var selectedDates: [Date] = []
     var selcetedTime: Int = 0
+    var minTime: Int = 0
     var labels: [UILabel] = []
     var selectedIndexPaths: [IndexPath] = []
     var previouslySelectedIndexPaths: Set<IndexPath> = []
