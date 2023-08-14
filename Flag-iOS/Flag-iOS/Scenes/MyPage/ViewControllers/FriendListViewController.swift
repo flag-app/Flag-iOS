@@ -45,10 +45,10 @@ final class FriendListViewController: BaseUIViewController {
     
     @objc
     func buttonTapped(_ sender: UIButton) {
-        let alertView = UIAlertController(title: "정말 친구 삭제하시겠습니까?", message: "", preferredStyle: .alert)
-        let deleteAction = UIAlertAction(title: "친구삭제", style: .default, handler: nil)
+        let alertView = UIAlertController(title: TextLiterals.DeleteQuestionText, message: "", preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: TextLiterals.friendDeleteText, style: .default, handler: nil)
         alertView.addAction(deleteAction)
-        let cancelAction = UIAlertAction(title: "취소", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: TextLiterals.flagCancelText, style: .default, handler: nil)
         alertView.addAction(cancelAction)
         present(alertView, animated: true, completion: nil)
     }

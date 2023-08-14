@@ -20,7 +20,7 @@ class FriendListCell: UITableViewCell {
    
     lazy var deleteButton: UIButton = {
         let button = UIButton()
-        button.addTitleAttribute(title: "삭제", titleColor: .black, fontName: .body2)
+        button.addTitleAttribute(title: TextLiterals.deleteText, titleColor: .black, fontName: .body2)
         button.backgroundColor = .gray200
         button.layer.cornerRadius = 6
         return button

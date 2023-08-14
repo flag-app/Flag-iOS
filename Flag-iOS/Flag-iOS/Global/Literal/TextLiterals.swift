@@ -84,5 +84,9 @@ enum TextLiterals {
     
     //MARK: MyPage
     static let searchText: String = "검색"
+    static let DeleteQuestionText: String = "정말 친구 삭제하시겠습니까?"
+    static let friendDeleteText: String = "친구삭제"
+    static let deleteText: String = "삭제"
+
 
 }
