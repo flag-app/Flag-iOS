@@ -77,6 +77,7 @@ enum TextLiterals {
    
     // MARK: Flag
     
+    static let flagRawValue: String = "FLAG"
     static let confirmedFlag: String = "확정된 약속"
     static let progressFlag: String = "진행 중인 약속"
     static let flagConfirmedText: String = "약속 확정하기"

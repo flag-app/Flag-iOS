@@ -7,13 +7,20 @@
 
 import UIKit
 
+protocol FlagCollectionViewCellDelegate: AnyObject {
+    func didSelectRowInFlagCollectionViewCell(isConfirmed: Bool)
+}
+
 class FlagCollectionViewCell: BaseCollectionViewCell {
     
     // MARK: - Properties
     
     static let identifier = "FlagCollectionViewCell"
+    weak var delegate: FlagCollectionViewCellDelegate?
     
     // MARK: - UI Components
+    
+    let flagViewController = FlagViewController()
     
     let flagTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -26,7 +33,6 @@ class FlagCollectionViewCell: BaseCollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setDelegate()
         setTableView()
     }
@@ -49,10 +55,11 @@ class FlagCollectionViewCell: BaseCollectionViewCell {
     
     func setDelegate() {
         flagTableView.dataSource = self
+        flagTableView.delegate = self
     }
     
     func setTableView() {
-        flagTableView.register(FlagCell.self, forCellReuseIdentifier: FlagCell.identifier)
+        flagTableView.register(FlagTableViewCell.self, forCellReuseIdentifier: FlagTableViewCell.identifier)
     }
 }
 
@@ -65,8 +72,15 @@ extension FlagCollectionViewCell: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FlagCell.identifier,
+        let cell = tableView.dequeueReusableCell(withIdentifier: FlagTableViewCell.identifier,
                                                  for: indexPath)
         return cell
+    }
+}
+
+extension FlagCollectionViewCell: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("didSelectRowAt")
+        delegate?.didSelectRowInFlagCollectionViewCell(isConfirmed: true)
     }
 }

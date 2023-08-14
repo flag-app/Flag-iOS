@@ -45,6 +45,10 @@
 		7B9999142A868E2D0043C592 /* FlagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999132A868E2D0043C592 /* FlagTableViewCell.swift */; };
 		7B9999162A868E640043C592 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999152A868E640043C592 /* BaseTableViewCell.swift */; };
 		7B9999182A8692780043C592 /* FlagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999172A8692780043C592 /* FlagCollectionViewCell.swift */; };
+		7B99991C2A8A85970043C592 /* FlagInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99991B2A8A85970043C592 /* FlagInfoViewController.swift */; };
+		7B99991E2A8A97680043C592 /* FlagInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99991D2A8A97680043C592 /* FlagInfoView.swift */; };
+		7B9999202A8AB6F50043C592 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99991F2A8AB6F50043C592 /* UserView.swift */; };
+		7B9999222A8ABB2B0043C592 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999212A8ABB2B0043C592 /* UITextView+.swift */; };
 		E50CEE472A8768A000101E4B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE462A8768A000101E4B /* ListView.swift */; };
 		E50CEE492A8768AD00101E4B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE482A8768AD00101E4B /* ListViewController.swift */; };
 		E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE4A2A8776A600101E4B /* TimeListCell.swift */; };
@@ -108,6 +112,10 @@
 		7B9999132A868E2D0043C592 /* FlagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagTableViewCell.swift; sourceTree = "<group>"; };
 		7B9999152A868E640043C592 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		7B9999172A8692780043C592 /* FlagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagCollectionViewCell.swift; sourceTree = "<group>"; };
+		7B99991B2A8A85970043C592 /* FlagInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagInfoViewController.swift; sourceTree = "<group>"; };
+		7B99991D2A8A97680043C592 /* FlagInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagInfoView.swift; sourceTree = "<group>"; };
+		7B99991F2A8AB6F50043C592 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		7B9999212A8ABB2B0043C592 /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
 		E50CEE462A8768A000101E4B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		E50CEE482A8768AD00101E4B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		E50CEE4A2A8776A600101E4B /* TimeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeListCell.swift; sourceTree = "<group>"; };
@@ -177,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9999102A868BD00043C592 /* Proto */,
-				E53586AA2A82027C007D053D /* Data */,
+				E53586AA2A82027C007D053D /* Model */,
 				7B51C58C2A6128BD0016B418 /* Base */,
 				7B51C57D2A6123D20016B418 /* Literal */,
 				7B51C57E2A6123DE0016B418 /* Resource */,
@@ -286,6 +294,7 @@
 				7B51C5B62A6429B00016B418 /* UIColor+.swift */,
 				7B9998C42A7A93B30043C592 /* UIButton+.swift */,
 				7B9998D02A7A9D9C0043C592 /* UITextField+.swift */,
+				7B9999212A8ABB2B0043C592 /* UITextView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -359,6 +368,7 @@
 				7B9999032A852C6D0043C592 /* MainMenuCollectionViewCell.swift */,
 				7B9999132A868E2D0043C592 /* FlagTableViewCell.swift */,
 				7B9999172A8692780043C592 /* FlagCollectionViewCell.swift */,
+				7B99991D2A8A97680043C592 /* FlagInfoView.swift */,
 			);
 			path = FlagMain;
 			sourceTree = "<group>";
@@ -366,6 +376,7 @@
 		7B9998FE2A8513E60043C592 /* FlagMain */ = {
 			isa = PBXGroup;
 			children = (
+				7B99991B2A8A85970043C592 /* FlagInfoViewController.swift */,
 				7B9999052A85306E0043C592 /* FlagViewController.swift */,
 			);
 			path = FlagMain;
@@ -411,12 +422,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		E53586AA2A82027C007D053D /* Data */ = {
+		E53586AA2A82027C007D053D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E53586AB2A820284007D053D /* File.swift */,
+				7B99991F2A8AB6F50043C592 /* UserView.swift */,
 			);
-			path = Data;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,6 +520,7 @@
 				7B9998C92A7A95F50043C592 /* BaseEmptyButton.swift in Sources */,
 				7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */,
 				7B51C5852A61249C0016B418 /* UIFont+.swift in Sources */,
+				7B99991C2A8A85970043C592 /* FlagInfoViewController.swift in Sources */,
 				E5DA6F862A83598500FC825F /* ProgressView.swift in Sources */,
 				7B51C5832A61248D0016B418 /* ImageLiterals.swift in Sources */,
 				7B51C5AD2A63F7790016B418 /* FlagPlusViewController.swift in Sources */,
@@ -517,6 +529,7 @@
 				E54787432A88CF550097F2D2 /* MyPageView.swift in Sources */,
 				7B9999002A85142B0043C592 /* MainMenuBar.swift in Sources */,
 				E593AAA72A7E992D00FC918A /* LocationViewController.swift in Sources */,
+				7B9999202A8AB6F50043C592 /* UserView.swift in Sources */,
 				7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */,
 				7B9999142A868E2D0043C592 /* FlagTableViewCell.swift in Sources */,
 				7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */,
@@ -524,6 +537,7 @@
 				7B9999022A852BED0043C592 /* BaseCollectionViewCell.swift in Sources */,
 				7B99990F2A86896C0043C592 /* Flag.swift in Sources */,
 				E535869E2A820175007D053D /* SetNameView.swift in Sources */,
+				7B9999222A8ABB2B0043C592 /* UITextView+.swift in Sources */,
 				7B51C5802A6124600016B418 /* TextLiterals.swift in Sources */,
 				7B9998CF2A7A9BEF0043C592 /* SignInViewController.swift in Sources */,
 				E50CEE492A8768AD00101E4B /* ListViewController.swift in Sources */,
@@ -546,6 +560,7 @@
 				E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */,
 				E53586A02A82017E007D053D /* FreindsView.swift in Sources */,
 				E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */,
+				E50CEE4B2A8776A600101E4B /* CustomTableViewCell.swift in Sources */,
 				E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */,
 				E53586AC2A820284007D053D /* File.swift in Sources */,
 				E53586A92A820251007D053D /* FlagView.swift in Sources */,
@@ -553,6 +568,7 @@
 				E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */,
 				E54787472A88D00D0097F2D2 /* FriendListViewController.swift in Sources */,
 				7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */,
+				7B99991E2A8A97680043C592 /* FlagInfoView.swift in Sources */,
 				7B9998D12A7A9D9C0043C592 /* UITextField+.swift in Sources */,
 				E54787452A88CF610097F2D2 /* HeaderView.swift in Sources */,
 			);
