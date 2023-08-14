@@ -82,5 +82,12 @@ enum TextLiterals {
     static let progressFlag: String = "진행 중인 약속"
     static let flagConfirmedText: String = "약속 확정하기"
     static let flagFriendDisplayText: String = "시간대를 클릭하여 가능한 친구들을\n확인해 보세요!"
+    
+    //MARK: MyPage
+    static let searchText: String = "검색"
+    static let DeleteQuestionText: String = "정말 친구 삭제하시겠습니까?"
+    static let friendDeleteText: String = "친구삭제"
+    static let deleteText: String = "삭제"
+
 
 }
