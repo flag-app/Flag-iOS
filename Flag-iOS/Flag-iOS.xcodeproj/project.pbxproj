@@ -51,7 +51,7 @@
 		7B9999222A8ABB2B0043C592 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999212A8ABB2B0043C592 /* UITextView+.swift */; };
 		E50CEE472A8768A000101E4B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE462A8768A000101E4B /* ListView.swift */; };
 		E50CEE492A8768AD00101E4B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE482A8768AD00101E4B /* ListViewController.swift */; };
-		E50CEE4B2A8776A600101E4B /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE4A2A8776A600101E4B /* CustomTableViewCell.swift */; };
+		E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE4A2A8776A600101E4B /* TimeListCell.swift */; };
 		E535869C2A82016B007D053D /* FlagPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869B2A82016B007D053D /* FlagPlusView.swift */; };
 		E535869E2A820175007D053D /* SetNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869D2A820175007D053D /* SetNameView.swift */; };
 		E53586A02A82017E007D053D /* FreindsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869F2A82017E007D053D /* FreindsView.swift */; };
@@ -59,6 +59,11 @@
 		E53586A42A82019A007D053D /* LoactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586A32A82019A007D053D /* LoactionView.swift */; };
 		E53586A62A8201A1007D053D /* TimeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586A52A8201A1007D053D /* TimeScrollView.swift */; };
 		E53586A92A820251007D053D /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586A82A820251007D053D /* FlagView.swift */; };
+		E53586AC2A820284007D053D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586AB2A820284007D053D /* File.swift */; };
+		E54787432A88CF550097F2D2 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787422A88CF550097F2D2 /* MyPageView.swift */; };
+		E54787452A88CF610097F2D2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787442A88CF610097F2D2 /* HeaderView.swift */; };
+		E54787472A88D00D0097F2D2 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787462A88D00D0097F2D2 /* FriendListViewController.swift */; };
+		E54787492A88D0160097F2D2 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787482A88D0160097F2D2 /* TermsViewController.swift */; };
 		E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA982A7E1F9500FC918A /* SetNameViewController.swift */; };
 		E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA9C2A7E299500FC918A /* FriendsViewController.swift */; };
 		E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */; };
@@ -113,7 +118,7 @@
 		7B9999212A8ABB2B0043C592 /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
 		E50CEE462A8768A000101E4B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		E50CEE482A8768AD00101E4B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		E50CEE4A2A8776A600101E4B /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		E50CEE4A2A8776A600101E4B /* TimeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeListCell.swift; sourceTree = "<group>"; };
 		E535869B2A82016B007D053D /* FlagPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPlusView.swift; sourceTree = "<group>"; };
 		E535869D2A820175007D053D /* SetNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameView.swift; sourceTree = "<group>"; };
 		E535869F2A82017E007D053D /* FreindsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsView.swift; sourceTree = "<group>"; };
@@ -121,6 +126,11 @@
 		E53586A32A82019A007D053D /* LoactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoactionView.swift; sourceTree = "<group>"; };
 		E53586A52A8201A1007D053D /* TimeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScrollView.swift; sourceTree = "<group>"; };
 		E53586A82A820251007D053D /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
+		E53586AB2A820284007D053D /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		E54787422A88CF550097F2D2 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		E54787442A88CF610097F2D2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		E54787462A88D00D0097F2D2 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
+		E54787482A88D0160097F2D2 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		E593AA982A7E1F9500FC918A /* SetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameViewController.swift; sourceTree = "<group>"; };
 		E593AA9C2A7E299500FC918A /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +270,8 @@
 			isa = PBXGroup;
 			children = (
 				7B51C5B02A63F8120016B418 /* MyPageViewController.swift */,
+				E54787462A88D00D0097F2D2 /* FriendListViewController.swift */,
+				E54787482A88D0160097F2D2 /* TermsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -267,6 +279,8 @@
 		7B51C57A2A6122DF0016B418 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E54787422A88CF550097F2D2 /* MyPageView.swift */,
+				E54787442A88CF610097F2D2 /* HeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -403,7 +417,7 @@
 				7B9998FD2A8513CD0043C592 /* FlagMain */,
 				E5DA6F852A83598500FC825F /* ProgressView.swift */,
 				E50CEE462A8768A000101E4B /* ListView.swift */,
-				E50CEE4A2A8776A600101E4B /* CustomTableViewCell.swift */,
+				E50CEE4A2A8776A600101E4B /* TimeListCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -512,6 +526,7 @@
 				7B51C5AD2A63F7790016B418 /* FlagPlusViewController.swift in Sources */,
 				7B51C5AD2A63F7790016B418 /* FlagPlusViewController.swift in Sources */,
 				7B9999122A868CF90043C592 /* DataTypeProtocol.swift in Sources */,
+				E54787432A88CF550097F2D2 /* MyPageView.swift in Sources */,
 				7B9999002A85142B0043C592 /* MainMenuBar.swift in Sources */,
 				E593AAA72A7E992D00FC918A /* LocationViewController.swift in Sources */,
 				7B9999202A8AB6F50043C592 /* UserView.swift in Sources */,
@@ -540,17 +555,22 @@
 				E5DA6F882A83599200FC825F /* ProgressViewController.swift in Sources */,
 				7B9999042A852C6D0043C592 /* MainMenuCollectionViewCell.swift in Sources */,
 				E593AAAB2A7EA0AD00FC918A /* TimeScrollViewController.swift in Sources */,
+				E54787492A88D0160097F2D2 /* TermsViewController.swift in Sources */,
 				7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */,
 				E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */,
 				E53586A02A82017E007D053D /* FreindsView.swift in Sources */,
 				E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */,
 				E50CEE4B2A8776A600101E4B /* CustomTableViewCell.swift in Sources */,
+				E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */,
+				E53586AC2A820284007D053D /* File.swift in Sources */,
 				E53586A92A820251007D053D /* FlagView.swift in Sources */,
 				7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */,
 				E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */,
+				E54787472A88D00D0097F2D2 /* FriendListViewController.swift in Sources */,
 				7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */,
 				7B99991E2A8A97680043C592 /* FlagInfoView.swift in Sources */,
 				7B9998D12A7A9D9C0043C592 /* UITextField+.swift in Sources */,
+				E54787452A88CF610097F2D2 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

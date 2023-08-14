@@ -23,6 +23,7 @@ final class ProgressViewController: BaseUIViewController {
     ]
     var array = [15, 40, 18, 30, 46, 31, 20, 44, 56, 61, 34, 42, 29, 32, 37, 36, 63, 41, 54, 28, 5, 52, 58, 62, 10, 35, 49, 8, 53, 51, 45, 13, 47, 24, 57, 23, 39, 25,46, 47, 15, 10, 35, 36, 41, 53, 33, 25, 27, 17, 16, 18, 44, 32, 48, 37, 28, 43, 42,54, 28, 25, 47, 59, 43, 40, 41, 19, 39, 52, 15, 44, 49, 38, 53, 37, 33, 22, 30, 57, 20, 42, 36, 63, 12, 27, 64, 17, 45, 62, 51, 61, 10, 46, 35, 48, 56, 58, 14, 20, 38, 29, 10,10,37,37,35,42,20,36,28,28]
     var selcetedTime: Int = 1
+    var allUserNumber: Int = 5
     //여기까지
     
     var labels: [UILabel] = []
@@ -101,17 +102,25 @@ final class ProgressViewController: BaseUIViewController {
                 frequencyDict[element] = 1
             }
         }
+        let borderNumber = allUserNumber/5
         for (element, count) in frequencyDict {
-            if count == 1 {
-                one.append(element)
-            } else if count == 2 {
-                two.append(element)
-            } else if count == 3 {
-                three.append(element)
-            }else if count == 4 {
-                four.append(element)
-            }else if count == 5 {
-                five.append(element)
+//            if count == 1 {
+//                one.append(element)
+//            } else if count == 2 {
+//                two.append(element)
+//            } else if count == 3 {
+//                three.append(element)
+//            }else if count == 4 {
+//                four.append(element)
+//            }else if count == 5 {
+//                five.append(element)
+//            }
+            switch count{
+            case 0...borderNumber: one.append(element)
+            case borderNumber...borderNumber*2: two.append(element)
+            case borderNumber*2...borderNumber*3: three.append(element)
+            case borderNumber*3...borderNumber*4: four.append(element)
+            default: five.append(element)
             }
         }
     }

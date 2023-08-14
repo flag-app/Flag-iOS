@@ -32,6 +32,10 @@ enum ImageLiterals {
     static var checkFill: UIImage { .load(name: "checkFill")}
     static var flagInfo: UIImage { .load(name: "flagInfo")}
 
+    //MARK: MyPage
+    
+    static var profileImage: UIImage { .load(name: "profileImage")}
+    
 }
 
 extension UIImage {
