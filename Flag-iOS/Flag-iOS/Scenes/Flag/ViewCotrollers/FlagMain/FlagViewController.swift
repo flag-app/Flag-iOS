@@ -36,7 +36,7 @@ final class FlagViewController: BaseUIViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        navigationItem.title = TextLiterals.flag
+        navigationItem.title = TextLiterals.flagRawValue
     }
 
     override func setUI() {
@@ -53,6 +53,7 @@ final class FlagViewController: BaseUIViewController {
         flagView.flagCollectionView.dataSource = self
         flagView.flagCollectionView.delegate = self
         flagView.menuBar.delegate = self
+//        flagView.FlagCollectionViewCell.delegate = self
     }
     
     func setCollectionView() {
@@ -139,5 +140,13 @@ extension FlagViewController: UICollectionViewDelegateFlowLayout {
 extension FlagViewController: HomeMenuBarDelegate {
     func didSelectMenuBarItem(didSelectItemAt item: Int) {
         scrollToMenuIndex(menuIndex: item)
+    }
+}
+
+extension FlagViewController: FlagCollectionViewCellDelegate {
+    func didSelectRowInFlagCollectionViewCell(isConfirmed: Bool) {
+        print("DDDDDDDDDDDD")
+        let vc = FlagInfoViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
