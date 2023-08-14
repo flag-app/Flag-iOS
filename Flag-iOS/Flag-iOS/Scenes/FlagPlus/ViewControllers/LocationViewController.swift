@@ -15,6 +15,7 @@ class LocationViewController: BaseUIViewController {
     
     var selectedDates: [Date] = []
     var selcetedTime: Int = 0
+    var minTime: Int = 0
     
     // MARK: - UI Components
     
@@ -43,6 +44,7 @@ class LocationViewController: BaseUIViewController {
         let homeVC = TimeScrollViewController()
         homeVC.selectedDates = selectedDates
         homeVC.selcetedTime = selcetedTime
+        homeVC.minTime = minTime
         self.navigationController?.pushViewController(homeVC, animated: true)
     }
     
