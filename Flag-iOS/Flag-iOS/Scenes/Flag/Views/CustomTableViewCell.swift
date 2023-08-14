@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 class CustomTableViewCell: UITableViewCell {
+    
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
    
