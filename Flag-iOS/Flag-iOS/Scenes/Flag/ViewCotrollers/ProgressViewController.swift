@@ -43,10 +43,10 @@ final class ProgressViewController: BaseUIViewController {
     
     // MARK: - Life Cycle
     
-    override func viewDidLoad() {
-            super.viewDidLoad()
-            presentModalViewController()
-        }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presentModalViewController() 
+    }
     
     // MARK: - Custom Method
     
