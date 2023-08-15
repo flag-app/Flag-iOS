@@ -7,12 +7,14 @@
 
 import UIKit
 
+
 final class ListViewController: BaseUIViewController {
     
     // MARK: - Properties
     
     private let listView = ListView()
     var selectedCellIndex: Int? = nil
+    let progressViewController = ProgressViewController()
     
     // MARK: - UI Components
 
@@ -42,7 +44,9 @@ final class ListViewController: BaseUIViewController {
     @objc
     func tap() {
         print("tap")
+        
     }
+
     
     @objc
     func buttonTapped(_ sender: UIButton) {
