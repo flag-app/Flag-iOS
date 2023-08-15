@@ -45,7 +45,7 @@ final class ProgressViewController: BaseUIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presentModalViewController() 
+        presentModalViewController()
     }
     
     // MARK: - Custom Method
@@ -85,8 +85,10 @@ final class ProgressViewController: BaseUIViewController {
         presentModal()
     }
     
+    
     func presentModal(){
         let vc = ListViewController()
+        vc.delegate = self
         vc.modalPresentationStyle = .pageSheet
         if let sheet = vc.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
@@ -222,5 +224,18 @@ extension ProgressViewController: UICollectionViewDelegate {
 
 extension ProgressViewController: UISheetPresentationControllerDelegate {
     func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
+    }
+}
+
+extension ProgressViewController: ListViewControllerDelegate {
+    func didDismissModal(with information: Int?) {
+        if let info = information {
+            print("모달로부터 전달된 리스트: \(info)")
+        }
+        //살짝 에니메이션
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            let homeVC = BaseTabBarController()
+            self.navigationController?.pushViewController(homeVC, animated: true)
+        }
     }
 }
