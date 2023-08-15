@@ -15,6 +15,8 @@ final class DatePickView: BaseUIView {
     var minTime: Int = 0
     var timeText: String = ""
     var minTimeText: String = ""
+    var time: Float = 0.0
+    var timer: Timer?
     
     // MARK: - UI Components
     
@@ -43,7 +45,7 @@ final class DatePickView: BaseUIView {
     
     private let minTimeLabel: UILabel = {
         let label = UILabel()
-        label.text = TextLiterals.flagTimeText
+        label.text = TextLiterals.flagMinimumTimeText
         label.font = .title1
         return label
     }()
@@ -108,6 +110,14 @@ final class DatePickView: BaseUIView {
         return view
     }()
     
+    lazy var progressView: UIProgressView = {
+        let view = UIProgressView()
+        view.trackTintColor = .gray200
+        view.progressTintColor = .purple300
+        view.progress = 0.30
+        return view
+    }()
+    
     // MARK: - Custom Method
     override func setUI() {
         self.addSubviews(nextButton,
@@ -117,8 +127,9 @@ final class DatePickView: BaseUIView {
                          displayLabel,
                          dateView,
                          timeLabel,
-                         minTimeLabel)
-        
+                         minTimeLabel,
+                         progressView)
+        progressAnimation()
     }
     override func setLayout() {
         nextButton.snp.makeConstraints {
@@ -156,6 +167,10 @@ final class DatePickView: BaseUIView {
         displayLabel.snp.makeConstraints { make in
             make.top.equalTo(minTimePopButton.snp.bottom).offset(20)
             make.leading.equalToSuperview().inset(31)
+        }
+        progressView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).offset(10)
+            make.leading.trailing.equalToSuperview().inset(25)
         }
     }
     
@@ -198,6 +213,17 @@ final class DatePickView: BaseUIView {
         alertController.addAction(confirmAction)
         alertController.addAction(cancelAction)
         self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
-        
+    }
+    
+    func progressAnimation() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(setProgress), userInfo: nil, repeats: true)
+    }
+    
+    @objc
+    func setProgress() {
+        time += 0.05
+        progressView.setProgress(time, animated: true)
+        if time >= 0.60 { timer?.invalidate() }
     }
 }

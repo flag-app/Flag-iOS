@@ -13,6 +13,8 @@ final class TimeScrollView: BaseUIView {
     
     var labels: [UILabel] = []
     var stakcViewSpace = 0
+    var time: Float = 0.0
+    var timer: Timer?
     
     // MARK: - UI Components
     
@@ -46,6 +48,14 @@ final class TimeScrollView: BaseUIView {
         return stackview
     }()
     
+    lazy var progressView: UIProgressView = {
+        let view = UIProgressView()
+        view.trackTintColor = .gray200
+        view.progressTintColor = .purple300
+        view.progress = 0.6
+        return view
+    }()
+    
     // MARK: - Custom Method
     
     override func setUI() {
@@ -53,7 +63,9 @@ final class TimeScrollView: BaseUIView {
         self.addSubviews(TimeLabel,
                          collectionView,
                          stackview,
-                         nextButton)
+                         nextButton,
+                         progressView)
+        progressAnimation()
     }
     
     func setLabels(_ labels: [UILabel]) {
@@ -99,5 +111,21 @@ final class TimeScrollView: BaseUIView {
             make.leading.equalToSuperview().offset(7)
             make.top.equalTo(TimeLabel.snp.bottom).offset(39)
         }
+        progressView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).offset(10)
+            make.leading.trailing.equalToSuperview().inset(25)
+        }
+    }
+    
+    func progressAnimation() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: #selector(setProgress), userInfo: nil, repeats: true)
+    }
+    
+    @objc
+    func setProgress() {
+        time += 0.005
+        progressView.setProgress(time, animated: true)
+        if time >= 0.8 { timer?.invalidate() }
     }
 }

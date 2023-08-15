@@ -12,11 +12,11 @@ import SnapKit
 class FriendListCell: UITableViewCell {
     
     // MARK: - Properties
+   
+    // MARK: - UI Components
     
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
-   
-    // MARK: - UI Components
    
     lazy var deleteButton: UIButton = {
         let button = UIButton()

@@ -65,6 +65,8 @@
 		E54787492A88D0160097F2D2 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787482A88D0160097F2D2 /* TermsViewController.swift */; };
 		E547874B2A8AC1920097F2D2 /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547874A2A8AC1920097F2D2 /* FriendListView.swift */; };
 		E547874D2A8AC5AC0097F2D2 /* FriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547874C2A8AC5AC0097F2D2 /* FriendListCell.swift */; };
+		E54787522A8BA5150097F2D2 /* ReadyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787512A8BA5150097F2D2 /* ReadyView.swift */; };
+		E54787542A8BA5250097F2D2 /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787532A8BA5250097F2D2 /* ReadyViewController.swift */; };
 		E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA982A7E1F9500FC918A /* SetNameViewController.swift */; };
 		E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA9C2A7E299500FC918A /* FriendsViewController.swift */; };
 		E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */; };
@@ -134,6 +136,8 @@
 		E54787482A88D0160097F2D2 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		E547874A2A8AC1920097F2D2 /* FriendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
 		E547874C2A8AC5AC0097F2D2 /* FriendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCell.swift; sourceTree = "<group>"; };
+		E54787512A8BA5150097F2D2 /* ReadyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyView.swift; sourceTree = "<group>"; };
+		E54787532A8BA5250097F2D2 /* ReadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyViewController.swift; sourceTree = "<group>"; };
 		E593AA982A7E1F9500FC918A /* SetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameViewController.swift; sourceTree = "<group>"; };
 		E593AA9C2A7E299500FC918A /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 			children = (
 				7B51C5582A61008A0016B418 /* Flag-iOS */,
 				7B51C5572A61008A0016B418 /* Products */,
+
+
 				E547874F2A8AFF480097F2D2 /* Recovered References */,
 			);
 			sourceTree = "<group>";
@@ -256,6 +262,7 @@
 				E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */,
 				E593AAA62A7E992D00FC918A /* LocationViewController.swift */,
 				E593AAAA2A7EA0AD00FC918A /* TimeScrollViewController.swift */,
+				E54787532A8BA5250097F2D2 /* ReadyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -413,6 +420,7 @@
 				E53586A12A82018F007D053D /* DatePickView.swift */,
 				E53586A32A82019A007D053D /* LoactionView.swift */,
 				E53586A52A8201A1007D053D /* TimeScrollView.swift */,
+				E54787512A8BA5150097F2D2 /* ReadyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -436,7 +444,11 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+
+		
+
 		E547874F2A8AFF480097F2D2 /* Recovered References */ = {
+
 			isa = PBXGroup;
 			children = (
 				E53586AB2A820284007D053D /* File.swift */,
@@ -568,6 +580,7 @@
 				7B51C5B12A63F8120016B418 /* MyPageViewController.swift in Sources */,
 				E53586A22A82018F007D053D /* DatePickView.swift in Sources */,
 				7B51C5B12A63F8120016B418 /* MyPageViewController.swift in Sources */,
+				E54787522A8BA5150097F2D2 /* ReadyView.swift in Sources */,
 				E5DA6F882A83599200FC825F /* ProgressViewController.swift in Sources */,
 				7B9999042A852C6D0043C592 /* MainMenuCollectionViewCell.swift in Sources */,
 				E593AAAB2A7EA0AD00FC918A /* TimeScrollViewController.swift in Sources */,
@@ -579,6 +592,7 @@
 				E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */,
 				E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */,
 				E53586A92A820251007D053D /* FlagView.swift in Sources */,
+				E54787542A8BA5250097F2D2 /* ReadyViewController.swift in Sources */,
 				7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */,
 				E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */,
 				E54787472A88D00D0097F2D2 /* FriendListViewController.swift in Sources */,
