@@ -56,9 +56,9 @@ final class ProgressView: BaseUIView {
         return stackview
     }()
     
-    lazy var modalButton: BaseFillButton = {
-        let button = BaseFillButton()
-        button.setTitle("나와라 모달!", for: .normal)
+    lazy var modalButton: BaseEmptyButton = {
+        let button = BaseEmptyButton()
+        button.setTitle("약속 리스트", for: .normal)
         button.isEnabled = true
         return button
     }()
