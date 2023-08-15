@@ -18,12 +18,6 @@ final class ProgressView: BaseUIView {
     
     let sectionCount = 14
     
-    lazy var nextButton: BaseFillButton = {
-        let button = BaseFillButton()
-        button.setTitle(TextLiterals.nextText, for: .normal)
-        button.isEnabled = true
-        return button
-    }()
     
     private let timeLabel: UILabel = {
         let label = UILabel()
@@ -62,9 +56,9 @@ final class ProgressView: BaseUIView {
         return stackview
     }()
     
-    lazy var modalButton: BaseFillButton = {
-        let button = BaseFillButton()
-        button.setTitle("나와라 모달!", for: .normal)
+    lazy var modalButton: BaseEmptyButton = {
+        let button = BaseEmptyButton()
+        button.setTitle("약속 리스트", for: .normal)
         button.isEnabled = true
         return button
     }()
@@ -79,7 +73,6 @@ final class ProgressView: BaseUIView {
                          collectionView,
                          indicatorImageView,
                          stackview,
-                         nextButton,
                          modalButton)
     }
     
@@ -92,13 +85,8 @@ final class ProgressView: BaseUIView {
             $0.top.equalTo(collectionView.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(25)
         }
-        nextButton.snp.makeConstraints {
-            $0.bottom.equalTo(safeAreaLayoutGuide).inset(21)
-            $0.horizontalEdges.equalToSuperview().inset(25)
-            $0.height.equalTo(49)
-        }
         modalButton.snp.makeConstraints { make in
-            make.bottom.equalTo(nextButton.snp.top).offset(-40)
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(21)
             make.horizontalEdges.equalToSuperview().inset(25)
             make.height.equalTo(49)
         }
@@ -106,7 +94,7 @@ final class ProgressView: BaseUIView {
             make.trailing.equalTo(safeAreaLayoutGuide).inset(10)
             make.leading.equalTo(safeAreaLayoutGuide).inset(20)
             make.top.equalTo(timeLabel.snp.bottom)
-            make.bottom.equalTo(nextButton.snp.top).offset(-160)
+            make.bottom.equalTo(modalButton.snp.top).offset(-160)
         }
         indicatorImageView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(40)
