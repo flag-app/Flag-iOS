@@ -1,36 +1,38 @@
 //
-//  SetNameView.swift
+//  ReadyView.swift
 //  Flag-iOS
 //
-//  Created by 성현주 on 2023/08/05.
+//  Created by 성현주 on 2023/08/15.
 //
+
 import UIKit
 
-final class SetNameView: BaseUIView {
+final class ReadyView: BaseUIView {
+    
+    // MARK: - Properties
     
     var time: Float = 0.0
     var timer: Timer?
     
     // MARK: - UI Components
     
+    let sectionCount = 14
+    
     lazy var nextButton: BaseFillButton = {
         let button = BaseFillButton()
-        button.setTitle(TextLiterals.nextText, for: .normal)
+        button.setTitle(TextLiterals.flagAlarmText, for: .normal)
         button.isEnabled = true
         return button
     }()
     
-    private let nameLabel: UILabel = {
+    private let ReadyLabel: UILabel = {
         let label = UILabel()
-        label.text = TextLiterals.flagNameText
-        label.font = .title1
+        label.text = TextLiterals.flagReadyText
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.font = .head1
+        label.alpha = 0.0
         return label
-    }()
-    
-    private let nameTextField: BaseUITextField = {
-        let textField = BaseUITextField()
-        textField.placeholder = TextLiterals.flagNameHintText
-        return textField
     }()
     
     lazy var progressView: UIProgressView = {
@@ -44,26 +46,20 @@ final class SetNameView: BaseUIView {
     // MARK: - Custom Method
     
     override func setUI() {
-        self.addSubviews(nextButton,
-                         nameTextField,
-                         nameLabel,
+        self.addSubviews(ReadyLabel,
+                         nextButton,
                          progressView)
         progressAnimation()
     }
+    
     override func setLayout() {
+        ReadyLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
         nextButton.snp.makeConstraints {
             $0.bottom.equalTo(safeAreaLayoutGuide).inset(21)
             $0.horizontalEdges.equalToSuperview().inset(25)
             $0.height.equalTo(49)
-        }
-        nameLabel.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(40)
-            $0.leading.equalToSuperview().offset(25)
-        }
-        nameTextField.snp.makeConstraints {
-            $0.top.equalTo(nameLabel.snp.bottom).offset(7)
-            $0.horizontalEdges.equalToSuperview().inset(25)
-            $0.height.equalTo(41)
         }
         progressView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(10)
@@ -73,13 +69,22 @@ final class SetNameView: BaseUIView {
     
     func progressAnimation() {
         timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(setProgress), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.002, target: self, selector: #selector(setProgress), userInfo: nil, repeats: true)
     }
     
     @objc
     func setProgress() {
-        time += 0.25
+        time += 0.002
         progressView.setProgress(time, animated: true)
-        if time >= 0.20 { timer?.invalidate() }
+        if time >= 1.0 {
+            timer?.invalidate()
+            animationDidFinish()
+        }
     }
+    
+    func animationDidFinish() {
+        UIView.animate(withDuration: 1.0) {
+                    self.ReadyLabel.alpha = 1.0
+                }
+        }
 }
