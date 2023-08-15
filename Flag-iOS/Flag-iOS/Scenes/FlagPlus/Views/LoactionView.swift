@@ -11,6 +11,8 @@ import SnapKit
 
 class LoactionView: BaseUIView {
     
+    // MARK: - Properties
+    
     var time: Float = 0.0
     var timer: Timer?
     
