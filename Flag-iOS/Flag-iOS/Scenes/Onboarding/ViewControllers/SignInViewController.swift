@@ -40,8 +40,8 @@ class SignInViewController: BaseUIViewController {
     
     @objc
     func didTappedSignInButton() {
-        let flagViewController = FlagViewController()
-        self.navigationController?.pushViewController(flagViewController, animated: true)
+        let tabBarController = BaseTabBarController()
+        self.navigationController?.pushViewController(tabBarController, animated: true)
     }
     
 }
