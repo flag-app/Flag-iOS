@@ -32,4 +32,16 @@ class SignInViewController: BaseUIViewController {
         }
     }
     
+    // MARK: - Action Method
+    
+    override func addTarget() {
+        signInView.signInButton.addTarget(self, action: #selector(didTappedSignInButton), for: .touchUpInside)
+    }
+    
+    @objc
+    func didTappedSignInButton() {
+        let flagViewController = FlagViewController()
+        self.navigationController?.pushViewController(flagViewController, animated: true)
+    }
+    
 }
