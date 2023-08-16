@@ -67,6 +67,7 @@
 		E547874D2A8AC5AC0097F2D2 /* FriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547874C2A8AC5AC0097F2D2 /* FriendListCell.swift */; };
 		E54787522A8BA5150097F2D2 /* ReadyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787512A8BA5150097F2D2 /* ReadyView.swift */; };
 		E54787542A8BA5250097F2D2 /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787532A8BA5250097F2D2 /* ReadyViewController.swift */; };
+		E54787572A8CAA4C0097F2D2 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787562A8CAA4C0097F2D2 /* HeaderViewController.swift */; };
 		E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA982A7E1F9500FC918A /* SetNameViewController.swift */; };
 		E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA9C2A7E299500FC918A /* FriendsViewController.swift */; };
 		E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */; };
@@ -138,6 +139,7 @@
 		E547874C2A8AC5AC0097F2D2 /* FriendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCell.swift; sourceTree = "<group>"; };
 		E54787512A8BA5150097F2D2 /* ReadyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyView.swift; sourceTree = "<group>"; };
 		E54787532A8BA5250097F2D2 /* ReadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyViewController.swift; sourceTree = "<group>"; };
+		E54787562A8CAA4C0097F2D2 /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
 		E593AA982A7E1F9500FC918A /* SetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameViewController.swift; sourceTree = "<group>"; };
 		E593AA9C2A7E299500FC918A /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickViewController.swift; sourceTree = "<group>"; };
@@ -165,8 +167,6 @@
 			children = (
 				7B51C5582A61008A0016B418 /* Flag-iOS */,
 				7B51C5572A61008A0016B418 /* Products */,
-
-
 				E547874F2A8AFF480097F2D2 /* Recovered References */,
 			);
 			sourceTree = "<group>";
@@ -281,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				7B51C5B02A63F8120016B418 /* MyPageViewController.swift */,
+				E54787562A8CAA4C0097F2D2 /* HeaderViewController.swift */,
 				E54787462A88D00D0097F2D2 /* FriendListViewController.swift */,
 				E54787482A88D0160097F2D2 /* TermsViewController.swift */,
 			);
@@ -444,11 +445,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-
-		
-
 		E547874F2A8AFF480097F2D2 /* Recovered References */ = {
-
 			isa = PBXGroup;
 			children = (
 				E53586AB2A820284007D053D /* File.swift */,
@@ -538,6 +535,7 @@
 				E547874B2A8AC1920097F2D2 /* FriendListView.swift in Sources */,
 				E53586A42A82019A007D053D /* LoactionView.swift in Sources */,
 				7B9999062A85306E0043C592 /* FlagViewController.swift in Sources */,
+				E54787572A8CAA4C0097F2D2 /* HeaderViewController.swift in Sources */,
 				7B51C55E2A61008A0016B418 /* ViewController.swift in Sources */,
 				7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */,
 				7B9998D92A7C56140043C592 /* SignUpViewController.swift in Sources */,

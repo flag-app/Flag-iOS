@@ -84,7 +84,7 @@ final class ReadyView: BaseUIView {
     
     func animationDidFinish() {
         UIView.animate(withDuration: 1.0) {
-                    self.ReadyLabel.alpha = 1.0
+            self.ReadyLabel.alpha = 1.0
                 }
         }
 }

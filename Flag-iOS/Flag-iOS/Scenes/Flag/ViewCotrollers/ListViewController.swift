@@ -20,6 +20,9 @@ final class ListViewController: BaseUIViewController {
     let progressViewController = ProgressViewController()
     weak var delegate: ListViewControllerDelegate?
     
+    //더미
+    let sections = ["참여 가능 인원 5명","참여 가능 인원 4명"]
+    
     // MARK: - UI Components
 
     // MARK: - Life Cycle
@@ -72,7 +75,7 @@ final class ListViewController: BaseUIViewController {
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -90,8 +93,15 @@ extension ListViewController: UITableViewDataSource {
         } else {
             cell.actionButton.setImage(uncheckImage, for: .normal)
         }
-        
         return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section]
     }
 }
 

@@ -13,7 +13,7 @@ final class MyPageView: BaseUIView {
     
     // MARK: - UI Components
     
-    let tableview = UITableView(frame: .zero, style: .grouped)
+    let tableview = UITableView(frame: .zero, style: .plain)
     
     // MARK: - Custom Method
     override func setUI() {

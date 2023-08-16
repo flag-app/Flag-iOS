@@ -8,7 +8,8 @@
 import UIKit
 
 final class HeaderView: BaseUIView {
-//MARK: - porperties
+    
+    //MARK: - UI Components
     
     private let profileImage: UIImageView = {
         let imageView = UIImageView()
@@ -16,42 +17,37 @@ final class HeaderView: BaseUIView {
         return imageView
     }()
     
-    private let nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = .title1
-        label.text = "시리얼"
-        return label
+    lazy var nameButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("시리얼 >", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        return button
     }()
     
-//MARK: -Lifecycle
+    
+    //MARK: -Lifecycle
     
     override init(frame : CGRect){
         super.init(frame: frame)
-        configuerUI()
-        
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Helpers
+    //MARK: - Custom Method
     
-    func configuerUI(){
+    override func setUI(){
         addSubviews(profileImage,
-                    nameLabel)
+                    nameButton)
         
         profileImage.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(safeAreaLayoutGuide).inset(30)
         }
-        nameLabel.snp.makeConstraints { make in
+        nameButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(profileImage.snp.bottom).offset(20)
         }
-
-
-        
     }
 }

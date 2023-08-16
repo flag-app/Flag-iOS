@@ -11,7 +11,7 @@ final class MyPageViewController: BaseUIViewController {
     
     //MARK: - Properties
     
-    let myPageMenu = ["친구 목록" , "이용약관", "로그아웃" , "탈퇴하기" ]
+    let myPageMenu = ["친구 목록" , "이용약관", "로그아웃" , "탈퇴하기" ,"만든 사람들"]
     
     // MARK: - UI Components
     
@@ -84,8 +84,12 @@ extension MyPageViewController: UITableViewDelegate{
                 navigationController?.pushViewController(termsViewController, animated: true)
 //            case 2: // 로그아웃
 //            case 3: // 탈퇴하기
+//.           case 4: // 만든사람들
             default:
                 break
             }
         }
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "앱버전: 1.0.0"
+    }
 }
