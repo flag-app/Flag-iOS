@@ -59,7 +59,6 @@
 		E53586A42A82019A007D053D /* LoactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586A32A82019A007D053D /* LoactionView.swift */; };
 		E53586A62A8201A1007D053D /* TimeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586A52A8201A1007D053D /* TimeScrollView.swift */; };
 		E53586A92A820251007D053D /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586A82A820251007D053D /* FlagView.swift */; };
-		E53586AC2A820284007D053D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586AB2A820284007D053D /* File.swift */; };
 		E54787432A88CF550097F2D2 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787422A88CF550097F2D2 /* MyPageView.swift */; };
 		E54787452A88CF610097F2D2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787442A88CF610097F2D2 /* HeaderView.swift */; };
 		E54787472A88D00D0097F2D2 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787462A88D00D0097F2D2 /* FriendListViewController.swift */; };
@@ -162,6 +161,7 @@
 			children = (
 				7B51C5582A61008A0016B418 /* Flag-iOS */,
 				7B51C5572A61008A0016B418 /* Products */,
+				7B9999232A8AE2C80043C592 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -404,6 +404,14 @@
 			path = Proto;
 			sourceTree = "<group>";
 		};
+		7B9999232A8AE2C80043C592 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				E53586AB2A820284007D053D /* File.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		E535869A2A82015A007D053D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,9 +576,8 @@
 				E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */,
 				E53586A02A82017E007D053D /* FreindsView.swift in Sources */,
 				E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */,
-				E50CEE4B2A8776A600101E4B /* CustomTableViewCell.swift in Sources */,
 				E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */,
-				E53586AC2A820284007D053D /* File.swift in Sources */,
+				E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */,
 				E53586A92A820251007D053D /* FlagView.swift in Sources */,
 				7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */,
 				E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */,
