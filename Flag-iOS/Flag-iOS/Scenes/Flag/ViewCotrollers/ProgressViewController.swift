@@ -43,6 +43,11 @@ final class ProgressViewController: BaseUIViewController {
     
     // MARK: - Life Cycle
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presentModalViewController()
+    }
+    
     // MARK: - Custom Method
     
     override func setUI() {
@@ -60,7 +65,6 @@ final class ProgressViewController: BaseUIViewController {
     }
     
     override func addTarget() {
-        progressView.nextButton.addTarget(self, action: #selector(didTappedNextButton), for: .touchUpInside)
         progressView.modalButton.addTarget(self, action: #selector(presentModalBtnTap), for: .touchUpInside)
     }
     
@@ -73,25 +77,30 @@ final class ProgressViewController: BaseUIViewController {
     @objc
     func didTappedNextButton() {
         let homeVC = BaseTabBarController()
-        self.navigationController?.pushViewController(homeVC, animated: true)
+        navigationController?.pushViewController(homeVC, animated: true)
+    }
+
+    @objc
+    func presentModalBtnTap() {
+        presentModal()
     }
     
-    @objc
-    private func presentModalBtnTap() {
-        
+    
+    func presentModal(){
         let vc = ListViewController()
-        
+        vc.delegate = self
         vc.modalPresentationStyle = .pageSheet
-        
         if let sheet = vc.sheetPresentationController {
-            
             sheet.detents = [.medium(), .large()]
             sheet.delegate = self
             sheet.prefersGrabberVisible = true
-            
         }
-        
         present(vc, animated: true, completion: nil)
+    }
+    
+
+    private func presentModalViewController() {
+        presentModal()
     }
     
     func categorizeNumbers() {
@@ -104,17 +113,6 @@ final class ProgressViewController: BaseUIViewController {
         }
         let borderNumber = allUserNumber/5
         for (element, count) in frequencyDict {
-//            if count == 1 {
-//                one.append(element)
-//            } else if count == 2 {
-//                two.append(element)
-//            } else if count == 3 {
-//                three.append(element)
-//            }else if count == 4 {
-//                four.append(element)
-//            }else if count == 5 {
-//                five.append(element)
-//            }
             switch count{
             case 0...borderNumber: one.append(element)
             case borderNumber...borderNumber*2: two.append(element)
@@ -226,5 +224,18 @@ extension ProgressViewController: UICollectionViewDelegate {
 
 extension ProgressViewController: UISheetPresentationControllerDelegate {
     func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
+    }
+}
+
+extension ProgressViewController: ListViewControllerDelegate {
+    func didDismissModal(with information: Int?) {
+        if let info = information {
+            print("모달로부터 전달된 리스트: \(info)")
+        }
+        //살짝 에니메이션
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            let homeVC = BaseTabBarController()
+            self.navigationController?.pushViewController(homeVC, animated: true)
+        }
     }
 }

@@ -8,6 +8,11 @@ import UIKit
 
 final class FriendsNameView: BaseUIView {
     
+    // MARK: - Properties
+    
+    var time: Float = 0.0
+    var timer: Timer?
+    
     // MARK: - UI Components
     
     lazy var nextButton: BaseFillButton = {
@@ -30,13 +35,22 @@ final class FriendsNameView: BaseUIView {
         return textField
     }()
     
+    lazy var progressView: UIProgressView = {
+        let view = UIProgressView()
+        view.trackTintColor = .gray200
+        view.progressTintColor = .purple300
+        view.progress = 0.16
+        return view
+    }()
+    
     // MARK: - Custom Method
     
     override func setUI() {
         self.addSubviews(nextButton,
                          nameTextField,
-                         nameLabel)
-        
+                         nameLabel,
+                         progressView)
+        progressAnimation()
     }
     override func setLayout() {
         nextButton.snp.makeConstraints {
@@ -53,5 +67,21 @@ final class FriendsNameView: BaseUIView {
             $0.horizontalEdges.equalToSuperview().inset(25)
             $0.height.equalTo(41)
         }
+        progressView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).offset(10)
+            make.leading.trailing.equalToSuperview().inset(25)
+        }
+    }
+    
+    func progressAnimation() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(setProgress), userInfo: nil, repeats: true)
+    }
+    
+    @objc
+    func setProgress() {
+        time += 0.05
+        progressView.setProgress(time, animated: true)
+        if time >= 0.40 { timer?.invalidate() }
     }
 }

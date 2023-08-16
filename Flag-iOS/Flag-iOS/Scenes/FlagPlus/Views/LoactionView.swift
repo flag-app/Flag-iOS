@@ -11,6 +11,11 @@ import SnapKit
 
 class LoactionView: BaseUIView {
     
+    // MARK: - Properties
+    
+    var time: Float = 0.0
+    var timer: Timer?
+    
     // MARK: - UI Components
     
     private let locationLabel: UILabel = {
@@ -44,6 +49,14 @@ class LoactionView: BaseUIView {
         return button
     }()
     
+    lazy var progressView: UIProgressView = {
+        let view = UIProgressView()
+        view.trackTintColor = .gray200
+        view.progressTintColor = .purple300
+        view.progress = 0.60
+        return view
+    }()
+    
     // MARK: - Custom Method
     
     override func setUI() {
@@ -51,7 +64,8 @@ class LoactionView: BaseUIView {
                          locationTextField,
                          memoLabel,
                          memoTextField,
-                         nextButton)
+                         nextButton,
+                         progressView)
     }
     
     override func setLayout() {
@@ -78,6 +92,9 @@ class LoactionView: BaseUIView {
             $0.horizontalEdges.equalToSuperview().inset(25)
             $0.height.equalTo(49)
         }
+        progressView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).offset(10)
+            make.leading.trailing.equalToSuperview().inset(25)
+        }
     }
-    
 }

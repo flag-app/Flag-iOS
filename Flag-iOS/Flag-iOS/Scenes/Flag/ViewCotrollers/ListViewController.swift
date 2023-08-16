@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol ListViewControllerDelegate: AnyObject {
+    func didDismissModal(with information: Int?)
+}
+
 final class ListViewController: BaseUIViewController {
     
     // MARK: - Properties
     
     private let listView = ListView()
     var selectedCellIndex: Int? = nil
+    let progressViewController = ProgressViewController()
+    weak var delegate: ListViewControllerDelegate?
     
     // MARK: - UI Components
 
@@ -41,9 +47,10 @@ final class ListViewController: BaseUIViewController {
     
     @objc
     func tap() {
-        print("tap")
+        delegate?.didDismissModal(with: selectedCellIndex)
+        dismiss(animated: true, completion: nil)
     }
-    
+
     @objc
     func buttonTapped(_ sender: UIButton) {
         guard let cell = sender.superview?.superview as? CustomTableViewCell,
