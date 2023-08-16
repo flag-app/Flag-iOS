@@ -32,14 +32,4 @@ class SignInViewController: BaseUIViewController {
         }
     }
     
-    override func addTarget() {
-        signInView.signUpButton.addTarget(self, action: #selector(didTappedSignUpButton), for: .touchUpInside)
-    }
-    
-    @objc
-    func didTappedSignUpButton() {
-        let signUpViewController = SignUpViewController()
-        self.navigationController?.pushViewController(signUpViewController, animated: true)
-    }
-    
 }

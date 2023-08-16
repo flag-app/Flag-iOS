@@ -30,6 +30,7 @@ class OnboardingViewController: BaseUIViewController {
     
     override func addTarget() {
         onboardingView.signInButton.addTarget(self, action: #selector(didTappedSignInButton), for: .touchUpInside)
+        onboardingView.signUpButton.addTarget(self, action: #selector(didTappedSignUpButton), for: .touchUpInside)
     }
     
     @objc
@@ -38,5 +39,10 @@ class OnboardingViewController: BaseUIViewController {
         self.navigationController?.pushViewController(signInViewController, animated: true)
     }
     
+    @objc
+    func didTappedSignUpButton() {
+        let signUpViewController = SignUpViewController()
+        self.navigationController?.pushViewController(signUpViewController, animated: true)
+    }
     
 }
