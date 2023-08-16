@@ -12,7 +12,7 @@ import SnapKit
 class SignInView: BaseUIView {
     
     // MARK: - UI Components
-
+    
     private let emailInputTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.inputEmailText
@@ -35,12 +35,12 @@ class SignInView: BaseUIView {
     }()
     
     // MARK: - Custom Method
-
+    
     override func setUI() {
         self.addSubviews(emailInputTextField,
                          passwordInputTextField,
                          signInButton)
-
+        
     }
     
     override func setLayout() {
@@ -59,5 +59,22 @@ class SignInView: BaseUIView {
             $0.horizontalEdges.equalToSuperview().inset(25)
             $0.height.equalTo(49)
         }
+    }
+    
+    // FIXME: - addTarget 해당 함수 구현
+    
+    func addTarget() {
+        emailInputTextField.addTarget(self, action: #selector(emailInputChanged), for: .editingChanged)
+        passwordInputTextField.addTarget(self, action: #selector(passwordInputChanged), for: .editingChanged)
+    }
+    
+    @objc
+    func emailInputChanged(_ textField: UITextField) {
+        
+    }
+    
+    @objc
+    func passwordInputChanged(_ textField: UITextField) {
+        
     }
 }
