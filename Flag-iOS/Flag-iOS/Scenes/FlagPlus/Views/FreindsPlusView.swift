@@ -1,12 +1,12 @@
 //
-//  FriendsNameView.swift
+//  FriendsPlusView.swift
 //  Flag-iOS
 //
 //  Created by 성현주 on 2023/08/05.
 //
 import UIKit
 
-final class FriendsNameView: BaseUIView {
+final class FriendsPlusView: BaseUIView {
     
     // MARK: - Properties
     
@@ -43,11 +43,10 @@ final class FriendsNameView: BaseUIView {
         return view
     }()
     
-    //수정필요
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = 60
-        tableView.register(FriendListCell.self, forCellReuseIdentifier: "FriendListCell")
+        tableView.register(FriendsPlusCell.self, forCellReuseIdentifier: "FriendsPlusCell")
         return tableView
     }()
     

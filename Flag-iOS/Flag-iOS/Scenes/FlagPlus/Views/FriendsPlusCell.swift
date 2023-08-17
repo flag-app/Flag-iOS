@@ -1,27 +1,32 @@
 //
-//  cell.swift
+//  FriendsPlusCell.swift
 //  Flag-iOS
 //
-//  Created by 성현주 on 2023/08/12.
+//  Created by 성현주 on 2023/08/17.
 //
 
 import UIKit
 
 import SnapKit
 
-class CustomTableViewCell: UITableViewCell {
+class FriendsPlusCell: UITableViewCell {
     
     // MARK: - Properties
-    
    
     // MARK: - UI Components
     
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
    
+    private let profileImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = ImageLiterals.profileImage
+        return imageView
+    }()
+    
     lazy var actionButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "check"), for: .normal) 
+        button.setImage(UIImage(named: "check"), for: .normal)
         return button
     }()
     
@@ -34,7 +39,7 @@ class CustomTableViewCell: UITableViewCell {
         }
     
     // MARK: - Custom Method
-
+    
     override func prepareForReuse() {
             super.prepareForReuse()
             actionButton.setImage(UIImage(named: "check"), for: .normal)
@@ -43,27 +48,30 @@ class CustomTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        titleLabel.font = .head2
-        subtitleLabel.font = .subTitle3
+        titleLabel.font = .subTitle3
+        subtitleLabel.font = .body2
         
-        contentView.addSubviews(actionButton,
-                                titleLabel,
-                                subtitleLabel)
-    
-        
-        actionButton.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(16)
-            make.top.equalToSuperview().offset(8)
-        }
+        contentView.addSubviews(titleLabel,
+                                subtitleLabel,
+                                profileImage,
+                                actionButton)
         
         titleLabel.snp.makeConstraints { make in
-            make.left.equalTo(actionButton.snp.right).offset(20)
+            make.leading.equalTo(profileImage.snp.trailing).offset(20)
             make.top.equalToSuperview().offset(8)
         }
-        
         subtitleLabel.snp.makeConstraints { make in
-            make.left.equalTo(actionButton.snp.right).offset(20)
+            make.leading.equalTo(profileImage.snp.trailing).offset(20)
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
+        }
+        profileImage.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().inset(25)
+            make.width.height.equalTo(36)
+        }
+        actionButton.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().inset(343)
         }
     }
 
@@ -71,3 +79,5 @@ class CustomTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+
