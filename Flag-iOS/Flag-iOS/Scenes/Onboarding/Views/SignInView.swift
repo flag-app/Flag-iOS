@@ -24,15 +24,27 @@ class SignInView: BaseUIView {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.inputPasswordText
         textField.addLeftImage(image: ImageLiterals.password)
+        textField.isSecureTextEntry = true
         return textField
     }()
     
     lazy var signInButton: BaseFillButton = {
         let button = BaseFillButton()
         button.setTitle(TextLiterals.signIn, for: .normal)
-        button.isEnabled = true
         return button
     }()
+    
+    // MARK: - Life Cycle
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        addTarget()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Custom Method
     
@@ -60,21 +72,19 @@ class SignInView: BaseUIView {
             $0.height.equalTo(49)
         }
     }
-    
-    // FIXME: - addTarget 해당 함수 구현
-    
+        
     func addTarget() {
-        emailInputTextField.addTarget(self, action: #selector(emailInputChanged), for: .editingChanged)
-        passwordInputTextField.addTarget(self, action: #selector(passwordInputChanged), for: .editingChanged)
+        emailInputTextField.addTarget(self, action: #selector(isChangedValue), for: .editingChanged)
+        passwordInputTextField.addTarget(self, action: #selector(isChangedValue), for: .editingChanged)
     }
     
     @objc
-    func emailInputChanged(_ textField: UITextField) {
-        
+    func isChangedValue() {
+        if let userEmail = emailInputTextField.text, !userEmail.isEmpty, let userPassword = passwordInputTextField.text, !userPassword.isEmpty {
+            signInButton.isEnabled = true
+        } else {
+            signInButton.isEnabled = false
+        }
     }
     
-    @objc
-    func passwordInputChanged(_ textField: UITextField) {
-        
-    }
 }
