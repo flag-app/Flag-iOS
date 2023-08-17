@@ -68,17 +68,6 @@ extension MyPageViewController: UITableViewDataSource {
 
 extension MyPageViewController: UITableViewDelegate{
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let header  = HeaderView()
-//
-//        header.backgroundColor = .white
-//        return header
-//    }
-//    
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 200
-//    }
-//    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
             

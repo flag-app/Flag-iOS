@@ -43,15 +43,25 @@ final class FriendsNameView: BaseUIView {
         return view
     }()
     
+    //수정필요
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.rowHeight = 60
+        tableView.register(FriendListCell.self, forCellReuseIdentifier: "FriendListCell")
+        return tableView
+    }()
+    
     // MARK: - Custom Method
     
     override func setUI() {
         self.addSubviews(nextButton,
                          nameTextField,
                          nameLabel,
-                         progressView)
+                         progressView,
+                         tableView)
         progressAnimation()
     }
+    
     override func setLayout() {
         nextButton.snp.makeConstraints {
             $0.bottom.equalTo(safeAreaLayoutGuide).inset(21)
@@ -70,6 +80,11 @@ final class FriendsNameView: BaseUIView {
         progressView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(10)
             make.leading.trailing.equalToSuperview().inset(25)
+        }
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(nameTextField.snp.bottom).offset(22)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(nextButton.snp.top).offset(-23)
         }
     }
     
