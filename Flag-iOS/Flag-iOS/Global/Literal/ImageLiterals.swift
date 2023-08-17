@@ -23,8 +23,6 @@ enum ImageLiterals {
     
     static var onboardingLogo: UIImage { .load(name: "OnboardingLogo")}
     static var userProfile: UIImage { .load(name: "userProfile")}
-    static var email: UIImage { .load(name: "email")}
-    static var password: UIImage { .load(name: "password")}
     
     // MARK: Flag
     

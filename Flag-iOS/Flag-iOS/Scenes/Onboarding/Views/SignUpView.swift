@@ -12,7 +12,6 @@ import SnapKit
 class SignUpView: BaseUIView {
     
     // MARK: - Properties
-    
     private var userEmail: String = ""
     private var userPassword: String = ""
     private var userDoubleCheckPassword: String = ""
@@ -20,7 +19,6 @@ class SignUpView: BaseUIView {
     private let leadingWidth = 25
     
     // MARK: - UI Components
-    
     private let signUpTitleLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.signUpAlertText
@@ -94,7 +92,7 @@ class SignUpView: BaseUIView {
         return button
     }()
     
-    // MARK: - Life Cycle
+    // MARK: - Custom Method
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -104,8 +102,6 @@ class SignUpView: BaseUIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    // MARK: - Custom Method
     
     override func setUI() {
         self.addSubviews(signUpTitleLabel,
@@ -175,7 +171,7 @@ class SignUpView: BaseUIView {
             $0.height.equalTo(49)
         }
     }
- 
+    
     func addTarget() {
         nicknameTextField.addTarget(self, action: #selector(nicknameInputChanged), for: .editingChanged)
     }
