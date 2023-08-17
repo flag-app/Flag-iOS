@@ -54,7 +54,6 @@ final class FlagViewController: BaseUIViewController {
         flagView.flagCollectionView.dataSource = self
         flagView.flagCollectionView.delegate = self
         flagView.menuBar.delegate = self
-//        flagView.FlagCollectionViewCell.delegate = self
     }
     
     func setCollectionView() {
@@ -104,8 +103,8 @@ extension FlagViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         // FIXME: 레이아웃 수정 필요
-//        return CGSize(width: view.frame.width, height: view.frame.height)
-        return CGSize(width: view.frame.width, height: 560)
+    
+        return CGSize(width: view.frame.width, height: 680)
     }
     
     func collectionView(_ collectionView: UICollectionView,
