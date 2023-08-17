@@ -42,7 +42,7 @@ final class FlagView: BaseUIView {
         flagCollectionView.snp.makeConstraints {
             $0.top.equalTo(menuBar.snp.bottom)
             $0.horizontalEdges.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
 }

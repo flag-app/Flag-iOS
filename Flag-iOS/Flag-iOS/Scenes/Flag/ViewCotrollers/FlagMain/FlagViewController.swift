@@ -12,8 +12,6 @@ final class FlagViewController: BaseUIViewController {
     
     // MARK: - Properties
     
-    let cellId = "cellId"
-
     private var currentIndex: Int = 0 {
            didSet {
                changeItem(index: currentIndex)
@@ -103,9 +101,7 @@ extension FlagViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // FIXME: 레이아웃 수정 필요
-    
-        return CGSize(width: view.frame.width, height: 680)
+        return CGSize(width: view.frame.width, height: view.safeAreaLayoutGuide.layoutFrame.height - flagView.menuBar.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView,
