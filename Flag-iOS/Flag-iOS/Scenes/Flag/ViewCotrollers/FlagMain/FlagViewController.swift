@@ -155,11 +155,12 @@ extension FlagViewController: FlagCollectionViewCellDelegate {
     func cellForRow(at indexPath: IndexPath, in tableView: UITableView) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FlagTableViewCell.identifier,
                                                  for: indexPath)
-        cell.selectionStyle = .none
         return cell
     }
     
     func didSelectRowAt(at indexPath: IndexPath, in tableView: UITableView) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
         let vc = FlagInfoViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
