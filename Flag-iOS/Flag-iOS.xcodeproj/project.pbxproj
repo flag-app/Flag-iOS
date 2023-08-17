@@ -166,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				7B51C5582A61008A0016B418 /* Flag-iOS */,
-				7B51C5672A61008C0016B418 /* Info.plist */,
 				7B51C5572A61008A0016B418 /* Products */,
 				7B9999232A8AE2C80043C592 /* Recovered References */,
 				E547874F2A8AFF480097F2D2 /* Recovered References */,
@@ -423,6 +422,7 @@
 		7BC45F892A8E18B700EAC144 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				7B51C5672A61008C0016B418 /* Info.plist */,
 				7BC45F8A2A8E18C700EAC144 /* Configurations */,
 			);
 			path = Settings;
@@ -811,7 +811,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HZ8WU7PA4J;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Flag-iOS/Info.plist";
+				INFOPLIST_FILE = "Flag-iOS/Settings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -843,7 +843,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HZ8WU7PA4J;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Flag-iOS/Info.plist";
+				INFOPLIST_FILE = "Flag-iOS/Settings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
