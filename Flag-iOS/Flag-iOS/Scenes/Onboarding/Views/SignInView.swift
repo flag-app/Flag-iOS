@@ -12,16 +12,18 @@ import SnapKit
 class SignInView: BaseUIView {
     
     // MARK: - UI Components
-
+    
     private let emailInputTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.inputEmailText
+        textField.addLeftImage(image: ImageLiterals.email)
         return textField
     }()
     
     private let passwordInputTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.inputPasswordText
+        textField.addLeftImage(image: ImageLiterals.password)
         return textField
     }()
     
@@ -32,20 +34,13 @@ class SignInView: BaseUIView {
         return button
     }()
     
-    lazy var signUpButton: UIButton = {
-        let button = UIButton()
-        button.addTitleAttribute(title: TextLiterals.signUp, titleColor: .black, fontName: .body2)
-        return button
-    }()
-    
     // MARK: - Custom Method
-
+    
     override func setUI() {
         self.addSubviews(emailInputTextField,
                          passwordInputTextField,
-                         signInButton,
-                         signUpButton)
-
+                         signInButton)
+        
     }
     
     override func setLayout() {
@@ -64,10 +59,22 @@ class SignInView: BaseUIView {
             $0.horizontalEdges.equalToSuperview().inset(25)
             $0.height.equalTo(49)
         }
-        signUpButton.snp.makeConstraints {
-            $0.top.equalTo(signInButton.snp.bottom).offset(31)
-            $0.centerX.equalToSuperview()
-            $0.height.equalTo(26)
-        }
+    }
+    
+    // FIXME: - addTarget 해당 함수 구현
+    
+    func addTarget() {
+        emailInputTextField.addTarget(self, action: #selector(emailInputChanged), for: .editingChanged)
+        passwordInputTextField.addTarget(self, action: #selector(passwordInputChanged), for: .editingChanged)
+    }
+    
+    @objc
+    func emailInputChanged(_ textField: UITextField) {
+        
+    }
+    
+    @objc
+    func passwordInputChanged(_ textField: UITextField) {
+        
     }
 }

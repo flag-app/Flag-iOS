@@ -23,4 +23,12 @@ extension UITextField {
         layer.borderWidth = 1.0
         layer.cornerRadius = 9
     }
+    
+    /// 좌측 이미지 추가
+    func addLeftImage(image: UIImage) {
+        let leftImage = UIImageView(frame: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
+        leftImage.image = image
+        self.leftView = leftImage
+        self.leftViewMode = .always
+    }
 }
