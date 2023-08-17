@@ -30,7 +30,6 @@ final class FlagView: BaseUIView {
     override func setUI() {
         addSubviews(menuBar,
                     flagCollectionView)
-
     }
 
     override func setLayout() {
@@ -43,6 +42,9 @@ final class FlagView: BaseUIView {
             $0.top.equalTo(menuBar.snp.bottom)
             $0.horizontalEdges.equalToSuperview()
             $0.bottom.equalTo(safeAreaLayoutGuide)
+        }
+        menuBar.menuHorizontalBarView.snp.makeConstraints {
+            $0.width.equalToSuperview().multipliedBy(0.5)
         }
     }
 }
