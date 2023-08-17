@@ -159,6 +159,7 @@ extension FlagViewController: FlagCollectionViewCellDelegate {
     func cellForRow(at indexPath: IndexPath, in tableView: UITableView) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FlagTableViewCell.identifier,
                                                  for: indexPath)
+        cell.selectionStyle = .none
         return cell
     }
     
