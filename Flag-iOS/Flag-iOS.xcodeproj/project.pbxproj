@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B31F7FA2A8E7D8300D7D0CF /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7B31F7F92A8E7D8300D7D0CF /* Realm */; };
+		7B31F7FC2A8E7D8300D7D0CF /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7B31F7FB2A8E7D8300D7D0CF /* RealmSwift */; };
 		7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5592A61008A0016B418 /* AppDelegate.swift */; };
 		7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C55B2A61008A0016B418 /* SceneDelegate.swift */; };
 		7B51C5632A61008C0016B418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B51C5622A61008C0016B418 /* Assets.xcassets */; };
@@ -154,6 +156,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B31F7FC2A8E7D8300D7D0CF /* RealmSwift in Frameworks */,
+				7B31F7FA2A8E7D8300D7D0CF /* Realm in Frameworks */,
 				7B51C58B2A61261A0016B418 /* Moya in Frameworks */,
 				7B51C5882A61258B0016B418 /* SnapKit in Frameworks */,
 			);
@@ -544,6 +548,8 @@
 			packageProductDependencies = (
 				7B51C5872A61258B0016B418 /* SnapKit */,
 				7B51C58A2A61261A0016B418 /* Moya */,
+				7B31F7F92A8E7D8300D7D0CF /* Realm */,
+				7B31F7FB2A8E7D8300D7D0CF /* RealmSwift */,
 			);
 			productName = "Flag-iOS";
 			productReference = 7B51C5562A61008A0016B418 /* Flag-iOS.app */;
@@ -576,6 +582,7 @@
 			packageReferences = (
 				7B51C5862A61258B0016B418 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				7B51C5892A61261A0016B418 /* XCRemoteSwiftPackageReference "Moya" */,
+				7B31F7F82A8E7D8300D7D0CF /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 7B51C5572A61008A0016B418 /* Products */;
 			projectDirPath = "";
@@ -888,6 +895,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7B31F7F82A8E7D8300D7D0CF /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		7B51C5862A61258B0016B418 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -907,6 +922,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7B31F7F92A8E7D8300D7D0CF /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B31F7F82A8E7D8300D7D0CF /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		7B31F7FB2A8E7D8300D7D0CF /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B31F7F82A8E7D8300D7D0CF /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		7B51C5872A61258B0016B418 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7B51C5862A61258B0016B418 /* XCRemoteSwiftPackageReference "SnapKit" */;
