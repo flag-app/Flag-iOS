@@ -33,12 +33,19 @@ final class MyPageViewController: BaseUIViewController {
     }
     
     override func addTarget() {
-        
+        mypageView.nameButton.addTarget(self, action: #selector(didTappedNameButton), for: .touchUpInside)
     }
     
     override func setDelegate() {
         mypageView.tableview.delegate = self
         mypageView.tableview.dataSource = self
+    }
+    
+    @objc
+    func didTappedNameButton() {
+        //일단 terms뷰컨으로 넘아가게해뒀습니다 작업하실때 뷰컨추가후 수정해주세요!
+        let termsViewController = TermsViewController()
+        navigationController?.pushViewController(termsViewController, animated: true)
     }
     
 }
@@ -61,17 +68,17 @@ extension MyPageViewController: UITableViewDataSource {
 
 extension MyPageViewController: UITableViewDelegate{
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header  = HeaderView()
-
-        header.backgroundColor = .white
-        return header
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 200
-    }
-    
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let header  = HeaderView()
+//
+//        header.backgroundColor = .white
+//        return header
+//    }
+//    
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 200
+//    }
+//    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
             

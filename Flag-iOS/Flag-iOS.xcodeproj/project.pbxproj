@@ -60,14 +60,12 @@
 		E53586A62A8201A1007D053D /* TimeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586A52A8201A1007D053D /* TimeScrollView.swift */; };
 		E53586A92A820251007D053D /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586A82A820251007D053D /* FlagView.swift */; };
 		E54787432A88CF550097F2D2 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787422A88CF550097F2D2 /* MyPageView.swift */; };
-		E54787452A88CF610097F2D2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787442A88CF610097F2D2 /* HeaderView.swift */; };
 		E54787472A88D00D0097F2D2 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787462A88D00D0097F2D2 /* FriendListViewController.swift */; };
 		E54787492A88D0160097F2D2 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787482A88D0160097F2D2 /* TermsViewController.swift */; };
 		E547874B2A8AC1920097F2D2 /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547874A2A8AC1920097F2D2 /* FriendListView.swift */; };
 		E547874D2A8AC5AC0097F2D2 /* FriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547874C2A8AC5AC0097F2D2 /* FriendListCell.swift */; };
 		E54787522A8BA5150097F2D2 /* ReadyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787512A8BA5150097F2D2 /* ReadyView.swift */; };
 		E54787542A8BA5250097F2D2 /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787532A8BA5250097F2D2 /* ReadyViewController.swift */; };
-		E54787572A8CAA4C0097F2D2 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787562A8CAA4C0097F2D2 /* HeaderViewController.swift */; };
 		E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA982A7E1F9500FC918A /* SetNameViewController.swift */; };
 		E593AA9D2A7E299500FC918A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA9C2A7E299500FC918A /* FriendsViewController.swift */; };
 		E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */; };
@@ -132,14 +130,12 @@
 		E53586A82A820251007D053D /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
 		E53586AB2A820284007D053D /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		E54787422A88CF550097F2D2 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
-		E54787442A88CF610097F2D2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		E54787462A88D00D0097F2D2 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		E54787482A88D0160097F2D2 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		E547874A2A8AC1920097F2D2 /* FriendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
 		E547874C2A8AC5AC0097F2D2 /* FriendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCell.swift; sourceTree = "<group>"; };
 		E54787512A8BA5150097F2D2 /* ReadyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyView.swift; sourceTree = "<group>"; };
 		E54787532A8BA5250097F2D2 /* ReadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyViewController.swift; sourceTree = "<group>"; };
-		E54787562A8CAA4C0097F2D2 /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
 		E593AA982A7E1F9500FC918A /* SetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameViewController.swift; sourceTree = "<group>"; };
 		E593AA9C2A7E299500FC918A /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickViewController.swift; sourceTree = "<group>"; };
@@ -281,7 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				7B51C5B02A63F8120016B418 /* MyPageViewController.swift */,
-				E54787562A8CAA4C0097F2D2 /* HeaderViewController.swift */,
 				E54787462A88D00D0097F2D2 /* FriendListViewController.swift */,
 				E54787482A88D0160097F2D2 /* TermsViewController.swift */,
 			);
@@ -292,7 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				E54787422A88CF550097F2D2 /* MyPageView.swift */,
-				E54787442A88CF610097F2D2 /* HeaderView.swift */,
 				E547874A2A8AC1920097F2D2 /* FriendListView.swift */,
 				E547874C2A8AC5AC0097F2D2 /* FriendListCell.swift */,
 			);
@@ -535,7 +529,6 @@
 				E547874B2A8AC1920097F2D2 /* FriendListView.swift in Sources */,
 				E53586A42A82019A007D053D /* LoactionView.swift in Sources */,
 				7B9999062A85306E0043C592 /* FlagViewController.swift in Sources */,
-				E54787572A8CAA4C0097F2D2 /* HeaderViewController.swift in Sources */,
 				7B51C55E2A61008A0016B418 /* ViewController.swift in Sources */,
 				7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */,
 				7B9998D92A7C56140043C592 /* SignUpViewController.swift in Sources */,
@@ -597,7 +590,6 @@
 				7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */,
 				7B99991E2A8A97680043C592 /* FlagInfoView.swift in Sources */,
 				7B9998D12A7A9D9C0043C592 /* UITextField+.swift in Sources */,
-				E54787452A88CF610097F2D2 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
