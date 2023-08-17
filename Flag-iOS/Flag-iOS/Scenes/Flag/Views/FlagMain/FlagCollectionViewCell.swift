@@ -7,9 +7,17 @@
 
 import UIKit
 
+//protocol FlagCollectionViewCellDelegate: AnyObject {
+//    func didSelectRowInFlagCollectionViewCell(isConfirmed: Bool)
+//}
+
 protocol FlagCollectionViewCellDelegate: AnyObject {
-    func didSelectRowInFlagCollectionViewCell(isConfirmed: Bool)
+    func numberOfSections(in tableView: UITableView) -> Int
+    func numberOfRows(in tableView: UITableView) -> Int
+    func cellForRow(at indexPath: IndexPath, in tableView: UITableView) -> UITableViewCell
+    func didSelectRowAt(at indexPath: IndexPath, in tableView: UITableView)
 }
+
 
 class FlagCollectionViewCell: BaseCollectionViewCell {
     
@@ -64,22 +72,19 @@ class FlagCollectionViewCell: BaseCollectionViewCell {
 
 extension FlagCollectionViewCell: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return delegate?.numberOfSections(in: tableView) ?? 0
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return delegate?.numberOfRows(in: tableView) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FlagTableViewCell.identifier,
-                                                 for: indexPath)
-        return cell
+        return delegate?.cellForRow(at: indexPath, in: tableView) ?? FlagTableViewCell()
     }
 }
 
 extension FlagCollectionViewCell: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("didSelectRowAt")
-        delegate?.didSelectRowInFlagCollectionViewCell(isConfirmed: true)
+        delegate?.didSelectRowAt(at: indexPath, in: tableView)
     }
 }

@@ -85,7 +85,8 @@ extension FlagViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FlagCollectionViewCell.identifier,
-                                                      for: indexPath)
+                                                      for: indexPath) as! FlagCollectionViewCell
+        cell.delegate = self
         return cell
     }
 }
@@ -143,9 +144,31 @@ extension FlagViewController: HomeMenuBarDelegate {
     }
 }
 
+//extension FlagViewController: FlagCollectionViewCellDelegate {
+//    func didSelectRowInFlagCollectionViewCell(isConfirmed: Bool) {
+//        print("DDDDDDDDDDDD")
+//        let vc = FlagInfoViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
+//}
+
 extension FlagViewController: FlagCollectionViewCellDelegate {
-    func didSelectRowInFlagCollectionViewCell(isConfirmed: Bool) {
-        print("DDDDDDDDDDDD")
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    func numberOfRows(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func cellForRow(at indexPath: IndexPath, in tableView: UITableView) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: FlagTableViewCell.identifier,
+                                                 for: indexPath)
+        return cell
+    }
+    
+    func didSelectRowAt(at indexPath: IndexPath, in tableView: UITableView) {
         let vc = FlagInfoViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
