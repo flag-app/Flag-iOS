@@ -144,13 +144,7 @@ extension FlagViewController: HomeMenuBarDelegate {
     }
 }
 
-//extension FlagViewController: FlagCollectionViewCellDelegate {
-//    func didSelectRowInFlagCollectionViewCell(isConfirmed: Bool) {
-//        print("DDDDDDDDDDDD")
-//        let vc = FlagInfoViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
-//    }
-//}
+// MARK: - FlagCollectionViewCellDelegate
 
 extension FlagViewController: FlagCollectionViewCellDelegate {
     

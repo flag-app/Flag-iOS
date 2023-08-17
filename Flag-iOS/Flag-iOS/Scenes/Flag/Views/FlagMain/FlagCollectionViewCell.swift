@@ -7,17 +7,12 @@
 
 import UIKit
 
-//protocol FlagCollectionViewCellDelegate: AnyObject {
-//    func didSelectRowInFlagCollectionViewCell(isConfirmed: Bool)
-//}
-
 protocol FlagCollectionViewCellDelegate: AnyObject {
     func numberOfSections(in tableView: UITableView) -> Int
     func numberOfRows(in tableView: UITableView) -> Int
     func cellForRow(at indexPath: IndexPath, in tableView: UITableView) -> UITableViewCell
     func didSelectRowAt(at indexPath: IndexPath, in tableView: UITableView)
 }
-
 
 class FlagCollectionViewCell: BaseCollectionViewCell {
     
@@ -70,6 +65,8 @@ class FlagCollectionViewCell: BaseCollectionViewCell {
     }
 }
 
+// MARK: - UITableViewDataSource
+
 extension FlagCollectionViewCell: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return delegate?.numberOfSections(in: tableView) ?? 0
@@ -82,6 +79,8 @@ extension FlagCollectionViewCell: UITableViewDataSource {
         return delegate?.cellForRow(at: indexPath, in: tableView) ?? FlagTableViewCell()
     }
 }
+
+// MARK: - UITableViewDelegate
 
 extension FlagCollectionViewCell: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
