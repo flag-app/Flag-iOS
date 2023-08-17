@@ -181,11 +181,11 @@
 		7B51C5582A61008A0016B418 /* Flag-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7B51C5672A61008C0016B418 /* Info.plist */,
 				7BC45F892A8E18B700EAC144 /* Settings */,
 				7B51C5732A6103220016B418 /* Application */,
 				7B51C56F2A6102B10016B418 /* Scenes */,
 				7B51C56E2A6102A80016B418 /* Global */,
-				7B51C5672A61008C0016B418 /* Info.plist */,
 			);
 			path = "Flag-iOS";
 			sourceTree = "<group>";
