@@ -16,8 +16,6 @@ class testRealmViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-
         let jay = UserFriendList()
         jay.userName = "최지우"
         jay.userId = "jay"
@@ -30,11 +28,12 @@ class testRealmViewController: UIViewController {
             realm.add(jay)
             realm.add(hy)
         }
-//
+
         let savedFriendsList = realm.objects(UserFriendList.self)
         
         view.backgroundColor = .systemBackground
        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         print(savedFriendsList)
 //        try! realm.write {
 //            realm.deleteAll()
