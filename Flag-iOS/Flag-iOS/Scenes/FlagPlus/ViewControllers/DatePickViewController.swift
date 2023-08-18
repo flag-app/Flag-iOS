@@ -44,12 +44,12 @@ final class DatePickViewController: BaseUIViewController {
     
     @objc
     func didTappedNextButton() {
-        let homeVC = LocationViewController()
-        homeVC.selectedDates = selectedDates
-        homeVC.selcetedTime = datePickView.selcetedTime
-        homeVC.minTime = datePickView.minTime
+        let locationVC = LocationViewController()
+        locationVC.selectedDates = selectedDates
+        locationVC.selcetedTime = datePickView.selcetedTime
+        locationVC.minTime = datePickView.minTime
         _ = Calendar.current
-        self.navigationController?.pushViewController(homeVC, animated: true)
+        self.navigationController?.pushViewController(locationVC, animated: true)
     }
 }
 

@@ -111,8 +111,8 @@ final class TimeScrollViewController: BaseUIViewController {
     
     @objc
     func didTappedNextButton() {
-        let homeVC = ReadyViewController()
-        self.navigationController?.pushViewController(homeVC, animated: true)
+        let readyVC = ReadyViewController()
+        self.navigationController?.pushViewController(readyVC, animated: true)
     }
 }
 

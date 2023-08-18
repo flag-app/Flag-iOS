@@ -40,8 +40,8 @@ final class SetNameViewController: BaseUIViewController {
     
     @objc
     func didTappedNextButton() {
-        let homeVC = FriendsViewController()
-        self.navigationController?.pushViewController(homeVC, animated: true)
+        let friendsPlusVC = FriendsPlusViewController()
+        self.navigationController?.pushViewController(friendsPlusVC, animated: true)
     }
     
 }

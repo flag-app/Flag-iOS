@@ -13,12 +13,13 @@ class CustomTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-    let titleLabel = UILabel()
-    let subtitleLabel = UILabel()
    
     // MARK: - UI Components
+    
+    let dateAndTimeLabel = UILabel()
+    let possibleUserLabel = UILabel()
    
-    lazy var actionButton: UIButton = {
+    lazy var selectButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "check"), for: .normal) 
         return button
@@ -27,7 +28,7 @@ class CustomTableViewCell: UITableViewCell {
     var isButtonToggled = false {
             didSet {
                 let imageName = isButtonToggled ? "checkFill" : "check"
-                actionButton.setImage(UIImage(named: imageName), for: .normal)
+                selectButton.setImage(UIImage(named: imageName), for: .normal)
             }
 
         }
@@ -36,32 +37,33 @@ class CustomTableViewCell: UITableViewCell {
 
     override func prepareForReuse() {
             super.prepareForReuse()
-            actionButton.setImage(UIImage(named: "check"), for: .normal)
+            selectButton.setImage(UIImage(named: "check"), for: .normal)
         }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        titleLabel.font = .head2
-        subtitleLabel.font = .subTitle3
+        dateAndTimeLabel.font = .head2
+        possibleUserLabel.font = .subTitle3
         
-        contentView.addSubview(actionButton)
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(subtitleLabel)
+        contentView.addSubviews(selectButton,
+                                dateAndTimeLabel,
+                                possibleUserLabel)
+    
         
-        actionButton.snp.makeConstraints { make in
+        selectButton.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
             make.top.equalToSuperview().offset(8)
         }
         
-        titleLabel.snp.makeConstraints { make in
-            make.left.equalTo(actionButton.snp.right).offset(20)
+        dateAndTimeLabel.snp.makeConstraints { make in
+            make.left.equalTo(selectButton.snp.right).offset(20)
             make.top.equalToSuperview().offset(8)
         }
         
-        subtitleLabel.snp.makeConstraints { make in
-            make.left.equalTo(actionButton.snp.right).offset(20)
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+        possibleUserLabel.snp.makeConstraints { make in
+            make.left.equalTo(selectButton.snp.right).offset(20)
+            make.top.equalTo(dateAndTimeLabel.snp.bottom).offset(10)
         }
     }
 

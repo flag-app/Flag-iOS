@@ -74,7 +74,7 @@ enum TextLiterals {
     static let flagMinTimeSix: String = "최소 6시간"
     static let flagMinTimeTextSix: String = "최소 6시간은 만나야 해요"
     static let flagReadyText: String = "모든 준비가 완료되었어요!\n친구들에게 약속 신청 알림을 보낼까요?"
-    static let flagAlarmText: String = "알람 보내기"
+    static let flagAlarmText: String = "알림 보내기"
 
 
    

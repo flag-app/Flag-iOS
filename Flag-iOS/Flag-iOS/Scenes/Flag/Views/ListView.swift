@@ -59,7 +59,7 @@ final class ListView: BaseUIView {
         }
         tableView.snp.makeConstraints { make in
             make.top.equalTo(listTitleLabel.snp.bottom).offset(15)
-            make.leading.trailing.equalToSuperview()
+            make.horizontalEdges.equalToSuperview()
             make.bottom.equalTo(confirmButton.snp.top).offset(-20)
         }
     }

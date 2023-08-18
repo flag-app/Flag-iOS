@@ -41,11 +41,11 @@ class LocationViewController: BaseUIViewController {
     
     @objc
     func didTappedNextButton() {
-        let homeVC = TimeScrollViewController()
-        homeVC.selectedDates = selectedDates
-        homeVC.selcetedTime = selcetedTime
-        homeVC.minTime = minTime
-        self.navigationController?.pushViewController(homeVC, animated: true)
+        let timeScrollVC = TimeScrollViewController()
+        timeScrollVC.selectedDates = selectedDates
+        timeScrollVC.selcetedTime = selcetedTime
+        timeScrollVC.minTime = minTime
+        self.navigationController?.pushViewController(timeScrollVC, animated: true)
     }
     
 }
