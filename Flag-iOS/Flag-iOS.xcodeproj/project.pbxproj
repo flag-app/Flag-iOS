@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B31F7FA2A8E7D8300D7D0CF /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7B31F7F92A8E7D8300D7D0CF /* Realm */; };
+		7B31F7FC2A8E7D8300D7D0CF /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7B31F7FB2A8E7D8300D7D0CF /* RealmSwift */; };
+		7B31F8002A8E7E6700D7D0CF /* UserFriendListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F7FF2A8E7E6700D7D0CF /* UserFriendListDTO.swift */; };
+		7B31F8022A8E7EB900D7D0CF /* testRealmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8012A8E7EB900D7D0CF /* testRealmViewController.swift */; };
 		7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5592A61008A0016B418 /* AppDelegate.swift */; };
 		7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C55B2A61008A0016B418 /* SceneDelegate.swift */; };
 		7B51C5632A61008C0016B418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B51C5622A61008C0016B418 /* Assets.xcassets */; };
@@ -78,6 +82,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B31F7FF2A8E7E6700D7D0CF /* UserFriendListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFriendListDTO.swift; sourceTree = "<group>"; };
+		7B31F8012A8E7EB900D7D0CF /* testRealmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testRealmViewController.swift; sourceTree = "<group>"; };
 		7B51C5562A61008A0016B418 /* Flag-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flag-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B51C5592A61008A0016B418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B51C55B2A61008A0016B418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +160,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B31F7FC2A8E7D8300D7D0CF /* RealmSwift in Frameworks */,
+				7B31F7FA2A8E7D8300D7D0CF /* Realm in Frameworks */,
 				7B51C58B2A61261A0016B418 /* Moya in Frameworks */,
 				7B51C5882A61258B0016B418 /* SnapKit in Frameworks */,
 			);
@@ -162,6 +170,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B31F7FD2A8E7DE000D7D0CF /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				7B31F7FE2A8E7E2B00D7D0CF /* RealmDTO */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		7B31F7FE2A8E7E2B00D7D0CF /* RealmDTO */ = {
+			isa = PBXGroup;
+			children = (
+				7B31F7FF2A8E7E6700D7D0CF /* UserFriendListDTO.swift */,
+				7B31F8012A8E7EB900D7D0CF /* testRealmViewController.swift */,
+			);
+			path = RealmDTO;
+			sourceTree = "<group>";
+		};
 		7B51C54D2A61008A0016B418 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +208,7 @@
 		7B51C5582A61008A0016B418 /* Flag-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7B31F7FD2A8E7DE000D7D0CF /* Realm */,
 				7BC45F8D2A8E1A1100EAC144 /* Network */,
 				7BC45F892A8E18B700EAC144 /* Settings */,
 				7B51C5732A6103220016B418 /* Application */,
@@ -544,6 +570,8 @@
 			packageProductDependencies = (
 				7B51C5872A61258B0016B418 /* SnapKit */,
 				7B51C58A2A61261A0016B418 /* Moya */,
+				7B31F7F92A8E7D8300D7D0CF /* Realm */,
+				7B31F7FB2A8E7D8300D7D0CF /* RealmSwift */,
 			);
 			productName = "Flag-iOS";
 			productReference = 7B51C5562A61008A0016B418 /* Flag-iOS.app */;
@@ -576,6 +604,7 @@
 			packageReferences = (
 				7B51C5862A61258B0016B418 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				7B51C5892A61261A0016B418 /* XCRemoteSwiftPackageReference "Moya" */,
+				7B31F7F82A8E7D8300D7D0CF /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 7B51C5572A61008A0016B418 /* Products */;
 			projectDirPath = "";
@@ -603,6 +632,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B31F8002A8E7E6700D7D0CF /* UserFriendListDTO.swift in Sources */,
 				7B51C5AB2A63F6650016B418 /* BaseTabBarController.swift in Sources */,
 				E547874B2A8AC1920097F2D2 /* FriendListView.swift in Sources */,
 				E53586A42A82019A007D053D /* LoactionView.swift in Sources */,
@@ -637,6 +667,7 @@
 				7B9999222A8ABB2B0043C592 /* UITextView+.swift in Sources */,
 				7B51C5802A6124600016B418 /* TextLiterals.swift in Sources */,
 				7B9998CF2A7A9BEF0043C592 /* SignInViewController.swift in Sources */,
+				7B31F8022A8E7EB900D7D0CF /* testRealmViewController.swift in Sources */,
 				E50CEE492A8768AD00101E4B /* ListViewController.swift in Sources */,
 				7B9998D32A7AA0330043C592 /* SignInView.swift in Sources */,
 				7B9999182A8692780043C592 /* FlagCollectionViewCell.swift in Sources */,
@@ -888,6 +919,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7B31F7F82A8E7D8300D7D0CF /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		7B51C5862A61258B0016B418 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -907,6 +946,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7B31F7F92A8E7D8300D7D0CF /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B31F7F82A8E7D8300D7D0CF /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		7B31F7FB2A8E7D8300D7D0CF /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B31F7F82A8E7D8300D7D0CF /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		7B51C5872A61258B0016B418 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7B51C5862A61258B0016B418 /* XCRemoteSwiftPackageReference "SnapKit" */;
