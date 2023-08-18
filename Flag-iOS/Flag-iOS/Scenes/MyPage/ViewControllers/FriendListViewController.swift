@@ -31,7 +31,7 @@ final class FriendListViewController: BaseUIViewController {
     }
     
     override func addTarget() {
-        friendListView.searchButton.addTarget(self, action: #selector(tap), for: .touchUpInside)
+        friendListView.searchButton.addTarget(self, action: #selector(didTappedFriendSearchButton), for: .touchUpInside)
     }
     
     override func setDelegate(){
@@ -39,12 +39,12 @@ final class FriendListViewController: BaseUIViewController {
     }
     
     @objc
-    func tap() {
+    func didTappedFriendSearchButton() {
         print("tap")
     }
     
     @objc
-    func buttonTapped(_ sender: UIButton) {
+    func didTappedDeleteButton(_ sender: UIButton) {
         let alertView = UIAlertController(title: TextLiterals.DeleteQuestionText, message: "", preferredStyle: .alert)
         let deleteAction = UIAlertAction(title: TextLiterals.friendDeleteText, style: .default, handler: nil)
         alertView.addAction(deleteAction)
@@ -66,7 +66,7 @@ extension FriendListViewController: UITableViewDataSource {
         
         cell.titleLabel.text = "닉네임 \(indexPath.row + 1)"
         cell.subtitleLabel.text = "아이디 : \(indexPath.row + 1)"
-        cell.deleteButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+        cell.deleteButton.addTarget(self, action: #selector(didTappedDeleteButton(_:)), for: .touchUpInside)
         cell.selectionStyle = .none
         return cell
     }

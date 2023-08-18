@@ -62,7 +62,7 @@ final class FriendListView: BaseUIView {
         }
         tableView.snp.makeConstraints { make in
             make.top.equalTo(friendSearchTextField.snp.bottom).offset(15)
-            make.leading.trailing.equalToSuperview()
+            make.horizontalEdges.equalToSuperview()
             make.bottom.equalToSuperview()
         }
     }

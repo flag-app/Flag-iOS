@@ -145,11 +145,11 @@ final class DatePickView: BaseUIView {
             make.centerX.equalToSuperview()
             make.top.equalTo(safeAreaLayoutGuide).offset(70)
             make.bottom.equalToSuperview().inset(350)
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.horizontalEdges.equalToSuperview().inset(20)
         }
         timeLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(31)
+            make.horizontalEdges.equalToSuperview().inset(31)
             make.top.equalTo(dateView.snp.bottom).offset(10)
         }
         timePopButton.snp.makeConstraints { make in
@@ -170,7 +170,7 @@ final class DatePickView: BaseUIView {
         }
         progressView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(10)
-            make.leading.trailing.equalToSuperview().inset(25)
+            make.horizontalEdges.equalToSuperview().inset(25)
         }
     }
     

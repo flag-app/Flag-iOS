@@ -9,22 +9,31 @@ import UIKit
 
 import SnapKit
 
-class FriendsPlusCell: UITableViewCell {
+class FriendsPlusCell: BaseTableViewCell {
     
     // MARK: - Properties
    
     // MARK: - UI Components
     
-    let titleLabel = UILabel()
-    let subtitleLabel = UILabel()
-   
+    let userNicknameLabel: UILabel = {
+       let label = UILabel()
+       label.font = .subTitle3
+       return label
+    }()
+    
+    let userIdLabel: UILabel = {
+       let label = UILabel()
+       label.font = .body2
+       return label
+    }()
+    
     private let profileImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.profileImage
         return imageView
     }()
     
-    lazy var actionButton: UIButton = {
+    lazy var friendPlusButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "check"), for: .normal)
         return button
@@ -33,50 +42,52 @@ class FriendsPlusCell: UITableViewCell {
     var isButtonToggled = false {
             didSet {
                 let imageName = isButtonToggled ? "checkFill" : "check"
-                actionButton.setImage(UIImage(named: imageName), for: .normal)
+                friendPlusButton.setImage(UIImage(named: imageName), for: .normal)
             }
 
         }
     
-    // MARK: - Custom Method
+    // MARK: - LifeCycle
     
     override func prepareForReuse() {
             super.prepareForReuse()
-            actionButton.setImage(UIImage(named: "check"), for: .normal)
+            friendPlusButton.setImage(UIImage(named: "check"), for: .normal)
         }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
         
-        titleLabel.font = .subTitle3
-        subtitleLabel.font = .body2
+        // MARK: - Custom Method
         
-        contentView.addSubviews(titleLabel,
-                                subtitleLabel,
+    override func setUI(){
+        contentView.addSubviews(userNicknameLabel,
+                                userIdLabel,
                                 profileImage,
-                                actionButton)
-        
-        titleLabel.snp.makeConstraints { make in
+                                friendPlusButton)
+    }
+    
+    override func setLayout() {
+        userNicknameLabel.snp.makeConstraints { make in
             make.leading.equalTo(profileImage.snp.trailing).offset(20)
             make.top.equalToSuperview().offset(8)
         }
-        subtitleLabel.snp.makeConstraints { make in
+        userIdLabel.snp.makeConstraints { make in
             make.leading.equalTo(profileImage.snp.trailing).offset(20)
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.top.equalTo(userNicknameLabel.snp.bottom).offset(10)
         }
         profileImage.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(25)
             make.width.height.equalTo(36)
         }
-        actionButton.snp.makeConstraints { make in
+        friendPlusButton.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(343)
         }
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 

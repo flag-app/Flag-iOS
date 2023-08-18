@@ -13,7 +13,7 @@ final class FriendsPlusViewController: BaseUIViewController {
     
     var selectedCellIndex: [Int] = []
     
-    // MARK: - UI Components
+    // MARK: - UI Components 
     
     private let friendsNameView = FriendsPlusView()
     
@@ -46,13 +46,13 @@ final class FriendsPlusViewController: BaseUIViewController {
     
     @objc
     func didTappedNextButton() {
-        let homeVC = DatePickViewController()
-        self.navigationController?.pushViewController(homeVC, animated: true)
+        let datePickVC = DatePickViewController()
+        self.navigationController?.pushViewController(datePickVC, animated: true)
         print(selectedCellIndex)
     }
     
     @objc
-    func buttonTapped(_ sender: UIButton) {
+    func didTappedFriendPlusButton(_ sender: UIButton) {
         guard let cell = sender.superview?.superview as? FriendsPlusCell,
               let indexPath = friendsNameView.tableView.indexPath(for: cell) else {
             return
@@ -80,18 +80,18 @@ extension FriendsPlusViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsPlusCell", for: indexPath) as! FriendsPlusCell
         
-        cell.titleLabel.text = "닉네임 \(indexPath.row + 1)"
-        cell.subtitleLabel.text = "아이디 : \(indexPath.row + 1)"
-        cell.actionButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+        cell.userNicknameLabel.text = "닉네임 \(indexPath.row + 1)"
+        cell.userIdLabel.text = "아이디 : \(indexPath.row + 1)"
+        cell.friendPlusButton.addTarget(self, action: #selector(didTappedFriendPlusButton(_:)), for: .touchUpInside)
         cell.selectionStyle = .none
         
         let checkFillImage = UIImage(named: "checkFill")
         let uncheckImage = UIImage(named: "check")
         
         if selectedCellIndex.contains(indexPath.row) {
-            cell.actionButton.setImage(checkFillImage, for: .normal)
+            cell.friendPlusButton.setImage(checkFillImage, for: .normal)
         } else {
-            cell.actionButton.setImage(uncheckImage, for: .normal)
+            cell.friendPlusButton.setImage(uncheckImage, for: .normal)
         }
 
         return cell

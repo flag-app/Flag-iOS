@@ -15,15 +15,16 @@ final class ListViewController: BaseUIViewController {
     
     // MARK: - Properties
     
-    private let listView = ListView()
     var selectedCellIndex: Int? = nil
-    let progressViewController = ProgressViewController()
     weak var delegate: ListViewControllerDelegate?
     
     //더미
     let sections = ["참여 가능 인원 5명","참여 가능 인원 4명"]
     
     // MARK: - UI Components
+    
+    private let listView = ListView()
+    let progressViewController = ProgressViewController()
 
     // MARK: - Life Cycle
     
@@ -40,7 +41,7 @@ final class ListViewController: BaseUIViewController {
     }
     
     override func addTarget() {
-        listView.confirmButton.addTarget(self, action: #selector(tap), for: .touchUpInside)
+        listView.confirmButton.addTarget(self, action: #selector(didTappedConfirmButton), for: .touchUpInside)
     }
     
     override func setDelegate(){
@@ -49,13 +50,13 @@ final class ListViewController: BaseUIViewController {
     }
     
     @objc
-    func tap() {
+    func didTappedConfirmButton() {
         delegate?.didDismissModal(with: selectedCellIndex)
         dismiss(animated: true, completion: nil)
     }
 
     @objc
-    func buttonTapped(_ sender: UIButton) {
+    func didTappedSelectButton(_ sender: UIButton) {
         guard let cell = sender.superview?.superview as? CustomTableViewCell,
               let indexPath = listView.tableView.indexPath(for: cell) else {
             return
@@ -81,17 +82,17 @@ extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomTableViewCell
         
-        cell.titleLabel.text = "제목들어갈 자리, 셀번호 : \(indexPath.row + 1)"
-        cell.subtitleLabel.text = "날짜들어갈 자리, 셀번호 : \(indexPath.row + 1)"
-        cell.actionButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+        cell.dateAndTimeLabel.text = "제목들어갈 자리, 셀번호 : \(indexPath.row + 1)"
+        cell.possibleUserLabel.text = "날짜들어갈 자리, 셀번호 : \(indexPath.row + 1)"
+        cell.selectButton.addTarget(self, action: #selector(didTappedSelectButton(_:)), for: .touchUpInside)
         cell.selectionStyle = .none
         
         let checkFillImage = UIImage(named: "checkFill")
         let uncheckImage = UIImage(named: "check")
         if let selectedCellIndex = selectedCellIndex, selectedCellIndex == indexPath.row {
-            cell.actionButton.setImage(checkFillImage, for: .normal)
+            cell.selectButton.setImage(checkFillImage, for: .normal)
         } else {
-            cell.actionButton.setImage(uncheckImage, for: .normal)
+            cell.selectButton.setImage(uncheckImage, for: .normal)
         }
         return cell
     }

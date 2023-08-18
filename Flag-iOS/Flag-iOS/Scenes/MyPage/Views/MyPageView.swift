@@ -37,7 +37,7 @@ final class MyPageView: BaseUIView {
     
     override func setLayout() {
         tableview.snp.makeConstraints { make in
-            make.bottom.leading.trailing.equalTo(safeAreaLayoutGuide)
+            make.bottom.horizontalEdges.equalTo(safeAreaLayoutGuide)
             make.top.equalTo(nameButton.snp.bottom).offset(52)
         }
         profileImage.snp.makeConstraints { make in

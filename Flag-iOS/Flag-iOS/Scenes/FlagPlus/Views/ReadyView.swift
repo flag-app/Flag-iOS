@@ -63,7 +63,7 @@ final class ReadyView: BaseUIView {
         }
         progressView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(10)
-            make.leading.trailing.equalToSuperview().inset(25)
+            make.horizontalEdges.equalToSuperview().inset(25)
         }
     }
     
