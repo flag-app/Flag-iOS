@@ -15,6 +15,9 @@ class testRealmViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
+        
+        // test
         
         let jay = UserFriendList()
         jay.userName = "최지우"
@@ -30,15 +33,7 @@ class testRealmViewController: UIViewController {
         }
 
         let savedFriendsList = realm.objects(UserFriendList.self)
-        
-        view.backgroundColor = .systemBackground
-       
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
         print(savedFriendsList)
-//        try! realm.write {
-//            realm.deleteAll()
-//        }
-        
     }
 }
 
