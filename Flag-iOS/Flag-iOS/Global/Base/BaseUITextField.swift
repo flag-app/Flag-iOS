@@ -23,5 +23,7 @@ final class BaseUITextField: UITextField {
         self.backgroundColor = .gray100
         self.addLeftPadding(width: 13)
         self.setRoundBorder()
+        self.autocapitalizationType = .none
+        self.clearButtonMode = .always
     }
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5592A61008A0016B418 /* AppDelegate.swift */; };
 		7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C55B2A61008A0016B418 /* SceneDelegate.swift */; };
-		7B51C55E2A61008A0016B418 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C55D2A61008A0016B418 /* ViewController.swift */; };
 		7B51C5632A61008C0016B418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B51C5622A61008C0016B418 /* Assets.xcassets */; };
 		7B51C5662A61008C0016B418 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B51C5642A61008C0016B418 /* LaunchScreen.storyboard */; };
 		7B51C5802A6124600016B418 /* TextLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C57F2A6124600016B418 /* TextLiterals.swift */; };
@@ -49,6 +48,8 @@
 		7B99991E2A8A97680043C592 /* FlagInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99991D2A8A97680043C592 /* FlagInfoView.swift */; };
 		7B9999202A8AB6F50043C592 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99991F2A8AB6F50043C592 /* UserView.swift */; };
 		7B9999222A8ABB2B0043C592 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999212A8ABB2B0043C592 /* UITextView+.swift */; };
+		7BC45F8C2A8E18DF00EAC144 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC45F8B2A8E18DF00EAC144 /* Config.swift */; };
+		7BC45F942A8E1DA500EAC144 /* MoyaLoggerPluggin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC45F932A8E1DA500EAC144 /* MoyaLoggerPluggin.swift */; };
 		E50CEE472A8768A000101E4B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE462A8768A000101E4B /* ListView.swift */; };
 		E50CEE492A8768AD00101E4B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE482A8768AD00101E4B /* ListViewController.swift */; };
 		E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE4A2A8776A600101E4B /* TimeListCell.swift */; };
@@ -80,7 +81,6 @@
 		7B51C5562A61008A0016B418 /* Flag-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flag-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B51C5592A61008A0016B418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B51C55B2A61008A0016B418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7B51C55D2A61008A0016B418 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7B51C5622A61008C0016B418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B51C5652A61008C0016B418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B51C5672A61008C0016B418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,6 +119,8 @@
 		7B99991D2A8A97680043C592 /* FlagInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagInfoView.swift; sourceTree = "<group>"; };
 		7B99991F2A8AB6F50043C592 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		7B9999212A8ABB2B0043C592 /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
+		7BC45F8B2A8E18DF00EAC144 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		7BC45F932A8E1DA500EAC144 /* MoyaLoggerPluggin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPluggin.swift; sourceTree = "<group>"; };
 		E50CEE462A8768A000101E4B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		E50CEE482A8768AD00101E4B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		E50CEE4A2A8776A600101E4B /* TimeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeListCell.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				7B51C5582A61008A0016B418 /* Flag-iOS */,
 				7B51C5572A61008A0016B418 /* Products */,
+
 				E547874F2A8AFF480097F2D2 /* Recovered References */,
 			);
 			sourceTree = "<group>";
@@ -180,11 +183,11 @@
 		7B51C5582A61008A0016B418 /* Flag-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7BC45F8D2A8E1A1100EAC144 /* Network */,
+				7BC45F892A8E18B700EAC144 /* Settings */,
 				7B51C5732A6103220016B418 /* Application */,
 				7B51C56F2A6102B10016B418 /* Scenes */,
 				7B51C56E2A6102A80016B418 /* Global */,
-				7B51C55D2A61008A0016B418 /* ViewController.swift */,
-				7B51C5672A61008C0016B418 /* Info.plist */,
 			);
 			path = "Flag-iOS";
 			sourceTree = "<group>";
@@ -408,6 +411,78 @@
 			path = Proto;
 			sourceTree = "<group>";
 		};
+		7B9999232A8AE2C80043C592 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		7BC45F892A8E18B700EAC144 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7B51C5672A61008C0016B418 /* Info.plist */,
+				7BC45F8A2A8E18C700EAC144 /* Configurations */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		7BC45F8A2A8E18C700EAC144 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				7BC45F8B2A8E18DF00EAC144 /* Config.swift */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		7BC45F8D2A8E1A1100EAC144 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7BC45F8F2A8E1AA800EAC144 /* Common */,
+				7BC45F902A8E1AFF00EAC144 /* API */,
+				7BC45F8E2A8E1A2200EAC144 /* DTO */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7BC45F8E2A8E1A2200EAC144 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		7BC45F8F2A8E1AA800EAC144 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7BC45F922A8E1C8A00EAC144 /* Foundation */,
+				7BC45F912A8E1C7F00EAC144 /* MoyaPluggin */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7BC45F902A8E1AFF00EAC144 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		7BC45F912A8E1C7F00EAC144 /* MoyaPluggin */ = {
+			isa = PBXGroup;
+			children = (
+				7BC45F932A8E1DA500EAC144 /* MoyaLoggerPluggin.swift */,
+			);
+			path = MoyaPluggin;
+			sourceTree = "<group>";
+		};
+		7BC45F922A8E1C8A00EAC144 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		E535869A2A82015A007D053D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,7 +607,6 @@
 				E547874B2A8AC1920097F2D2 /* FriendListView.swift in Sources */,
 				E53586A42A82019A007D053D /* LoactionView.swift in Sources */,
 				7B9999062A85306E0043C592 /* FlagViewController.swift in Sources */,
-				7B51C55E2A61008A0016B418 /* ViewController.swift in Sources */,
 				7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */,
 				7B9998D92A7C56140043C592 /* SignUpViewController.swift in Sources */,
 				E547874D2A8AC5AC0097F2D2 /* FriendListCell.swift in Sources */,
@@ -567,6 +641,7 @@
 				7B9998D32A7AA0330043C592 /* SignInView.swift in Sources */,
 				7B9999182A8692780043C592 /* FlagCollectionViewCell.swift in Sources */,
 				7B9999162A868E640043C592 /* BaseTableViewCell.swift in Sources */,
+				7BC45F942A8E1DA500EAC144 /* MoyaLoggerPluggin.swift in Sources */,
 				E535869C2A82016B007D053D /* FlagPlusView.swift in Sources */,
 				7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */,
 				7B9998CB2A7A995D0043C592 /* BaseUIView.swift in Sources */,
@@ -589,6 +664,7 @@
 				E53586A92A820251007D053D /* FlagView.swift in Sources */,
 				E54787542A8BA5250097F2D2 /* ReadyViewController.swift in Sources */,
 				7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */,
+				7BC45F8C2A8E18DF00EAC144 /* Config.swift in Sources */,
 				E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */,
 				E54787472A88D00D0097F2D2 /* FriendListViewController.swift in Sources */,
 				7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */,
@@ -730,11 +806,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://54.180.31.100:8080/";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HZ8WU7PA4J;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Flag-iOS/Info.plist";
+				INFOPLIST_FILE = "Flag-iOS/Settings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -744,6 +821,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				"MTL_ENABLE_DEBUG_INFO[arch=*]" = INCLUDE_SOURCE;
 				PRODUCT_BUNDLE_IDENTIFIER = "Flag.Flag-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -760,11 +838,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://54.180.31.100:8080/";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HZ8WU7PA4J;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Flag-iOS/Info.plist";
+				INFOPLIST_FILE = "Flag-iOS/Settings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
