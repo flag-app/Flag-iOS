@@ -45,7 +45,6 @@ class BaseTabBarController: UITabBarController {
         flagViewController.tabBarItem = setTabbarItem(title: TextLiterals.flag, image: ImageLiterals.flag, selectedImage: ImageLiterals.flagFill)
         flagPlusViewController.tabBarItem = setTabbarItem(title: TextLiterals.flagPlus, image: ImageLiterals.home, selectedImage: ImageLiterals.homeFill)
         myPageViewController.tabBarItem = setTabbarItem(title: TextLiterals.myPage, image: ImageLiterals.flex, selectedImage: ImageLiterals.flexFill)
-        
     }
     
     private func setTabbarItem(title: String, image: UIImage, selectedImage: UIImage) -> UITabBarItem {

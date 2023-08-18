@@ -12,8 +12,6 @@ final class FlagViewController: BaseUIViewController {
     
     // MARK: - Properties
     
-    let cellId = "cellId"
-
     private var currentIndex: Int = 0 {
            didSet {
                changeItem(index: currentIndex)
@@ -85,7 +83,8 @@ extension FlagViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FlagCollectionViewCell.identifier,
-                                                      for: indexPath)
+                                                      for: indexPath) as! FlagCollectionViewCell
+        cell.delegate = self
         return cell
     }
 }
@@ -102,9 +101,7 @@ extension FlagViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // FIXME: 레이아웃 수정 필요
-    
-        return CGSize(width: view.frame.width, height: 680)
+        return CGSize(width: view.frame.width, height: view.safeAreaLayoutGuide.layoutFrame.height - flagView.menuBar.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -143,9 +140,27 @@ extension FlagViewController: HomeMenuBarDelegate {
     }
 }
 
+// MARK: - FlagCollectionViewCellDelegate
+
 extension FlagViewController: FlagCollectionViewCellDelegate {
-    func didSelectRowInFlagCollectionViewCell(isConfirmed: Bool) {
-        print("DDDDDDDDDDDD")
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    func numberOfRows(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func cellForRow(at indexPath: IndexPath, in tableView: UITableView) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: FlagTableViewCell.identifier,
+                                                 for: indexPath)
+        return cell
+    }
+    
+    func didSelectRowAt(at indexPath: IndexPath, in tableView: UITableView) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
         let vc = FlagInfoViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
