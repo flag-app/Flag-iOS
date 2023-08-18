@@ -98,9 +98,9 @@ final class ProgressView: BaseUIView {
         }
         indicatorImageView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(40)
-            make.left.equalTo(timeLabel.snp.right).offset(10)
-            make.trailing.equalTo(safeAreaLayoutGuide).inset(10)
-            make.bottom.equalTo(timeLabel.snp.bottom)
+            make.left.equalTo(timeLabel.snp.right).offset(40)
+            make.height.equalTo(21)
+            make.width.equalTo(109)
         }
         stackview.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(7)
