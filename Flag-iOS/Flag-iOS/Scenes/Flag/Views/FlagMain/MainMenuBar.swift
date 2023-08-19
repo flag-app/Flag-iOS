@@ -66,9 +66,7 @@ class MainMenuBar: BaseUIView {
             $0.edges.equalToSuperview()
         }
         menuHorizontalBarView.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(36)
-            $0.bottom.equalToSuperview()
-            $0.width.equalTo(170)
+            $0.leading.bottom.equalToSuperview()
             $0.height.equalTo(3)
         }
     }
