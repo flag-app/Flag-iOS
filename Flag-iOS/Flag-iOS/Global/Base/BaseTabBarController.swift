@@ -74,11 +74,8 @@ class BaseTabBarController: UITabBarController {
         self.tabBar.addSubview(label)
     }
 
-        
-        
     @objc
     private func didTappedFloatingButton() {
-            print("tap")
         let setNameViewController =
             SetNameViewController()
         self.navigationController?
