@@ -46,9 +46,13 @@ final class FriendsPlusViewController: BaseUIViewController {
     
     @objc
     func didTappedNextButton() {
+
+        if selectedCellIndex.isEmpty {
+            return
+        }
+        
         let datePickVC = DatePickViewController()
         self.navigationController?.pushViewController(datePickVC, animated: true)
-        print(selectedCellIndex)
     }
     
     @objc

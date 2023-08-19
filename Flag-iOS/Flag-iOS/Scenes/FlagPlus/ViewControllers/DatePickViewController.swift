@@ -44,6 +44,9 @@ final class DatePickViewController: BaseUIViewController {
     
     @objc
     func didTappedNextButton() {
+        guard selectedDates.count > 0, selectedDates.count <= 5 else {
+            return
+        }
         let locationVC = LocationViewController()
         locationVC.selectedDates = selectedDates
         locationVC.selcetedTime = datePickView.selcetedTime

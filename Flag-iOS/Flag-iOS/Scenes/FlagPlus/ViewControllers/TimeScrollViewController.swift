@@ -111,6 +111,12 @@ final class TimeScrollViewController: BaseUIViewController {
     
     @objc
     func didTappedNextButton() {
+        let selectedCellIndices = previouslySelectedIndexPaths.map { $0.item }
+        
+        if selectedCellIndices.isEmpty {
+            return
+        }
+       
         let readyVC = ReadyViewController()
         self.navigationController?.pushViewController(readyVC, animated: true)
     }

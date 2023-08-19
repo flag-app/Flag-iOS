@@ -11,8 +11,8 @@ final class DatePickView: BaseUIView {
     // MARK: - Properties
     
     var selectedDates: [Date] = []
-    var selcetedTime: Int = 0
-    var minTime: Int = 0
+    var selcetedTime: Int = -1
+    var minTime: Int = -1
     var timeText: String = ""
     var minTimeText: String = ""
     var time: Float = 0.0
@@ -130,6 +130,7 @@ final class DatePickView: BaseUIView {
                          minTimeLabel,
                          progressView)
         progressAnimation()
+        nextButtonState()
     }
     override func setLayout() {
         nextButton.snp.makeConstraints {
@@ -174,6 +175,14 @@ final class DatePickView: BaseUIView {
         }
     }
     
+    func nextButtonState() {
+           if selcetedTime == -1 || minTime == -1 {
+               nextButton.isEnabled = false
+           } else {
+               nextButton.isEnabled = true
+           }
+       }
+    
     func selectTimeAction(_ time: Int, _ label: String) -> UIActionHandler {
         return { [weak self] _ in
             self?.selcetedTime = time
@@ -181,8 +190,10 @@ final class DatePickView: BaseUIView {
             self?.displayLabel.font = .head1
             self?.timeText = label
             self?.minTimePopButton.isEnabled = true
+            self?.nextButtonState()
         }
     }
+   
     
     func selectMinTimeAction(_ time: Int, _ label: String) -> UIActionHandler {
         return { [weak self] _ in
@@ -190,6 +201,7 @@ final class DatePickView: BaseUIView {
             self?.minTimeText = label
             self?.displayLabel.text = "\(self!.timeText)에 \(self!.minTimeText) 만나야 해요"
             self?.displayLabel.font = .head1
+            self?.nextButtonState()
         }
     }
     
