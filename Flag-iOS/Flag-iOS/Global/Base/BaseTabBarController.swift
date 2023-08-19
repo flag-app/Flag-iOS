@@ -14,11 +14,9 @@ class BaseTabBarController: UITabBarController {
     // MARK: - UI Components
     
     let flagViewController = FlagViewController()
-    let flagPlusViewController = FlagPlusViewController()
     let myPageViewController = MyPageViewController()
     
     lazy var flagNavigationController = UINavigationController(rootViewController: flagViewController)
-    lazy var flagPlusNavigationController = UINavigationController(rootViewController: flagPlusViewController)
     lazy var myPageNavigationController = UINavigationController(rootViewController: myPageViewController)
     
     // MARK: - Life Cycle
@@ -28,6 +26,7 @@ class BaseTabBarController: UITabBarController {
         
         setTabBar()
         setViewController()
+        setFloatingButton()
     }
     
     // MARK: - Custom Method
@@ -35,15 +34,13 @@ class BaseTabBarController: UITabBarController {
     private func setTabBar() {
         tabBar.backgroundColor = .white
         tabBar.tintColor = .black
-        tabBar.itemPositioning = .centered
-        
-        let viewControllers: [UIViewController] = [flagViewController, flagPlusViewController, myPageViewController]
+        tabBar.itemPositioning = .automatic
+        let viewControllers: [UIViewController] = [flagViewController, myPageViewController]
         self.setViewControllers(viewControllers, animated: true)
     }
     
     private func setViewController() {
         flagViewController.tabBarItem = setTabbarItem(title: TextLiterals.flag, image: ImageLiterals.flag, selectedImage: ImageLiterals.flagFill)
-        flagPlusViewController.tabBarItem = setTabbarItem(title: TextLiterals.flagPlus, image: ImageLiterals.home, selectedImage: ImageLiterals.homeFill)
         myPageViewController.tabBarItem = setTabbarItem(title: TextLiterals.myPage, image: ImageLiterals.flex, selectedImage: ImageLiterals.flexFill)
     }
     
@@ -51,5 +48,37 @@ class BaseTabBarController: UITabBarController {
         let tabBarItem = UITabBarItem(title: title, image: image, selectedImage: selectedImage)
         return tabBarItem
     }
-    
-}
+   
+    private func setFloatingButton() {
+        let buttonSize: CGFloat = 64.0
+        let floatingButton = UIButton(type: .custom)
+        floatingButton.backgroundColor = .purple300
+        floatingButton.layer.cornerRadius = buttonSize / 2
+        floatingButton.setImage(ImageLiterals.home, for: .normal)
+        floatingButton.imageView?.contentMode = .center
+        floatingButton.addTarget(self, action: #selector(didTappedFloatingButton), for: .touchUpInside)
+        floatingButton.frame = CGRect(x: (self.tabBar.frame.width - buttonSize) / 2,
+                                      y: self.tabBar.frame.height - buttonSize - 20,
+                                      width: buttonSize,
+                                      height: buttonSize)
+            
+        let label = UILabel()
+        label.text = TextLiterals.flagPlus
+        label.textAlignment = .center
+        label.textColor = .purple300
+        label.font = .title3
+        label.frame = CGRect(x: 0, y: floatingButton.frame.origin.y + buttonSize, width: self.tabBar.frame.width, height: 30)
+        
+        self.tabBar.addSubview(floatingButton)
+        self.tabBar.addSubview(label)
+    }
+
+    @objc
+    private func didTappedFloatingButton() {
+        let setNameViewController =
+            SetNameViewController()
+        self.navigationController?
+            .pushViewController(setNameViewController, animated: true)
+        }
+    }
+
