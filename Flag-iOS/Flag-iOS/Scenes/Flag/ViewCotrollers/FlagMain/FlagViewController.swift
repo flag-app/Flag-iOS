@@ -35,7 +35,6 @@ final class FlagViewController: BaseUIViewController {
     override func setupNavigationBar() {
         super.setupNavigationBar()
         navigationItem.title = TextLiterals.flagRawValue
-        navigationController?.navigationBar.topItem?.backBarButtonItem?.isHidden = true
     }
 
     override func setUI() {
