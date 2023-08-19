@@ -35,8 +35,8 @@ class BaseTabBarController: UITabBarController {
         tabBar.backgroundColor = .white
         tabBar.tintColor = .black
         tabBar.itemPositioning = .automatic
-        let viewControllers: [UIViewController] = [flagViewController, myPageViewController]
-        self.setViewControllers(viewControllers, animated: true)
+        let viewControllers: [UIViewController] = [flagNavigationController, myPageNavigationController]
+        self.setViewControllers(viewControllers, animated: false)
     }
     
     private func setViewController() {
