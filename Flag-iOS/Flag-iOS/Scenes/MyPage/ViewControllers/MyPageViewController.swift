@@ -17,9 +17,12 @@ final class MyPageViewController: BaseUIViewController {
     
     private let mypageView = MyPageView()
     
-    // MARK: - Life Cycle
-    
     // MARK: - Custom Method
+    
+    override func setupNavigationBar() {
+        super.setupNavigationBar()
+        navigationItem.title = TextLiterals.myPage
+    }
     
     override func setUI() {
         view.addSubviews(mypageView)
@@ -62,6 +65,7 @@ extension MyPageViewController: UITableViewDataSource {
         cell.backgroundColor = .white
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = myPageMenu[indexPath.row]
+        cell.textLabel?.font = .title2
         return cell
     }
 }

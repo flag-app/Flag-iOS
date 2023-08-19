@@ -11,9 +11,17 @@ import SnapKit
 
 final class MyPageView: BaseUIView {
     
+    // MARK: - Properties
+    
+    let cellRowHeight: CGFloat = 55
+    
     // MARK: - UI Components
     
-    let tableview = UITableView(frame: .zero, style: .plain)
+    lazy var tableview: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.rowHeight = cellRowHeight
+        return tableView
+    }()
     
     private let profileImage: UIImageView = {
         let imageView = UIImageView()
