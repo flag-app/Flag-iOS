@@ -68,6 +68,9 @@
 		E54787522A8BA5150097F2D2 /* ReadyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787512A8BA5150097F2D2 /* ReadyView.swift */; };
 		E54787542A8BA5250097F2D2 /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787532A8BA5250097F2D2 /* ReadyViewController.swift */; };
 		E5586CEF2A8E68AD00A66EA5 /* FriendsPlusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5586CEE2A8E68AD00A66EA5 /* FriendsPlusCell.swift */; };
+		E5586CF22A914CAF00A66EA5 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E5586CF12A914CAF00A66EA5 /* RxCocoa */; };
+		E5586CF42A914CAF00A66EA5 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = E5586CF32A914CAF00A66EA5 /* RxRelay */; };
+		E5586CF62A914CAF00A66EA5 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E5586CF52A914CAF00A66EA5 /* RxSwift */; };
 		E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA982A7E1F9500FC918A /* SetNameViewController.swift */; };
 		E593AA9D2A7E299500FC918A /* FriendsPlusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA9C2A7E299500FC918A /* FriendsPlusViewController.swift */; };
 		E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */; };
@@ -154,7 +157,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5586CF22A914CAF00A66EA5 /* RxCocoa in Frameworks */,
 				7B51C58B2A61261A0016B418 /* Moya in Frameworks */,
+				E5586CF62A914CAF00A66EA5 /* RxSwift in Frameworks */,
+				E5586CF42A914CAF00A66EA5 /* RxRelay in Frameworks */,
 				7B51C5882A61258B0016B418 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,7 +173,6 @@
 			children = (
 				7B51C5582A61008A0016B418 /* Flag-iOS */,
 				7B51C5572A61008A0016B418 /* Products */,
-
 				E547874F2A8AFF480097F2D2 /* Recovered References */,
 			);
 			sourceTree = "<group>";
@@ -411,13 +416,6 @@
 			path = Proto;
 			sourceTree = "<group>";
 		};
-		7B9999232A8AE2C80043C592 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		7BC45F892A8E18B700EAC144 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +542,9 @@
 			packageProductDependencies = (
 				7B51C5872A61258B0016B418 /* SnapKit */,
 				7B51C58A2A61261A0016B418 /* Moya */,
+				E5586CF12A914CAF00A66EA5 /* RxCocoa */,
+				E5586CF32A914CAF00A66EA5 /* RxRelay */,
+				E5586CF52A914CAF00A66EA5 /* RxSwift */,
 			);
 			productName = "Flag-iOS";
 			productReference = 7B51C5562A61008A0016B418 /* Flag-iOS.app */;
@@ -576,6 +577,7 @@
 			packageReferences = (
 				7B51C5862A61258B0016B418 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				7B51C5892A61261A0016B418 /* XCRemoteSwiftPackageReference "Moya" */,
+				E5586CF02A914CAF00A66EA5 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 7B51C5572A61008A0016B418 /* Products */;
 			projectDirPath = "";
@@ -904,6 +906,14 @@
 				minimumVersion = 15.0.0;
 			};
 		};
+		E5586CF02A914CAF00A66EA5 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -916,6 +926,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7B51C5892A61261A0016B418 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		E5586CF12A914CAF00A66EA5 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5586CF02A914CAF00A66EA5 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		E5586CF32A914CAF00A66EA5 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5586CF02A914CAF00A66EA5 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		E5586CF52A914CAF00A66EA5 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5586CF02A914CAF00A66EA5 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

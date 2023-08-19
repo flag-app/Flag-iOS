@@ -36,6 +36,7 @@ final class TimeScrollViewController: BaseUIViewController {
         timeScrollView.setLabels(labels)
         selectedDates.sort()
         view.addSubviews(timeScrollView)
+        buttonStatus()
     }
     
     override func setLayout() {
@@ -79,6 +80,7 @@ final class TimeScrollViewController: BaseUIViewController {
                 }
             }
         }
+        buttonStatus()
     }
     
     @objc
@@ -95,6 +97,7 @@ final class TimeScrollViewController: BaseUIViewController {
                     }
             }
         }
+        buttonStatus()
     }
     
     func setStackView() {
@@ -108,15 +111,18 @@ final class TimeScrollViewController: BaseUIViewController {
             labels.append(label)
         }
     }
+
+    func buttonStatus() {
+        let selectedCellIndices = previouslySelectedIndexPaths.map { $0.item }
+        if selectedCellIndices.isEmpty {
+            timeScrollView.nextButton.isEnabled = false
+        } else{
+            timeScrollView.nextButton.isEnabled = true
+        }
+    }
     
     @objc
     func didTappedNextButton() {
-        let selectedCellIndices = previouslySelectedIndexPaths.map { $0.item }
-        
-        if selectedCellIndices.isEmpty {
-            return
-        }
-       
         let readyVC = ReadyViewController()
         self.navigationController?.pushViewController(readyVC, animated: true)
     }

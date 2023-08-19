@@ -21,7 +21,6 @@ final class FriendsPlusViewController: BaseUIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     // MARK: - Custom Method
@@ -44,13 +43,16 @@ final class FriendsPlusViewController: BaseUIViewController {
         friendsNameView.tableView.dataSource = self
     }
     
+    func buttonStatus() {
+        if selectedCellIndex.isEmpty {
+            friendsNameView.nextButton.isEnabled = false
+        } else{
+            friendsNameView.nextButton.isEnabled = true
+        }
+    }
+    
     @objc
     func didTappedNextButton() {
-
-        if selectedCellIndex.isEmpty {
-            return
-        }
-        
         let datePickVC = DatePickViewController()
         self.navigationController?.pushViewController(datePickVC, animated: true)
     }
@@ -67,7 +69,7 @@ final class FriendsPlusViewController: BaseUIViewController {
         } else {
             selectedCellIndex.append(indexPath.row)
         }
-        
+        buttonStatus()
         friendsNameView.tableView.reloadData()
     }
 

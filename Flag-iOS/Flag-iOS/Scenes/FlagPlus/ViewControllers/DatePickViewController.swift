@@ -24,6 +24,7 @@ final class DatePickViewController: BaseUIViewController {
     
     override func setUI() {
         view.addSubviews(datePickView)
+        buttonStatus()
     }
     
     override func setLayout() {
@@ -33,7 +34,8 @@ final class DatePickViewController: BaseUIViewController {
     }
     
     override func addTarget() {
-        datePickView.nextButton.addTarget(self, action: #selector(didTappedNextButton), for: .touchUpInside)            
+        datePickView.nextButton.addTarget(self, action: #selector(didTappedNextButton), for: .touchUpInside)
+        datePickView.delegate = self
     }
     
     override func setDelegate(){
@@ -49,10 +51,18 @@ final class DatePickViewController: BaseUIViewController {
         }
         let locationVC = LocationViewController()
         locationVC.selectedDates = selectedDates
-        locationVC.selcetedTime = datePickView.selcetedTime
+        locationVC.selcetedTime = datePickView.selectedTime
         locationVC.minTime = datePickView.minTime
         _ = Calendar.current
         self.navigationController?.pushViewController(locationVC, animated: true)
+    }
+    
+    func buttonStatus() {
+        if selectedDates.isEmpty || selectedDates.count > 5 || datePickView.minTime == -1 || datePickView.selectedTime == -1 {
+            datePickView.nextButton.isEnabled = false
+        } else {
+            datePickView.nextButton.isEnabled = true
+        }
     }
 }
 
@@ -63,6 +73,7 @@ extension DatePickViewController: UICalendarViewDelegate, UICalendarSelectionMul
             return
         }
         selectedDates.append(date)
+        buttonStatus()
     }
     
     func multiDateSelection(_ selection: UICalendarSelectionMultiDate, didDeselectDate dateComponents: DateComponents) {
@@ -73,10 +84,19 @@ extension DatePickViewController: UICalendarViewDelegate, UICalendarSelectionMul
         if let index = selectedDates.firstIndex(of: date) {
             selectedDates.remove(at: index)
         }
+        buttonStatus()
     }
     
     func dateSelection(_ selection: UICalendarSelectionMultiDate, didSelectDates dateComponents: [DateComponents]) {
         let calendar = Calendar.current
         selectedDates = dateComponents.compactMap { calendar.date(from: $0) }
+    }
+}
+
+//MARK: - ButtonStatus
+
+extension DatePickViewController: DatePickViewDelegate {
+    func timeValuesDidChange(selectedTime: Int, minTime: Int) {
+        buttonStatus()
     }
 }
