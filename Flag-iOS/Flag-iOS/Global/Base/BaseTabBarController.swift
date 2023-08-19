@@ -53,18 +53,27 @@ class BaseTabBarController: UITabBarController {
     private func setFloatingButton() {
         let buttonSize: CGFloat = 64.0
         let floatingButton = UIButton(type: .custom)
-        floatingButton.backgroundColor = .purple300;
+        floatingButton.backgroundColor = .purple300
         floatingButton.layer.cornerRadius = buttonSize / 2
         floatingButton.setImage(ImageLiterals.home, for: .normal)
         floatingButton.imageView?.contentMode = .center
         floatingButton.addTarget(self, action: #selector(didTappedFloatingButton), for: .touchUpInside)
         floatingButton.frame = CGRect(x: (self.tabBar.frame.width - buttonSize) / 2,
-                                          y: self.tabBar.frame.height - buttonSize - 20,
-                                          width: buttonSize,
-                                          height: buttonSize)
+                                      y: self.tabBar.frame.height - buttonSize - 20,
+                                      width: buttonSize,
+                                      height: buttonSize)
             
+        let label = UILabel()
+        label.text = TextLiterals.flagPlus
+        label.textAlignment = .center
+        label.textColor = .purple300
+        label.font = .title3
+        label.frame = CGRect(x: 0, y: floatingButton.frame.origin.y + buttonSize, width: self.tabBar.frame.width, height: 30)
+        
         self.tabBar.addSubview(floatingButton)
+        self.tabBar.addSubview(label)
     }
+
         
         
     @objc
