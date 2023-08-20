@@ -20,6 +20,14 @@ final class ReadyViewController: BaseUIViewController {
     
     override func setUI() {
         view.addSubviews(readyView)
+        print(FlagPlusInfo.shared.name)
+        print(FlagPlusInfo.shared.guestId)
+        print(FlagPlusInfo.shared.dates)
+        print(FlagPlusInfo.shared.minTime)
+        print(FlagPlusInfo.shared.timeSlot)
+        print(FlagPlusInfo.shared.possibleDates)
+        print(FlagPlusInfo.shared.memo)
+        print(FlagPlusInfo.shared.place)
     }
     
     override func setLayout() {

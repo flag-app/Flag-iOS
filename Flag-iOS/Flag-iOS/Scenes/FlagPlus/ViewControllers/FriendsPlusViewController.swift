@@ -12,6 +12,7 @@ final class FriendsPlusViewController: BaseUIViewController {
     // MARK: - Properties
     
     var selectedCellIndex: [Int] = []
+    var guestNames: [String] = []
     
     // MARK: - UI Components 
     
@@ -53,6 +54,8 @@ final class FriendsPlusViewController: BaseUIViewController {
     
     @objc
     func didTappedNextButton() {
+        let flagPlusInfo = FlagPlusInfo.shared
+        flagPlusInfo.guestId = guestNames
         let datePickVC = DatePickViewController()
         self.navigationController?.pushViewController(datePickVC, animated: true)
     }
@@ -71,6 +74,10 @@ final class FriendsPlusViewController: BaseUIViewController {
         }
         buttonStatus()
         friendsNameView.tableView.reloadData()
+        
+       
+        let guestName = cell.userNicknameLabel.text ?? "닉네임 없음"
+        guestNames.append(guestName)
     }
 
     
@@ -103,6 +110,3 @@ extension FriendsPlusViewController: UITableViewDataSource {
         return cell
     }
 }
-
-
-

@@ -12,6 +12,7 @@ final class DatePickViewController: BaseUIViewController {
     // MARK: - Properties
     
     var selectedDates: [Date] = []
+    var stringSelectedDates: [String] = []
     var selcetedTime: Int = -1
     
     // MARK: - UI Components
@@ -55,7 +56,20 @@ final class DatePickViewController: BaseUIViewController {
         locationVC.minTime = datePickView.minTime
         _ = Calendar.current
         self.navigationController?.pushViewController(locationVC, animated: true)
+        
+        dateFormatter()
+        let flagPlusInfo = FlagPlusInfo.shared
+        flagPlusInfo.dates = stringSelectedDates
+        flagPlusInfo.timeSlot = datePickView.selectedTime
+        flagPlusInfo.minTime = datePickView.minTime
     }
+
+    func dateFormatter() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        stringSelectedDates = selectedDates.map { dateFormatter.string(from: $0) }
+    }
+    
     
     func buttonStatus() {
         if selectedDates.isEmpty || selectedDates.count > 5 || datePickView.minTime == -1 || datePickView.selectedTime == -1 {
@@ -74,6 +88,7 @@ extension DatePickViewController: UICalendarViewDelegate, UICalendarSelectionMul
         }
         selectedDates.append(date)
         buttonStatus()
+        dateFormatter()
     }
     
     func multiDateSelection(_ selection: UICalendarSelectionMultiDate, didDeselectDate dateComponents: DateComponents) {
@@ -100,3 +115,12 @@ extension DatePickViewController: DatePickViewDelegate {
         buttonStatus()
     }
 }
+
+
+//@objc
+//func didTappedNextButton() {
+//    let flagPlusInfo = FlagPlusInfo.shared
+//    flagPlusInfo.guestId = guestNames
+//    let datePickVC = DatePickViewController()
+//    self.navigationController?.pushViewController(datePickVC, animated: true)
+//}

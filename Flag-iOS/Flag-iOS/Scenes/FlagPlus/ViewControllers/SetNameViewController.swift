@@ -39,8 +39,11 @@ final class SetNameViewController: BaseUIViewController {
     
     @objc
     func didTappedNextButton() {
+        let flagPlusInfo = FlagPlusInfo.shared
+        flagPlusInfo.name = setNameView.nameTextField.text ?? ""
         let friendsPlusVC = FriendsPlusViewController()
         self.navigationController?.pushViewController(friendsPlusVC, animated: true)
+        
     }
     
 }
