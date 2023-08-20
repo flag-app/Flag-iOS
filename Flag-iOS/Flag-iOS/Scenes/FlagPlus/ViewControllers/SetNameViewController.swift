@@ -19,7 +19,6 @@ final class SetNameViewController: BaseUIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     // MARK: - Custom Method

@@ -19,7 +19,8 @@ class BaseUIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        
+        self.hideKeyboardWhenTappedAround()
+
         setupNavigationBar()
         setUI()
         setLayout()
