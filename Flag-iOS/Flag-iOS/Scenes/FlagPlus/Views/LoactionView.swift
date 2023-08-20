@@ -37,14 +37,18 @@ class LoactionView: BaseUIView {
         return label
     }()
     
-    private let memoTextField: BaseUITextField = {
-        let textField = BaseUITextField()
-        return textField
+    private lazy var memoTextView: UITextView = {
+        let textview = UITextView()
+        textview.backgroundColor = .gray100
+        textview.layer.cornerRadius = 9
+        textview.layer.borderWidth = 1.0
+        textview.layer.borderColor = UIColor.gray200.cgColor
+        return textview
     }()
     
     lazy var nextButton: BaseFillButton = {
         let button = BaseFillButton()
-        button.setTitle(TextLiterals.nextText, for: .normal)
+        button.setTitle(TextLiterals.flagPassText, for: .normal)
         button.isEnabled = true
         return button
     }()
@@ -57,15 +61,33 @@ class LoactionView: BaseUIView {
         return view
     }()
     
+    private let optionLabel1: UILabel = {
+        let label = UILabel()
+        label.text = TextLiterals.flagOptionText
+        label.font = .subTitle3
+        label.textColor = .gray400
+        return label
+    }()
+    
+    private let optionLabel2: UILabel = {
+        let label = UILabel()
+        label.text = TextLiterals.flagOptionText
+        label.font = .subTitle3
+        label.textColor = .gray400
+        return label
+    }()
+    
     // MARK: - Custom Method
     
     override func setUI() {
         self.addSubviews(locationLabel,
                          locationTextField,
                          memoLabel,
-                         memoTextField,
+                         memoTextView,
                          nextButton,
-                         progressView)
+                         progressView,
+                         optionLabel1,
+                         optionLabel2)
     }
     
     override func setLayout() {
@@ -74,16 +96,16 @@ class LoactionView: BaseUIView {
             $0.leading.equalToSuperview().offset(25)
         }
         locationTextField.snp.makeConstraints {
-            $0.top.equalTo(locationLabel.snp.bottom).offset(7)
+            $0.top.equalTo(locationLabel.snp.bottom).offset(15)
             $0.horizontalEdges.equalToSuperview().inset(25)
             $0.height.equalTo(41)
         }
         memoLabel.snp.makeConstraints {
-            $0.top.equalTo(locationTextField.snp.bottom).offset(20)
+            $0.top.equalTo(locationTextField.snp.bottom).offset(49)
             $0.leading.equalToSuperview().offset(25)
         }
-        memoTextField.snp.makeConstraints {
-            $0.top.equalTo(memoLabel.snp.bottom).offset(7)
+        memoTextView.snp.makeConstraints {
+            $0.top.equalTo(memoLabel.snp.bottom).offset(15)
             $0.horizontalEdges.equalToSuperview().inset(25)
             $0.height.equalTo(192)
         }
@@ -95,6 +117,14 @@ class LoactionView: BaseUIView {
         progressView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(10)
             make.horizontalEdges.equalToSuperview().inset(25)
+        }
+        optionLabel1.snp.makeConstraints { make in
+            make.top.equalTo(locationTextField.snp.bottom).offset(7)
+            make.trailing.equalToSuperview().inset(26)
+        }
+        optionLabel2.snp.makeConstraints { make in
+            make.top.equalTo(memoTextView.snp.bottom).offset(7)
+            make.trailing.equalToSuperview().inset(26)
         }
     }
 }

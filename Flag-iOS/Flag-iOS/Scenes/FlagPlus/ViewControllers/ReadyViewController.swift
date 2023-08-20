@@ -34,8 +34,7 @@ final class ReadyViewController: BaseUIViewController {
     
     @objc
     func didTappedNextButton() {
-        let homeVC = BaseTabBarController()
-        self.navigationController?.pushViewController(homeVC, animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }
