@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SignInRequest: Codable {
+struct SignInRequest: Codable {
     var email: String
     var password: String
 }
