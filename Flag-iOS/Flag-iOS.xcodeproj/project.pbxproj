@@ -11,6 +11,7 @@
 		7B31F7FC2A8E7D8300D7D0CF /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7B31F7FB2A8E7D8300D7D0CF /* RealmSwift */; };
 		7B31F8002A8E7E6700D7D0CF /* UserFriendListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F7FF2A8E7E6700D7D0CF /* UserFriendListDTO.swift */; };
 		7B31F8022A8E7EB900D7D0CF /* testRealmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8012A8E7EB900D7D0CF /* testRealmViewController.swift */; };
+		7B31F8042A923B5600D7D0CF /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8032A923B5600D7D0CF /* UIViewController+.swift */; };
 		7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5592A61008A0016B418 /* AppDelegate.swift */; };
 		7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C55B2A61008A0016B418 /* SceneDelegate.swift */; };
 		7B51C5632A61008C0016B418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B51C5622A61008C0016B418 /* Assets.xcassets */; };
@@ -72,7 +73,6 @@
 		E54787522A8BA5150097F2D2 /* ReadyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787512A8BA5150097F2D2 /* ReadyView.swift */; };
 		E54787542A8BA5250097F2D2 /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787532A8BA5250097F2D2 /* ReadyViewController.swift */; };
 		E5586CEF2A8E68AD00A66EA5 /* FriendsPlusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5586CEE2A8E68AD00A66EA5 /* FriendsPlusCell.swift */; };
-		E5586CF22A914CAF00A66EA5 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E5586CF12A914CAF00A66EA5 /* RxCocoa */; };
 		E5586CF42A914CAF00A66EA5 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = E5586CF32A914CAF00A66EA5 /* RxRelay */; };
 		E5586CF62A914CAF00A66EA5 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E5586CF52A914CAF00A66EA5 /* RxSwift */; };
 		E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593AA982A7E1F9500FC918A /* SetNameViewController.swift */; };
@@ -87,6 +87,7 @@
 /* Begin PBXFileReference section */
 		7B31F7FF2A8E7E6700D7D0CF /* UserFriendListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFriendListDTO.swift; sourceTree = "<group>"; };
 		7B31F8012A8E7EB900D7D0CF /* testRealmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testRealmViewController.swift; sourceTree = "<group>"; };
+		7B31F8032A923B5600D7D0CF /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		7B51C5562A61008A0016B418 /* Flag-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flag-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B51C5592A61008A0016B418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B51C55B2A61008A0016B418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,10 +164,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				7B31F7FC2A8E7D8300D7D0CF /* RealmSwift in Frameworks */,
 				7B31F7FA2A8E7D8300D7D0CF /* Realm in Frameworks */,
-
 				7B51C58B2A61261A0016B418 /* Moya in Frameworks */,
 				E5586CF62A914CAF00A66EA5 /* RxSwift in Frameworks */,
 				E5586CF42A914CAF00A66EA5 /* RxRelay in Frameworks */,
@@ -340,6 +339,7 @@
 				7B9998C42A7A93B30043C592 /* UIButton+.swift */,
 				7B9998D02A7A9D9C0043C592 /* UITextField+.swift */,
 				7B9999212A8ABB2B0043C592 /* UITextView+.swift */,
+				7B31F8032A923B5600D7D0CF /* UIViewController+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -569,11 +569,8 @@
 			packageProductDependencies = (
 				7B51C5872A61258B0016B418 /* SnapKit */,
 				7B51C58A2A61261A0016B418 /* Moya */,
-
-
 				7B31F7F92A8E7D8300D7D0CF /* Realm */,
 				7B31F7FB2A8E7D8300D7D0CF /* RealmSwift */,
-
 			);
 			productName = "Flag-iOS";
 			productReference = 7B51C5562A61008A0016B418 /* Flag-iOS.app */;
@@ -606,7 +603,6 @@
 			packageReferences = (
 				7B51C5862A61258B0016B418 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				7B51C5892A61261A0016B418 /* XCRemoteSwiftPackageReference "Moya" */,
-
 				7B31F7F82A8E7D8300D7D0CF /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 7B51C5572A61008A0016B418 /* Products */;
@@ -677,6 +673,7 @@
 				7B9999162A868E640043C592 /* BaseTableViewCell.swift in Sources */,
 				7BC45F942A8E1DA500EAC144 /* MoyaLoggerPluggin.swift in Sources */,
 				E535869C2A82016B007D053D /* FlagPlusView.swift in Sources */,
+				7B31F8042A923B5600D7D0CF /* UIViewController+.swift in Sources */,
 				7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */,
 				7B9998CB2A7A995D0043C592 /* BaseUIView.swift in Sources */,
 				7B9998D52A7B856E0043C592 /* BaseUITextField.swift in Sources */,
@@ -976,11 +973,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7B51C5892A61261A0016B418 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
-		};
-		E5586CF12A914CAF00A66EA5 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E5586CF02A914CAF00A66EA5 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
 		};
 		E5586CF32A914CAF00A66EA5 /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
