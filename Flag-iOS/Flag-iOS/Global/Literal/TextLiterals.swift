@@ -96,6 +96,10 @@ enum TextLiterals {
     static let deleteText: String = "삭제"
     static let newNicknameText: String = "새로운 닉네임을 입력해 주세요."
     static let newNicknameTextHint: String = "닉네임 최소 2자 ~ 최대 7자"
+<<<<<<< HEAD
+    static let completeText: String = "완료"
+=======
+>>>>>>> #80
 
 
 }
