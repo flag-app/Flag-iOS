@@ -15,11 +15,7 @@ final class NicknameChangeView: BaseUIView {
     
     lazy var nextButton: BaseFillButton = {
         let button = BaseFillButton()
-<<<<<<< HEAD
         button.setTitle(TextLiterals.completeText, for: .normal)
-=======
-        button.setTitle(TextLiterals.nextText, for: .normal)
->>>>>>> #80
         return button
     }()
     
