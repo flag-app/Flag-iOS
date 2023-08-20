@@ -18,6 +18,11 @@ class FlagInfoViewController: BaseUIViewController {
         view.backgroundColor = .gray100
     }
     
+    override func setupNavigationBar() {
+        super.setupNavigationBar()
+        navigationItem.title = TextLiterals.flagRawValue
+    }
+    
     override func setUI() {
         view.addSubview(flagInfoView)
     }

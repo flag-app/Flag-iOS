@@ -35,8 +35,8 @@ class BaseTabBarController: UITabBarController {
         tabBar.backgroundColor = .white
         tabBar.tintColor = .black
         tabBar.itemPositioning = .automatic
-        let viewControllers: [UIViewController] = [flagViewController, myPageViewController]
-        self.setViewControllers(viewControllers, animated: true)
+        let viewControllers: [UIViewController] = [flagNavigationController, myPageNavigationController]
+        self.setViewControllers(viewControllers, animated: false)
     }
     
     private func setViewController() {
@@ -75,10 +75,11 @@ class BaseTabBarController: UITabBarController {
 
     @objc
     private func didTappedFloatingButton() {
-        let setNameViewController =
-            SetNameViewController()
-        self.navigationController?
-            .pushViewController(setNameViewController, animated: true)
+        let setNameViewController = SetNameViewController()
+        setNameViewController.hidesBottomBarWhenPushed = true
+        if let selectedNavController = self.selectedViewController as? UINavigationController {
+            selectedNavController.pushViewController(setNameViewController, animated: true)
         }
     }
+}
 
