@@ -46,8 +46,8 @@ final class MyPageViewController: BaseUIViewController {
     
     @objc
     func didTappedNameButton() {
-        //일단 terms뷰컨으로 넘아가게해뒀습니다 작업하실때 뷰컨추가후 수정해주세요!
-        let termsViewController = TermsViewController()
+        let termsViewController = NicknameChangeViewController()
+        termsViewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(termsViewController, animated: true)
     }
     
