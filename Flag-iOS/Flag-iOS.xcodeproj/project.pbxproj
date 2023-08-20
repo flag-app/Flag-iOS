@@ -66,6 +66,8 @@
 		E546EEDF2A92484100B59FEA /* NicknameChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EEDE2A92484100B59FEA /* NicknameChangeView.swift */; };
 		E546EEE12A92485800B59FEA /* NicknameChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EEE02A92485800B59FEA /* NicknameChangeViewController.swift */; };
 		E546EEE42A926FAE00B59FEA /* FlagPlusInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EEE32A926FAE00B59FEA /* FlagPlusInfo.swift */; };
+		E546EEF52A9299E300B59FEA /* FlagPlusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EEF42A9299E300B59FEA /* FlagPlusDTO.swift */; };
+		E546EEF72A929ADE00B59FEA /* FlagPlusAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EEF62A929ADE00B59FEA /* FlagPlusAPI.swift */; };
 		E54787432A88CF550097F2D2 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787422A88CF550097F2D2 /* MyPageView.swift */; };
 		E54787472A88D00D0097F2D2 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787462A88D00D0097F2D2 /* FriendListViewController.swift */; };
 		E54787492A88D0160097F2D2 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787482A88D0160097F2D2 /* TermsViewController.swift */; };
@@ -144,6 +146,8 @@
 		E546EEDE2A92484100B59FEA /* NicknameChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameChangeView.swift; sourceTree = "<group>"; };
 		E546EEE02A92485800B59FEA /* NicknameChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameChangeViewController.swift; sourceTree = "<group>"; };
 		E546EEE32A926FAE00B59FEA /* FlagPlusInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPlusInfo.swift; sourceTree = "<group>"; };
+		E546EEF42A9299E300B59FEA /* FlagPlusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPlusDTO.swift; sourceTree = "<group>"; };
+		E546EEF62A929ADE00B59FEA /* FlagPlusAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPlusAPI.swift; sourceTree = "<group>"; };
 		E54787422A88CF550097F2D2 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		E54787462A88D00D0097F2D2 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		E54787482A88D0160097F2D2 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
@@ -477,6 +481,7 @@
 		7BC45F8E2A8E1A2200EAC144 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				E546EEF32A9299C200B59FEA /* FlagPlusDTO */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -493,6 +498,7 @@
 		7BC45F902A8E1AFF00EAC144 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				E546EEF62A929ADE00B59FEA /* FlagPlusAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -551,6 +557,14 @@
 				E546EEE32A926FAE00B59FEA /* FlagPlusInfo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E546EEF32A9299C200B59FEA /* FlagPlusDTO */ = {
+			isa = PBXGroup;
+			children = (
+				E546EEF42A9299E300B59FEA /* FlagPlusDTO.swift */,
+			);
+			path = FlagPlusDTO;
 			sourceTree = "<group>";
 		};
 		E547874F2A8AFF480097F2D2 /* Recovered References */ = {
@@ -668,6 +682,7 @@
 				7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */,
 				E5586CEF2A8E68AD00A66EA5 /* FriendsPlusCell.swift in Sources */,
 				E546EEDF2A92484100B59FEA /* NicknameChangeView.swift in Sources */,
+				E546EEF52A9299E300B59FEA /* FlagPlusDTO.swift in Sources */,
 				7B9999142A868E2D0043C592 /* FlagTableViewCell.swift in Sources */,
 				7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */,
 				7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */,
@@ -677,6 +692,7 @@
 				7B9999222A8ABB2B0043C592 /* UITextView+.swift in Sources */,
 				7B51C5802A6124600016B418 /* TextLiterals.swift in Sources */,
 				7B9998CF2A7A9BEF0043C592 /* SignInViewController.swift in Sources */,
+				E546EEF72A929ADE00B59FEA /* FlagPlusAPI.swift in Sources */,
 				7B31F8022A8E7EB900D7D0CF /* testRealmViewController.swift in Sources */,
 				E50CEE492A8768AD00101E4B /* ListViewController.swift in Sources */,
 				7B9998D32A7AA0330043C592 /* SignInView.swift in Sources */,
@@ -848,7 +864,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://54.180.31.100:8080/";
+				BASE_URL = "http://43.200.172.15:8080";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HZ8WU7PA4J;
@@ -880,7 +896,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://54.180.31.100:8080/";
+				BASE_URL = "http://43.200.172.15:8080";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HZ8WU7PA4J;
