@@ -9,8 +9,6 @@ import UIKit
 
 final class NicknameChangeView: BaseUIView {
     
-    // MARK: - Properties
-    
     // MARK: - UI Components
     
     lazy var nextButton: BaseFillButton = {
@@ -32,14 +30,6 @@ final class NicknameChangeView: BaseUIView {
         return textField
     }()
     
-    lazy var progressView: UIProgressView = {
-        let view = UIProgressView()
-        view.trackTintColor = .gray200
-        view.progressTintColor = .purple300
-        view.progress = 0.0
-        return view
-    }()
-    
     // MARK: - Life Cycle
     
     override init(frame: CGRect) {
@@ -57,8 +47,7 @@ final class NicknameChangeView: BaseUIView {
     override func setUI() {
         self.addSubviews(nextButton,
                          nameTextField,
-                         nameLabel,
-                         progressView)
+                         nameLabel)
     }
     override func setLayout() {
         nextButton.snp.makeConstraints {
