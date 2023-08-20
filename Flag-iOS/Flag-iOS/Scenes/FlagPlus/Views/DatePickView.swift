@@ -6,13 +6,27 @@
 //
 import UIKit
 
+protocol DatePickViewDelegate: AnyObject {
+    func timeValuesDidChange(selectedTime: Int, minTime: Int)
+}
+
 final class DatePickView: BaseUIView {
     
     // MARK: - Properties
     
+    weak var delegate: DatePickViewDelegate?
+    
     var selectedDates: [Date] = []
-    var selcetedTime: Int = 0
-    var minTime: Int = 0
+    var selectedTime: Int = -1 {
+            didSet {
+                delegate?.timeValuesDidChange(selectedTime: selectedTime, minTime: minTime)
+            }
+        }
+    var minTime: Int = -1 {
+            didSet {
+                delegate?.timeValuesDidChange(selectedTime: selectedTime, minTime: minTime)
+            }
+        }
     var timeText: String = ""
     var minTimeText: String = ""
     var time: Float = 0.0
@@ -130,6 +144,7 @@ final class DatePickView: BaseUIView {
                          minTimeLabel,
                          progressView)
         progressAnimation()
+        
     }
     override func setLayout() {
         nextButton.snp.makeConstraints {
@@ -176,13 +191,14 @@ final class DatePickView: BaseUIView {
     
     func selectTimeAction(_ time: Int, _ label: String) -> UIActionHandler {
         return { [weak self] _ in
-            self?.selcetedTime = time
+            self?.selectedTime = time
             self?.displayLabel.text = label
             self?.displayLabel.font = .head1
             self?.timeText = label
             self?.minTimePopButton.isEnabled = true
         }
     }
+   
     
     func selectMinTimeAction(_ time: Int, _ label: String) -> UIActionHandler {
         return { [weak self] _ in
@@ -202,12 +218,12 @@ final class DatePickView: BaseUIView {
         let confirmAction = UIAlertAction(title: TextLiterals.flagConfirmText, style: .default) { _ in
             if let timeString = alertController.textFields?.first?.text,
                let selectedTime = Int(timeString) {
-                self.selcetedTime = selectedTime
+                self.selectedTime = selectedTime
             } else {
-                self.selcetedTime = -1
+                self.selectedTime = -1
             }
-            let endtime = self.selcetedTime + 5
-            self.displayLabel.text = "\(self.selcetedTime):00 ~ \(endtime):59"
+            let endtime = self.selectedTime + 5
+            self.displayLabel.text = "\(self.selectedTime):00 ~ \(endtime):59"
         }
         let cancelAction = UIAlertAction(title: TextLiterals.flagCancelText, style: .cancel, handler: nil)
         alertController.addAction(confirmAction)

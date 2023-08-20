@@ -18,7 +18,6 @@ final class SetNameView: BaseUIView {
     lazy var nextButton: BaseFillButton = {
         let button = BaseFillButton()
         button.setTitle(TextLiterals.nextText, for: .normal)
-        button.isEnabled = true
         return button
     }()
     
@@ -42,6 +41,18 @@ final class SetNameView: BaseUIView {
         view.progress = 0.0
         return view
     }()
+    
+    // MARK: - Life Cycle
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        addTarget()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Custom Method
     
@@ -73,10 +84,24 @@ final class SetNameView: BaseUIView {
         }
     }
     
+    func addTarget() {
+        nameTextField.addTarget(self, action: #selector(isChangedValue(_:)), for: .editingChanged)
+    }
+    
     func progressAnimation() {
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(setProgress), userInfo: nil, repeats: true)
     }
+    
+    @objc
+        func isChangedValue(_ textField: UITextField) {
+            if let flagName = nameTextField.text,(flagName.count > 1 && flagName.count < 15) {
+                nextButton.isEnabled = true
+            } else {
+                nextButton.isEnabled = false
+            }
+        }
+
     
     @objc
     func setProgress() {
@@ -84,4 +109,6 @@ final class SetNameView: BaseUIView {
         progressView.setProgress(time, animated: true)
         if time >= 0.20 { timer?.invalidate() }
     }
+    
+    
 }
