@@ -12,6 +12,9 @@
 		7B31F8002A8E7E6700D7D0CF /* UserFriendListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F7FF2A8E7E6700D7D0CF /* UserFriendListDTO.swift */; };
 		7B31F8022A8E7EB900D7D0CF /* testRealmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8012A8E7EB900D7D0CF /* testRealmViewController.swift */; };
 		7B31F8042A923B5600D7D0CF /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8032A923B5600D7D0CF /* UIViewController+.swift */; };
+		7B31F8082A92765F00D7D0CF /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8072A92765F00D7D0CF /* AuthAPI.swift */; };
+		7B31F80A2A927E2F00D7D0CF /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8092A927E2F00D7D0CF /* SignUpRequest.swift */; };
+		7B31F80C2A92A06B00D7D0CF /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F80B2A92A06B00D7D0CF /* SignUpResponse.swift */; };
 		7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5592A61008A0016B418 /* AppDelegate.swift */; };
 		7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C55B2A61008A0016B418 /* SceneDelegate.swift */; };
 		7B51C5632A61008C0016B418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B51C5622A61008C0016B418 /* Assets.xcassets */; };
@@ -90,6 +93,9 @@
 		7B31F7FF2A8E7E6700D7D0CF /* UserFriendListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFriendListDTO.swift; sourceTree = "<group>"; };
 		7B31F8012A8E7EB900D7D0CF /* testRealmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testRealmViewController.swift; sourceTree = "<group>"; };
 		7B31F8032A923B5600D7D0CF /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		7B31F8072A92765F00D7D0CF /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		7B31F8092A927E2F00D7D0CF /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
+		7B31F80B2A92A06B00D7D0CF /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		7B51C5562A61008A0016B418 /* Flag-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flag-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B51C5592A61008A0016B418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B51C55B2A61008A0016B418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +201,15 @@
 				7B31F8012A8E7EB900D7D0CF /* testRealmViewController.swift */,
 			);
 			path = RealmDTO;
+			sourceTree = "<group>";
+		};
+		7B31F8062A9275CF00D7D0CF /* AuthDTO */ = {
+			isa = PBXGroup;
+			children = (
+				7B31F8092A927E2F00D7D0CF /* SignUpRequest.swift */,
+				7B31F80B2A92A06B00D7D0CF /* SignUpResponse.swift */,
+			);
+			path = AuthDTO;
 			sourceTree = "<group>";
 		};
 		7B51C54D2A61008A0016B418 = {
@@ -479,6 +494,7 @@
 		7BC45F8E2A8E1A2200EAC144 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				7B31F8062A9275CF00D7D0CF /* AuthDTO */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -495,6 +511,7 @@
 		7BC45F902A8E1AFF00EAC144 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				7B31F8072A92765F00D7D0CF /* AuthAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -650,6 +667,7 @@
 				E50CEE472A8768A000101E4B /* ListView.swift in Sources */,
 				7B9998C92A7A95F50043C592 /* BaseEmptyButton.swift in Sources */,
 				7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */,
+				7B31F80C2A92A06B00D7D0CF /* SignUpResponse.swift in Sources */,
 				7B51C5852A61249C0016B418 /* UIFont+.swift in Sources */,
 				7B99991C2A8A85970043C592 /* FlagInfoViewController.swift in Sources */,
 				E5DA6F862A83598500FC825F /* ProgressView.swift in Sources */,
@@ -659,6 +677,7 @@
 				7B9999122A868CF90043C592 /* DataTypeProtocol.swift in Sources */,
 				E54787432A88CF550097F2D2 /* MyPageView.swift in Sources */,
 				7B9999002A85142B0043C592 /* MainMenuBar.swift in Sources */,
+				7B31F8082A92765F00D7D0CF /* AuthAPI.swift in Sources */,
 				E593AAA72A7E992D00FC918A /* LocationViewController.swift in Sources */,
 				7B9999202A8AB6F50043C592 /* UserView.swift in Sources */,
 				E546EEE12A92485800B59FEA /* NicknameChangeViewController.swift in Sources */,
@@ -679,6 +698,7 @@
 				7B9998D32A7AA0330043C592 /* SignInView.swift in Sources */,
 				7B9999182A8692780043C592 /* FlagCollectionViewCell.swift in Sources */,
 				7B9999162A868E640043C592 /* BaseTableViewCell.swift in Sources */,
+				7B31F80A2A927E2F00D7D0CF /* SignUpRequest.swift in Sources */,
 				7BC45F942A8E1DA500EAC144 /* MoyaLoggerPluggin.swift in Sources */,
 				E535869C2A82016B007D053D /* FlagPlusView.swift in Sources */,
 				7B31F8042A923B5600D7D0CF /* UIViewController+.swift in Sources */,
@@ -845,7 +865,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://54.180.31.100:8080/";
+				BASE_URL = "http://43.200.172.15:8080";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HZ8WU7PA4J;
@@ -877,7 +897,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://54.180.31.100:8080/";
+				BASE_URL = "http://43.200.172.15:8080";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HZ8WU7PA4J;
