@@ -19,7 +19,8 @@
 		7B31F8102A92AF4100D7D0CF /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F80F2A92AF4100D7D0CF /* SignInResponse.swift */; };
 		7B31F8132A93958A00D7D0CF /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8122A93958A00D7D0CF /* NetworkResult.swift */; };
 		7B31F8162A93A39100D7D0CF /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8152A93A39100D7D0CF /* AuthRepository.swift */; };
-		7B31F8182A93BDA300D7D0CF /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8172A93BDA300D7D0CF /* TokenUtils.swift */; };
+		7B31F81A2A93C36E00D7D0CF /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8192A93C36E00D7D0CF /* RealmService.swift */; };
+		7B31F81C2A93C42600D7D0CF /* AccessTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F81B2A93C42600D7D0CF /* AccessTokenDTO.swift */; };
 		7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5592A61008A0016B418 /* AppDelegate.swift */; };
 		7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C55B2A61008A0016B418 /* SceneDelegate.swift */; };
 		7B51C5632A61008C0016B418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B51C5622A61008C0016B418 /* Assets.xcassets */; };
@@ -105,7 +106,8 @@
 		7B31F80F2A92AF4100D7D0CF /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		7B31F8122A93958A00D7D0CF /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		7B31F8152A93A39100D7D0CF /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
-		7B31F8172A93BDA300D7D0CF /* TokenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
+		7B31F8192A93C36E00D7D0CF /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		7B31F81B2A93C42600D7D0CF /* AccessTokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenDTO.swift; sourceTree = "<group>"; };
 		7B51C5562A61008A0016B418 /* Flag-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flag-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B51C5592A61008A0016B418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B51C55B2A61008A0016B418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				7B31F7FE2A8E7E2B00D7D0CF /* RealmDTO */,
+				7B31F8192A93C36E00D7D0CF /* RealmService.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			children = (
 				7B31F7FF2A8E7E6700D7D0CF /* UserFriendListDTO.swift */,
 				7B31F8012A8E7EB900D7D0CF /* testRealmViewController.swift */,
+				7B31F81B2A93C42600D7D0CF /* AccessTokenDTO.swift */,
 			);
 			path = RealmDTO;
 			sourceTree = "<group>";
@@ -557,7 +561,6 @@
 			isa = PBXGroup;
 			children = (
 				7B31F8122A93958A00D7D0CF /* NetworkResult.swift */,
-				7B31F8172A93BDA300D7D0CF /* TokenUtils.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				E53586A42A82019A007D053D /* LoactionView.swift in Sources */,
 				7B9999062A85306E0043C592 /* FlagViewController.swift in Sources */,
 				7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */,
+				7B31F81C2A93C42600D7D0CF /* AccessTokenDTO.swift in Sources */,
 				7B9998D92A7C56140043C592 /* SignUpViewController.swift in Sources */,
 				E547874D2A8AC5AC0097F2D2 /* FriendListCell.swift in Sources */,
 				7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */,
@@ -730,7 +734,6 @@
 				E50CEE492A8768AD00101E4B /* ListViewController.swift in Sources */,
 				7B9998D32A7AA0330043C592 /* SignInView.swift in Sources */,
 				7B9999182A8692780043C592 /* FlagCollectionViewCell.swift in Sources */,
-				7B31F8182A93BDA300D7D0CF /* TokenUtils.swift in Sources */,
 				7B31F8132A93958A00D7D0CF /* NetworkResult.swift in Sources */,
 				7B9999162A868E640043C592 /* BaseTableViewCell.swift in Sources */,
 				7B31F80A2A927E2F00D7D0CF /* SignUpRequest.swift in Sources */,
@@ -765,6 +768,7 @@
 				7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */,
 				7B99991E2A8A97680043C592 /* FlagInfoView.swift in Sources */,
 				7B9998D12A7A9D9C0043C592 /* UITextField+.swift in Sources */,
+				7B31F81A2A93C36E00D7D0CF /* RealmService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
