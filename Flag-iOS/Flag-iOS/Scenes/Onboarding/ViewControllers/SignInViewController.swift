@@ -66,7 +66,6 @@ extension SignInViewController {
             switch response {
             case .success(let moyaResponse):
                 do {
-                    /// SUCCESS
                     print("Response status code:", moyaResponse.statusCode)
                     
                     // moyaResponse.data 를 사용하여 응답 데이터를 파싱합니다.

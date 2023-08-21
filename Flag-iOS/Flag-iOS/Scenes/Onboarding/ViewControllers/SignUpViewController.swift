@@ -6,9 +6,9 @@
 //
 import Foundation
 
+import Moya
 import SnapKit
 import UIKit
-import Moya
 
 class SignUpViewController: BaseUIViewController {
     
@@ -23,7 +23,6 @@ class SignUpViewController: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        postSignUpRequest()
     }
     
     override func setupNavigationBar() {
@@ -47,36 +46,33 @@ class SignUpViewController: BaseUIViewController {
     
     @objc
     func didTappedNextButton() {
+        postSignUpRequest(userEmail: signUpView.emailTextField.text!,
+                          userPassword: signUpView.passwordTextField.text!,
+                          userNickname: signUpView.nicknameTextField.text!)
+      
         let setNicknameViewController = BaseTabBarController()
         self.navigationController?.pushViewController(setNicknameViewController, animated: true)
     }
-    
-    func postSignUpRequest() {
-        let param = SignUpRequest.init("oo@naver.com", "oo", "oo")
+}
+
+// MARK: - Network
+
+extension SignUpViewController {
+    func postSignUpRequest(userEmail: String, userPassword: String, userNickname: String) {
+        let param = SignUpRequest(signUpView.emailTextField.text!,
+                                  signUpView.passwordTextField.text!,
+                                  signUpView.nicknameTextField.text!)
         
         self.authProvider.request(.signUp(body: param)) { response in
             switch response {
             case .success(let moyaResponse):
                 do {
-                    /// SUCCESS
                     print("Response status code:", moyaResponse.statusCode)
-                    // 추가적으로 moyaResponse.data 를 사용하여 응답 데이터를 파싱할 수 있습니다.
                 }
             case .failure(let err):
-                /// ERROR
                 print("Error:", err.localizedDescription)
             }
         }
-        print("❌postSignUpRequest 실행")
     }
-
-       
-
 }
-
-// MARK: - Network
-
-//extension SignUpViewController {
-//    var param = SignUpRequest("plpl@naver.com", "pl", "plpl")
-//}
 
