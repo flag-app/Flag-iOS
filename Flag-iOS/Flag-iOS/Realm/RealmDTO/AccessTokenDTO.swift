@@ -11,11 +11,11 @@ import RealmSwift
 
 final class AccessTokenDTO: Object {
     
+    @Persisted var accessToken: String // user의 accessToken
+    
     // PK
     @Persisted(primaryKey: true) var id: ObjectId
-    
-    @Persisted var accessToken: String
-    
+        
     override static func primaryKey() -> String? {
         return "RealmStoragePost"
     }
