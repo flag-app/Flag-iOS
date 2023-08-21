@@ -19,9 +19,8 @@ class OnboardingViewController: BaseUIViewController {
     // MARK: - Custom Method
     
     override func setUI() {
+//        realm.deleteAllRealmData()
         view.addSubviews(onboardingView)
-        
-        realm.deleteAllRealmData()
     }
     
     override func setLayout() {

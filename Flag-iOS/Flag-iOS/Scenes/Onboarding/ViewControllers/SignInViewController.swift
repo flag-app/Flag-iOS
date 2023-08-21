@@ -51,6 +51,7 @@ class SignInViewController: BaseUIViewController {
     func didTappedSignInButton() {
         postSignInRequest(userEmail: signInView.emailInputTextField.text!,
                           userPassword: signInView.passwordInputTextField.text!)
+        
         let tabBarController = BaseTabBarController()
 //        self.navigationController?.pushViewController(tabBarController, animated: true)
         
@@ -103,6 +104,7 @@ extension SignInViewController {
                             print("Response status code:", moyaResponse.statusCode)
                             let responseData = try moyaResponse.map(GenericResponse.self)
                             self.realm.setAccessToken(accessToken: responseData.result)
+                            self.realm.setAutoSignIn(isSignedIn: true)
                         } catch let parsingError {
                             print("Error parsing:", parsingError)
                         }
