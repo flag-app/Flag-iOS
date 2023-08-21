@@ -1,5 +1,5 @@
 //
-//  FlagPlusAPI.swift
+//  FlagProgressAPI.swift
 //  Flag-iOS
 //
 //  Created by 성현주 on 2023/08/21.
@@ -9,33 +9,40 @@ import Foundation
 
 import Moya
 
-enum FlagPlusAPI {
-    case setFlag(body: FlagPlus)
+enum FlagProgressAPI {
+    case showProgress(flagId: Int)
+    case selectTimeCell(flagId: Int,cellIndex: Int)
 }
 
-extension FlagPlusAPI: TargetType {
+extension FlagProgressAPI: TargetType {
     public var baseURL: URL {
             return URL(string: Config.baseURL)!
         }
     
     var path: String {
         switch self {
-        case .setFlag:
-            return "/flag/add"
+        case .showProgress(let flagId):
+            return "/flag/\(flagId)/show"
+        case .selectTimeCell(let flagId, let cellIndex):
+            return "/flag/\(flagId)/\(cellIndex)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .setFlag:
-            return .post
+        case .showProgress:
+            return .get
+        case .selectTimeCell:
+            return .get
         }
     }
     
     var task: Task {
         switch self {
-        case .setFlag(let body):
-            return .requestJSONEncodable(body)
+        case .showProgress:
+            return .requestPlain
+        case .selectTimeCell:
+            return .requestPlain
         }
     }
     
@@ -49,3 +56,4 @@ extension FlagPlusAPI: TargetType {
             ]
         }
 }
+
