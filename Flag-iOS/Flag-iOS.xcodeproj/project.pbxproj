@@ -24,6 +24,7 @@
 		7B31F81E2A93E2AC00D7D0CF /* AutoSignInDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F81D2A93E2AC00D7D0CF /* AutoSignInDTO.swift */; };
 		7B31F8202A94025300D7D0CF /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F81F2A94025300D7D0CF /* GenericResponse.swift */; };
 		7B31F8222A9419AC00D7D0CF /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8212A9419AC00D7D0CF /* UIWindow+.swift */; };
+		7B31F8242A941D2500D7D0CF /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8232A941D2500D7D0CF /* BaseTargetType.swift */; };
 		7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5592A61008A0016B418 /* AppDelegate.swift */; };
 		7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C55B2A61008A0016B418 /* SceneDelegate.swift */; };
 		7B51C5632A61008C0016B418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B51C5622A61008C0016B418 /* Assets.xcassets */; };
@@ -114,6 +115,7 @@
 		7B31F81D2A93E2AC00D7D0CF /* AutoSignInDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSignInDTO.swift; sourceTree = "<group>"; };
 		7B31F81F2A94025300D7D0CF /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		7B31F8212A9419AC00D7D0CF /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
+		7B31F8232A941D2500D7D0CF /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
 		7B51C5562A61008A0016B418 /* Flag-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flag-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B51C5592A61008A0016B418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B51C55B2A61008A0016B418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 			children = (
 				7B31F8122A93958A00D7D0CF /* NetworkResult.swift */,
 				7B31F81F2A94025300D7D0CF /* GenericResponse.swift */,
+				7B31F8232A941D2500D7D0CF /* BaseTargetType.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 				7BC45F8C2A8E18DF00EAC144 /* Config.swift in Sources */,
 				E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */,
 				E54787472A88D00D0097F2D2 /* FriendListViewController.swift in Sources */,
+				7B31F8242A941D2500D7D0CF /* BaseTargetType.swift in Sources */,
 				7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */,
 				7B99991E2A8A97680043C592 /* FlagInfoView.swift in Sources */,
 				7B9998D12A7A9D9C0043C592 /* UITextField+.swift in Sources */,
