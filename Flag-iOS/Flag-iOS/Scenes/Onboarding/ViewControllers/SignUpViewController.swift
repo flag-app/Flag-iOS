@@ -6,16 +6,25 @@
 //
 import Foundation
 
+import Moya
 import SnapKit
 import UIKit
 
 class SignUpViewController: BaseUIViewController {
+    
+    private var realm = RealmService()
+    let authProvider = MoyaProvider<AuthAPI>()
         
     // MARK: - UI Components
     
     private let signUpView = SignUpView()
         
     // MARK: - Custom Method
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
@@ -38,8 +47,30 @@ class SignUpViewController: BaseUIViewController {
     
     @objc
     func didTappedNextButton() {
-        let setNicknameViewController = BaseTabBarController()
-        self.navigationController?.pushViewController(setNicknameViewController, animated: true)
+        postSignUpRequest(userEmail: signUpView.emailTextField.text!,
+                          userPassword: signUpView.passwordTextField.text!,
+                          userNickname: signUpView.nicknameTextField.text!)
+      
+        self.navigationController?.popViewController(animated: true)
     }
-
 }
+
+// MARK: - Network
+
+extension SignUpViewController {
+    func postSignUpRequest(userEmail: String, userPassword: String, userNickname: String) {
+        let param = SignUpRequest(userEmail, userPassword, userNickname)
+        
+        self.authProvider.request(.signUp(body: param)) { response in
+            switch response {
+            case .success(let moyaResponse):
+                do {
+                    print("Response status code:", moyaResponse.statusCode)
+                }
+            case .failure(let err):
+                print("Error:", err.localizedDescription)
+            }
+        }
+    }
+}
+

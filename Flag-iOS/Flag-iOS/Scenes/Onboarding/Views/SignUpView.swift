@@ -13,10 +13,7 @@ class SignUpView: BaseUIView {
     
     // MARK: - Properties
     
-    private var userEmail: String = ""
-    private var userPassword: String = ""
     private var userDoubleCheckPassword: String = ""
-    private var userNickname: String = ""
     private let leadingWidth = 25
     
     // MARK: - UI Components
@@ -49,7 +46,7 @@ class SignUpView: BaseUIView {
         return label
     }()
     
-    private let passwordTextField: BaseUITextField = {
+    let passwordTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.passwordHintText
         return textField
