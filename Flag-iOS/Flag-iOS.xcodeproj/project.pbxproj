@@ -23,6 +23,7 @@
 		7B31F81C2A93C42600D7D0CF /* AccessTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F81B2A93C42600D7D0CF /* AccessTokenDTO.swift */; };
 		7B31F81E2A93E2AC00D7D0CF /* AutoSignInDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F81D2A93E2AC00D7D0CF /* AutoSignInDTO.swift */; };
 		7B31F8202A94025300D7D0CF /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F81F2A94025300D7D0CF /* GenericResponse.swift */; };
+		7B31F8222A9419AC00D7D0CF /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8212A9419AC00D7D0CF /* UIWindow+.swift */; };
 		7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5592A61008A0016B418 /* AppDelegate.swift */; };
 		7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C55B2A61008A0016B418 /* SceneDelegate.swift */; };
 		7B51C5632A61008C0016B418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B51C5622A61008C0016B418 /* Assets.xcassets */; };
@@ -112,6 +113,7 @@
 		7B31F81B2A93C42600D7D0CF /* AccessTokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenDTO.swift; sourceTree = "<group>"; };
 		7B31F81D2A93E2AC00D7D0CF /* AutoSignInDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSignInDTO.swift; sourceTree = "<group>"; };
 		7B31F81F2A94025300D7D0CF /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
+		7B31F8212A9419AC00D7D0CF /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
 		7B51C5562A61008A0016B418 /* Flag-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flag-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B51C5592A61008A0016B418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B51C55B2A61008A0016B418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				7B9998D02A7A9D9C0043C592 /* UITextField+.swift */,
 				7B9999212A8ABB2B0043C592 /* UITextView+.swift */,
 				7B31F8032A923B5600D7D0CF /* UIViewController+.swift */,
+				7B31F8212A9419AC00D7D0CF /* UIWindow+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 				E593AA9D2A7E299500FC918A /* FriendsPlusViewController.swift in Sources */,
 				E53586A02A82017E007D053D /* FreindsPlusView.swift in Sources */,
 				E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */,
+				7B31F8222A9419AC00D7D0CF /* UIWindow+.swift in Sources */,
 				E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */,
 				E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */,
 				E53586A92A820251007D053D /* FlagView.swift in Sources */,

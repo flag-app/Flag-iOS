@@ -52,7 +52,10 @@ class SignInViewController: BaseUIViewController {
         postSignInRequest(userEmail: signInView.emailInputTextField.text!,
                           userPassword: signInView.passwordInputTextField.text!)
         let tabBarController = BaseTabBarController()
-        self.navigationController?.pushViewController(tabBarController, animated: true)
+//        self.navigationController?.pushViewController(tabBarController, animated: true)
+        
+        // rootView 변경
+        UIApplication.shared.keyWindow?.replaceRootViewController(tabBarController, animated: true, completion: nil)
         print("🌞\(realm.getAccessToken())")
     }
     
