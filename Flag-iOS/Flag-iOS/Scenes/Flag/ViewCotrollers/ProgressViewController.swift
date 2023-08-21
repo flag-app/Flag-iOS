@@ -8,27 +8,21 @@
 import UIKit
 
 import SnapKit
+import Moya
 
 final class ProgressViewController: BaseUIViewController {
     
     // MARK: - Properties
    
-    //더미데이터
-    var selectedDates: [Date] = [
-        Calendar.current.date(from: DateComponents(year: 2023, month: 8, day: 22))!,
-        Calendar.current.date(from: DateComponents(year: 2023, month: 8, day: 24))!,
-        Calendar.current.date(from: DateComponents(year: 2023, month: 8, day: 23))!,
-        Calendar.current.date(from: DateComponents(year: 2023, month: 8, day: 21))!,
-        Calendar.current.date(from: DateComponents(year: 2023, month: 8, day: 20))!
-    ]
-    var array = [15, 40, 18, 30, 46, 31, 20, 44, 56, 61, 34, 42, 29, 32, 37, 36, 63, 41, 54, 28, 5, 52, 58, 62, 10, 35, 49, 8, 53, 51, 45, 13, 47, 24, 57, 23, 39, 25,46, 47, 15, 10, 35, 36, 41, 53, 33, 25, 27, 17, 16, 18, 44, 32, 48, 37, 28, 43, 42,54, 28, 25, 47, 59, 43, 40, 41, 19, 39, 52, 15, 44, 49, 38, 53, 37, 33, 22, 30, 57, 20, 42, 36, 63, 12, 27, 64, 17, 45, 62, 51, 61, 10, 46, 35, 48, 56, 58, 14, 20, 38, 29, 10,10,37,37,35,42,20,36,28,28]
+    var selectedDates: [Date] = []
+    var array = [1]
     var selcetedTime: Int = 1
     var allUserNumber: Int = 5
-    //여기까지
     
     var labels: [UILabel] = []
     var frequencyDict: [Int: Int] = [:]
     var selectedIndexPath: IndexPath?
+    var selectedCell: Int = 1
     var one: [Int] = []
     var two: [Int] = []
     var three : [Int] = []
@@ -43,6 +37,12 @@ final class ProgressViewController: BaseUIViewController {
     
     // MARK: - Life Cycle
     
+    override func viewDidLoad() {
+        showProgress()
+        userAcceptStatus()
+        super.viewDidLoad()// showProgress()를 viewDidLoad()에서 호출
+       }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         presentModalViewController()
@@ -51,11 +51,11 @@ final class ProgressViewController: BaseUIViewController {
     // MARK: - Custom Method
     
     override func setUI() {
-        setStackView()
-        progressView.setLabels(labels)
+//        setStackView()
+//        progressView.setLabels(labels)
         selectedDates.sort()
         view.addSubviews(progressView)
-        categorizeNumbers()
+//        categorizeNumbers()
     }
     
     override func setLayout() {
@@ -73,6 +73,8 @@ final class ProgressViewController: BaseUIViewController {
         progressView.collectionView.delegate = self
         progressView.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
     }
+    
+   
     
     @objc
     func didTappedNextButton() {
@@ -201,7 +203,121 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
         
         return CGSize(width: itemWidth, height: itemHeight)
     }
-
+   
+    func showProgress() {
+            let provider = MoyaProvider<FlagProgressAPI>()
+            
+        // Make the API request
+            provider.request(.showProgress(flagId: 7)) { result in
+                switch result {
+                case .success(let response):
+                    // Handle successful response
+                    let statusCode = response.statusCode
+                        print("Status Code: \(statusCode)")
+                        // Process the response data as needed
+                        do {
+                            let responseData = try response.map(FlagProgress.self)
+                            self.handleResponse(responseData) // 파싱된 데이터를 처리하는 메서드 호출
+                            print(responseData)
+                            let nonResponseUsers = responseData.nonResponseUsers
+                            let acceptUsers = responseData.acceptUsers
+                            self.progressView.acceptUsers.text = "\(acceptUsers)"
+                            self.progressView.nonResponseUsers.text = "\(nonResponseUsers)"
+                        } catch {
+                            print("Response Parsing Error: \(error)")
+                        }
+                    
+                    
+                case .failure(let error):
+                    // Handle network error
+                    print("Network Error: \(error)")
+                }
+            }
+        }
+        
+        func handleResponse(_ responseData: FlagProgress) {
+            array = responseData.ableCells
+            formet()
+            
+            func formet() {
+                let dateStringArray = responseData.dates
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                
+                var dateArray: [Date] = []
+                
+                for dateString in dateStringArray {
+                    if let date = dateFormatter.date(from: dateString) {
+                        dateArray.append(date)
+                    }
+                }
+                
+                selectedDates = dateArray // 변환된 날짜 배열 출력
+            }
+            categorizeNumbers()
+            allUserNumber = responseData.userTotalCount
+            selcetedTime = responseData.timeSlot
+            self.progressView.collectionView.reloadData()
+            setStackView()
+            progressView.setLabels(labels)
+        }
+   
+    func selectTimeCell() {
+            let provider = MoyaProvider<FlagProgressAPI>()
+            
+        // Make the API request
+        provider.request(.selectTimeCell(flagId: 7, cellIndex: selectedCell )) { result in
+                switch result {
+                case .success(let response):
+                    // Handle successful response
+                    let statusCode = response.statusCode
+                        print("Status Code: \(statusCode)")
+                        // Process the response data as needed
+                        do {
+                            let responseData = try response.map(SelectTimeCell.self)
+                            print(responseData)
+                            let date = responseData.date
+                            let startTime = responseData.startTime
+                            let endTime = responseData.endTime
+                            let members = responseData.members
+                            self.progressView.friendDisplayLabel.text = "\(date) \(startTime)~\(endTime)에 가능한 친구들"
+                            self.progressView.membersDisplayLabel.text = "\(members)"
+                        } catch {
+                            print("Response Parsing Error: \(error)")
+                        }
+                    
+                    
+                case .failure(let error):
+                    // Handle network error
+                    print("Network Error: \(error)")
+                }
+            }
+        }
+    
+    func userAcceptStatus() {
+            let provider = MoyaProvider<FlagProgressAPI>()
+        // Make the API request
+            provider.request(.userAcceptStatus(flagId: 7)) { result in
+                switch result {
+                case .success(let response):
+                    // Handle successful response
+                    let statusCode = response.statusCode
+                        print("Status Code: \(statusCode)")
+                    print(String(data: response.data, encoding: .utf8))
+                        // Process the response data as needed
+                        do {
+                            _ = try response.map(UserAcceptStatus.self)
+                        } catch {
+                            print("Response Parsing Error: \(error)")
+                        }
+                    
+                    
+                case .failure(let error):
+                    // Handle network error
+                    print("Network Error: \(error)")
+                }
+            }
+        }
 }
 
 extension ProgressViewController: UICollectionViewDelegate {
@@ -216,7 +332,9 @@ extension ProgressViewController: UICollectionViewDelegate {
                     let cell = collectionView.cellForItem(at: indexPath)
                     cell?.backgroundColor = .red
                     selectedIndexPath = indexPath
+                    selectedCell = indexPath.row
                     print("선택된 셀 번호 : \(indexPath.row)")
+                    selectTimeCell()
                 }
             }
         }
@@ -235,7 +353,8 @@ extension ProgressViewController: ListViewControllerDelegate {
         //살짝 에니메이션
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             let homeVC = BaseTabBarController()
-            self.navigationController?.pushViewController(homeVC, animated: true)
+            //self.navigationController?.pushViewController(homeVC, animated: true)
+            self.navigationController?.popToRootViewController(animated: true)
         }
     }
 }

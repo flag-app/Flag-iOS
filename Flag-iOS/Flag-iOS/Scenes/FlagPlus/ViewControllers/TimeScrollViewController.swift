@@ -125,6 +125,9 @@ final class TimeScrollViewController: BaseUIViewController {
     func didTappedNextButton() {
         let readyVC = ReadyViewController()
         self.navigationController?.pushViewController(readyVC, animated: true)
+        let selectedCellIndices = previouslySelectedIndexPaths.map { $0.item }
+        let flagPlusInfo = FlagPlusInfo.shared
+        flagPlusInfo.possibleDates = selectedCellIndices
     }
 }
 

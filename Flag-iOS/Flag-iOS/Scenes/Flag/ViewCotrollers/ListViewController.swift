@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Moya
 
 protocol ListViewControllerDelegate: AnyObject {
     func didDismissModal(with information: Int?)
@@ -17,6 +18,12 @@ final class ListViewController: BaseUIViewController {
     
     var selectedCellIndex: Int? = nil
     weak var delegate: ListViewControllerDelegate?
+    var numberFlagList: Int = 0
+    var flagListData: [FlagList] = [] {
+        didSet {
+            print("flagListData: \(flagListData)")
+        }
+    }
     
     //더미
     let sections = ["참여 가능 인원 5명","참여 가능 인원 4명"]
@@ -32,6 +39,7 @@ final class ListViewController: BaseUIViewController {
     
     override func setUI() {
         view.addSubviews(listView)
+        getFlagList()
     }
     
     override func setLayout() {
@@ -70,22 +78,59 @@ final class ListViewController: BaseUIViewController {
         }
         listView.tableView.reloadData()
     }
+    
+    //MARK: -NetWork
+    
+    func getFlagList() {
+            let provider = MoyaProvider<FlagListAPI>()
+            
+        // Make the API request
+        provider.request(.showFlagList(flagId: 7)) { result in
+                switch result {
+                case .success(let response):
+                    // Handle successful response
+                    let statusCode = response.statusCode
+                        print("Status Code: \(statusCode)")
+                        // Process the response data as needed
+                        do {
+                            let responseData = try response.map([FlagList].self)
+                            print(responseData)
+                            self.numberFlagList = responseData.count
+                            print(self.numberFlagList)
+                            self.flagListData = responseData
+                            
+                            self.listView.tableView.reloadData()
+                        } catch {
+                            print("Response Parsing Error: \(error)")
+                        }
+                    
+                    
+                case .failure(let error):
+                    // Handle network error
+                    print("Network Error: \(error)")
+                }
+            }
+        }
+    
 }
 
 // MARK: - TableViewDataSource
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return numberFlagList
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomTableViewCell
         
-        cell.dateAndTimeLabel.text = "제목들어갈 자리, 셀번호 : \(indexPath.row + 1)"
-        cell.possibleUserLabel.text = "날짜들어갈 자리, 셀번호 : \(indexPath.row + 1)"
+//        cell.dateAndTimeLabel.text = "제목들어갈 자리, 셀번호 : \(indexPath.row + 1)"
+        cell.dateAndTimeLabel.text = "\(flagListData[indexPath.row].date)     \(flagListData[indexPath.row].startTime)~\(flagListData[indexPath.row].endTime)"
+        
+        cell.possibleUserLabel.text = "\(flagListData[indexPath.row].candidates)"
+        
         cell.selectButton.addTarget(self, action: #selector(didTappedSelectButton(_:)), for: .touchUpInside)
-        cell.selectionStyle = .none
+       cell.selectionStyle = .none
         
         let checkFillImage = UIImage(named: "checkFill")
         let uncheckImage = UIImage(named: "check")
@@ -97,13 +142,13 @@ extension ListViewController: UITableViewDataSource {
         return cell
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section]
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return sections.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return sections[section]
+//    }
 }
 
 extension ListViewController: UITableViewDelegate {

@@ -27,13 +27,58 @@ final class ProgressView: BaseUIView {
         return label
     }()
     
-    private let friendDisplayLabel: UILabel = {
+    lazy var friendDisplayLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.flagFriendDisplayText
         label.font = .title1
         label.numberOfLines = 0
         return label
     }()
+    
+    lazy var acceptUsersLabel: UILabel = {
+        let label = UILabel()
+        label.text = TextLiterals.flagAcceptUsersText
+        label.font = .title1
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var nonResponseLabel: UILabel = {
+        let label = UILabel()
+        label.text = TextLiterals.flagNonResponseUsersText
+        label.font = .title1
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var scrollView: UIScrollView = {
+       let scrollView = UIScrollView()
+        scrollView.contentSize = CGSize(width: 0 , height: 850)
+       return scrollView
+    }()
+    
+
+    lazy var membersDisplayLabel: UILabel = {
+        let label = UILabel()
+        label.font = .title1
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var acceptUsers: UILabel = {
+        let label = UILabel()
+        label.font = .title1
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var nonResponseUsers: UILabel = {
+        let label = UILabel()
+        label.font = .title1
+        label.numberOfLines = 0
+        return label
+    }()
+  
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -69,11 +114,18 @@ final class ProgressView: BaseUIView {
     override func setUI() {
         stackview = UIStackView(arrangedSubviews: labels)
         self.addSubviews(timeLabel,
-                         friendDisplayLabel,
-                         collectionView,
-                         indicatorImageView,
-                         stackview,
-                         modalButton)
+                         modalButton,
+                         scrollView,
+                         indicatorImageView)
+        
+        scrollView.addSubviews(friendDisplayLabel,
+                               collectionView,
+                               stackview,
+                               acceptUsersLabel,
+                               nonResponseLabel,
+                               membersDisplayLabel,
+                               acceptUsers,
+                               nonResponseUsers)
     }
     
     override func setLayout() {
@@ -93,8 +145,9 @@ final class ProgressView: BaseUIView {
         collectionView.snp.makeConstraints { make in
             make.trailing.equalTo(safeAreaLayoutGuide).inset(10)
             make.leading.equalTo(safeAreaLayoutGuide).inset(20)
-            make.top.equalTo(timeLabel.snp.bottom)
-            make.bottom.equalTo(modalButton.snp.top).offset(-160)
+            make.top.equalTo(scrollView).offset(22)
+            make.height.equalTo(475)
+            //make.bottom.equalTo(modalButton.snp.top).offset(-160)
         }
         indicatorImageView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(40)
@@ -104,14 +157,43 @@ final class ProgressView: BaseUIView {
         }
         stackview.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(7)
-            make.top.equalTo(collectionView.snp.top).offset(23)
+            make.top.equalTo(collectionView.snp.top).offset(29)
+        }
+        
+        membersDisplayLabel.snp.makeConstraints { make in
+            make.top.equalTo(friendDisplayLabel.snp.bottom).offset(30)
+            make.leading.equalToSuperview().offset(25)
+        }
+       
+        scrollView.snp.makeConstraints { make in
+            make.top.equalTo(timeLabel.snp.bottom)
+            make.bottom.equalTo(modalButton.snp.top)
+            make.horizontalEdges.equalToSuperview()
+        }
+        acceptUsersLabel.snp.makeConstraints { make in
+            make.top.equalTo(friendDisplayLabel.snp.bottom).offset(85)
+            make.leading.equalToSuperview().offset(25)
+        }
+        acceptUsers.snp.makeConstraints { make in
+            make.top.equalTo(acceptUsersLabel.snp.bottom).offset(30)
+            make.leading.equalToSuperview().inset(25)
+        }
+        nonResponseLabel.snp.makeConstraints { make in
+            make.top.equalTo(acceptUsersLabel.snp.bottom).offset(85)
+            make.leading.equalToSuperview().offset(25)
+        }
+        nonResponseUsers.snp.makeConstraints { make in
+            make.top.equalTo(nonResponseLabel.snp.bottom).offset(30)
+            make.leading.equalToSuperview().inset(25)
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        stakcViewSpace = Int((collectionView.bounds.height / CGFloat(sectionCount) - 2))
+        stakcViewSpace = 31
+//        Int((collectionView.bounds.height / CGFloat(sectionCount) - 2))
         updateStackView()
+
     }
     
     func setLabels(_ labels: [UILabel]) {

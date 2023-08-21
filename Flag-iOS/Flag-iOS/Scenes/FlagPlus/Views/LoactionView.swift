@@ -25,7 +25,7 @@ class LoactionView: BaseUIView {
         return label
     }()
     
-    private let locationTextField: BaseUITextField = {
+    lazy var locationTextField: BaseUITextField = {
         let textField = BaseUITextField()
         return textField
     }()
@@ -37,7 +37,7 @@ class LoactionView: BaseUIView {
         return label
     }()
     
-    private lazy var memoTextView: UITextView = {
+     lazy var memoTextView: UITextView = {
         let textview = UITextView()
         textview.backgroundColor = .gray100
         textview.layer.cornerRadius = 9

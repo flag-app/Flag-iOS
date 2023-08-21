@@ -35,7 +35,6 @@
 		7B51C5882A61258B0016B418 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B51C5872A61258B0016B418 /* SnapKit */; };
 		7B51C58B2A61261A0016B418 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 7B51C58A2A61261A0016B418 /* Moya */; };
 		7B51C5AB2A63F6650016B418 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5AA2A63F6650016B418 /* BaseTabBarController.swift */; };
-		7B51C5AD2A63F7790016B418 /* FlagPlusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5AC2A63F7790016B418 /* FlagPlusViewController.swift */; };
 		7B51C5B12A63F8120016B418 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B02A63F8120016B418 /* MyPageViewController.swift */; };
 		7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B22A63F8840016B418 /* UIStackView+.swift */; };
 		7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B42A63F8E70016B418 /* UIView+.swift */; };
@@ -71,7 +70,6 @@
 		E50CEE472A8768A000101E4B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE462A8768A000101E4B /* ListView.swift */; };
 		E50CEE492A8768AD00101E4B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE482A8768AD00101E4B /* ListViewController.swift */; };
 		E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE4A2A8776A600101E4B /* TimeListCell.swift */; };
-		E535869C2A82016B007D053D /* FlagPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869B2A82016B007D053D /* FlagPlusView.swift */; };
 		E535869E2A820175007D053D /* SetNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869D2A820175007D053D /* SetNameView.swift */; };
 		E53586A02A82017E007D053D /* FreindsPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869F2A82017E007D053D /* FreindsPlusView.swift */; };
 		E53586A22A82018F007D053D /* DatePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586A12A82018F007D053D /* DatePickView.swift */; };
@@ -80,6 +78,16 @@
 		E53586A92A820251007D053D /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586A82A820251007D053D /* FlagView.swift */; };
 		E546EEDF2A92484100B59FEA /* NicknameChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EEDE2A92484100B59FEA /* NicknameChangeView.swift */; };
 		E546EEE12A92485800B59FEA /* NicknameChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EEE02A92485800B59FEA /* NicknameChangeViewController.swift */; };
+		E546EEE42A926FAE00B59FEA /* FlagPlusInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EEE32A926FAE00B59FEA /* FlagPlusInfo.swift */; };
+		E546EEF52A9299E300B59FEA /* FlagPlusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EEF42A9299E300B59FEA /* FlagPlusDTO.swift */; };
+		E546EEF72A929ADE00B59FEA /* FlagPlusAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EEF62A929ADE00B59FEA /* FlagPlusAPI.swift */; };
+		E546EEFB2A92ADF900B59FEA /* FlagProgressResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EEFA2A92ADF900B59FEA /* FlagProgressResponseDTO.swift */; };
+		E546EEFF2A92AED600B59FEA /* FlagProgressAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EEFE2A92AED600B59FEA /* FlagProgressAPI.swift */; };
+		E546EF012A93A28F00B59FEA /* SelectTimeCellResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF002A93A28F00B59FEA /* SelectTimeCellResponseDTO.swift */; };
+		E546EF052A93E88100B59FEA /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF042A93E88100B59FEA /* TermsView.swift */; };
+		E546EF072A93FB4000B59FEA /* UserAcceptStatusResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF062A93FB4000B59FEA /* UserAcceptStatusResponseDTO.swift */; };
+		E546EF092A94061700B59FEA /* FlagListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF082A94061700B59FEA /* FlagListAPI.swift */; };
+		E546EF0B2A94066700B59FEA /* FlagListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF0A2A94066700B59FEA /* FlagListResponseDTO.swift */; };
 		E54787432A88CF550097F2D2 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787422A88CF550097F2D2 /* MyPageView.swift */; };
 		E54787472A88D00D0097F2D2 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787462A88D00D0097F2D2 /* FriendListViewController.swift */; };
 		E54787492A88D0160097F2D2 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787482A88D0160097F2D2 /* TermsViewController.swift */; };
@@ -126,7 +134,6 @@
 		7B51C5822A61248D0016B418 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		7B51C5842A61249C0016B418 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		7B51C5AA2A63F6650016B418 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
-		7B51C5AC2A63F7790016B418 /* FlagPlusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPlusViewController.swift; sourceTree = "<group>"; };
 		7B51C5B02A63F8120016B418 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		7B51C5B22A63F8840016B418 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		7B51C5B42A63F8E70016B418 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -162,7 +169,6 @@
 		E50CEE462A8768A000101E4B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		E50CEE482A8768AD00101E4B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		E50CEE4A2A8776A600101E4B /* TimeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeListCell.swift; sourceTree = "<group>"; };
-		E535869B2A82016B007D053D /* FlagPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPlusView.swift; sourceTree = "<group>"; };
 		E535869D2A820175007D053D /* SetNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameView.swift; sourceTree = "<group>"; };
 		E535869F2A82017E007D053D /* FreindsPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsPlusView.swift; sourceTree = "<group>"; };
 		E53586A12A82018F007D053D /* DatePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickView.swift; sourceTree = "<group>"; };
@@ -172,6 +178,16 @@
 		E53586AB2A820284007D053D /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		E546EEDE2A92484100B59FEA /* NicknameChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameChangeView.swift; sourceTree = "<group>"; };
 		E546EEE02A92485800B59FEA /* NicknameChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameChangeViewController.swift; sourceTree = "<group>"; };
+		E546EEE32A926FAE00B59FEA /* FlagPlusInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPlusInfo.swift; sourceTree = "<group>"; };
+		E546EEF42A9299E300B59FEA /* FlagPlusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPlusDTO.swift; sourceTree = "<group>"; };
+		E546EEF62A929ADE00B59FEA /* FlagPlusAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPlusAPI.swift; sourceTree = "<group>"; };
+		E546EEFA2A92ADF900B59FEA /* FlagProgressResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagProgressResponseDTO.swift; sourceTree = "<group>"; };
+		E546EEFE2A92AED600B59FEA /* FlagProgressAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagProgressAPI.swift; sourceTree = "<group>"; };
+		E546EF002A93A28F00B59FEA /* SelectTimeCellResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeCellResponseDTO.swift; sourceTree = "<group>"; };
+		E546EF042A93E88100B59FEA /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
+		E546EF062A93FB4000B59FEA /* UserAcceptStatusResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAcceptStatusResponseDTO.swift; sourceTree = "<group>"; };
+		E546EF082A94061700B59FEA /* FlagListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListAPI.swift; sourceTree = "<group>"; };
+		E546EF0A2A94066700B59FEA /* FlagListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListResponseDTO.swift; sourceTree = "<group>"; };
 		E54787422A88CF550097F2D2 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		E54787462A88D00D0097F2D2 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		E54787482A88D0160097F2D2 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
@@ -329,6 +345,7 @@
 		7B51C5722A6103030016B418 /* FlagPlus */ = {
 			isa = PBXGroup;
 			children = (
+				E546EEE22A926F5800B59FEA /* Model */,
 				E535869A2A82015A007D053D /* Views */,
 				7B51C5752A6122C00016B418 /* ViewControllers */,
 			);
@@ -348,7 +365,6 @@
 		7B51C5752A6122C00016B418 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7B51C5AC2A63F7790016B418 /* FlagPlusViewController.swift */,
 				E593AA982A7E1F9500FC918A /* SetNameViewController.swift */,
 				E593AA9C2A7E299500FC918A /* FriendsPlusViewController.swift */,
 				E593AAA02A7E2C4D00FC918A /* DatePickViewController.swift */,
@@ -387,6 +403,7 @@
 				E547874A2A8AC1920097F2D2 /* FriendListView.swift */,
 				E547874C2A8AC5AC0097F2D2 /* FriendListCell.swift */,
 				E546EEDE2A92484100B59FEA /* NicknameChangeView.swift */,
+				E546EF042A93E88100B59FEA /* TermsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -537,7 +554,11 @@
 		7BC45F8E2A8E1A2200EAC144 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				E546EF0C2A9407EE00B59FEA /* FlagListDTO */,
+				E546EEF92A92ADDC00B59FEA /* FlagProgressDTO */,
+				E546EEF32A9299C200B59FEA /* FlagPlusDTO */,
 				7B31F8062A9275CF00D7D0CF /* AuthDTO */,
+
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -554,6 +575,9 @@
 		7BC45F902A8E1AFF00EAC144 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				E546EEF62A929ADE00B59FEA /* FlagPlusAPI.swift */,
+				E546EEFE2A92AED600B59FEA /* FlagProgressAPI.swift */,
+				E546EF082A94061700B59FEA /* FlagListAPI.swift */,
 				7B31F8072A92765F00D7D0CF /* AuthAPI.swift */,
 			);
 			path = API;
@@ -580,7 +604,6 @@
 		E535869A2A82015A007D053D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E535869B2A82016B007D053D /* FlagPlusView.swift */,
 				E535869D2A820175007D053D /* SetNameView.swift */,
 				E535869F2A82017E007D053D /* FreindsPlusView.swift */,
 				E5586CEE2A8E68AD00A66EA5 /* FriendsPlusCell.swift */,
@@ -609,6 +632,40 @@
 				7B99991F2A8AB6F50043C592 /* UserView.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E546EEE22A926F5800B59FEA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E546EEE32A926FAE00B59FEA /* FlagPlusInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E546EEF32A9299C200B59FEA /* FlagPlusDTO */ = {
+			isa = PBXGroup;
+			children = (
+				E546EEF42A9299E300B59FEA /* FlagPlusDTO.swift */,
+			);
+			path = FlagPlusDTO;
+			sourceTree = "<group>";
+		};
+		E546EEF92A92ADDC00B59FEA /* FlagProgressDTO */ = {
+			isa = PBXGroup;
+			children = (
+				E546EEFA2A92ADF900B59FEA /* FlagProgressResponseDTO.swift */,
+				E546EF002A93A28F00B59FEA /* SelectTimeCellResponseDTO.swift */,
+				E546EF062A93FB4000B59FEA /* UserAcceptStatusResponseDTO.swift */,
+			);
+			path = FlagProgressDTO;
+			sourceTree = "<group>";
+		};
+		E546EF0C2A9407EE00B59FEA /* FlagListDTO */ = {
+			isa = PBXGroup;
+			children = (
+				E546EF0A2A94066700B59FEA /* FlagListResponseDTO.swift */,
+			);
+			path = FlagListDTO;
 			sourceTree = "<group>";
 		};
 		E547874F2A8AFF480097F2D2 /* Recovered References */ = {
@@ -700,12 +757,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E546EEFF2A92AED600B59FEA /* FlagProgressAPI.swift in Sources */,
+				E546EF072A93FB4000B59FEA /* UserAcceptStatusResponseDTO.swift in Sources */,
 				7B31F8002A8E7E6700D7D0CF /* UserFriendListDTO.swift in Sources */,
 				7B51C5AB2A63F6650016B418 /* BaseTabBarController.swift in Sources */,
 				E547874B2A8AC1920097F2D2 /* FriendListView.swift in Sources */,
 				E53586A42A82019A007D053D /* LoactionView.swift in Sources */,
 				7B9999062A85306E0043C592 /* FlagViewController.swift in Sources */,
 				7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */,
+				E546EF092A94061700B59FEA /* FlagListAPI.swift in Sources */,
 				7B31F81C2A93C42600D7D0CF /* AccessTokenDTO.swift in Sources */,
 				7B9998D92A7C56140043C592 /* SignUpViewController.swift in Sources */,
 				E547874D2A8AC5AC0097F2D2 /* FriendListCell.swift in Sources */,
@@ -719,8 +779,6 @@
 				7B99991C2A8A85970043C592 /* FlagInfoViewController.swift in Sources */,
 				E5DA6F862A83598500FC825F /* ProgressView.swift in Sources */,
 				7B51C5832A61248D0016B418 /* ImageLiterals.swift in Sources */,
-				7B51C5AD2A63F7790016B418 /* FlagPlusViewController.swift in Sources */,
-				7B51C5AD2A63F7790016B418 /* FlagPlusViewController.swift in Sources */,
 				7B9999122A868CF90043C592 /* DataTypeProtocol.swift in Sources */,
 				E54787432A88CF550097F2D2 /* MyPageView.swift in Sources */,
 				7B9999002A85142B0043C592 /* MainMenuBar.swift in Sources */,
@@ -730,19 +788,24 @@
 				7B9999202A8AB6F50043C592 /* UserView.swift in Sources */,
 				E546EEE12A92485800B59FEA /* NicknameChangeViewController.swift in Sources */,
 				7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */,
+				E546EF012A93A28F00B59FEA /* SelectTimeCellResponseDTO.swift in Sources */,
 				E5586CEF2A8E68AD00A66EA5 /* FriendsPlusCell.swift in Sources */,
 				E546EEDF2A92484100B59FEA /* NicknameChangeView.swift in Sources */,
+				E546EEF52A9299E300B59FEA /* FlagPlusDTO.swift in Sources */,
 				7B9999142A868E2D0043C592 /* FlagTableViewCell.swift in Sources */,
 				7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */,
+				E546EEFB2A92ADF900B59FEA /* FlagProgressResponseDTO.swift in Sources */,
 				7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */,
 				7B9999022A852BED0043C592 /* BaseCollectionViewCell.swift in Sources */,
 				7B99990F2A86896C0043C592 /* Flag.swift in Sources */,
 				7B31F80E2A92AC4200D7D0CF /* SignInRequest.swift in Sources */,
 				7B31F8202A94025300D7D0CF /* GenericResponse.swift in Sources */,
 				E535869E2A820175007D053D /* SetNameView.swift in Sources */,
+				E546EF052A93E88100B59FEA /* TermsView.swift in Sources */,
 				7B9999222A8ABB2B0043C592 /* UITextView+.swift in Sources */,
 				7B51C5802A6124600016B418 /* TextLiterals.swift in Sources */,
 				7B9998CF2A7A9BEF0043C592 /* SignInViewController.swift in Sources */,
+				E546EEF72A929ADE00B59FEA /* FlagPlusAPI.swift in Sources */,
 				7B31F8022A8E7EB900D7D0CF /* testRealmViewController.swift in Sources */,
 				E50CEE492A8768AD00101E4B /* ListViewController.swift in Sources */,
 				7B31F81E2A93E2AC00D7D0CF /* AutoSignInDTO.swift in Sources */,
@@ -753,7 +816,6 @@
 				7B31F80A2A927E2F00D7D0CF /* SignUpRequest.swift in Sources */,
 				7B31F8162A93A39100D7D0CF /* AuthRepository.swift in Sources */,
 				7BC45F942A8E1DA500EAC144 /* MoyaLoggerPluggin.swift in Sources */,
-				E535869C2A82016B007D053D /* FlagPlusView.swift in Sources */,
 				7B31F8042A923B5600D7D0CF /* UIViewController+.swift in Sources */,
 				7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */,
 				7B9998CB2A7A995D0043C592 /* BaseUIView.swift in Sources */,
@@ -762,6 +824,7 @@
 				7B51C5B12A63F8120016B418 /* MyPageViewController.swift in Sources */,
 				E53586A22A82018F007D053D /* DatePickView.swift in Sources */,
 				7B51C5B12A63F8120016B418 /* MyPageViewController.swift in Sources */,
+				E546EF0B2A94066700B59FEA /* FlagListResponseDTO.swift in Sources */,
 				E54787522A8BA5150097F2D2 /* ReadyView.swift in Sources */,
 				E5DA6F882A83599200FC825F /* ProgressViewController.swift in Sources */,
 				7B9999042A852C6D0043C592 /* MainMenuCollectionViewCell.swift in Sources */,
@@ -779,6 +842,7 @@
 				7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */,
 				7BC45F8C2A8E18DF00EAC144 /* Config.swift in Sources */,
 				E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */,
+				E546EEE42A926FAE00B59FEA /* FlagPlusInfo.swift in Sources */,
 				E54787472A88D00D0097F2D2 /* FriendListViewController.swift in Sources */,
 				7B31F8242A941D2500D7D0CF /* BaseTargetType.swift in Sources */,
 				7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */,

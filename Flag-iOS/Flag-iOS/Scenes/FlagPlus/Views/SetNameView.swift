@@ -28,7 +28,7 @@ final class SetNameView: BaseUIView {
         return label
     }()
     
-    private let nameTextField: BaseUITextField = {
+    lazy var nameTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.flagNameHintText
         return textField

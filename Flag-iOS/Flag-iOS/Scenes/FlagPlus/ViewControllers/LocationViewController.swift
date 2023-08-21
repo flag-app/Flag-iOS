@@ -46,6 +46,10 @@ class LocationViewController: BaseUIViewController {
         timeScrollVC.selcetedTime = selcetedTime
         timeScrollVC.minTime = minTime
         self.navigationController?.pushViewController(timeScrollVC, animated: true)
+        
+        let flagPlusInfo = FlagPlusInfo.shared
+        flagPlusInfo.place = locationView.locationTextField.text ?? ""
+        flagPlusInfo.memo = locationView.memoTextView.text
     }
     
 }
