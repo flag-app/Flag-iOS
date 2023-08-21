@@ -39,6 +39,7 @@ final class ProgressViewController: BaseUIViewController {
     
     override func viewDidLoad() {
         showProgress()
+        userAcceptStatus()
         super.viewDidLoad()// showProgress()를 viewDidLoad()에서 호출
        }
     
@@ -235,12 +236,6 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
         }
         
         func handleResponse(_ responseData: FlagProgress) {
-//            print("nonResponseUsers: \(responseData.nonResponseUsers)")
-//            print("acceptUsers: \(responseData.acceptUsers)")
-//            print("userTotalCount: \(responseData.userTotalCount)")
-//            print("ableCells: \(responseData.ableCells)")
-//            print("dates: \(responseData.dates)")
-//            print("timeSlot: \(responseData.timeSlot)")
             array = responseData.ableCells
             formet()
             
@@ -298,7 +293,31 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
                 }
             }
         }
-
+    
+    func userAcceptStatus() {
+            let provider = MoyaProvider<FlagProgressAPI>()
+        // Make the API request
+            provider.request(.userAcceptStatus(flagId: 7)) { result in
+                switch result {
+                case .success(let response):
+                    // Handle successful response
+                    let statusCode = response.statusCode
+                        print("Status Code: \(statusCode)")
+                    print(String(data: response.data, encoding: .utf8))
+                        // Process the response data as needed
+                        do {
+                            let responseData = try response.map(UserAcceptStatus.self)
+                        } catch {
+                            print("Response Parsing Error: \(error)")
+                        }
+                    
+                    
+                case .failure(let error):
+                    // Handle network error
+                    print("Network Error: \(error)")
+                }
+            }
+        }
 }
 
 extension ProgressViewController: UICollectionViewDelegate {

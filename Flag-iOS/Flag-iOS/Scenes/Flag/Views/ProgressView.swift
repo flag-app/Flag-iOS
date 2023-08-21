@@ -115,8 +115,6 @@ final class ProgressView: BaseUIView {
         stackview = UIStackView(arrangedSubviews: labels)
         self.addSubviews(timeLabel,
                          modalButton,
-                         //더미
-                         membersDisplayLabel,
                          scrollView,
                          indicatorImageView)
         
@@ -125,6 +123,7 @@ final class ProgressView: BaseUIView {
                                stackview,
                                acceptUsersLabel,
                                nonResponseLabel,
+                               membersDisplayLabel,
                                acceptUsers,
                                nonResponseUsers)
     }

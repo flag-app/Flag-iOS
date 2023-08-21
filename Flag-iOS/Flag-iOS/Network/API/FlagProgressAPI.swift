@@ -12,6 +12,7 @@ import Moya
 enum FlagProgressAPI {
     case showProgress(flagId: Int)
     case selectTimeCell(flagId: Int,cellIndex: Int)
+    case userAcceptStatus(flagId: Int)
 }
 
 extension FlagProgressAPI: TargetType {
@@ -25,6 +26,8 @@ extension FlagProgressAPI: TargetType {
             return "/flag/\(flagId)/show"
         case .selectTimeCell(let flagId, let cellIndex):
             return "/flag/\(flagId)/\(cellIndex)"
+        case .userAcceptStatus(let flagId):
+            return "/flag/\(flagId)/checkState"
         }
     }
     
@@ -34,6 +37,8 @@ extension FlagProgressAPI: TargetType {
             return .get
         case .selectTimeCell:
             return .get
+        case .userAcceptStatus:
+            return .get
         }
     }
     
@@ -42,6 +47,8 @@ extension FlagProgressAPI: TargetType {
         case .showProgress:
             return .requestPlain
         case .selectTimeCell:
+            return .requestPlain
+        case .userAcceptStatus:
             return .requestPlain
         }
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Moya
 
 protocol ListViewControllerDelegate: AnyObject {
     func didDismissModal(with information: Int?)
@@ -32,6 +33,7 @@ final class ListViewController: BaseUIViewController {
     
     override func setUI() {
         view.addSubviews(listView)
+        getFlagList()
     }
     
     override func setLayout() {
@@ -70,6 +72,35 @@ final class ListViewController: BaseUIViewController {
         }
         listView.tableView.reloadData()
     }
+    
+    //MARK: -NetWork
+    
+    func getFlagList() {
+            let provider = MoyaProvider<FlagListAPI>()
+            
+        // Make the API request
+        provider.request(.showFlagList(flagId: 7)) { result in
+                switch result {
+                case .success(let response):
+                    // Handle successful response
+                    let statusCode = response.statusCode
+                        print("Status Code: \(statusCode)")
+                        // Process the response data as needed
+                        do {
+                            let responseData = try response.map([FlagList].self)
+                            print(responseData)
+                        } catch {
+                            print("Response Parsing Error: \(error)")
+                        }
+                    
+                    
+                case .failure(let error):
+                    // Handle network error
+                    print("Network Error: \(error)")
+                }
+            }
+        }
+    
 }
 
 // MARK: - TableViewDataSource
