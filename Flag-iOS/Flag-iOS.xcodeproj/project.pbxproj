@@ -21,6 +21,8 @@
 		7B31F8162A93A39100D7D0CF /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8152A93A39100D7D0CF /* AuthRepository.swift */; };
 		7B31F81A2A93C36E00D7D0CF /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8192A93C36E00D7D0CF /* RealmService.swift */; };
 		7B31F81C2A93C42600D7D0CF /* AccessTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F81B2A93C42600D7D0CF /* AccessTokenDTO.swift */; };
+		7B31F81E2A93E2AC00D7D0CF /* AutoSignInDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F81D2A93E2AC00D7D0CF /* AutoSignInDTO.swift */; };
+		7B31F8202A94025300D7D0CF /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F81F2A94025300D7D0CF /* GenericResponse.swift */; };
 		7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5592A61008A0016B418 /* AppDelegate.swift */; };
 		7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C55B2A61008A0016B418 /* SceneDelegate.swift */; };
 		7B51C5632A61008C0016B418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B51C5622A61008C0016B418 /* Assets.xcassets */; };
@@ -108,6 +110,8 @@
 		7B31F8152A93A39100D7D0CF /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		7B31F8192A93C36E00D7D0CF /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		7B31F81B2A93C42600D7D0CF /* AccessTokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenDTO.swift; sourceTree = "<group>"; };
+		7B31F81D2A93E2AC00D7D0CF /* AutoSignInDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSignInDTO.swift; sourceTree = "<group>"; };
+		7B31F81F2A94025300D7D0CF /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		7B51C5562A61008A0016B418 /* Flag-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flag-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B51C5592A61008A0016B418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B51C55B2A61008A0016B418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 				7B31F7FF2A8E7E6700D7D0CF /* UserFriendListDTO.swift */,
 				7B31F8012A8E7EB900D7D0CF /* testRealmViewController.swift */,
 				7B31F81B2A93C42600D7D0CF /* AccessTokenDTO.swift */,
+				7B31F81D2A93E2AC00D7D0CF /* AutoSignInDTO.swift */,
 			);
 			path = RealmDTO;
 			sourceTree = "<group>";
@@ -561,6 +566,7 @@
 			isa = PBXGroup;
 			children = (
 				7B31F8122A93958A00D7D0CF /* NetworkResult.swift */,
+				7B31F81F2A94025300D7D0CF /* GenericResponse.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -726,12 +732,14 @@
 				7B9999022A852BED0043C592 /* BaseCollectionViewCell.swift in Sources */,
 				7B99990F2A86896C0043C592 /* Flag.swift in Sources */,
 				7B31F80E2A92AC4200D7D0CF /* SignInRequest.swift in Sources */,
+				7B31F8202A94025300D7D0CF /* GenericResponse.swift in Sources */,
 				E535869E2A820175007D053D /* SetNameView.swift in Sources */,
 				7B9999222A8ABB2B0043C592 /* UITextView+.swift in Sources */,
 				7B51C5802A6124600016B418 /* TextLiterals.swift in Sources */,
 				7B9998CF2A7A9BEF0043C592 /* SignInViewController.swift in Sources */,
 				7B31F8022A8E7EB900D7D0CF /* testRealmViewController.swift in Sources */,
 				E50CEE492A8768AD00101E4B /* ListViewController.swift in Sources */,
+				7B31F81E2A93E2AC00D7D0CF /* AutoSignInDTO.swift in Sources */,
 				7B9998D32A7AA0330043C592 /* SignInView.swift in Sources */,
 				7B9999182A8692780043C592 /* FlagCollectionViewCell.swift in Sources */,
 				7B31F8132A93958A00D7D0CF /* NetworkResult.swift in Sources */,
@@ -905,7 +913,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://15.164.94.151:8080";
+				BASE_URL = "http://localhost:8080";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HZ8WU7PA4J;
@@ -937,7 +945,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://15.164.94.151:8080";
+				BASE_URL = "http://localhost:8080";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HZ8WU7PA4J;

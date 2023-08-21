@@ -12,6 +12,7 @@ import Moya
 
 class SignInViewController: BaseUIViewController {
     
+    private var realm = RealmService()
     let authProvider = MoyaProvider<AuthAPI>()
         
     // MARK: - UI Components
@@ -43,6 +44,7 @@ class SignInViewController: BaseUIViewController {
     
     override func addTarget() {
         signInView.signInButton.addTarget(self, action: #selector(didTappedSignInButton), for: .touchUpInside)
+        
     }
     
     @objc
@@ -51,7 +53,16 @@ class SignInViewController: BaseUIViewController {
                           userPassword: signInView.passwordInputTextField.text!)
         let tabBarController = BaseTabBarController()
         self.navigationController?.pushViewController(tabBarController, animated: true)
+        print("🌞\(realm.getAccessToken())")
     }
+    
+    func checkIsSignedIn() {
+        
+    }
+    
+//    func checkRealmAccessToken() -> Bool {
+//
+//    }
 
 }
 
@@ -64,21 +75,34 @@ extension SignInViewController {
         
         self.authProvider.request(.signIn(body: param)) { response in
             switch response {
-            case .success(let moyaResponse):
-                do {
-                    print("Response status code:", moyaResponse.statusCode)
+//            case .success(let moyaResponse):
+//                do {
+//                    print("Response status code:", moyaResponse.statusCode)
+//                    let responseData = try moyaResponse.map(GenericResponse.self)
+//                    self.realm.setAccessToken(accessToken: responseData.result)
+                    
                     
                     // moyaResponse.data 를 사용하여 응답 데이터를 파싱합니다.
 //                    let decoder = JSONDecoder()
 //                    let signInResponse = try decoder.decode(SignInResponse.self, from: moyaResponse.data)
 //                    let result = try moyaResponse.map(SignInResponse.self)
                     
-                    if let accessToken = String(data: moyaResponse.data, encoding: .utf8) {
-                        print("Access Token:", accessToken)
-                    } else {
-                        print("Failed to decode token.")
-                    }
-                }
+//                    if let accessToken = String(data: moyaResponse.data, encoding: .utf8) {
+//                        print("Access Token:", accessToken)
+//                        self.realm.setAccessToken(accessToken: accessToken)
+//                        self.realm.setAutoSignIn(isSignedIn: true)
+//                    } else {
+//                        print("Failed to decode token.")
+//                    }
+//                }
+            case .success(let moyaResponse):
+                        do {
+                            print("Response status code:", moyaResponse.statusCode)
+                            let responseData = try moyaResponse.map(GenericResponse.self)
+                            self.realm.setAccessToken(accessToken: responseData.result)
+                        } catch let parsingError {
+                            print("Error parsing:", parsingError)
+                        }
             case .failure(let err):
                 print("Error:", err.localizedDescription)
             }

@@ -10,6 +10,8 @@ import SnapKit
 
 class OnboardingViewController: BaseUIViewController {
         
+    private var realm = RealmService()
+
     // MARK: - UI Components
     
     private let onboardingView = OnboardingView()
@@ -18,6 +20,8 @@ class OnboardingViewController: BaseUIViewController {
     
     override func setUI() {
         view.addSubviews(onboardingView)
+        
+        realm.deleteAllRealmData()
     }
     
     override func setLayout() {

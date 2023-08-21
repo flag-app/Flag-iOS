@@ -12,6 +12,7 @@ import UIKit
 
 class SignUpViewController: BaseUIViewController {
     
+    private var realm = RealmService()
     let authProvider = MoyaProvider<AuthAPI>()
         
     // MARK: - UI Components
@@ -50,8 +51,7 @@ class SignUpViewController: BaseUIViewController {
                           userPassword: signUpView.passwordTextField.text!,
                           userNickname: signUpView.nicknameTextField.text!)
       
-        let setNicknameViewController = BaseTabBarController()
-        self.navigationController?.pushViewController(setNicknameViewController, animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
