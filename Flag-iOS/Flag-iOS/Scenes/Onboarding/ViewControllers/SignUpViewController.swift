@@ -59,9 +59,7 @@ class SignUpViewController: BaseUIViewController {
 
 extension SignUpViewController {
     func postSignUpRequest(userEmail: String, userPassword: String, userNickname: String) {
-        let param = SignUpRequest(signUpView.emailTextField.text!,
-                                  signUpView.passwordTextField.text!,
-                                  signUpView.nicknameTextField.text!)
+        let param = SignUpRequest(userEmail, userPassword, userNickname)
         
         self.authProvider.request(.signUp(body: param)) { response in
             switch response {
