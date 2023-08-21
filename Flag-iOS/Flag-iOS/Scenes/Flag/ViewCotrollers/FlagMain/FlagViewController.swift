@@ -160,7 +160,8 @@ extension FlagViewController: FlagCollectionViewCellDelegate {
     func didSelectRowAt(at indexPath: IndexPath, in tableView: UITableView) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        let vc = FlagInfoViewController()
+        let vc = ProgressViewController()
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

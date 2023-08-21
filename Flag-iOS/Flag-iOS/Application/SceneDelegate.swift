@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
 
-        self.window?.rootViewController = ProgressViewController()
+        self.window?.rootViewController = BaseTabBarController()
         self.window?.makeKeyAndVisible()
         
         // 다크 모드 해제

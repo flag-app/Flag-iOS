@@ -306,7 +306,7 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
                     print(String(data: response.data, encoding: .utf8))
                         // Process the response data as needed
                         do {
-                            let responseData = try response.map(UserAcceptStatus.self)
+                            _ = try response.map(UserAcceptStatus.self)
                         } catch {
                             print("Response Parsing Error: \(error)")
                         }
@@ -353,7 +353,8 @@ extension ProgressViewController: ListViewControllerDelegate {
         //살짝 에니메이션
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             let homeVC = BaseTabBarController()
-            self.navigationController?.pushViewController(homeVC, animated: true)
+            //self.navigationController?.pushViewController(homeVC, animated: true)
+            self.navigationController?.popToRootViewController(animated: true)
         }
     }
 }
