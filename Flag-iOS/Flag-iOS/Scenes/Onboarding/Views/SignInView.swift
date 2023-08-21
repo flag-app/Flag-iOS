@@ -13,14 +13,14 @@ class SignInView: BaseUIView {
     
     // MARK: - UI Components
     
-    private let emailInputTextField: BaseUITextField = {
+    let emailInputTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.inputEmailText
         textField.addLeftImage(image: ImageLiterals.email)
         return textField
     }()
     
-    private let passwordInputTextField: BaseUITextField = {
+    let passwordInputTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.inputPasswordText
         textField.addLeftImage(image: ImageLiterals.password)

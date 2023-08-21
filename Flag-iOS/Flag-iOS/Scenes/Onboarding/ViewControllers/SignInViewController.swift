@@ -22,7 +22,6 @@ class SignInViewController: BaseUIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        login()
     }
     
     override func setupNavigationBar() {
@@ -48,19 +47,20 @@ class SignInViewController: BaseUIViewController {
     
     @objc
     func didTappedSignInButton() {
+        postSignInRequest(userEmail: signInView.emailInputTextField.text!,
+                          userPassword: signInView.passwordInputTextField.text!)
         let tabBarController = BaseTabBarController()
         self.navigationController?.pushViewController(tabBarController, animated: true)
     }
-    
-  
 
 }
 
+// MARK: - Network
 
 extension SignInViewController {
     
-    func login() {
-        let param = SignInRequest(email: "oo@naver.com", password: "oo")
+    func postSignInRequest(userEmail: String, userPassword: String) {
+        let param = SignInRequest(email: userEmail, password: userPassword)
         
         self.authProvider.request(.signIn(body: param)) { response in
             switch response {
@@ -73,21 +73,15 @@ extension SignInViewController {
 //                    let signInResponse = try decoder.decode(SignInResponse.self, from: moyaResponse.data)
 //                    let result = try moyaResponse.map(SignInResponse.self)
                     
-//                    print("Access Token:", moyaResponse.data)
                     if let accessToken = String(data: moyaResponse.data, encoding: .utf8) {
                         print("Access Token:", accessToken)
                     } else {
                         print("Failed to decode token.")
                     }
-
-                } catch let parsingError {
-                    print("Error parsing:", parsingError)
                 }
             case .failure(let err):
-                /// ERROR
                 print("Error:", err.localizedDescription)
             }
         }
-        print("❌login 실행")
     }
 }
