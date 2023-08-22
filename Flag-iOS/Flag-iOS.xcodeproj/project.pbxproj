@@ -25,6 +25,7 @@
 		7B31F8202A94025300D7D0CF /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F81F2A94025300D7D0CF /* GenericResponse.swift */; };
 		7B31F8222A9419AC00D7D0CF /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8212A9419AC00D7D0CF /* UIWindow+.swift */; };
 		7B31F8242A941D2500D7D0CF /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8232A941D2500D7D0CF /* BaseTargetType.swift */; };
+		7B31F8272A950D8500D7D0CF /* FixedFlagListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8262A950D8500D7D0CF /* FixedFlagListResponse.swift */; };
 		7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5592A61008A0016B418 /* AppDelegate.swift */; };
 		7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C55B2A61008A0016B418 /* SceneDelegate.swift */; };
 		7B51C5632A61008C0016B418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B51C5622A61008C0016B418 /* Assets.xcassets */; };
@@ -124,6 +125,7 @@
 		7B31F81F2A94025300D7D0CF /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		7B31F8212A9419AC00D7D0CF /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
 		7B31F8232A941D2500D7D0CF /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
+		7B31F8262A950D8500D7D0CF /* FixedFlagListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedFlagListResponse.swift; sourceTree = "<group>"; };
 		7B51C5562A61008A0016B418 /* Flag-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flag-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B51C5592A61008A0016B418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B51C55B2A61008A0016B418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -267,6 +269,14 @@
 				7B31F8152A93A39100D7D0CF /* AuthRepository.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		7B31F8252A950D5300D7D0CF /* FlagDTO */ = {
+			isa = PBXGroup;
+			children = (
+				7B31F8262A950D8500D7D0CF /* FixedFlagListResponse.swift */,
+			);
+			path = FlagDTO;
 			sourceTree = "<group>";
 		};
 		7B51C54D2A61008A0016B418 = {
@@ -554,11 +564,11 @@
 		7BC45F8E2A8E1A2200EAC144 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				7B31F8252A950D5300D7D0CF /* FlagDTO */,
 				E546EF0C2A9407EE00B59FEA /* FlagListDTO */,
 				E546EEF92A92ADDC00B59FEA /* FlagProgressDTO */,
 				E546EEF32A9299C200B59FEA /* FlagPlusDTO */,
 				7B31F8062A9275CF00D7D0CF /* AuthDTO */,
-
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -773,6 +783,7 @@
 				7B9998CD2A7A9B530043C592 /* BaseUIViewController.swift in Sources */,
 				E50CEE472A8768A000101E4B /* ListView.swift in Sources */,
 				7B9998C92A7A95F50043C592 /* BaseEmptyButton.swift in Sources */,
+				7B31F8272A950D8500D7D0CF /* FixedFlagListResponse.swift in Sources */,
 				7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */,
 				7B31F80C2A92A06B00D7D0CF /* SignUpResponse.swift in Sources */,
 				7B51C5852A61249C0016B418 /* UIFont+.swift in Sources */,
