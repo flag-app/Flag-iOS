@@ -88,6 +88,7 @@
 		E546EF072A93FB4000B59FEA /* UserAcceptStatusResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF062A93FB4000B59FEA /* UserAcceptStatusResponseDTO.swift */; };
 		E546EF092A94061700B59FEA /* FlagListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF082A94061700B59FEA /* FlagListAPI.swift */; };
 		E546EF0B2A94066700B59FEA /* FlagListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF0A2A94066700B59FEA /* FlagListResponseDTO.swift */; };
+		E546EF0E2A95138100B59FEA /* FlagCandidateFixDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF0D2A95138100B59FEA /* FlagCandidateFixDTO.swift */; };
 		E54787432A88CF550097F2D2 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787422A88CF550097F2D2 /* MyPageView.swift */; };
 		E54787472A88D00D0097F2D2 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787462A88D00D0097F2D2 /* FriendListViewController.swift */; };
 		E54787492A88D0160097F2D2 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787482A88D0160097F2D2 /* TermsViewController.swift */; };
@@ -188,6 +189,7 @@
 		E546EF062A93FB4000B59FEA /* UserAcceptStatusResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAcceptStatusResponseDTO.swift; sourceTree = "<group>"; };
 		E546EF082A94061700B59FEA /* FlagListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListAPI.swift; sourceTree = "<group>"; };
 		E546EF0A2A94066700B59FEA /* FlagListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListResponseDTO.swift; sourceTree = "<group>"; };
+		E546EF0D2A95138100B59FEA /* FlagCandidateFixDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagCandidateFixDTO.swift; sourceTree = "<group>"; };
 		E54787422A88CF550097F2D2 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		E54787462A88D00D0097F2D2 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		E54787482A88D0160097F2D2 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
@@ -558,7 +560,6 @@
 				E546EEF92A92ADDC00B59FEA /* FlagProgressDTO */,
 				E546EEF32A9299C200B59FEA /* FlagPlusDTO */,
 				7B31F8062A9275CF00D7D0CF /* AuthDTO */,
-
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -664,6 +665,7 @@
 			isa = PBXGroup;
 			children = (
 				E546EF0A2A94066700B59FEA /* FlagListResponseDTO.swift */,
+				E546EF0D2A95138100B59FEA /* FlagCandidateFixDTO.swift */,
 			);
 			path = FlagListDTO;
 			sourceTree = "<group>";
@@ -815,6 +817,7 @@
 				7B9999162A868E640043C592 /* BaseTableViewCell.swift in Sources */,
 				7B31F80A2A927E2F00D7D0CF /* SignUpRequest.swift in Sources */,
 				7B31F8162A93A39100D7D0CF /* AuthRepository.swift in Sources */,
+				E546EF0E2A95138100B59FEA /* FlagCandidateFixDTO.swift in Sources */,
 				7BC45F942A8E1DA500EAC144 /* MoyaLoggerPluggin.swift in Sources */,
 				7B31F8042A923B5600D7D0CF /* UIViewController+.swift in Sources */,
 				7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */,

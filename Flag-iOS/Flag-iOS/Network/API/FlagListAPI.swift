@@ -11,6 +11,8 @@ import Moya
 
 enum FlagListAPI {
     case showFlagList(flagId: Int)
+    //리스트에서 확정 api
+    case flagCandidateFix(flagId: Int)
 }
 
 extension FlagListAPI: TargetType {
@@ -22,6 +24,8 @@ extension FlagListAPI: TargetType {
         switch self {
         case .showFlagList(let flagId):
             return "/flag/\(flagId)/candidate"
+        case .flagCandidateFix(let flagId):
+            return "/flag/\(flagId)/candidate/fix"
         }
     }
     
@@ -29,6 +33,8 @@ extension FlagListAPI: TargetType {
         switch self {
         case .showFlagList:
             return .get
+        case .flagCandidateFix:
+            return .post
         }
     }
     
@@ -36,6 +42,8 @@ extension FlagListAPI: TargetType {
         switch self {
         case .showFlagList:
             return .requestPlain
+        case .flagCandidateFix(let body):
+            return .requestJSONEncodable(body)
         }
     }
     
