@@ -166,7 +166,7 @@ extension FlagViewController: HomeMenuBarDelegate {
 
 extension FlagViewController: FlagCollectionViewCellDelegate {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView, at section: Int) -> Int {
         return fixedFlagListData.count
     }
     
@@ -174,7 +174,7 @@ extension FlagViewController: FlagCollectionViewCellDelegate {
         return 1
     }
     
-    func cellForRow(at indexPath: IndexPath, in tableView: UITableView) -> UITableViewCell {
+    func cellForRow(at indexPath: IndexPath, in tableView: UITableView, at section: Int) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FlagTableViewCell.identifier,
                                                  for: indexPath) as! FlagTableViewCell
         cell.model = .fixed(fixedFlagListData[indexPath.section])
@@ -229,8 +229,12 @@ extension FlagViewController {
             case .success(let moyaResponse):
                 do {
                     let responseData = try moyaResponse.map([ProgressFlagListResponse].self)
-                    self.
+                    self.progressFlagListData = responseData
+                } catch (let err) {
+                    print(err.localizedDescription)
                 }
+            case .failure(let err):
+                print(err.localizedDescription)
             }
         }
     }
