@@ -31,6 +31,12 @@ final class FlagViewController: BaseUIViewController {
             flagView.flagCollectionView.reloadData()
         }
     }
+    
+    private var progressFlagListData: [ProgressFlagListResponse] = [] {
+        didSet {
+            flagView.flagCollectionView.reloadData()
+        }
+    }
 
     // MARK: - UI Components
     
@@ -177,7 +183,7 @@ extension FlagViewController: FlagCollectionViewCellDelegate {
     
     func didSelectRowAt(at indexPath: IndexPath, in tableView: UITableView, at section: Int) {
         tableView.deselectRow(at: indexPath, animated: true)
-print("🅿️\(section)")
+
         switch section {
         case 0:
             let flagInfoViewController = FlagInfoViewController()
@@ -192,7 +198,6 @@ print("🅿️\(section)")
         default:
             break
         }
-        
         
     }
 }
@@ -214,6 +219,18 @@ extension FlagViewController {
                 }
             case .failure(let err):
                 print(err.localizedDescription)
+            }
+        }
+    }
+    
+    private func getProgressFlag() {
+        self.provider.request(.progressFlag) { response in
+            switch response {
+            case .success(let moyaResponse):
+                do {
+                    let responseData = try moyaResponse.map([ProgressFlagListResponse].self)
+                    self.
+                }
             }
         }
     }

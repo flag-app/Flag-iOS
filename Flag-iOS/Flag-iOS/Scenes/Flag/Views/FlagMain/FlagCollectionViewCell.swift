@@ -8,9 +8,9 @@
 import UIKit
 
 protocol FlagCollectionViewCellDelegate: AnyObject {
-    func numberOfSections(in tableView: UITableView) -> Int
+    func numberOfSections(in tableView: UITableView, at section: Int) -> Int
     func numberOfRows(in tableView: UITableView) -> Int
-    func cellForRow(at indexPath: IndexPath, in tableView: UITableView) -> UITableViewCell
+    func cellForRow(at indexPath: IndexPath, in tableView: UITableView, at section: Int) -> UITableViewCell
     func didSelectRowAt(at indexPath: IndexPath, in tableView: UITableView, at section: Int)
 }
 
@@ -68,14 +68,14 @@ class FlagCollectionViewCell: BaseCollectionViewCell {
 
 extension FlagCollectionViewCell: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return delegate?.numberOfSections(in: tableView) ?? 0
+        return delegate?.numberOfSections(in: tableView, at: section) ?? 0
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return delegate?.numberOfRows(in: tableView) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return delegate?.cellForRow(at: indexPath, in: tableView) ?? FlagTableViewCell()
+        return delegate?.cellForRow(at: indexPath, in: tableView, at: section) ?? FlagTableViewCell()
     }
 }
 
