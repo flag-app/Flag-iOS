@@ -101,31 +101,6 @@ extension FlagViewController: UICollectionViewDataSource {
                                                       for: indexPath) as! FlagCollectionViewCell
         cell.delegate = self
         cell.section = indexPath.item
-        cell.flagTableView.delegate = cell
-
-//        cell.tableViewDidSelect = { [weak self] (selectedIndexPath) in
-                // selectedIndexPath는 tableView의 선택된 셀의 indexPath입니다.
-                // indexPath는 collectionView의 현재 셀의 indexPath입니다.
-//
-//                switch indexPath.section {
-//                case 0:
-//                    let flagInfoViewController = FlagInfoViewController()
-//                    self?.delegate = flagInfoViewController
-//                    delegate?.didTappedFixedFlagInfo(fixedFlag: fixedFlagListData[indexPath.section])
-//                    flagInfoViewController.hidesBottomBarWhenPushed = true
-//                    self?.navigationController?.pushViewController(flagInfoViewController, animated: true)
-//                case 1:
-//                    let progressViewController = ProgressViewController()
-//                    progressViewController.hidesBottomBarWhenPushed = true
-//                    self?.navigationController?.pushViewController(progressViewController, animated: true)
-//                default:
-//                    break
-//                }
-//            }
-//
-        
-        
-        
         cell.flagTableView.reloadData()
         return cell
     }
