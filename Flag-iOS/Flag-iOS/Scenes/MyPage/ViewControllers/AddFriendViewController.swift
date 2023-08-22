@@ -1,18 +1,18 @@
 //
-//  FriendListViewController.swift
+//  AddFriendViewController.swift
 //  Flag-iOS
 //
-//  Created by 성현주 on 2023/08/13.
+//  Created by 성현주 on 2023/08/23.
 //
 
 import UIKit
 import Moya
 
-final class FriendListViewController: BaseUIViewController {
+final class AddFriendViewController: BaseUIViewController {
     
     // MARK: - Properties
     
-    private let friendListView = FriendListView()
+    private let addFriendView = AddFriendView()
     var selectedCellIndex: Int? = nil
     var numberFriendList: Int = 0
     var friendListData: [FriendList] = [] {
@@ -29,36 +29,34 @@ final class FriendListViewController: BaseUIViewController {
     // MARK: - Custom Method
     
     override func setUI() {
-        view.addSubviews(friendListView)
+        view.addSubviews(addFriendView)
         getFriendList()
     }
     
     override func setLayout() {
-        friendListView.snp.makeConstraints{ make in
+        addFriendView.snp.makeConstraints{ make in
             make.edges.equalToSuperview()
         }
     }
     
     override func addTarget() {
-        friendListView.searchButton.addTarget(self, action: #selector(didTappedFriendSearchButton), for: .touchUpInside)
+        addFriendView.searchButton.addTarget(self, action: #selector(didTappedFriendSearchButton), for: .touchUpInside)
     }
     
     override func setDelegate(){
-        friendListView.tableView.dataSource = self
+        addFriendView.tableView.dataSource = self
     }
     
     @objc
     func didTappedFriendSearchButton() {
-        print("tap")
+        searchFriend()
     }
     
     @objc
     func didTappedDeleteButton(_ sender: UIButton) {
         let alertView = UIAlertController(title: TextLiterals.DeleteQuestionText, message: "", preferredStyle: .alert)
-        let deleteAction = UIAlertAction(title: TextLiterals.friendDeleteText, style: .default) { _ in
-                self.deleteFriend() 
-            }
-            alertView.addAction(deleteAction)
+        let deleteAction = UIAlertAction(title: TextLiterals.friendDeleteText, style: .default, handler: nil)
+        alertView.addAction(deleteAction)
         let cancelAction = UIAlertAction(title: TextLiterals.flagCancelText, style: .default, handler: nil)
         alertView.addAction(cancelAction)
         present(alertView, animated: true, completion: nil)
@@ -83,7 +81,7 @@ final class FriendListViewController: BaseUIViewController {
                             print(self.numberFriendList)
                             self.friendListData = responseData
                             
-                            self.friendListView.tableView.reloadData()
+                            self.addFriendView.tableView.reloadData()
                         } catch {
                             print("Response Parsing Error: \(error)")
                         }
@@ -96,46 +94,42 @@ final class FriendListViewController: BaseUIViewController {
             }
         }
     
-    func deleteFriend() {
-            let provider = MoyaProvider<FriendDeleteAPI>()
-            
-            // Create a FriendDelete object with the appropriate data
-            let friendToDelete = FriendDelete(fid: 38) // Replace with the actual friend ID
-            
-            // Make the API request
-            provider.request(.friendDelete(body: friendToDelete)) { result in
-                switch result {
-                case .success(let response):
-                    // Handle successful response
-                    let statusCode = response.statusCode
-                    print("Status Code: \(statusCode)")
-                    do {
-                        // Parse the response data if needed
-                        let responseData = try JSONDecoder().decode(FriendDelete.self, from: response.data)
-                        // Perform any actions or UI updates based on the responseData
-                        
-                    } catch {
-                        print("Response Parsing Error: \(error)")
-                    }
-                    
-                case .failure(let error):
-                    // Handle network error
-                    print("Network Error: \(error)")
-                }
+    
+    func searchFriend() {
+        
+            let provider = MoyaProvider<FriendSearchAPI>()
+
+            // Create a FlagPlus object with appropriate data
+        let flagData = FriendSearch(name: addFriendView.friendSearchTextField.text ?? "")
+        print(flagData)
+        provider.request(.friendSearch(body: flagData)) { result in
+            switch result {
+            case .success(let response):
+                // Handle successful response
+                let responseData = response.data
+                        if let dataString = String(data: responseData, encoding: .utf8) {
+                            print("Response Data: \(dataString)")
+                        }
+
+            case .failure(let error):
+                // Handle network error
+                print("Network Error: \(error)")
             }
+        }
+
         }
     
 }
 
 // MARK: - TableViewDataSource
 
-extension FriendListViewController: UITableViewDataSource {
+extension AddFriendViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberFriendList
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendListCell", for: indexPath) as! FriendListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddFriendCell", for: indexPath) as! AddFriendCell
         
         cell.titleLabel.text = "\(friendListData[indexPath.row].name)"
         cell.subtitleLabel.text = "\(friendListData[indexPath.row].email)"
@@ -144,3 +138,4 @@ extension FriendListViewController: UITableViewDataSource {
         return cell
     }
 }
+

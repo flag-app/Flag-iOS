@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Moya
 
 final class FriendsPlusViewController: BaseUIViewController {
     
@@ -13,6 +14,12 @@ final class FriendsPlusViewController: BaseUIViewController {
     
     var selectedCellIndex: [Int] = []
     var guestNames: [String] = []
+    var numberFriendList: Int = 0
+    var friendListData: [FriendList] = [] {
+        didSet {
+            print("flagListData: \(friendListData)")
+        }
+    }
     
     // MARK: - UI Components 
     
@@ -28,6 +35,7 @@ final class FriendsPlusViewController: BaseUIViewController {
     
     override func setUI() {
         view.addSubviews(friendsNameView)
+        getFriendList()
     }
     
     override func setLayout() {
@@ -58,6 +66,7 @@ final class FriendsPlusViewController: BaseUIViewController {
         flagPlusInfo.guestId = guestNames
         let datePickVC = DatePickViewController()
         self.navigationController?.pushViewController(datePickVC, animated: true)
+        print(guestNames)
     }
     
     @objc
@@ -79,6 +88,39 @@ final class FriendsPlusViewController: BaseUIViewController {
         let guestName = cell.userNicknameLabel.text ?? "닉네임 없음"
         guestNames.append(guestName)
     }
+    
+    //MARK: -NetWork
+    
+    func getFriendList() {
+            let provider = MoyaProvider<FriendListAPI>()
+            
+        // Make the API request
+        provider.request(.showFriendList) { result in
+                switch result {
+                case .success(let response):
+                    // Handle successful response
+                    let statusCode = response.statusCode
+                        print("Status Code: \(statusCode)")
+                        // Process the response data as needed
+                        do {
+                            let responseData = try response.map([FriendList].self)
+                            print(responseData)
+                            self.numberFriendList = responseData.count
+                            print(self.numberFriendList)
+                            self.friendListData = responseData
+                            
+                            self.friendsNameView.tableView.reloadData()
+                        } catch {
+                            print("Response Parsing Error: \(error)")
+                        }
+                    
+                    
+                case .failure(let error):
+                    // Handle network error
+                    print("Network Error: \(error)")
+                }
+            }
+        }
 
     
 }
@@ -87,14 +129,14 @@ final class FriendsPlusViewController: BaseUIViewController {
 
 extension FriendsPlusViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 40
+        return numberFriendList
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsPlusCell", for: indexPath) as! FriendsPlusCell
         
-        cell.userNicknameLabel.text = "닉네임 \(indexPath.row + 1)"
-        cell.userIdLabel.text = "아이디 : \(indexPath.row + 1)"
+        cell.userNicknameLabel.text = "\(friendListData[indexPath.row].name)"
+        cell.userIdLabel.text = "\(friendListData[indexPath.row].email)"
         cell.friendPlusButton.addTarget(self, action: #selector(didTappedFriendPlusButton(_:)), for: .touchUpInside)
         cell.selectionStyle = .none
         
