@@ -6,11 +6,14 @@
 //
 import UIKit
 
+import Moya
 import SnapKit
 
 final class FlagViewController: BaseUIViewController {
     
     // MARK: - Properties
+    
+    private let provider = MoyaProvider<FlagMainAPI>(plugins: [MoyaLoggerPlugin()])
     
     private var currentIndex: Int = 0 {
            didSet {
@@ -163,5 +166,27 @@ extension FlagViewController: FlagCollectionViewCellDelegate {
         let vc = ProgressViewController()
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+
+// MARK: - Network
+
+extension FlagViewController {
+    
+    private func getFixedFlag() {
+        self.provider.request(.fixedFlag) { response in
+            switch response {
+            case .success(let moyaResponse):
+                do {
+                    let responseData = try moyaResponse.map(FixedFlagListResponse.self)
+                    // bind
+                } catch (let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
 }

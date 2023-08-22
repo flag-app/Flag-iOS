@@ -15,6 +15,14 @@ class FlagTableViewCell: BaseTableViewCell {
     
     static let identifier = "FlagCell"
     
+    var model: FlagStatusInfo? {
+        didSet {
+            if let model = model {
+                bind(model)
+            }
+        }
+    }
+    
     // MARK: - UI Components
     
     let flagImage: UIImageView = {
@@ -109,6 +117,13 @@ class FlagTableViewCell: BaseTableViewCell {
         }
         dDayLabel.snp.makeConstraints {
             $0.center.equalTo(dDayView)
+        }
+    }
+    
+    func bind(_ model: FlagStatusInfo) {
+        switch model {
+        case .fixed(let data):
+            print("bind success: \(data)")
         }
     }
 }
