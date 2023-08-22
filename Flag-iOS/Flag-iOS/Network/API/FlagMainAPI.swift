@@ -11,9 +11,10 @@ import Moya
 
 enum FlagMainAPI {
     case fixedFlag
+    case progressFlag
 }
 
-extension FlagMainAPI: TargetType {
+extension FlagMainAPI: BaseTargetType {
     public var baseURL: URL {
         return URL(string: Config.baseURL)!
     }
@@ -22,19 +23,21 @@ extension FlagMainAPI: TargetType {
         switch self {
         case .fixedFlag:
             return "/flag/fixedlist"
+        case .progressFlag:
+            return "/flag/progresslist"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .fixedFlag:
+        case .fixedFlag, .progressFlag:
             return .get
         }
     }
     
     var task: Task {
         switch self {
-        case .fixedFlag:
+        case .fixedFlag, .progressFlag:
             return .requestPlain
         }
     }
