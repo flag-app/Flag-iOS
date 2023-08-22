@@ -123,6 +123,10 @@ class FlagTableViewCell: BaseTableViewCell {
             locationLabel.text = data.place
             participantLabel.text = data.members.joined(separator: ",")
             dDayLabel.text = data.dday
+        case .progress(let data):
+            nameLabel.text = data.name
+            locationLabel.text = data.place
+            participantLabel.text = "\(data.host) 외 \(data.count)명"
         }
     }
 }
