@@ -26,6 +26,7 @@
 		7B31F8222A9419AC00D7D0CF /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8212A9419AC00D7D0CF /* UIWindow+.swift */; };
 		7B31F8242A941D2500D7D0CF /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8232A941D2500D7D0CF /* BaseTargetType.swift */; };
 		7B31F8272A950D8500D7D0CF /* FixedFlagListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8262A950D8500D7D0CF /* FixedFlagListResponse.swift */; };
+		7B31F8292A950FFB00D7D0CF /* FlagMainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8282A950FFB00D7D0CF /* FlagMainAPI.swift */; };
 		7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5592A61008A0016B418 /* AppDelegate.swift */; };
 		7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C55B2A61008A0016B418 /* SceneDelegate.swift */; };
 		7B51C5632A61008C0016B418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B51C5622A61008C0016B418 /* Assets.xcassets */; };
@@ -126,6 +127,7 @@
 		7B31F8212A9419AC00D7D0CF /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
 		7B31F8232A941D2500D7D0CF /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
 		7B31F8262A950D8500D7D0CF /* FixedFlagListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedFlagListResponse.swift; sourceTree = "<group>"; };
+		7B31F8282A950FFB00D7D0CF /* FlagMainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMainAPI.swift; sourceTree = "<group>"; };
 		7B51C5562A61008A0016B418 /* Flag-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flag-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B51C5592A61008A0016B418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B51C55B2A61008A0016B418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -589,6 +591,7 @@
 				E546EEFE2A92AED600B59FEA /* FlagProgressAPI.swift */,
 				E546EF082A94061700B59FEA /* FlagListAPI.swift */,
 				7B31F8072A92765F00D7D0CF /* AuthAPI.swift */,
+				7B31F8282A950FFB00D7D0CF /* FlagMainAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -806,6 +809,7 @@
 				7B9999142A868E2D0043C592 /* FlagTableViewCell.swift in Sources */,
 				7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */,
 				E546EEFB2A92ADF900B59FEA /* FlagProgressResponseDTO.swift in Sources */,
+				7B31F8292A950FFB00D7D0CF /* FlagMainAPI.swift in Sources */,
 				7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */,
 				7B9999022A852BED0043C592 /* BaseCollectionViewCell.swift in Sources */,
 				7B99990F2A86896C0043C592 /* Flag.swift in Sources */,
