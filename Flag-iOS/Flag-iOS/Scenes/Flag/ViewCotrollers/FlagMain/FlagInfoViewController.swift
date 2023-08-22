@@ -9,6 +9,9 @@ import UIKit
 
 class FlagInfoViewController: BaseUIViewController {
     
+    // MARK: - Properties
+
+    
     // MARK: - UI Components
     
     let flagInfoView = FlagInfoView()
@@ -34,8 +37,11 @@ class FlagInfoViewController: BaseUIViewController {
     }
 }
 
-// MARK: - Network
+// MARK: - Delegate
 
-extension FlagInfoViewController {
+extension FlagInfoViewController: FixedFlagInfoDelegate {
+    func didTappedFixedFlagInfo(fixedFlag: FixedFlagListResponse) {
+        flagInfoView.dataModel = fixedFlag
+    }
     
 }

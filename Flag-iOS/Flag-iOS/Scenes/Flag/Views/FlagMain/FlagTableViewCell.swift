@@ -33,28 +33,24 @@ class FlagTableViewCell: BaseTableViewCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "광고론 팀플 회의"
         label.font = .head2
         return label
     }()
     
     let dateLabel: UILabel = {
         let label = UILabel()
-        label.text = "2023년 7월 18일 19:00 - 21:00"
         label.font = .subTitle3
         return label
     }()
     
     let locationLabel: UILabel = {
         let label = UILabel()
-        label.text = "중앙도서관 세미나실 2"
         label.font = .body2
         return label
     }()
     
     let participantLabel: UILabel = {
         let label = UILabel()
-        label.text = "노키 외 3명"
         label.font = .body2
         return label
     }()
@@ -69,7 +65,6 @@ class FlagTableViewCell: BaseTableViewCell {
     
     let dDayLabel: UILabel = {
         let label = UILabel()
-        label.text = "D-2"
         label.font = .title2
         label.textColor = .white
         return label
@@ -127,6 +122,7 @@ class FlagTableViewCell: BaseTableViewCell {
             dateLabel.text = data.date
             locationLabel.text = data.place
             participantLabel.text = data.members.joined(separator: ",")
+            dDayLabel.text = data.dday
         }
     }
 }

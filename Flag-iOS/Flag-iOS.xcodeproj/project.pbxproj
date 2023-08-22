@@ -28,6 +28,7 @@
 		7B31F8272A950D8500D7D0CF /* FixedFlagListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8262A950D8500D7D0CF /* FixedFlagListResponse.swift */; };
 		7B31F8292A950FFB00D7D0CF /* FlagMainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8282A950FFB00D7D0CF /* FlagMainAPI.swift */; };
 		7B31F82C2A951CFE00D7D0CF /* FlagStatusInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F82B2A951CFE00D7D0CF /* FlagStatusInfo.swift */; };
+		7B31F82E2A955B2C00D7D0CF /* ProgressFlagListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F82D2A955B2C00D7D0CF /* ProgressFlagListResponse.swift */; };
 		7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5592A61008A0016B418 /* AppDelegate.swift */; };
 		7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C55B2A61008A0016B418 /* SceneDelegate.swift */; };
 		7B51C5632A61008C0016B418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B51C5622A61008C0016B418 /* Assets.xcassets */; };
@@ -130,6 +131,7 @@
 		7B31F8262A950D8500D7D0CF /* FixedFlagListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedFlagListResponse.swift; sourceTree = "<group>"; };
 		7B31F8282A950FFB00D7D0CF /* FlagMainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMainAPI.swift; sourceTree = "<group>"; };
 		7B31F82B2A951CFE00D7D0CF /* FlagStatusInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagStatusInfo.swift; sourceTree = "<group>"; };
+		7B31F82D2A955B2C00D7D0CF /* ProgressFlagListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressFlagListResponse.swift; sourceTree = "<group>"; };
 		7B51C5562A61008A0016B418 /* Flag-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flag-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B51C5592A61008A0016B418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B51C55B2A61008A0016B418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				7B31F8262A950D8500D7D0CF /* FixedFlagListResponse.swift */,
+				7B31F82D2A955B2C00D7D0CF /* ProgressFlagListResponse.swift */,
 			);
 			path = FlagDTO;
 			sourceTree = "<group>";
@@ -864,6 +867,7 @@
 				7B31F8222A9419AC00D7D0CF /* UIWindow+.swift in Sources */,
 				E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */,
 				E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */,
+				7B31F82E2A955B2C00D7D0CF /* ProgressFlagListResponse.swift in Sources */,
 				E53586A92A820251007D053D /* FlagView.swift in Sources */,
 				E54787542A8BA5250097F2D2 /* ReadyViewController.swift in Sources */,
 				7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */,

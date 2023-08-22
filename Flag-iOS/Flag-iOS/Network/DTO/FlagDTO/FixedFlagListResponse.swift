@@ -8,11 +8,17 @@
 import Foundation
 
 struct FixedFlagListResponse: Codable {
-    let date: String
-    let endTime: String
-    let members: [String]
-    let memo: String
-    let name: String
-    let place: String
-    let startTime: String
+    var count: Int
+    var date: String
+    var dday: String
+    var endTime: String
+    var host: String
+    var id: Int
+    var members: [String]
+    var memo: String
+    var name: String
+    var place: String
+    var startTime: String
+    var title: String
 }
+

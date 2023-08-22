@@ -9,10 +9,16 @@ import UIKit
 import Moya
 import SnapKit
 
+protocol FixedFlagInfoDelegate: AnyObject {
+    func didTappedFixedFlagInfo(fixedFlag: FixedFlagListResponse)
+}
+
 final class FlagViewController: BaseUIViewController {
     
     // MARK: - Properties
     
+//    var section: Int = 0
+    weak var delegate: FixedFlagInfoDelegate?
     private let provider = MoyaProvider<FlagMainAPI>(plugins: [MoyaLoggerPlugin()])
     
     private var currentIndex: Int = 0 {
@@ -23,7 +29,6 @@ final class FlagViewController: BaseUIViewController {
     
     private var fixedFlagListData: [FixedFlagListResponse] = [] {
         didSet {
-            print("✅fixedFlagListData: \(fixedFlagListData)")
             flagView.flagCollectionView.reloadData()
         }
     }
@@ -95,6 +100,32 @@ extension FlagViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FlagCollectionViewCell.identifier,
                                                       for: indexPath) as! FlagCollectionViewCell
         cell.delegate = self
+        cell.section = indexPath.item
+        cell.flagTableView.delegate = cell
+
+//        cell.tableViewDidSelect = { [weak self] (selectedIndexPath) in
+                // selectedIndexPath는 tableView의 선택된 셀의 indexPath입니다.
+                // indexPath는 collectionView의 현재 셀의 indexPath입니다.
+//
+//                switch indexPath.section {
+//                case 0:
+//                    let flagInfoViewController = FlagInfoViewController()
+//                    self?.delegate = flagInfoViewController
+//                    delegate?.didTappedFixedFlagInfo(fixedFlag: fixedFlagListData[indexPath.section])
+//                    flagInfoViewController.hidesBottomBarWhenPushed = true
+//                    self?.navigationController?.pushViewController(flagInfoViewController, animated: true)
+//                case 1:
+//                    let progressViewController = ProgressViewController()
+//                    progressViewController.hidesBottomBarWhenPushed = true
+//                    self?.navigationController?.pushViewController(progressViewController, animated: true)
+//                default:
+//                    break
+//                }
+//            }
+//
+        
+        
+        
         cell.flagTableView.reloadData()
         return cell
     }
@@ -170,12 +201,25 @@ extension FlagViewController: FlagCollectionViewCellDelegate {
         return cell
     }
     
-    func didSelectRowAt(at indexPath: IndexPath, in tableView: UITableView) {
+    func didSelectRowAt(at indexPath: IndexPath, in tableView: UITableView, at section: Int) {
         tableView.deselectRow(at: indexPath, animated: true)
-
-        let vc = FlagInfoViewController()
-        vc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(vc, animated: true)
+print("🅿️\(section)")
+        switch section {
+        case 0:
+            let flagInfoViewController = FlagInfoViewController()
+            self.delegate = flagInfoViewController
+            delegate?.didTappedFixedFlagInfo(fixedFlag: fixedFlagListData[indexPath.section])
+            flagInfoViewController.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(flagInfoViewController, animated: true)
+        case 1:
+            let progressViewController = ProgressViewController()
+            progressViewController.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(progressViewController, animated: true)
+        default:
+            break
+        }
+        
+        
     }
 }
 
