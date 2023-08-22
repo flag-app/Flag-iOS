@@ -34,6 +34,7 @@ final class FlagViewController: BaseUIViewController {
     
     private var progressFlagListData: [ProgressFlagListResponse] = [] {
         didSet {
+            print("🍊\(progressFlagListData)")
             flagView.flagCollectionView.reloadData()
         }
     }
@@ -49,6 +50,7 @@ final class FlagViewController: BaseUIViewController {
 
         setCollectionView()
         getFixedFlag()
+        getProgressFlag()
     }
 
     // MARK: - Custom Method
@@ -167,7 +169,15 @@ extension FlagViewController: HomeMenuBarDelegate {
 extension FlagViewController: FlagCollectionViewCellDelegate {
     
     func numberOfSections(in tableView: UITableView, at section: Int) -> Int {
-        return fixedFlagListData.count
+        switch section {
+        case 0:
+            return fixedFlagListData.count
+        case 1:
+            return progressFlagListData.count
+        default:
+            return 0
+        }
+        
     }
     
     func numberOfRows(in tableView: UITableView) -> Int {
@@ -177,7 +187,14 @@ extension FlagViewController: FlagCollectionViewCellDelegate {
     func cellForRow(at indexPath: IndexPath, in tableView: UITableView, at section: Int) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FlagTableViewCell.identifier,
                                                  for: indexPath) as! FlagTableViewCell
-        cell.model = .fixed(fixedFlagListData[indexPath.section])
+        switch section {
+        case 0:
+            cell.model = .fixed(fixedFlagListData[indexPath.section])
+        case 1:
+            cell.model = .progress(progressFlagListData[indexPath.section])
+        default:
+            return FlagTableViewCell()
+        }
         return cell
     }
     
@@ -229,6 +246,7 @@ extension FlagViewController {
             case .success(let moyaResponse):
                 do {
                     let responseData = try moyaResponse.map([ProgressFlagListResponse].self)
+                    print("🌕responseData: \(responseData)")
                     self.progressFlagListData = responseData
                 } catch (let err) {
                     print(err.localizedDescription)
