@@ -33,3 +33,9 @@ class FlagInfoViewController: BaseUIViewController {
         }
     }
 }
+
+// MARK: - Network
+
+extension FlagInfoViewController {
+    
+}

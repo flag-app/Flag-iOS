@@ -123,7 +123,10 @@ class FlagTableViewCell: BaseTableViewCell {
     func bind(_ model: FlagStatusInfo) {
         switch model {
         case .fixed(let data):
-            print("bind success: \(data)")
+            nameLabel.text = data.name
+            dateLabel.text = data.date
+            locationLabel.text = data.place
+            participantLabel.text = data.members.joined(separator: ",")
         }
     }
 }

@@ -14,6 +14,7 @@ class FlagInfoView: BaseUIView {
     // MARK: Properties
     
     let leadingConstraint = 25
+
     
     // MARK: - UI Components
     

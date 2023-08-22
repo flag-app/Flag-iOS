@@ -16,10 +16,17 @@ final class FlagViewController: BaseUIViewController {
     private let provider = MoyaProvider<FlagMainAPI>(plugins: [MoyaLoggerPlugin()])
     
     private var currentIndex: Int = 0 {
-           didSet {
-               changeItem(index: currentIndex)
-           }
+       didSet {
+           changeItem(index: currentIndex)
        }
+   }
+    
+    private var fixedFlagListData: [FixedFlagListResponse] = [] {
+        didSet {
+            print("✅fixedFlagListData: \(fixedFlagListData)")
+            flagView.flagCollectionView.reloadData()
+        }
+    }
 
     // MARK: - UI Components
     
@@ -31,6 +38,7 @@ final class FlagViewController: BaseUIViewController {
         super.viewDidLoad()
 
         setCollectionView()
+        getFixedFlag()
     }
 
     // MARK: - Custom Method
@@ -87,6 +95,7 @@ extension FlagViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FlagCollectionViewCell.identifier,
                                                       for: indexPath) as! FlagCollectionViewCell
         cell.delegate = self
+        cell.flagTableView.reloadData()
         return cell
     }
 }
@@ -147,7 +156,7 @@ extension FlagViewController: HomeMenuBarDelegate {
 extension FlagViewController: FlagCollectionViewCellDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return fixedFlagListData.count
     }
     
     func numberOfRows(in tableView: UITableView) -> Int {
@@ -156,14 +165,15 @@ extension FlagViewController: FlagCollectionViewCellDelegate {
     
     func cellForRow(at indexPath: IndexPath, in tableView: UITableView) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FlagTableViewCell.identifier,
-                                                 for: indexPath)
+                                                 for: indexPath) as! FlagTableViewCell
+        cell.model = .fixed(fixedFlagListData[indexPath.section])
         return cell
     }
     
     func didSelectRowAt(at indexPath: IndexPath, in tableView: UITableView) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        let vc = ProgressViewController()
+        let vc = FlagInfoViewController()
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -179,8 +189,8 @@ extension FlagViewController {
             switch response {
             case .success(let moyaResponse):
                 do {
-                    let responseData = try moyaResponse.map(FixedFlagListResponse.self)
-                    // bind
+                    let responseData = try moyaResponse.map([FixedFlagListResponse].self)
+                    self.fixedFlagListData = responseData
                 } catch (let err) {
                     print(err.localizedDescription)
                 }
