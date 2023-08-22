@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: windowScene)
         
         if(realm.checkIsUserSignedIn()) {
-            self.window?.rootViewController = BaseTabBarController()
+            self.window?.rootViewController = ProgressViewController()
         } else {
             self.window?.rootViewController = UINavigationController(rootViewController: OnboardingViewController())
         }
