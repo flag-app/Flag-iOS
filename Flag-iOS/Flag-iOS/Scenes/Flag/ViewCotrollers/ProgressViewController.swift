@@ -45,7 +45,7 @@ final class ProgressViewController: BaseUIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presentModalViewController()
+//        presentModalViewController()
     }
     
     // MARK: - Custom Method
@@ -297,16 +297,28 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
     func userAcceptStatus() {
             let provider = MoyaProvider<FlagProgressAPI>()
         // Make the API request
-            provider.request(.userAcceptStatus(flagId: 7)) { result in
+            provider.request(.userAcceptStatus(flagId: 3)) { result in
                 switch result {
                 case .success(let response):
                     // Handle successful response
                     let statusCode = response.statusCode
                         print("Status Code: \(statusCode)")
-                    print(String(data: response.data, encoding: .utf8))
+                    //print(String(data: response.data, encoding: .utf8))
                         // Process the response data as needed
                         do {
-                            _ = try response.map(UserAcceptStatus.self)
+                            let responseData = try JSONDecoder().decode(Bool.self, from: response.data)
+                                print("User Accept Status: \(responseData)")
+                            if responseData {
+                                self.presentModalViewController()
+                                } else {
+                                // The value is false
+                                    self.progressView.modalButton.isHidden = true
+                                    self.progressView.modalButton.removeFromSuperview()
+                                    self.progressView.scrollView.snp.makeConstraints { make in
+                                        make.bottom.equalToSuperview().offset(-20)
+                                    }
+                                    
+                                            }
                         } catch {
                             print("Response Parsing Error: \(error)")
                         }

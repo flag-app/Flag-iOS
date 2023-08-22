@@ -1,48 +1,40 @@
 //
-//  FlagListAPI.swift
+//  FriendSearchAPI.swift
 //  Flag-iOS
 //
-//  Created by 성현주 on 2023/08/22.
+//  Created by 성현주 on 2023/08/23.
 //
 
 import Foundation
 
 import Moya
 
-enum FlagListAPI {
-    case showFlagList(flagId: Int)
-    //리스트에서 확정 api
-    case flagCandidateFix(flagId: Int)
+enum FriendSearchAPI {
+    case friendSearch(body: FriendSearch)
 }
 
-extension FlagListAPI: TargetType {
+extension FriendSearchAPI: TargetType {
     public var baseURL: URL {
             return URL(string: Config.baseURL)!
         }
     
     var path: String {
         switch self {
-        case .showFlagList(let flagId):
-            return "/flag/\(flagId)/candidate"
-        case .flagCandidateFix(let flagId):
-            return "/flag/\(flagId)/candidate/fix"
+        case .friendSearch:
+            return "/friends/List"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .showFlagList:
-            return .get
-        case .flagCandidateFix:
+        case .friendSearch:
             return .post
         }
     }
     
     var task: Task {
         switch self {
-        case .showFlagList:
-            return .requestPlain
-        case .flagCandidateFix(let body):
+        case .friendSearch(let body):
             return .requestJSONEncodable(body)
         }
     }

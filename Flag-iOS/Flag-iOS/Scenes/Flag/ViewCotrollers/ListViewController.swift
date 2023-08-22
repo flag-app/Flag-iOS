@@ -61,6 +61,8 @@ final class ListViewController: BaseUIViewController {
     func didTappedConfirmButton() {
         delegate?.didDismissModal(with: selectedCellIndex)
         dismiss(animated: true, completion: nil)
+        print(selectedCellIndex!)
+        sendFlagListIndexToServer()
     }
 
     @objc
@@ -104,6 +106,29 @@ final class ListViewController: BaseUIViewController {
                             print("Response Parsing Error: \(error)")
                         }
                     
+                    
+                case .failure(let error):
+                    // Handle network error
+                    print("Network Error: \(error)")
+                }
+            }
+        }
+    
+    func sendFlagListIndexToServer() {
+            let provider = MoyaProvider<FlagListAPI>()
+            
+            // Create a FlagPlus object with appropriate data
+            let flagListIndex = FlagCandidateFix(
+                flagListIndex: selectedCellIndex!)
+            
+            // Make the API request
+            provider.request(.flagCandidateFix(flagId: 7)) { result in
+                switch result {
+                case .success(let response):
+                    // Handle successful response
+                    let statusCode = response.statusCode
+                    print("Status Code: \(statusCode)")
+                    // Process the response data as needed
                     
                 case .failure(let error):
                     // Handle network error

@@ -37,6 +37,7 @@ enum ImageLiterals {
     //MARK: MyPage
     
     static var profileImage: UIImage { .load(name: "profileImage")}
+    static var plussButton: UIImage { .load(name: "plusButton")}
     
 }
 

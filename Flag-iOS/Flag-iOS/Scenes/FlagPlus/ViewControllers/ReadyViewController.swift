@@ -54,7 +54,7 @@ final class ReadyViewController: BaseUIViewController {
             let flagData = FlagPlus(
                 name: FlagPlusInfo.shared.name,
                 dates: FlagPlusInfo.shared.dates,
-                guestNames: ["val", "izone"],
+                guestNames: FlagPlusInfo.shared.guestId,
                 memo: FlagPlusInfo.shared.memo,
                 minTime: FlagPlusInfo.shared.minTime,
                 place: FlagPlusInfo.shared.place,
