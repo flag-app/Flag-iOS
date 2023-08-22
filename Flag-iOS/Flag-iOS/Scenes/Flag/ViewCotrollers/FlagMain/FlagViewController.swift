@@ -6,17 +6,38 @@
 //
 import UIKit
 
+import Moya
 import SnapKit
+
+protocol FixedFlagInfoDelegate: AnyObject {
+    func didTappedFixedFlagInfo(fixedFlag: FixedFlagListResponse)
+}
 
 final class FlagViewController: BaseUIViewController {
     
     // MARK: - Properties
     
+    weak var delegate: FixedFlagInfoDelegate?
+    private let provider = MoyaProvider<FlagMainAPI>(plugins: [MoyaLoggerPlugin()])
+    
     private var currentIndex: Int = 0 {
-           didSet {
-               changeItem(index: currentIndex)
-           }
+       didSet {
+           changeItem(index: currentIndex)
        }
+   }
+    
+    private var fixedFlagListData: [FixedFlagListResponse] = [] {
+        didSet {
+            flagView.flagCollectionView.reloadData()
+        }
+    }
+    
+    private var progressFlagListData: [ProgressFlagListResponse] = [] {
+        didSet {
+            print("🍊\(progressFlagListData)")
+            flagView.flagCollectionView.reloadData()
+        }
+    }
 
     // MARK: - UI Components
     
@@ -28,6 +49,8 @@ final class FlagViewController: BaseUIViewController {
         super.viewDidLoad()
 
         setCollectionView()
+        getFixedFlag()
+        getProgressFlag()
     }
 
     // MARK: - Custom Method
@@ -84,6 +107,8 @@ extension FlagViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FlagCollectionViewCell.identifier,
                                                       for: indexPath) as! FlagCollectionViewCell
         cell.delegate = self
+        cell.section = indexPath.item
+        cell.flagTableView.reloadData()
         return cell
     }
 }
@@ -143,25 +168,92 @@ extension FlagViewController: HomeMenuBarDelegate {
 
 extension FlagViewController: FlagCollectionViewCellDelegate {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+    func numberOfSections(in tableView: UITableView, at section: Int) -> Int {
+        switch section {
+        case 0:
+            return fixedFlagListData.count
+        case 1:
+            return progressFlagListData.count
+        default:
+            return 0
+        }
+        
     }
     
     func numberOfRows(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func cellForRow(at indexPath: IndexPath, in tableView: UITableView) -> UITableViewCell {
+    func cellForRow(at indexPath: IndexPath, in tableView: UITableView, at section: Int) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FlagTableViewCell.identifier,
-                                                 for: indexPath)
+                                                 for: indexPath) as! FlagTableViewCell
+        switch section {
+        case 0:
+            cell.model = .fixed(fixedFlagListData[indexPath.section])
+        case 1:
+            cell.model = .progress(progressFlagListData[indexPath.section])
+        default:
+            return FlagTableViewCell()
+        }
         return cell
     }
     
-    func didSelectRowAt(at indexPath: IndexPath, in tableView: UITableView) {
+    func didSelectRowAt(at indexPath: IndexPath, in tableView: UITableView, at section: Int) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        let vc = ProgressViewController()
-        vc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(vc, animated: true)
+        switch section {
+        case 0:
+            let flagInfoViewController = FlagInfoViewController()
+            self.delegate = flagInfoViewController
+            delegate?.didTappedFixedFlagInfo(fixedFlag: fixedFlagListData[indexPath.section])
+            flagInfoViewController.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(flagInfoViewController, animated: true)
+        case 1:
+            let progressViewController = ProgressViewController()
+            progressViewController.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(progressViewController, animated: true)
+        default:
+            break
+        }
+        
+    }
+}
+
+
+// MARK: - Network
+
+extension FlagViewController {
+    
+    private func getFixedFlag() {
+        self.provider.request(.fixedFlag) { response in
+            switch response {
+            case .success(let moyaResponse):
+                do {
+                    let responseData = try moyaResponse.map([FixedFlagListResponse].self)
+                    self.fixedFlagListData = responseData
+                } catch (let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    private func getProgressFlag() {
+        self.provider.request(.progressFlag) { response in
+            switch response {
+            case .success(let moyaResponse):
+                do {
+                    let responseData = try moyaResponse.map([ProgressFlagListResponse].self)
+                    print("🌕responseData: \(responseData)")
+                    self.progressFlagListData = responseData
+                } catch (let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
 }

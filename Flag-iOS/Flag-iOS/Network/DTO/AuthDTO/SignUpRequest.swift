@@ -19,5 +19,4 @@ struct SignUpRequest: Codable {
         self.password = password
         self.profile = ""
     }
-    
 }

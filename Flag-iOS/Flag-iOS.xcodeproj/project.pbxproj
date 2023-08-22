@@ -25,6 +25,10 @@
 		7B31F8202A94025300D7D0CF /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F81F2A94025300D7D0CF /* GenericResponse.swift */; };
 		7B31F8222A9419AC00D7D0CF /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8212A9419AC00D7D0CF /* UIWindow+.swift */; };
 		7B31F8242A941D2500D7D0CF /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8232A941D2500D7D0CF /* BaseTargetType.swift */; };
+		7B31F8272A950D8500D7D0CF /* FixedFlagListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8262A950D8500D7D0CF /* FixedFlagListResponse.swift */; };
+		7B31F8292A950FFB00D7D0CF /* FlagMainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8282A950FFB00D7D0CF /* FlagMainAPI.swift */; };
+		7B31F82C2A951CFE00D7D0CF /* FlagStatusInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F82B2A951CFE00D7D0CF /* FlagStatusInfo.swift */; };
+		7B31F82E2A955B2C00D7D0CF /* ProgressFlagListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F82D2A955B2C00D7D0CF /* ProgressFlagListResponse.swift */; };
 		7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5592A61008A0016B418 /* AppDelegate.swift */; };
 		7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C55B2A61008A0016B418 /* SceneDelegate.swift */; };
 		7B51C5632A61008C0016B418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B51C5622A61008C0016B418 /* Assets.xcassets */; };
@@ -137,6 +141,10 @@
 		7B31F81F2A94025300D7D0CF /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		7B31F8212A9419AC00D7D0CF /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
 		7B31F8232A941D2500D7D0CF /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
+		7B31F8262A950D8500D7D0CF /* FixedFlagListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedFlagListResponse.swift; sourceTree = "<group>"; };
+		7B31F8282A950FFB00D7D0CF /* FlagMainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMainAPI.swift; sourceTree = "<group>"; };
+		7B31F82B2A951CFE00D7D0CF /* FlagStatusInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagStatusInfo.swift; sourceTree = "<group>"; };
+		7B31F82D2A955B2C00D7D0CF /* ProgressFlagListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressFlagListResponse.swift; sourceTree = "<group>"; };
 		7B51C5562A61008A0016B418 /* Flag-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flag-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B51C5592A61008A0016B418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B51C55B2A61008A0016B418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -295,6 +303,23 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		7B31F8252A950D5300D7D0CF /* FlagDTO */ = {
+			isa = PBXGroup;
+			children = (
+				7B31F8262A950D8500D7D0CF /* FixedFlagListResponse.swift */,
+				7B31F82D2A955B2C00D7D0CF /* ProgressFlagListResponse.swift */,
+			);
+			path = FlagDTO;
+			sourceTree = "<group>";
+		};
+		7B31F82A2A951CB200D7D0CF /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				7B31F82B2A951CFE00D7D0CF /* FlagStatusInfo.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		7B51C54D2A61008A0016B418 = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +386,7 @@
 		7B51C5712A6102F30016B418 /* Flag */ = {
 			isa = PBXGroup;
 			children = (
+				7B31F82A2A951CB200D7D0CF /* Enum */,
 				7B99990D2A86895A0043C592 /* Model */,
 				E53586A72A820249007D053D /* Views */,
 				7B51C5772A6122D20016B418 /* ViewCotrollers */,
@@ -583,6 +609,8 @@
 		7BC45F8E2A8E1A2200EAC144 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				7B31F8252A950D5300D7D0CF /* FlagDTO */,
+
 				E546EF262A95476C00B59FEA /* FriendSearchDTO */,
 				E546EF212A95474500B59FEA /* FriendPlusDTO */,
 				E546EF142A95354100B59FEA /* FriendDeleteDTO */,
@@ -611,10 +639,14 @@
 				E546EEFE2A92AED600B59FEA /* FlagProgressAPI.swift */,
 				E546EF082A94061700B59FEA /* FlagListAPI.swift */,
 				7B31F8072A92765F00D7D0CF /* AuthAPI.swift */,
+
+				7B31F8282A950FFB00D7D0CF /* FlagMainAPI.swift */,
+
 				E546EF0F2A9529E700B59FEA /* FriendListAPI.swift */,
 				E546EF172A95359700B59FEA /* FriendDeleteAPI.swift */,
 				E546EF1F2A95473600B59FEA /* FriendPlusAPI.swift */,
 				E546EF242A95476800B59FEA /* FriendSearchAPI.swift */,
+
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -846,6 +878,7 @@
 				7B9998CD2A7A9B530043C592 /* BaseUIViewController.swift in Sources */,
 				E50CEE472A8768A000101E4B /* ListView.swift in Sources */,
 				7B9998C92A7A95F50043C592 /* BaseEmptyButton.swift in Sources */,
+				7B31F8272A950D8500D7D0CF /* FixedFlagListResponse.swift in Sources */,
 				7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */,
 				7B31F80C2A92A06B00D7D0CF /* SignUpResponse.swift in Sources */,
 				7B51C5852A61249C0016B418 /* UIFont+.swift in Sources */,
@@ -871,6 +904,8 @@
 				7B9999142A868E2D0043C592 /* FlagTableViewCell.swift in Sources */,
 				7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */,
 				E546EEFB2A92ADF900B59FEA /* FlagProgressResponseDTO.swift in Sources */,
+				7B31F82C2A951CFE00D7D0CF /* FlagStatusInfo.swift in Sources */,
+				7B31F8292A950FFB00D7D0CF /* FlagMainAPI.swift in Sources */,
 				7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */,
 				7B9999022A852BED0043C592 /* BaseCollectionViewCell.swift in Sources */,
 				7B99990F2A86896C0043C592 /* Flag.swift in Sources */,
@@ -920,6 +955,7 @@
 				7B31F8222A9419AC00D7D0CF /* UIWindow+.swift in Sources */,
 				E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */,
 				E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */,
+				7B31F82E2A955B2C00D7D0CF /* ProgressFlagListResponse.swift in Sources */,
 				E53586A92A820251007D053D /* FlagView.swift in Sources */,
 				E54787542A8BA5250097F2D2 /* ReadyViewController.swift in Sources */,
 				7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */,

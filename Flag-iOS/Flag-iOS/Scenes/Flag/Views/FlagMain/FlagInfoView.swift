@@ -15,6 +15,14 @@ class FlagInfoView: BaseUIView {
     
     let leadingConstraint = 25
     
+    var dataModel: FixedFlagListResponse? {
+        didSet {
+            if let model = dataModel {
+                bind(model)
+            }
+        }
+    }
+    
     // MARK: - UI Components
     
     let flagImage: UIImageView = {
@@ -25,33 +33,30 @@ class FlagInfoView: BaseUIView {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "광고론 팀플 회의"
         label.font = .title1
         return label
     }()
     
     let dateLabel: UILabel = {
         let label = UILabel()
-        label.text = "2023년 7월 18일 19:00 - 21:00"
         label.font = .subTitle2
         return label
     }()
     
     let locationLabel: UILabel = {
         let label = UILabel()
-        label.text = "중앙도서관 세미나실 2"
         label.font = .subTitle3
         return label
     }()
     
     let userImageView: UserView = {
-        let imageView = UserView(userName: "최지우")
+        let name = ""
+        let imageView = UserView(userName: name)
         return imageView
     }()
     
     let memoTextView: UITextView = {
         let textView = UITextView()
-        textView.text = "-플로우 연결\n-디자인 시스템 정리\n-Se 화면 만들기(스크롤 하는 화면 빼고 모두)"
         textView.font = .subTitle3
 
         // TextView에 세팅
@@ -124,6 +129,14 @@ class FlagInfoView: BaseUIView {
             $0.height.equalTo(80)
         }
         
+    }
+    
+    func bind(_ data: FixedFlagListResponse) {
+        nameLabel.text = data.name
+        dateLabel.text = "\(data.date)  \(data.startTime) - \(data.endTime)"
+        locationLabel.text = data.place
+        memoTextView.text = data.memo
+        // FIXME: - user name 해야 됨
     }
     
 }

@@ -15,6 +15,14 @@ class FlagTableViewCell: BaseTableViewCell {
     
     static let identifier = "FlagCell"
     
+    var model: FlagStatusInfo? {
+        didSet {
+            if let model = model {
+                bind(model)
+            }
+        }
+    }
+    
     // MARK: - UI Components
     
     let flagImage: UIImageView = {
@@ -25,28 +33,24 @@ class FlagTableViewCell: BaseTableViewCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "광고론 팀플 회의"
         label.font = .head2
         return label
     }()
     
     let dateLabel: UILabel = {
         let label = UILabel()
-        label.text = "2023년 7월 18일 19:00 - 21:00"
         label.font = .subTitle3
         return label
     }()
     
     let locationLabel: UILabel = {
         let label = UILabel()
-        label.text = "중앙도서관 세미나실 2"
         label.font = .body2
         return label
     }()
     
     let participantLabel: UILabel = {
         let label = UILabel()
-        label.text = "노키 외 3명"
         label.font = .body2
         return label
     }()
@@ -61,7 +65,6 @@ class FlagTableViewCell: BaseTableViewCell {
     
     let dDayLabel: UILabel = {
         let label = UILabel()
-        label.text = "D-2"
         label.font = .title2
         label.textColor = .white
         return label
@@ -109,6 +112,22 @@ class FlagTableViewCell: BaseTableViewCell {
         }
         dDayLabel.snp.makeConstraints {
             $0.center.equalTo(dDayView)
+        }
+    }
+    
+    func bind(_ model: FlagStatusInfo) {
+        switch model {
+        case .fixed(let data):
+            nameLabel.text = data.name
+            dateLabel.text = data.date
+            locationLabel.text = data.place
+            participantLabel.text = data.members.joined(separator: ",")
+            dDayLabel.text = data.dday
+        case .progress(let data):
+            nameLabel.text = data.name
+            locationLabel.text = data.place
+            participantLabel.text = "\(data.host) 외 \(data.count)명"
+            dDayView.removeFromSuperview()
         }
     }
 }
