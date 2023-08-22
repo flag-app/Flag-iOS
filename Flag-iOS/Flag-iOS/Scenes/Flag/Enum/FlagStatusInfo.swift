@@ -9,4 +9,5 @@ import Foundation
 
 enum FlagStatusInfo {
     case fixed(FixedFlagListResponse)
+    case progress(ProgressFlagListResponse)
 }
