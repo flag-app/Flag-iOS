@@ -297,7 +297,7 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
     func userAcceptStatus() {
             let provider = MoyaProvider<FlagProgressAPI>()
         // Make the API request
-            provider.request(.userAcceptStatus(flagId: 7)) { result in
+            provider.request(.userAcceptStatus(flagId: 3)) { result in
                 switch result {
                 case .success(let response):
                     // Handle successful response
