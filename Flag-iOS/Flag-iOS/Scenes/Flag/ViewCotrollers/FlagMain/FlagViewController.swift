@@ -17,7 +17,6 @@ final class FlagViewController: BaseUIViewController {
     
     // MARK: - Properties
     
-//    var section: Int = 0
     weak var delegate: FixedFlagInfoDelegate?
     private let provider = MoyaProvider<FlagMainAPI>(plugins: [MoyaLoggerPlugin()])
     

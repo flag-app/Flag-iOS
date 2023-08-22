@@ -21,12 +21,9 @@ class FlagCollectionViewCell: BaseCollectionViewCell {
     static let identifier = "FlagCollectionViewCell"
     weak var delegate: FlagCollectionViewCellDelegate?
     var section: Int = 0
-//    var tableViewDidSelect: ((IndexPath) -> Void)?
     
     // MARK: - UI Components
-    
-//    let flagViewController = FlagViewController()
-    
+        
     let flagTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.separatorStyle = .none
@@ -87,6 +84,5 @@ extension FlagCollectionViewCell: UITableViewDataSource {
 extension FlagCollectionViewCell: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.didSelectRowAt(at: indexPath, in: tableView, at: section)
-//        tableViewDidSelect?(indexPath)
     }
 }
