@@ -127,6 +127,7 @@ class FlagTableViewCell: BaseTableViewCell {
             nameLabel.text = data.name
             locationLabel.text = data.place
             participantLabel.text = "\(data.host) 외 \(data.count)명"
+            dDayView.removeFromSuperview()
         }
     }
 }
