@@ -67,7 +67,7 @@
 		7B9999182A8692780043C592 /* FlagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999172A8692780043C592 /* FlagCollectionViewCell.swift */; };
 		7B99991C2A8A85970043C592 /* FlagInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99991B2A8A85970043C592 /* FlagInfoViewController.swift */; };
 		7B99991E2A8A97680043C592 /* FlagInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99991D2A8A97680043C592 /* FlagInfoView.swift */; };
-		7B9999202A8AB6F50043C592 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99991F2A8AB6F50043C592 /* UserView.swift */; };
+		7B9999202A8AB6F50043C592 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99991F2A8AB6F50043C592 /* UserProfileView.swift */; };
 		7B9999222A8ABB2B0043C592 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999212A8ABB2B0043C592 /* UITextView+.swift */; };
 		7BC45F8C2A8E18DF00EAC144 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC45F8B2A8E18DF00EAC144 /* Config.swift */; };
 		7BC45F942A8E1DA500EAC144 /* MoyaLoggerPluggin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC45F932A8E1DA500EAC144 /* MoyaLoggerPluggin.swift */; };
@@ -183,7 +183,7 @@
 		7B9999172A8692780043C592 /* FlagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagCollectionViewCell.swift; sourceTree = "<group>"; };
 		7B99991B2A8A85970043C592 /* FlagInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagInfoViewController.swift; sourceTree = "<group>"; };
 		7B99991D2A8A97680043C592 /* FlagInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagInfoView.swift; sourceTree = "<group>"; };
-		7B99991F2A8AB6F50043C592 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		7B99991F2A8AB6F50043C592 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		7B9999212A8ABB2B0043C592 /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
 		7BC45F8B2A8E18DF00EAC144 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		7BC45F932A8E1DA500EAC144 /* MoyaLoggerPluggin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPluggin.swift; sourceTree = "<group>"; };
@@ -610,7 +610,6 @@
 			isa = PBXGroup;
 			children = (
 				7B31F8252A950D5300D7D0CF /* FlagDTO */,
-
 				E546EF262A95476C00B59FEA /* FriendSearchDTO */,
 				E546EF212A95474500B59FEA /* FriendPlusDTO */,
 				E546EF142A95354100B59FEA /* FriendDeleteDTO */,
@@ -639,14 +638,11 @@
 				E546EEFE2A92AED600B59FEA /* FlagProgressAPI.swift */,
 				E546EF082A94061700B59FEA /* FlagListAPI.swift */,
 				7B31F8072A92765F00D7D0CF /* AuthAPI.swift */,
-
 				7B31F8282A950FFB00D7D0CF /* FlagMainAPI.swift */,
-
 				E546EF0F2A9529E700B59FEA /* FriendListAPI.swift */,
 				E546EF172A95359700B59FEA /* FriendDeleteAPI.swift */,
 				E546EF1F2A95473600B59FEA /* FriendPlusAPI.swift */,
 				E546EF242A95476800B59FEA /* FriendSearchAPI.swift */,
-
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -697,7 +693,7 @@
 		E53586AA2A82027C007D053D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7B99991F2A8AB6F50043C592 /* UserView.swift */,
+				7B99991F2A8AB6F50043C592 /* UserProfileView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -894,7 +890,7 @@
 				7B31F8102A92AF4100D7D0CF /* SignInResponse.swift in Sources */,
 				E593AAA72A7E992D00FC918A /* LocationViewController.swift in Sources */,
 				E546EF1C2A9541F500B59FEA /* AddFriendViewController.swift in Sources */,
-				7B9999202A8AB6F50043C592 /* UserView.swift in Sources */,
+				7B9999202A8AB6F50043C592 /* UserProfileView.swift in Sources */,
 				E546EEE12A92485800B59FEA /* NicknameChangeViewController.swift in Sources */,
 				7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */,
 				E546EF012A93A28F00B59FEA /* SelectTimeCellResponseDTO.swift in Sources */,

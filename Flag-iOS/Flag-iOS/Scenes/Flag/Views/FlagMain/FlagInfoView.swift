@@ -49,9 +49,9 @@ class FlagInfoView: BaseUIView {
         return label
     }()
     
-    let userImageView: UserView = {
+    let userImageView: UserProfileView = {
         let name = ""
-        let imageView = UserView(userName: name)
+        let imageView = UserProfileView(userName: name)
         return imageView
     }()
     

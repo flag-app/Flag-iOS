@@ -1,12 +1,12 @@
 //
-//  User.swift
+//  UserProfileView.swift
 //  Flag-iOS
 //
 //  Created by 최지우 on 2023/08/15.
 //
 import UIKit
 
-class UserView: BaseUIView {
+class UserProfileView: BaseUIView {
 
     // MARK: - UI Components
     private let userProfileImage: UIImageView = {
