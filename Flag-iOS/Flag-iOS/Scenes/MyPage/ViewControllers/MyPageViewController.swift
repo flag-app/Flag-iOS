@@ -12,6 +12,7 @@ final class MyPageViewController: BaseUIViewController {
     //MARK: - Properties
     
     let myPageMenu = ["친구 목록" , "이용약관", "로그아웃" , "탈퇴하기" ,"만든 사람들"]
+    let realm = RealmService()
     
     // MARK: - UI Components
     
@@ -51,6 +52,25 @@ final class MyPageViewController: BaseUIViewController {
         navigationController?.pushViewController(termsViewController, animated: true)
     }
     
+    func didTappedSignOutButton() {
+ 
+        let alertView = UIAlertController(title: TextLiterals.signOutText, message: "", preferredStyle: .alert)
+        
+        let deleteAction = UIAlertAction(title: TextLiterals.yesText, style: .default) { _ in
+            // rootView 변경
+            let onboardingViewController = OnboardingViewController()
+            UIApplication.shared.keyWindow?.replaceRootViewController(onboardingViewController, animated: true, completion: nil)
+//            self.navigationController?.popToRootViewController(animated: true)
+            self.realm.deleteAllRealmData()
+        }
+        alertView.addAction(deleteAction)
+        
+        let cancelAction = UIAlertAction(title: TextLiterals.noText, style: .default, handler: nil)
+        alertView.addAction(cancelAction)
+        
+        present(alertView, animated: true, completion: nil)
+    }
+    
 }
 
     //MARK: - TableViewDataSource
@@ -82,7 +102,9 @@ extension MyPageViewController: UITableViewDelegate{
             case 1:
                 let termsViewController = TermsViewController()
                 navigationController?.pushViewController(termsViewController, animated: true)
-//            case 2: // 로그아웃
+            case 2:
+                didTappedSignOutButton()
+                
 //            case 3: // 탈퇴하기
 //.           case 4: // 만든사람들
             default:
