@@ -100,6 +100,11 @@ enum TextLiterals {
     static let newNicknameText: String = "새로운 닉네임을 입력해 주세요."
     static let newNicknameTextHint: String = "닉네임 최소 2자 ~ 최대 7자"
     static let completeText: String = "완료"
+    static let askFriendPlusText: String = "친구추가하시겠습니까?"
+    static let friendPlusText: String = "추가하기"
+    static let friendListText: String = "친구목록"
+    static let addFriendText: String = "친구추가"
+    
     static let termsText: String = """
     “FLAG” 이용약관
     제1장 총칙

@@ -102,7 +102,7 @@
 		E546EF1E2A9543B500B59FEA /* AddFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF1D2A9543B500B59FEA /* AddFriendCell.swift */; };
 		E546EF202A95473600B59FEA /* FriendPlusAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF1F2A95473600B59FEA /* FriendPlusAPI.swift */; };
 		E546EF232A95475600B59FEA /* FriendPlusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF222A95475600B59FEA /* FriendPlusDTO.swift */; };
-		E546EF252A95476800B59FEA /* FriendSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF242A95476800B59FEA /* FriendSearchAPI.swift */; };
+		E546EF252A95476800B59FEA /* FriendsSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF242A95476800B59FEA /* FriendsSearchAPI.swift */; };
 		E546EF282A95477F00B59FEA /* FriendSerachDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF272A95477F00B59FEA /* FriendSerachDTO.swift */; };
 		E546EF2A2A954ED400B59FEA /* FriendSearchResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546EF292A954ED400B59FEA /* FriendSearchResponseDTO.swift */; };
 		E54787432A88CF550097F2D2 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787422A88CF550097F2D2 /* MyPageView.swift */; };
@@ -219,7 +219,7 @@
 		E546EF1D2A9543B500B59FEA /* AddFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendCell.swift; sourceTree = "<group>"; };
 		E546EF1F2A95473600B59FEA /* FriendPlusAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPlusAPI.swift; sourceTree = "<group>"; };
 		E546EF222A95475600B59FEA /* FriendPlusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPlusDTO.swift; sourceTree = "<group>"; };
-		E546EF242A95476800B59FEA /* FriendSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSearchAPI.swift; sourceTree = "<group>"; };
+		E546EF242A95476800B59FEA /* FriendsSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsSearchAPI.swift; sourceTree = "<group>"; };
 		E546EF272A95477F00B59FEA /* FriendSerachDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSerachDTO.swift; sourceTree = "<group>"; };
 		E546EF292A954ED400B59FEA /* FriendSearchResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSearchResponseDTO.swift; sourceTree = "<group>"; };
 		E54787422A88CF550097F2D2 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
@@ -610,7 +610,6 @@
 			isa = PBXGroup;
 			children = (
 				7B31F8252A950D5300D7D0CF /* FlagDTO */,
-
 				E546EF262A95476C00B59FEA /* FriendSearchDTO */,
 				E546EF212A95474500B59FEA /* FriendPlusDTO */,
 				E546EF142A95354100B59FEA /* FriendDeleteDTO */,
@@ -639,14 +638,11 @@
 				E546EEFE2A92AED600B59FEA /* FlagProgressAPI.swift */,
 				E546EF082A94061700B59FEA /* FlagListAPI.swift */,
 				7B31F8072A92765F00D7D0CF /* AuthAPI.swift */,
-
 				7B31F8282A950FFB00D7D0CF /* FlagMainAPI.swift */,
-
 				E546EF0F2A9529E700B59FEA /* FriendListAPI.swift */,
 				E546EF172A95359700B59FEA /* FriendDeleteAPI.swift */,
 				E546EF1F2A95473600B59FEA /* FriendPlusAPI.swift */,
-				E546EF242A95476800B59FEA /* FriendSearchAPI.swift */,
-
+				E546EF242A95476800B59FEA /* FriendsSearchAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -949,7 +945,7 @@
 				E54787492A88D0160097F2D2 /* TermsViewController.swift in Sources */,
 				7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */,
 				E593AA9D2A7E299500FC918A /* FriendsPlusViewController.swift in Sources */,
-				E546EF252A95476800B59FEA /* FriendSearchAPI.swift in Sources */,
+				E546EF252A95476800B59FEA /* FriendsSearchAPI.swift in Sources */,
 				E53586A02A82017E007D053D /* FreindsPlusView.swift in Sources */,
 				E593AAA12A7E2C4D00FC918A /* DatePickViewController.swift in Sources */,
 				7B31F8222A9419AC00D7D0CF /* UIWindow+.swift in Sources */,

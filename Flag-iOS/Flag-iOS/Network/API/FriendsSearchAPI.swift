@@ -9,33 +9,33 @@ import Foundation
 
 import Moya
 
-enum FriendSearchAPI {
-    case friendSearch(body: FriendSearch)
+enum FriendsSearchAPI {
+    case friendsSearch(body: String)
 }
 
-extension FriendSearchAPI: TargetType {
+extension FriendsSearchAPI: TargetType {
     public var baseURL: URL {
             return URL(string: Config.baseURL)!
         }
     
     var path: String {
         switch self {
-        case .friendSearch:
+        case .friendsSearch:
             return "/friends/List"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .friendSearch:
+        case .friendsSearch:
             return .post
         }
     }
     
     var task: Task {
         switch self {
-        case .friendSearch(let body):
-            return .requestJSONEncodable(body)
+        case .friendsSearch(let body):
+            return .requestParameters(parameters: ["name": body], encoding: URLEncoding.queryString)
         }
     }
     

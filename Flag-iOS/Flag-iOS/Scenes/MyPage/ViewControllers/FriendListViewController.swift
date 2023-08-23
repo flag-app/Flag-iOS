@@ -20,6 +20,7 @@ final class FriendListViewController: BaseUIViewController {
             print("flagListData: \(friendListData)")
         }
     }
+    var userName: String = ""
 
     
     // MARK: - UI Components
@@ -31,6 +32,8 @@ final class FriendListViewController: BaseUIViewController {
     override func setUI() {
         view.addSubviews(friendListView)
         getFriendList()
+        let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTappedAddButton))
+            navigationItem.rightBarButtonItem = addBarButtonItem
     }
     
     override func setLayout() {
@@ -47,21 +50,41 @@ final class FriendListViewController: BaseUIViewController {
         friendListView.tableView.dataSource = self
     }
     
+    override func setupNavigationBar() {
+        super.setupNavigationBar()
+        navigationItem.title = TextLiterals.friendListText
+    }
+    
     @objc
     func didTappedFriendSearchButton() {
         print("tap")
     }
+    @objc
+    func didTappedAddButton() {
+        let addFirendViewController = AddFriendViewController()
+        navigationController?.pushViewController(addFirendViewController, animated: true)
+    }
     
     @objc
     func didTappedDeleteButton(_ sender: UIButton) {
+        guard let cell = sender.superview?.superview as? FriendListCell else {
+            return
+        }
+        
+        let userName = cell.titleLabel.text ?? ""
+        
         let alertView = UIAlertController(title: TextLiterals.DeleteQuestionText, message: "", preferredStyle: .alert)
         let deleteAction = UIAlertAction(title: TextLiterals.friendDeleteText, style: .default) { _ in
-                self.deleteFriend() 
-            }
-            alertView.addAction(deleteAction)
+            self.deleteFriend()
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        alertView.addAction(deleteAction)
+        
         let cancelAction = UIAlertAction(title: TextLiterals.flagCancelText, style: .default, handler: nil)
         alertView.addAction(cancelAction)
+        
         present(alertView, animated: true, completion: nil)
+        print(userName)
     }
     
     //MARK: -NetWork
@@ -98,25 +121,17 @@ final class FriendListViewController: BaseUIViewController {
     
     func deleteFriend() {
             let provider = MoyaProvider<FriendDeleteAPI>()
-            
-            // Create a FriendDelete object with the appropriate data
-            let friendToDelete = FriendDelete(fid: 38) // Replace with the actual friend ID
-            
             // Make the API request
-            provider.request(.friendDelete(body: friendToDelete)) { result in
+            provider.request(.friendDelete(body: userName)) { result in
                 switch result {
                 case .success(let response):
                     // Handle successful response
                     let statusCode = response.statusCode
                     print("Status Code: \(statusCode)")
-                    do {
-                        // Parse the response data if needed
-                        let responseData = try JSONDecoder().decode(FriendDelete.self, from: response.data)
-                        // Perform any actions or UI updates based on the responseData
-                        
-                    } catch {
-                        print("Response Parsing Error: \(error)")
-                    }
+                    let responseData = response.data
+                    if let dataString = String(data: responseData, encoding: .utf8) {
+                    print("Response Data: \(dataString)")
+                                           }
                     
                 case .failure(let error):
                     // Handle network error
@@ -138,6 +153,7 @@ extension FriendListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendListCell", for: indexPath) as! FriendListCell
         
         cell.titleLabel.text = "\(friendListData[indexPath.row].name)"
+        userName = cell.titleLabel.text ?? ""
         cell.subtitleLabel.text = "\(friendListData[indexPath.row].email)"
         cell.deleteButton.addTarget(self, action: #selector(didTappedDeleteButton(_:)), for: .touchUpInside)
         cell.selectionStyle = .none

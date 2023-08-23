@@ -12,6 +12,7 @@ import SnapKit
 class FriendListCell: UITableViewCell {
     
     // MARK: - Properties
+    var userName: String = ""
    
     // MARK: - UI Components
     
