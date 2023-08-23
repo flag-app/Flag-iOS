@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserResponse: Codable {
+struct UserResult: Codable {
     let id: Int
     let name: String
     let email: String
@@ -18,7 +18,7 @@ struct FriendSearchResponse: Codable {
     let code: Int
     let isSuccess: Bool
     let message: String
-    //let result: String
+    let result: String
 }
 
 
