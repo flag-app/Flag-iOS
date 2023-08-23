@@ -45,6 +45,7 @@
 		7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B42A63F8E70016B418 /* UIView+.swift */; };
 		7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B62A6429B00016B418 /* UIColor+.swift */; };
 		7B8969992A96360700C6DFD6 /* TestTimeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8969982A96360700C6DFD6 /* TestTimeScrollViewController.swift */; };
+		7B89699B2A96809B00C6DFD6 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */; };
 		7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */; };
 		7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */; };
 		7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C42A7A93B30043C592 /* UIButton+.swift */; };
@@ -163,6 +164,7 @@
 		7B51C5B42A63F8E70016B418 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		7B51C5B62A6429B00016B418 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		7B8969982A96360700C6DFD6 /* TestTimeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTimeScrollViewController.swift; sourceTree = "<group>"; };
+		7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
 		7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		7B9998C42A7A93B30043C592 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
@@ -648,6 +650,7 @@
 				E546EF172A95359700B59FEA /* FriendDeleteAPI.swift */,
 				E546EF1F2A95473600B59FEA /* FriendPlusAPI.swift */,
 				E546EF242A95476800B59FEA /* FriendsSearchAPI.swift */,
+				7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -884,6 +887,7 @@
 				7B9998DB2A7C562E0043C592 /* SignUpView.swift in Sources */,
 				7B31F80C2A92A06B00D7D0CF /* SignUpResponse.swift in Sources */,
 				7B51C5852A61249C0016B418 /* UIFont+.swift in Sources */,
+				7B89699B2A96809B00C6DFD6 /* MyPageAPI.swift in Sources */,
 				7B99991C2A8A85970043C592 /* FlagInfoViewController.swift in Sources */,
 				E5DA6F862A83598500FC825F /* ProgressView.swift in Sources */,
 				7B51C5832A61248D0016B418 /* ImageLiterals.swift in Sources */,
@@ -1108,7 +1112,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://localhost:8080";
+				BASE_URL = "http://13.209.60.211:8080";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HZ8WU7PA4J;
@@ -1140,7 +1144,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://localhost:8080";
+				BASE_URL = "http://13.209.60.211:8080";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HZ8WU7PA4J;
