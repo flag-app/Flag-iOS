@@ -232,7 +232,7 @@ extension FlagViewController: FlagCollectionViewCellDelegate {
                     progressViewController.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(progressViewController, animated: true)
                 } else if progressFlagListData[indexPath.section].check == false {
-                    let testTimeScrollViewController = TestTimeScrollViewController()
+                    let testTimeScrollViewController = GuestTimeScrollViewController()
                     testTimeScrollViewController.flagId = progressFlagListData[indexPath.section].id
                     testTimeScrollViewController.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(testTimeScrollViewController, animated: true)

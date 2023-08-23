@@ -87,7 +87,7 @@ final class ListViewController: BaseUIViewController {
             let provider = MoyaProvider<FlagListAPI>()
             
         // Make the API request
-        provider.request(.showFlagList(flagId: 7)) { result in
+        provider.request(.showFlagList(flagId: progressViewController.flagId)) { result in
                 switch result {
                 case .success(let response):
                     // Handle successful response
@@ -118,17 +118,28 @@ final class ListViewController: BaseUIViewController {
             let provider = MoyaProvider<FlagListAPI>()
             
             // Create a FlagPlus object with appropriate data
-            let flagListIndex = FlagCandidateFix(
-                flagListIndex: selectedCellIndex!)
+            let flagListIndex =  selectedCellIndex!
             
             // Make the API request
-            provider.request(.flagCandidateFix(flagId: 7)) { result in
-                switch result {
-                case .success(let response):
-                    // Handle successful response
-                    let statusCode = response.statusCode
-                    print("Status Code: \(statusCode)")
-                    // Process the response data as needed
+        provider.request(.flagCandidateFix(flagId: progressViewController.flagId, requestBody: flagListIndex)) { result in
+            switch result {
+            case .success(let response):
+                // Handle successful response
+                let statusCode = response.statusCode
+                print("Status Code: \(statusCode)")
+                
+                // Access response data
+                let responseData = response.data
+                if let dataString = String(data: responseData, encoding: .utf8) {
+                    print("Response Data: \(dataString)")
+                }
+                
+                // Access response headers
+                let responseHeaders = response.response?.allHeaderFields
+                print("Response Headers: \(responseHeaders)")
+                
+                // Access the entire response object
+                print("Entire Response: \(response)")
                     
                 case .failure(let error):
                     // Handle network error
