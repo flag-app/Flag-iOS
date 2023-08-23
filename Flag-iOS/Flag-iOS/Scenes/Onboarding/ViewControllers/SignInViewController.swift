@@ -52,21 +52,8 @@ class SignInViewController: BaseUIViewController {
         postSignInRequest(userEmail: signInView.emailInputTextField.text!,
                           userPassword: signInView.passwordInputTextField.text!)
         
-        let tabBarController = BaseTabBarController()
-//        self.navigationController?.pushViewController(tabBarController, animated: true)
-        
-        // rootView 변경
-        UIApplication.shared.keyWindow?.replaceRootViewController(tabBarController, animated: true, completion: nil)
         print("🌞\(realm.getAccessToken())")
     }
-    
-    func checkIsSignedIn() {
-        
-    }
-    
-//    func checkRealmAccessToken() -> Bool {
-//
-//    }
 
 }
 
@@ -100,14 +87,19 @@ extension SignInViewController {
 //                    }
 //                }
             case .success(let moyaResponse):
-                        do {
-                            print("Response status code:", moyaResponse.statusCode)
-                            let responseData = try moyaResponse.map(GenericResponse.self)
-                            self.realm.setAccessToken(accessToken: responseData.result)
-                            self.realm.setAutoSignIn(isSignedIn: true)
-                        } catch let parsingError {
-                            print("Error parsing:", parsingError)
-                        }
+            do {
+                print("Response status code:", moyaResponse.statusCode)
+                let responseData = try moyaResponse.map(GenericResponse.self)
+                self.realm.setAccessToken(accessToken: responseData.result)
+                self.realm.setAutoSignIn(isSignedIn: true)
+                
+                let tabBarController = BaseTabBarController()
+                
+                // rootView 변경
+                UIApplication.shared.keyWindow?.replaceRootViewController(tabBarController, animated: true, completion: nil)
+            } catch let parsingError {
+                print("Error parsing:", parsingError)
+            }
             case .failure(let err):
                 print("Error:", err.localizedDescription)
             }

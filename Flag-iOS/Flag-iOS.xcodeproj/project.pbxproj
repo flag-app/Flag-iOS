@@ -29,6 +29,7 @@
 		7B31F8292A950FFB00D7D0CF /* FlagMainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F8282A950FFB00D7D0CF /* FlagMainAPI.swift */; };
 		7B31F82C2A951CFE00D7D0CF /* FlagStatusInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F82B2A951CFE00D7D0CF /* FlagStatusInfo.swift */; };
 		7B31F82E2A955B2C00D7D0CF /* ProgressFlagListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F82D2A955B2C00D7D0CF /* ProgressFlagListResponse.swift */; };
+		7B31F8302A95CF2000D7D0CF /* AllUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31F82F2A95CF2000D7D0CF /* AllUsersView.swift */; };
 		7B51C55A2A61008A0016B418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5592A61008A0016B418 /* AppDelegate.swift */; };
 		7B51C55C2A61008A0016B418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C55B2A61008A0016B418 /* SceneDelegate.swift */; };
 		7B51C5632A61008C0016B418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B51C5622A61008C0016B418 /* Assets.xcassets */; };
@@ -67,7 +68,7 @@
 		7B9999182A8692780043C592 /* FlagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999172A8692780043C592 /* FlagCollectionViewCell.swift */; };
 		7B99991C2A8A85970043C592 /* FlagInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99991B2A8A85970043C592 /* FlagInfoViewController.swift */; };
 		7B99991E2A8A97680043C592 /* FlagInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99991D2A8A97680043C592 /* FlagInfoView.swift */; };
-		7B9999202A8AB6F50043C592 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99991F2A8AB6F50043C592 /* UserView.swift */; };
+		7B9999202A8AB6F50043C592 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99991F2A8AB6F50043C592 /* UserProfileView.swift */; };
 		7B9999222A8ABB2B0043C592 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9999212A8ABB2B0043C592 /* UITextView+.swift */; };
 		7BC45F8C2A8E18DF00EAC144 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC45F8B2A8E18DF00EAC144 /* Config.swift */; };
 		7BC45F942A8E1DA500EAC144 /* MoyaLoggerPluggin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC45F932A8E1DA500EAC144 /* MoyaLoggerPluggin.swift */; };
@@ -145,6 +146,7 @@
 		7B31F8282A950FFB00D7D0CF /* FlagMainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMainAPI.swift; sourceTree = "<group>"; };
 		7B31F82B2A951CFE00D7D0CF /* FlagStatusInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagStatusInfo.swift; sourceTree = "<group>"; };
 		7B31F82D2A955B2C00D7D0CF /* ProgressFlagListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressFlagListResponse.swift; sourceTree = "<group>"; };
+		7B31F82F2A95CF2000D7D0CF /* AllUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersView.swift; sourceTree = "<group>"; };
 		7B51C5562A61008A0016B418 /* Flag-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flag-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B51C5592A61008A0016B418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B51C55B2A61008A0016B418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,7 +185,7 @@
 		7B9999172A8692780043C592 /* FlagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagCollectionViewCell.swift; sourceTree = "<group>"; };
 		7B99991B2A8A85970043C592 /* FlagInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagInfoViewController.swift; sourceTree = "<group>"; };
 		7B99991D2A8A97680043C592 /* FlagInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagInfoView.swift; sourceTree = "<group>"; };
-		7B99991F2A8AB6F50043C592 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		7B99991F2A8AB6F50043C592 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		7B9999212A8ABB2B0043C592 /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
 		7BC45F8B2A8E18DF00EAC144 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		7BC45F932A8E1DA500EAC144 /* MoyaLoggerPluggin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPluggin.swift; sourceTree = "<group>"; };
@@ -642,7 +644,11 @@
 				E546EF0F2A9529E700B59FEA /* FriendListAPI.swift */,
 				E546EF172A95359700B59FEA /* FriendDeleteAPI.swift */,
 				E546EF1F2A95473600B59FEA /* FriendPlusAPI.swift */,
+
 				E546EF242A95476800B59FEA /* FriendsSearchAPI.swift */,
+
+				E546EF242A95476800B59FEA /* FriendSearchAPI.swift */,
+
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -693,7 +699,8 @@
 		E53586AA2A82027C007D053D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7B99991F2A8AB6F50043C592 /* UserView.swift */,
+				7B99991F2A8AB6F50043C592 /* UserProfileView.swift */,
+				7B31F82F2A95CF2000D7D0CF /* AllUsersView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -890,7 +897,7 @@
 				7B31F8102A92AF4100D7D0CF /* SignInResponse.swift in Sources */,
 				E593AAA72A7E992D00FC918A /* LocationViewController.swift in Sources */,
 				E546EF1C2A9541F500B59FEA /* AddFriendViewController.swift in Sources */,
-				7B9999202A8AB6F50043C592 /* UserView.swift in Sources */,
+				7B9999202A8AB6F50043C592 /* UserProfileView.swift in Sources */,
 				E546EEE12A92485800B59FEA /* NicknameChangeViewController.swift in Sources */,
 				7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */,
 				E546EF012A93A28F00B59FEA /* SelectTimeCellResponseDTO.swift in Sources */,
@@ -908,6 +915,7 @@
 				7B31F80E2A92AC4200D7D0CF /* SignInRequest.swift in Sources */,
 				E546EF132A952A0E00B59FEA /* FriendListDTO.swift in Sources */,
 				7B31F8202A94025300D7D0CF /* GenericResponse.swift in Sources */,
+				7B31F8302A95CF2000D7D0CF /* AllUsersView.swift in Sources */,
 				E535869E2A820175007D053D /* SetNameView.swift in Sources */,
 				E546EF052A93E88100B59FEA /* TermsView.swift in Sources */,
 				7B9999222A8ABB2B0043C592 /* UITextView+.swift in Sources */,

@@ -12,6 +12,7 @@ protocol FlagCollectionViewCellDelegate: AnyObject {
     func numberOfRows(in tableView: UITableView) -> Int
     func cellForRow(at indexPath: IndexPath, in tableView: UITableView, at section: Int) -> UITableViewCell
     func didSelectRowAt(at indexPath: IndexPath, in tableView: UITableView, at section: Int)
+    func didRefreshTable()
 }
 
 class FlagCollectionViewCell: BaseCollectionViewCell {
@@ -30,12 +31,15 @@ class FlagCollectionViewCell: BaseCollectionViewCell {
         return tableView
     }()
     
+    let refreshControl = UIRefreshControl()
+    
     // MARK: - Life Cycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setDelegate()
         setTableView()
+        initRefresh()
     }
     
     required init?(coder: NSCoder) {
@@ -61,6 +65,23 @@ class FlagCollectionViewCell: BaseCollectionViewCell {
     
     func setTableView() {
         flagTableView.register(FlagTableViewCell.self, forCellReuseIdentifier: FlagTableViewCell.identifier)
+    }
+    
+    func initRefresh() {
+        refreshControl.addTarget(self, action: #selector(refreshTable(refresh:)), for: .valueChanged)
+        
+        flagTableView.refreshControl = refreshControl
+    }
+    
+    @objc
+    func refreshTable(refresh: UIRefreshControl) {
+        print("새로고침 시작")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//            self.flagTableView.reloadData()
+            self.delegate?.didRefreshTable()
+            refresh.endRefreshing()
+        }
     }
 }
 
