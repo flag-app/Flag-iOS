@@ -69,10 +69,6 @@ class FlagCollectionViewCell: BaseCollectionViewCell {
     func initRefresh() {
         refreshControl.addTarget(self, action: #selector(refreshTable(refresh:)), for: .valueChanged)
         
-        refreshControl.backgroundColor = .yellow
-        refreshControl.tintColor = .purple
-        refreshControl.attributedTitle = NSAttributedString(string: "당겨서 새로고침")
-        
         flagTableView.refreshControl = refreshControl
     }
     
