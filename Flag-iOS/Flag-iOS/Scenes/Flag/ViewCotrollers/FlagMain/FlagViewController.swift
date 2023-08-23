@@ -215,7 +215,12 @@ extension FlagViewController: FlagCollectionViewCellDelegate {
         default:
             break
         }
-        
+    }
+    
+    func didRefreshTable() {
+        getFixedFlag()
+        getProgressFlag()
+        print("api 재호출")
     }
 }
 

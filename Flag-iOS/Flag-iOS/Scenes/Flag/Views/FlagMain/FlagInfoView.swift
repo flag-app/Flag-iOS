@@ -49,11 +49,13 @@ class FlagInfoView: BaseUIView {
         return label
     }()
     
-    let userImageView: UserView = {
-        let name = ""
-        let imageView = UserView(userName: name)
-        return imageView
-    }()
+//    let userImageView: UserProfileView = {
+//        let name = ""
+//        let imageView = UserProfileView(userName: name)
+//        return imageView
+//    }()
+    
+    let userImageView = AllUsersView.renderStackViewWithUsers(userNames: ["최지우", "성현주"])
     
     let memoTextView: UITextView = {
         let textView = UITextView()
