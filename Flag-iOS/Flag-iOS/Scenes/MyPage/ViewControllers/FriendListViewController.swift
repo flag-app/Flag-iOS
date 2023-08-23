@@ -20,7 +20,6 @@ final class FriendListViewController: BaseUIViewController {
             print("flagListData: \(friendListData)")
         }
     }
-    var userName: String = ""
 
     
     // MARK: - UI Components
@@ -73,9 +72,9 @@ final class FriendListViewController: BaseUIViewController {
         
         let userName = cell.titleLabel.text ?? ""
         
-        let alertView = UIAlertController(title: TextLiterals.DeleteQuestionText, message: "", preferredStyle: .alert)
+        let alertView = UIAlertController(title: "\(userName)\(TextLiterals.DeleteQuestionText)", message: "", preferredStyle: .alert)
         let deleteAction = UIAlertAction(title: TextLiterals.friendDeleteText, style: .default) { _ in
-            self.deleteFriend()
+            self.deleteFriend(userName: userName)
             self.navigationController?.popToRootViewController(animated: true)
         }
         alertView.addAction(deleteAction)
@@ -119,7 +118,7 @@ final class FriendListViewController: BaseUIViewController {
             }
         }
     
-    func deleteFriend() {
+    func deleteFriend(userName: String) {
             let provider = MoyaProvider<FriendDeleteAPI>()
             // Make the API request
             provider.request(.friendDelete(body: userName)) { result in
@@ -153,7 +152,6 @@ extension FriendListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendListCell", for: indexPath) as! FriendListCell
         
         cell.titleLabel.text = "\(friendListData[indexPath.row].name)"
-        userName = cell.titleLabel.text ?? ""
         cell.subtitleLabel.text = "\(friendListData[indexPath.row].email)"
         cell.deleteButton.addTarget(self, action: #selector(didTappedDeleteButton(_:)), for: .touchUpInside)
         cell.selectionStyle = .none
