@@ -19,6 +19,11 @@ final class ProgressViewController: BaseUIViewController {
             print("♥️\(flagId)")
         }
     }
+    var role: String = "" {
+        didSet {
+            print("⭐️\(role)")
+        }
+    }
     var selectedDates: [Date] = []
     var array = [1]
     var selcetedTime: Int = 1

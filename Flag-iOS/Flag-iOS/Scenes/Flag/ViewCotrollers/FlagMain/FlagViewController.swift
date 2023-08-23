@@ -218,6 +218,7 @@ extension FlagViewController: FlagCollectionViewCellDelegate {
             if progressFlagListData[indexPath.section].role == "HOST" {
                 let progressViewController = ProgressViewController()
                 progressViewController.flagId = progressFlagListData[indexPath.section].id
+                progressViewController.role = progressFlagListData[indexPath.section].role
                 progressViewController.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(progressViewController, animated: true)
             }
@@ -229,6 +230,7 @@ extension FlagViewController: FlagCollectionViewCellDelegate {
                 if progressFlagListData[indexPath.section].check == true {
                     let progressViewController = ProgressViewController()
                     progressViewController.flagId = progressFlagListData[indexPath.section].id
+                    progressViewController.role = progressFlagListData[indexPath.section].role
                     progressViewController.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(progressViewController, animated: true)
                 } else if progressFlagListData[indexPath.section].check == false {
