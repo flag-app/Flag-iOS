@@ -46,6 +46,7 @@
 		7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B62A6429B00016B418 /* UIColor+.swift */; };
 		7B8969992A96360700C6DFD6 /* TestTimeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8969982A96360700C6DFD6 /* TestTimeScrollViewController.swift */; };
 		7B89699B2A96809B00C6DFD6 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */; };
+		7B89699E2A96844500C6DFD6 /* MyPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89699D2A96844500C6DFD6 /* MyPageResponse.swift */; };
 		7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */; };
 		7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */; };
 		7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C42A7A93B30043C592 /* UIButton+.swift */; };
@@ -165,6 +166,7 @@
 		7B51C5B62A6429B00016B418 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		7B8969982A96360700C6DFD6 /* TestTimeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTimeScrollViewController.swift; sourceTree = "<group>"; };
 		7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
+		7B89699D2A96844500C6DFD6 /* MyPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageResponse.swift; sourceTree = "<group>"; };
 		7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		7B9998C42A7A93B30043C592 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
@@ -517,6 +519,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		7B89699C2A96842D00C6DFD6 /* MypageDTO */ = {
+			isa = PBXGroup;
+			children = (
+				7B89699D2A96844500C6DFD6 /* MyPageResponse.swift */,
+			);
+			path = MypageDTO;
+			sourceTree = "<group>";
+		};
 		7B9998BD2A7A7E2E0043C592 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +626,7 @@
 		7BC45F8E2A8E1A2200EAC144 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				7B89699C2A96842D00C6DFD6 /* MypageDTO */,
 				7B31F8252A950D5300D7D0CF /* FlagDTO */,
 				E546EF262A95476C00B59FEA /* FriendSearchDTO */,
 				E546EF212A95474500B59FEA /* FriendPlusDTO */,
@@ -906,6 +917,7 @@
 				E546EF012A93A28F00B59FEA /* SelectTimeCellResponseDTO.swift in Sources */,
 				E5586CEF2A8E68AD00A66EA5 /* FriendsPlusCell.swift in Sources */,
 				E546EEDF2A92484100B59FEA /* NicknameChangeView.swift in Sources */,
+				7B89699E2A96844500C6DFD6 /* MyPageResponse.swift in Sources */,
 				E546EEF52A9299E300B59FEA /* FlagPlusDTO.swift in Sources */,
 				7B9999142A868E2D0043C592 /* FlagTableViewCell.swift in Sources */,
 				7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */,

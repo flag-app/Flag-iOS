@@ -14,6 +14,11 @@ final class MyPageView: BaseUIView {
     // MARK: - Properties
     
     let cellRowHeight: CGFloat = 55
+    var userNickname: String = "" {
+        didSet {
+            nameButton.setTitle(userNickname, for: .normal)
+        }
+    }
     
     // MARK: - UI Components
     
@@ -31,7 +36,7 @@ final class MyPageView: BaseUIView {
     
     lazy var nameButton: UIButton = {
         let button = UIButton()
-        button.addTitleAttribute(title: "시리얼>", titleColor: .black, fontName: .title1)
+        button.addTitleAttribute(title: userNickname, titleColor: .black, fontName: .title1)
         return button
     }()
     
