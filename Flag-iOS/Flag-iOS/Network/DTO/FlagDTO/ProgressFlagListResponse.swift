@@ -8,10 +8,12 @@
 import Foundation
 
 struct ProgressFlagListResponse: Codable {
+    var check: Bool
+    var count: Int
+    var host: String
     var id: Int
-    var title: String
     var name: String?
     var place: String
-    var host: String
-    var count: Int
+    var role: String
+    var title: String
 }
