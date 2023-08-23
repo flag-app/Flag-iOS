@@ -138,7 +138,7 @@ final class AddFriendViewController: BaseUIViewController {
                     print(responseData.result)
                     
                     // Parse the result string to extract name and email
-                    if let nameRange = responseData.result.range(of: "name=([a-zA-Z0-9]+)", options: .regularExpression),
+                    if let nameRange = responseData.result.range(of: "name=([a-zA-Z0-9가-힣]+)", options: .regularExpression),
                        let emailRange = responseData.result.range(of: "email=([a-zA-Z0-9@.]+)", options: .regularExpression) {
                         let name = String(responseData.result[nameRange].dropFirst(5))
                         let email = String(responseData.result[emailRange].dropFirst(6))
