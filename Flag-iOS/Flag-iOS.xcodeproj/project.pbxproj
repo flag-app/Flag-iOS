@@ -44,6 +44,7 @@
 		7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B22A63F8840016B418 /* UIStackView+.swift */; };
 		7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B42A63F8E70016B418 /* UIView+.swift */; };
 		7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B62A6429B00016B418 /* UIColor+.swift */; };
+		7B8969992A96360700C6DFD6 /* TestTimeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8969982A96360700C6DFD6 /* TestTimeScrollViewController.swift */; };
 		7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */; };
 		7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */; };
 		7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C42A7A93B30043C592 /* UIButton+.swift */; };
@@ -161,6 +162,7 @@
 		7B51C5B22A63F8840016B418 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		7B51C5B42A63F8E70016B418 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		7B51C5B62A6429B00016B418 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		7B8969982A96360700C6DFD6 /* TestTimeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTimeScrollViewController.swift; sourceTree = "<group>"; };
 		7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		7B9998C42A7A93B30043C592 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 			children = (
 				7B99991B2A8A85970043C592 /* FlagInfoViewController.swift */,
 				7B9999052A85306E0043C592 /* FlagViewController.swift */,
+				7B8969982A96360700C6DFD6 /* TestTimeScrollViewController.swift */,
 			);
 			path = FlagMain;
 			sourceTree = "<group>";
@@ -644,11 +647,7 @@
 				E546EF0F2A9529E700B59FEA /* FriendListAPI.swift */,
 				E546EF172A95359700B59FEA /* FriendDeleteAPI.swift */,
 				E546EF1F2A95473600B59FEA /* FriendPlusAPI.swift */,
-
 				E546EF242A95476800B59FEA /* FriendsSearchAPI.swift */,
-
-				E546EF242A95476800B59FEA /* FriendSearchAPI.swift */,
-
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -950,6 +949,7 @@
 				E546EF232A95475600B59FEA /* FriendPlusDTO.swift in Sources */,
 				7B9999042A852C6D0043C592 /* MainMenuCollectionViewCell.swift in Sources */,
 				E593AAAB2A7EA0AD00FC918A /* TimeScrollViewController.swift in Sources */,
+				7B8969992A96360700C6DFD6 /* TestTimeScrollViewController.swift in Sources */,
 				E54787492A88D0160097F2D2 /* TermsViewController.swift in Sources */,
 				7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */,
 				E593AA9D2A7E299500FC918A /* FriendsPlusViewController.swift in Sources */,

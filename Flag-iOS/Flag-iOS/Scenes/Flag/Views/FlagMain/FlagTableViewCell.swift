@@ -23,6 +23,10 @@ class FlagTableViewCell: BaseTableViewCell {
         }
     }
     
+    var flagId: Int = 0
+    var role: String = ""
+    var check: Bool = false
+    
     // MARK: - UI Components
     
     let flagImage: UIImageView = {
@@ -127,6 +131,9 @@ class FlagTableViewCell: BaseTableViewCell {
             nameLabel.text = data.name
             locationLabel.text = data.place
             participantLabel.text = "\(data.host) 외 \(data.count)명"
+            flagId = data.id
+            role = data.role
+            check = data.check
             dDayView.removeFromSuperview()
         }
     }
