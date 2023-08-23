@@ -13,10 +13,7 @@ enum FriendsSearchAPI {
     case friendsSearch(body: String)
 }
 
-extension FriendsSearchAPI: TargetType {
-    public var baseURL: URL {
-            return URL(string: Config.baseURL)!
-        }
+extension FriendsSearchAPI: BaseTargetType {
     
     var path: String {
         switch self {
@@ -38,15 +35,5 @@ extension FriendsSearchAPI: TargetType {
             return .requestParameters(parameters: ["name": body], encoding: URLEncoding.queryString)
         }
     }
-    
-    var headers: [String : String]? {
-            return [
-                "Content-type": "application/json",
-                "Authorization":
-                    """
-               eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvb0BuYXZlci5jb20iLCJyb2xlcyI6W10sImlhdCI6MTY5MjU2Mjc5MywiZXhwIjoxNjk1MTU0NzkzfQ.OadrHpnjbqTCxRSvcSLQyxbJRe49XF-0I7yChSIp6R4
-"""
-            ]
-        }
 }
 

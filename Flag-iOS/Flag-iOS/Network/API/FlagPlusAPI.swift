@@ -13,10 +13,7 @@ enum FlagPlusAPI {
     case setFlag(body: FlagPlus)
 }
 
-extension FlagPlusAPI: TargetType {
-    public var baseURL: URL {
-            return URL(string: Config.baseURL)!
-        }
+extension FlagPlusAPI: BaseTargetType {
     
     var path: String {
         switch self {
@@ -38,14 +35,4 @@ extension FlagPlusAPI: TargetType {
             return .requestJSONEncodable(body)
         }
     }
-    
-    var headers: [String : String]? {
-            return [
-                "Content-type": "application/json",
-                "Authorization":
-                    """
-               eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvb0BuYXZlci5jb20iLCJyb2xlcyI6W10sImlhdCI6MTY5MjU2Mjc5MywiZXhwIjoxNjk1MTU0NzkzfQ.OadrHpnjbqTCxRSvcSLQyxbJRe49XF-0I7yChSIp6R4
-"""
-            ]
-        }
 }

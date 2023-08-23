@@ -16,9 +16,6 @@ enum FlagProgressAPI {
 }
 
 extension FlagProgressAPI: BaseTargetType {
-//    public var baseURL: URL {
-//            return URL(string: Config.baseURL)!
-//        }
     
     var path: String {
         switch self {
@@ -52,15 +49,5 @@ extension FlagProgressAPI: BaseTargetType {
             return .requestPlain
         }
     }
-    
-//    var headers: [String : String]? {
-//            return [
-//                "Content-type": "application/json",
-//                "Authorization":
-//                    """
-//               eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvb0BuYXZlci5jb20iLCJyb2xlcyI6W10sImlhdCI6MTY5MjU2Mjc5MywiZXhwIjoxNjk1MTU0NzkzfQ.OadrHpnjbqTCxRSvcSLQyxbJRe49XF-0I7yChSIp6R4
-//"""
-//            ]
-//        }
 }
 

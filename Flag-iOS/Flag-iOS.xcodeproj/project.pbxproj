@@ -44,9 +44,13 @@
 		7B51C5B32A63F8840016B418 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B22A63F8840016B418 /* UIStackView+.swift */; };
 		7B51C5B52A63F8E70016B418 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B42A63F8E70016B418 /* UIView+.swift */; };
 		7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51C5B62A6429B00016B418 /* UIColor+.swift */; };
+]
+		7B8969992A96360700C6DFD6 /* GuestTimeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8969982A96360700C6DFD6 /* GuestTimeScrollViewController.swift */; };
+]
 		7B8969992A96360700C6DFD6 /* TestTimeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8969982A96360700C6DFD6 /* TestTimeScrollViewController.swift */; };
 		7B89699B2A96809B00C6DFD6 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */; };
 		7B89699E2A96844500C6DFD6 /* MyPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89699D2A96844500C6DFD6 /* MyPageResponse.swift */; };
+]
 		7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */; };
 		7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */; };
 		7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C42A7A93B30043C592 /* UIButton+.swift */; };
@@ -78,6 +82,9 @@
 		E50CEE472A8768A000101E4B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE462A8768A000101E4B /* ListView.swift */; };
 		E50CEE492A8768AD00101E4B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE482A8768AD00101E4B /* ListViewController.swift */; };
 		E50CEE4B2A8776A600101E4B /* TimeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CEE4A2A8776A600101E4B /* TimeListCell.swift */; };
+		E511A2F92A965D6F002722A2 /* GuestTimeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E511A2F82A965D6F002722A2 /* GuestTimeScrollView.swift */; };
+		E511A2FB2A966F58002722A2 /* FlagGuestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E511A2FA2A966F58002722A2 /* FlagGuestAPI.swift */; };
+		E511A3002A96737E002722A2 /* GuestFlagDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E511A2FF2A96737E002722A2 /* GuestFlagDTO.swift */; };
 		E535869E2A820175007D053D /* SetNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869D2A820175007D053D /* SetNameView.swift */; };
 		E53586A02A82017E007D053D /* FreindsPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535869F2A82017E007D053D /* FreindsPlusView.swift */; };
 		E53586A22A82018F007D053D /* DatePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53586A12A82018F007D053D /* DatePickView.swift */; };
@@ -164,9 +171,13 @@
 		7B51C5B22A63F8840016B418 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		7B51C5B42A63F8E70016B418 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		7B51C5B62A6429B00016B418 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+]
+		7B8969982A96360700C6DFD6 /* GuestTimeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestTimeScrollViewController.swift; sourceTree = "<group>"; };
+]
 		7B8969982A96360700C6DFD6 /* TestTimeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTimeScrollViewController.swift; sourceTree = "<group>"; };
 		7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
 		7B89699D2A96844500C6DFD6 /* MyPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageResponse.swift; sourceTree = "<group>"; };
+]
 		7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		7B9998C42A7A93B30043C592 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
@@ -198,6 +209,9 @@
 		E50CEE462A8768A000101E4B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		E50CEE482A8768AD00101E4B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		E50CEE4A2A8776A600101E4B /* TimeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeListCell.swift; sourceTree = "<group>"; };
+		E511A2F82A965D6F002722A2 /* GuestTimeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestTimeScrollView.swift; sourceTree = "<group>"; };
+		E511A2FA2A966F58002722A2 /* FlagGuestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGuestAPI.swift; sourceTree = "<group>"; };
+		E511A2FF2A96737E002722A2 /* GuestFlagDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestFlagDTO.swift; sourceTree = "<group>"; };
 		E535869D2A820175007D053D /* SetNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameView.swift; sourceTree = "<group>"; };
 		E535869F2A82017E007D053D /* FreindsPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsPlusView.swift; sourceTree = "<group>"; };
 		E53586A12A82018F007D053D /* DatePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickView.swift; sourceTree = "<group>"; };
@@ -565,6 +579,7 @@
 				7B9999132A868E2D0043C592 /* FlagTableViewCell.swift */,
 				7B9999172A8692780043C592 /* FlagCollectionViewCell.swift */,
 				7B99991D2A8A97680043C592 /* FlagInfoView.swift */,
+				E511A2F82A965D6F002722A2 /* GuestTimeScrollView.swift */,
 			);
 			path = FlagMain;
 			sourceTree = "<group>";
@@ -574,7 +589,7 @@
 			children = (
 				7B99991B2A8A85970043C592 /* FlagInfoViewController.swift */,
 				7B9999052A85306E0043C592 /* FlagViewController.swift */,
-				7B8969982A96360700C6DFD6 /* TestTimeScrollViewController.swift */,
+				7B8969982A96360700C6DFD6 /* GuestTimeScrollViewController.swift */,
 			);
 			path = FlagMain;
 			sourceTree = "<group>";
@@ -626,7 +641,11 @@
 		7BC45F8E2A8E1A2200EAC144 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+]
+				E511A2FE2A96736C002722A2 /* GuestFlagDTO */,
+]
 				7B89699C2A96842D00C6DFD6 /* MypageDTO */,
+]
 				7B31F8252A950D5300D7D0CF /* FlagDTO */,
 				E546EF262A95476C00B59FEA /* FriendSearchDTO */,
 				E546EF212A95474500B59FEA /* FriendPlusDTO */,
@@ -661,7 +680,11 @@
 				E546EF172A95359700B59FEA /* FriendDeleteAPI.swift */,
 				E546EF1F2A95473600B59FEA /* FriendPlusAPI.swift */,
 				E546EF242A95476800B59FEA /* FriendsSearchAPI.swift */,
+]
+				E511A2FA2A966F58002722A2 /* FlagGuestAPI.swift */,
+]
 				7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */,
+]
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -682,6 +705,14 @@
 				7B31F8232A941D2500D7D0CF /* BaseTargetType.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		E511A2FE2A96736C002722A2 /* GuestFlagDTO */ = {
+			isa = PBXGroup;
+			children = (
+				E511A2FF2A96737E002722A2 /* GuestFlagDTO.swift */,
+			);
+			path = GuestFlagDTO;
 			sourceTree = "<group>";
 		};
 		E535869A2A82015A007D053D /* Views */ = {
@@ -913,6 +944,7 @@
 				E546EF1C2A9541F500B59FEA /* AddFriendViewController.swift in Sources */,
 				7B9999202A8AB6F50043C592 /* UserProfileView.swift in Sources */,
 				E546EEE12A92485800B59FEA /* NicknameChangeViewController.swift in Sources */,
+				E511A2F92A965D6F002722A2 /* GuestTimeScrollView.swift in Sources */,
 				7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */,
 				E546EF012A93A28F00B59FEA /* SelectTimeCellResponseDTO.swift in Sources */,
 				E5586CEF2A8E68AD00A66EA5 /* FriendsPlusCell.swift in Sources */,
@@ -955,17 +987,19 @@
 				7B9998CB2A7A995D0043C592 /* BaseUIView.swift in Sources */,
 				7B9998D52A7B856E0043C592 /* BaseUITextField.swift in Sources */,
 				E53586A62A8201A1007D053D /* TimeScrollView.swift in Sources */,
+				E511A2FB2A966F58002722A2 /* FlagGuestAPI.swift in Sources */,
 				E546EF162A95355A00B59FEA /* FriendDeleteDT0.swift in Sources */,
 				7B51C5B12A63F8120016B418 /* MyPageViewController.swift in Sources */,
 				E53586A22A82018F007D053D /* DatePickView.swift in Sources */,
 				7B51C5B12A63F8120016B418 /* MyPageViewController.swift in Sources */,
 				E546EF0B2A94066700B59FEA /* FlagListResponseDTO.swift in Sources */,
 				E54787522A8BA5150097F2D2 /* ReadyView.swift in Sources */,
+				E511A3002A96737E002722A2 /* GuestFlagDTO.swift in Sources */,
 				E5DA6F882A83599200FC825F /* ProgressViewController.swift in Sources */,
 				E546EF232A95475600B59FEA /* FriendPlusDTO.swift in Sources */,
 				7B9999042A852C6D0043C592 /* MainMenuCollectionViewCell.swift in Sources */,
 				E593AAAB2A7EA0AD00FC918A /* TimeScrollViewController.swift in Sources */,
-				7B8969992A96360700C6DFD6 /* TestTimeScrollViewController.swift in Sources */,
+				7B8969992A96360700C6DFD6 /* GuestTimeScrollViewController.swift in Sources */,
 				E54787492A88D0160097F2D2 /* TermsViewController.swift in Sources */,
 				7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */,
 				E593AA9D2A7E299500FC918A /* FriendsPlusViewController.swift in Sources */,
@@ -1125,9 +1159,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BASE_URL = "http://13.209.60.211:8080";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HZ8WU7PA4J;
+				DEVELOPMENT_TEAM = C9XX799UJH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flag-iOS/Settings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1140,8 +1175,9 @@
 				);
 				MARKETING_VERSION = 1.0;
 				"MTL_ENABLE_DEBUG_INFO[arch=*]" = INCLUDE_SOURCE;
-				PRODUCT_BUNDLE_IDENTIFIER = "Flag.Flag-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "Flag.Flag-iOS.";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1157,9 +1193,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BASE_URL = "http://13.209.60.211:8080";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HZ8WU7PA4J;
+				DEVELOPMENT_TEAM = C9XX799UJH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flag-iOS/Settings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1171,8 +1208,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Flag.Flag-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "Flag.Flag-iOS.";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

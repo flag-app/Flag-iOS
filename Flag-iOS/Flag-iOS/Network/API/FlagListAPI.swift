@@ -11,20 +11,16 @@ import Moya
 
 enum FlagListAPI {
     case showFlagList(flagId: Int)
-    //리스트에서 확정 api
-    case flagCandidateFix(flagId: Int)
+    case flagCandidateFix(flagId: Int, requestBody: Int)
 }
 
-extension FlagListAPI: TargetType {
-    public var baseURL: URL {
-            return URL(string: Config.baseURL)!
-        }
+extension FlagListAPI: BaseTargetType {
     
     var path: String {
         switch self {
         case .showFlagList(let flagId):
             return "/flag/\(flagId)/candidate"
-        case .flagCandidateFix(let flagId):
+        case .flagCandidateFix(let flagId, _):
             return "/flag/\(flagId)/candidate/fix"
         }
     }
@@ -42,19 +38,8 @@ extension FlagListAPI: TargetType {
         switch self {
         case .showFlagList:
             return .requestPlain
-        case .flagCandidateFix(let body):
-            return .requestJSONEncodable(body)
+        case .flagCandidateFix(_, let requestBody):
+            return .requestJSONEncodable(requestBody)
         }
     }
-    
-    var headers: [String : String]? {
-            return [
-                "Content-type": "application/json",
-                "Authorization":
-                    """
-               eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvb0BuYXZlci5jb20iLCJyb2xlcyI6W10sImlhdCI6MTY5MjU2Mjc5MywiZXhwIjoxNjk1MTU0NzkzfQ.OadrHpnjbqTCxRSvcSLQyxbJRe49XF-0I7yChSIp6R4
-"""
-            ]
-        }
 }
-

@@ -213,7 +213,7 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
             let provider = MoyaProvider<FlagProgressAPI>()
             
         // Make the API request
-            provider.request(.showProgress(flagId: 7)) { result in
+            provider.request(.showProgress(flagId: flagId)) { result in
                 switch result {
                 case .success(let response):
                     // Handle successful response
@@ -258,6 +258,7 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
                 }
                 
                 selectedDates = dateArray // 변환된 날짜 배열 출력
+                //selectedDates.sort()
             }
             categorizeNumbers()
             allUserNumber = responseData.userTotalCount
@@ -271,7 +272,7 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
             let provider = MoyaProvider<FlagProgressAPI>()
             
         // Make the API request
-        provider.request(.selectTimeCell(flagId: 7, cellIndex: selectedCell )) { result in
+        provider.request(.selectTimeCell(flagId: flagId, cellIndex: selectedCell )) { result in
                 switch result {
                 case .success(let response):
                     // Handle successful response
@@ -302,7 +303,7 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
     func userAcceptStatus() {
             let provider = MoyaProvider<FlagProgressAPI>()
         // Make the API request
-            provider.request(.userAcceptStatus(flagId: 3)) { result in
+            provider.request(.userAcceptStatus(flagId: flagId)) { result in
                 switch result {
                 case .success(let response):
                     // Handle successful response
