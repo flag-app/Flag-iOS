@@ -30,12 +30,15 @@ class FlagCollectionViewCell: BaseCollectionViewCell {
         return tableView
     }()
     
+    let refreshControl = UIRefreshControl()
+    
     // MARK: - Life Cycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setDelegate()
         setTableView()
+        initRefresh()
     }
     
     required init?(coder: NSCoder) {
@@ -61,6 +64,26 @@ class FlagCollectionViewCell: BaseCollectionViewCell {
     
     func setTableView() {
         flagTableView.register(FlagTableViewCell.self, forCellReuseIdentifier: FlagTableViewCell.identifier)
+    }
+    
+    func initRefresh() {
+        refreshControl.addTarget(self, action: #selector(refreshTable(refresh:)), for: .valueChanged)
+        
+        refreshControl.backgroundColor = .yellow
+        refreshControl.tintColor = .purple
+        refreshControl.attributedTitle = NSAttributedString(string: "당겨서 새로고침")
+        
+        flagTableView.refreshControl = refreshControl
+    }
+    
+    @objc
+    func refreshTable(refresh: UIRefreshControl) {
+        print("새로고침 시작")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.flagTableView.reloadData()
+            refresh.endRefreshing()
+        }
     }
 }
 
