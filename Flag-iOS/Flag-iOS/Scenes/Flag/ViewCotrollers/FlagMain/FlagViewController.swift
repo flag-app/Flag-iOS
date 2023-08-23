@@ -34,7 +34,6 @@ final class FlagViewController: BaseUIViewController {
     
     private var progressFlagListData: [ProgressFlagListResponse] = [] {
         didSet {
-            print("🍊\(progressFlagListData)")
             flagView.flagCollectionView.reloadData()
         }
     }
@@ -51,6 +50,9 @@ final class FlagViewController: BaseUIViewController {
         setCollectionView()
         getFixedFlag()
         getProgressFlag()
+        
+        let realm = RealmService()
+        print("⭐️\(realm.getAccessToken())")
     }
 
     // MARK: - Custom Method
@@ -251,7 +253,6 @@ extension FlagViewController {
             case .success(let moyaResponse):
                 do {
                     let responseData = try moyaResponse.map([ProgressFlagListResponse].self)
-                    print("🌕responseData: \(responseData)")
                     self.progressFlagListData = responseData
                 } catch (let err) {
                     print(err.localizedDescription)

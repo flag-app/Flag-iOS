@@ -15,10 +15,7 @@ enum FlagMainAPI {
 }
 
 extension FlagMainAPI: BaseTargetType {
-    public var baseURL: URL {
-        return URL(string: Config.baseURL)!
-    }
-    
+
     var path: String {
         switch self {
         case .fixedFlag:
@@ -41,15 +38,5 @@ extension FlagMainAPI: BaseTargetType {
             return .requestPlain
         }
     }
-    
-    var headers: [String : String]? {
-        let accessToken = """
-eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbGFsd2w3MjNAbmF2ZXIuY29tIiwicm9sZXMiOltdLCJpYXQiOjE2OTI3MjcxNjgsImV4cCI6MTY5NTMxOTE2OH0.AhAysqEtqh6_VmEJOF3RZZI5OXzoS57NVeLkeaTUl7I
-"""
-        let header = [
-            "Content-Type": "application/json",
-            "Authorization": accessToken
-        ]
-        return header
-    }
+
 }
