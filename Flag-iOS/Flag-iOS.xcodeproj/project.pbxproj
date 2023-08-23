@@ -47,7 +47,6 @@
 ]
 		7B8969992A96360700C6DFD6 /* GuestTimeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8969982A96360700C6DFD6 /* GuestTimeScrollViewController.swift */; };
 ]
-		7B8969992A96360700C6DFD6 /* TestTimeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8969982A96360700C6DFD6 /* TestTimeScrollViewController.swift */; };
 		7B89699B2A96809B00C6DFD6 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */; };
 		7B89699E2A96844500C6DFD6 /* MyPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89699D2A96844500C6DFD6 /* MyPageResponse.swift */; };
 ]
@@ -174,7 +173,6 @@
 ]
 		7B8969982A96360700C6DFD6 /* GuestTimeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestTimeScrollViewController.swift; sourceTree = "<group>"; };
 ]
-		7B8969982A96360700C6DFD6 /* TestTimeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTimeScrollViewController.swift; sourceTree = "<group>"; };
 		7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
 		7B89699D2A96844500C6DFD6 /* MyPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageResponse.swift; sourceTree = "<group>"; };
 ]
@@ -1162,7 +1160,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C9XX799UJH;
+				DEVELOPMENT_TEAM = HZ8WU7PA4J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flag-iOS/Settings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1175,9 +1173,8 @@
 				);
 				MARKETING_VERSION = 1.0;
 				"MTL_ENABLE_DEBUG_INFO[arch=*]" = INCLUDE_SOURCE;
-				PRODUCT_BUNDLE_IDENTIFIER = "Flag.Flag-iOS.";
+				PRODUCT_BUNDLE_IDENTIFIER = "Flag.Flag-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1193,10 +1190,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BASE_URL = "http://13.209.60.211:8080";
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C9XX799UJH;
+				DEVELOPMENT_TEAM = HZ8WU7PA4J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flag-iOS/Settings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1208,9 +1204,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Flag.Flag-iOS.";
+				PRODUCT_BUNDLE_IDENTIFIER = "Flag.Flag-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
