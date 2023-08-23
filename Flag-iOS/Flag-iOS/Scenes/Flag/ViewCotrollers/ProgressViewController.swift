@@ -19,6 +19,11 @@ final class ProgressViewController: BaseUIViewController {
             print("♥️\(flagId)")
         }
     }
+    var role: String = "" {
+        didSet {
+            print("⭐️\(role)")
+        }
+    }
     var selectedDates: [Date] = []
     var array = [1]
     var selcetedTime: Int = 1
@@ -61,6 +66,7 @@ final class ProgressViewController: BaseUIViewController {
         selectedDates.sort()
         view.addSubviews(progressView)
 //        categorizeNumbers()
+        divideHG()
     }
     
     override func setLayout() {
@@ -79,8 +85,6 @@ final class ProgressViewController: BaseUIViewController {
         progressView.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
     }
     
-   
-    
     @objc
     func didTappedNextButton() {
         let homeVC = BaseTabBarController()
@@ -92,6 +96,16 @@ final class ProgressViewController: BaseUIViewController {
         presentModal()
     }
     
+    func divideHG() {
+        if role == "GUEST"{
+            self.progressView.modalButton.isHidden = true
+            //presentModalViewController() = false
+            self.progressView.modalButton.removeFromSuperview()
+            self.progressView.scrollView.snp.makeConstraints { make in
+                make.bottom.equalToSuperview().offset(-20)
+            }
+        }
+    }
     
     func presentModal(){
         let vc = ListViewController()
@@ -258,7 +272,6 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
                 }
                 
                 selectedDates = dateArray // 변환된 날짜 배열 출력
-                //selectedDates.sort()
             }
             categorizeNumbers()
             allUserNumber = responseData.userTotalCount
@@ -314,17 +327,20 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
                         do {
                             let responseData = try JSONDecoder().decode(Bool.self, from: response.data)
                                 print("User Accept Status: \(responseData)")
-                            if responseData {
-                                self.presentModalViewController()
+                            if self.role == "HOST" {
+                                if responseData {
+                                    self.presentModalViewController()
                                 } else {
-                                // The value is false
+                                    // The value is false
                                     self.progressView.modalButton.isHidden = true
                                     self.progressView.modalButton.removeFromSuperview()
                                     self.progressView.scrollView.snp.makeConstraints { make in
                                         make.bottom.equalToSuperview().offset(-20)
                                     }
                                     
-                                            }
+                                }
+                            }
+                            
                         } catch {
                             print("Response Parsing Error: \(error)")
                         }
