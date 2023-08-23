@@ -9,6 +9,7 @@ import UIKit
 class UserProfileView: BaseUIView {
 
     // MARK: - UI Components
+    
     private let userProfileImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.userProfile
