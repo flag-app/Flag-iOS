@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 enum FriendDeleteAPI {
-    case friendDelete(body: FriendDelete)
+    case friendDelete(body: String)
 }
 
 extension FriendDeleteAPI: TargetType {
@@ -21,7 +21,7 @@ extension FriendDeleteAPI: TargetType {
     var path: String {
         switch self {
         case .friendDelete:
-            return "/friends​/delete"
+            return "/friends/delete"
         }
     }
     
@@ -35,7 +35,7 @@ extension FriendDeleteAPI: TargetType {
     var task: Task {
         switch self {
         case .friendDelete(let body):
-            return .requestJSONEncodable(body)
+            return .requestParameters(parameters: ["name" : body], encoding: URLEncoding.queryString)
         }
     }
     
