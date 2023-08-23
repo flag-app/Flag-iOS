@@ -14,6 +14,11 @@ final class ProgressViewController: BaseUIViewController {
     
     // MARK: - Properties
    
+    var flagId: Int = 0 {
+        didSet {
+            print("♥️\(flagId)")
+        }
+    }
     var selectedDates: [Date] = []
     var array = [1]
     var selcetedTime: Int = 1

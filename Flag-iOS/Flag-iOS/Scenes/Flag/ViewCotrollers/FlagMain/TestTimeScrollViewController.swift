@@ -10,7 +10,12 @@ import Foundation
 class TestTimeScrollViewController: BaseUIViewController {
     
     // MARK: - Properties
-
+    
+    var flagId: Int = 0 {
+        didSet {
+            print("♥️\(flagId)")
+        }
+    }
     
     // MARK: - UI Components
     
