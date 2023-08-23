@@ -7,18 +7,27 @@
 
 import UIKit
 
+import Moya
+
 final class MyPageViewController: BaseUIViewController {
     
     //MARK: - Properties
     
     let myPageMenu = ["친구 목록" , "이용약관", "로그아웃" , "탈퇴하기" ,"만든 사람들"]
     let realm = RealmService()
+    private let provider = MoyaProvider<MyPageAPI>(plugins: [MoyaLoggerPlugin]())
     
     // MARK: - UI Components
     
     private let mypageView = MyPageView()
     
     // MARK: - Custom Method
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getNickname()
+        
+    }
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
@@ -113,5 +122,27 @@ extension MyPageViewController: UITableViewDelegate{
         }
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return "앱버전: 1.0.0"
+    }
+}
+
+// MARK: - Network
+
+extension MyPageViewController {
+    
+    private func getNickname() {
+        self.provider.request(.getNickname) { response in
+            switch response {
+            case .success(let moyaResponse):
+                do {
+                    let responseData = try moyaResponse.map(MyPageResponse.self)
+                    print(responseData)
+                    self.mypageView.userNickname = responseData.name
+                } catch (let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
 }
