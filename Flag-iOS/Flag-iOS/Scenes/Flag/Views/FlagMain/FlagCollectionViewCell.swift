@@ -12,6 +12,7 @@ protocol FlagCollectionViewCellDelegate: AnyObject {
     func numberOfRows(in tableView: UITableView) -> Int
     func cellForRow(at indexPath: IndexPath, in tableView: UITableView, at section: Int) -> UITableViewCell
     func didSelectRowAt(at indexPath: IndexPath, in tableView: UITableView, at section: Int)
+    func didRefreshTable()
 }
 
 class FlagCollectionViewCell: BaseCollectionViewCell {
@@ -77,7 +78,8 @@ class FlagCollectionViewCell: BaseCollectionViewCell {
         print("새로고침 시작")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.flagTableView.reloadData()
+//            self.flagTableView.reloadData()
+            self.delegate?.didRefreshTable()
             refresh.endRefreshing()
         }
     }
