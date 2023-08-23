@@ -211,9 +211,33 @@ extension FlagViewController: FlagCollectionViewCellDelegate {
             flagInfoViewController.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(flagInfoViewController, animated: true)
         case 1:
-            let progressViewController = ProgressViewController()
-            progressViewController.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(progressViewController, animated: true)
+            // host인 경우
+            print("🌕\(progressFlagListData[indexPath.section].role)")
+            print("🌕\(progressFlagListData[indexPath.section].id)")
+            print("🌕\(progressFlagListData[indexPath.section].check)")
+            if progressFlagListData[indexPath.section].role == "HOST" {
+                let progressViewController = ProgressViewController()
+                progressViewController.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(progressViewController, animated: true)
+            } else if progressFlagListData[indexPath.section].role == "GUEST" {
+                if progressFlagListData[indexPath.section].check == true {
+                    let progressViewController = ProgressViewController()
+                    progressViewController.hidesBottomBarWhenPushed = true
+                    self.navigationController?.pushViewController(progressViewController, animated: true)
+                } else if progressFlagListData[indexPath.section].check == false {
+                    let testTimeScrollViewController = TestTimeScrollViewController()
+                    testTimeScrollViewController.hidesBottomBarWhenPushed = true
+                    self.navigationController?.pushViewController(testTimeScrollViewController, animated: true)
+                }
+                
+            }
+            
+            // guest인 경우
+                // check 여부에 따라
+                // true: progress
+                // false: timeScroll
+            
+            
         default:
             break
         }
