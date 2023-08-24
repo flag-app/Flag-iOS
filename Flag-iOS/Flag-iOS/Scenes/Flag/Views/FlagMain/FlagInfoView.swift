@@ -23,6 +23,12 @@ class FlagInfoView: BaseUIView {
         }
     }
     
+    var userName: [String] = [] {
+        didSet {
+            updateImageView()
+        }
+    }
+    
     // MARK: - UI Components
     
     let flagImage: UIImageView = {
@@ -138,7 +144,34 @@ class FlagInfoView: BaseUIView {
         dateLabel.text = "\(data.date)  \(data.startTime) - \(data.endTime)"
         locationLabel.text = data.place
         memoTextView.text = data.memo
+        userName = data.members
         // FIXME: - user name 해야 됨
     }
     
+    func updateImageView() {
+        AllUsersView.updateStackViewWithUsers(userImageView, userNames: userName)
+    }
+    
+}
+
+class AllUsersView {
+    
+    /// 인자로 받은 User들의 UserProfileView 반환
+    static func renderStackViewWithUsers(userNames: [String]) -> UIStackView {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.spacing = 47
+        updateStackViewWithUsers(stackView, userNames: userNames)
+        return stackView
+    }
+    
+    static func updateStackViewWithUsers(_ stackView: UIStackView, userNames: [String]) {
+        stackView.arrangedSubviews.forEach { $0.removeFromSuperview() } // 기존의 subviews를 모두 제거
+
+        for userName in userNames {
+            let userView = UserProfileView(userName: userName)
+            stackView.addArrangedSubview(userView)
+        }
+    }
 }
