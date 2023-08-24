@@ -110,6 +110,7 @@ final class ProgressViewController: BaseUIViewController {
     func presentModal(){
         let vc = ListViewController()
         vc.delegate = self
+        vc.flagId = flagId
         vc.modalPresentationStyle = .pageSheet
         if let sheet = vc.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
@@ -240,8 +241,8 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
                             print(responseData)
                             let nonResponseUsers = responseData.nonResponseUsers
                             let acceptUsers = responseData.acceptUsers
-                            self.progressView.acceptUsers.text = "\(acceptUsers)"
-                            self.progressView.nonResponseUsers.text = "\(nonResponseUsers)"
+                            self.progressView.responseUserName = responseData.acceptUsers
+                            self.progressView.nonResponseUserName = responseData.nonResponseUsers
                         } catch {
                             print("Response Parsing Error: \(error)")
                         }
@@ -300,8 +301,7 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
                             let endTime = responseData.endTime
                             let members = responseData.members
                             self.progressView.friendDisplayLabel.text = "\(date) \(startTime)~\(endTime)에 가능한 친구들"
-                            self.progressView.membersDisplayLabel.text = "\(members)"
-                        } catch {
+                            self.progressView.ableUserName = responseData.members                        } catch {
                             print("Response Parsing Error: \(error)")
                         }
                     

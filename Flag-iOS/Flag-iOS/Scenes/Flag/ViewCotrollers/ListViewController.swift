@@ -93,7 +93,7 @@ final class ListViewController: BaseUIViewController {
             let provider = MoyaProvider<FlagListAPI>()
             
         // Make the API request
-        provider.request(.showFlagList(flagId: 63)) { result in
+        provider.request(.showFlagList(flagId: flagId)) { result in
                 switch result {
                 case .success(let response):
                     // Handle successful response
@@ -129,7 +129,7 @@ final class ListViewController: BaseUIViewController {
         print(progressViewController.flagId)
             
             // Make the API request
-        provider.request(.flagCandidateFix(flagId: 63, requestBody: selectedCellIndex!)) { result in
+        provider.request(.flagCandidateFix(flagId: flagId, requestBody: selectedCellIndex!)) { result in
             switch result {
             case .success(let response):
                 // Handle successful response
