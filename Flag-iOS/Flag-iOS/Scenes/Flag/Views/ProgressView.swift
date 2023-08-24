@@ -14,6 +14,25 @@ final class ProgressView: BaseUIView {
     var labels: [UILabel] = []
     var stakcViewSpace = 0
     
+    var ableUserName: [String] = [] {
+            didSet {
+                updateImageView()
+            }
+        }
+        
+        var responseUserName: [String] = [] {
+            didSet {
+                updateResponseView()
+            }
+        }
+        
+        var nonResponseUserName: [String] = [] {
+            didSet {
+                updateNonResponseView()
+            }
+        }
+        
+    
     // MARK: - UI Components
     
     let sectionCount = 14
@@ -58,27 +77,28 @@ final class ProgressView: BaseUIView {
     }()
     
 
-    lazy var membersDisplayLabel: UILabel = {
-        let label = UILabel()
-        label.font = .title1
-        label.numberOfLines = 0
-        return label
-    }()
+//    lazy var membersDisplayLabel: UILabel = {
+//        let label = UILabel()
+//        label.font = .title1
+//        label.numberOfLines = 0
+//        return label
+//    }()
+    let ableUserImageView = AbleUsersView.renderStackViewWithUsers(userNames: [])
     
-    lazy var acceptUsers: UILabel = {
-        let label = UILabel()
-        label.font = .title1
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    lazy var nonResponseUsers: UILabel = {
-        let label = UILabel()
-        label.font = .title1
-        label.numberOfLines = 0
-        return label
-    }()
-  
+//    lazy var acceptUsers: UILabel = {
+//        let label = UILabel()
+//        label.font = .title1
+//        label.numberOfLines = 0
+//        return label
+//    }()
+    let responseUserImageView = AbleUsersView.renderStackViewWithUsers(userNames: ["최지우", "성현주"])
+//    lazy var nonResponseUsers: UILabel = {
+//        let label = UILabel()
+//        label.font = .title1
+//        label.numberOfLines = 0
+//        return label
+//    }()
+    let nonResponseUserImageView = AbleUsersView.renderStackViewWithUsers(userNames: ["최지우", "성현주"])
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -123,9 +143,9 @@ final class ProgressView: BaseUIView {
                                stackview,
                                acceptUsersLabel,
                                nonResponseLabel,
-                               membersDisplayLabel,
-                               acceptUsers,
-                               nonResponseUsers)
+                               ableUserImageView,
+                               responseUserImageView,
+                               nonResponseUserImageView)
     }
     
     override func setLayout() {
@@ -160,7 +180,7 @@ final class ProgressView: BaseUIView {
             make.top.equalTo(collectionView.snp.top).offset(29)
         }
         
-        membersDisplayLabel.snp.makeConstraints { make in
+        ableUserImageView.snp.makeConstraints { make in
             make.top.equalTo(friendDisplayLabel.snp.bottom).offset(30)
             make.leading.equalToSuperview().offset(25)
         }
@@ -174,7 +194,7 @@ final class ProgressView: BaseUIView {
             make.top.equalTo(friendDisplayLabel.snp.bottom).offset(85)
             make.leading.equalToSuperview().offset(25)
         }
-        acceptUsers.snp.makeConstraints { make in
+        responseUserImageView.snp.makeConstraints { make in
             make.top.equalTo(acceptUsersLabel.snp.bottom).offset(30)
             make.leading.equalToSuperview().inset(25)
         }
@@ -182,7 +202,7 @@ final class ProgressView: BaseUIView {
             make.top.equalTo(acceptUsersLabel.snp.bottom).offset(85)
             make.leading.equalToSuperview().offset(25)
         }
-        nonResponseUsers.snp.makeConstraints { make in
+        nonResponseUserImageView.snp.makeConstraints { make in
             make.top.equalTo(nonResponseLabel.snp.bottom).offset(30)
             make.leading.equalToSuperview().inset(25)
         }
@@ -211,5 +231,45 @@ final class ProgressView: BaseUIView {
         stackview.distribution = .equalSpacing
         stackview.spacing = CGFloat(stakcViewSpace * 2)
     }
-}
+    
+    
+    func updateImageView() {
+            AbleUsersView.updateStackViewWithUsers(ableUserImageView, userNames: ableUserName)
+        }
+        func updateNonResponseView() {
+            AbleUsersView.updateStackViewWithUsers(responseUserImageView, userNames: responseUserName)
+        }
+        func updateResponseView() {
+            AbleUsersView.updateStackViewWithUsers(nonResponseUserImageView, userNames: nonResponseUserName)
+        }
+        
+    }
+
+
+
+    class AbleUsersView {
+        
+        /// 인자로 받은 User들의 UserProfileView 반환
+        static func renderStackViewWithUsers(userNames: [String]) -> UIStackView {
+            let stackView = UIStackView()
+            stackView.axis = .horizontal
+            stackView.distribution = .fillEqually
+            stackView.spacing = 47
+            updateStackViewWithUsers(stackView, userNames: userNames)
+            return stackView
+        }
+        
+        static func updateStackViewWithUsers(_ stackView: UIStackView, userNames: [String]) {
+            stackView.arrangedSubviews.forEach { $0.removeFromSuperview() } // 기존의 subviews를 모두 제거
+
+            for userName in userNames {
+                let userView = UserProfileView(userName: userName)
+                stackView.addArrangedSubview(userView)
+            }
+        }
+    }
+
+
+
+
 
