@@ -21,7 +21,7 @@ final class ProgressView: BaseUIView {
     
     private let timeLabel: UILabel = {
         let label = UILabel()
-        label.text = TextLiterals.flagPossibleList
+        label.text = TextLiterals.flagPossibleTimeList
         label.font = .title1
         label.numberOfLines = 0
         return label

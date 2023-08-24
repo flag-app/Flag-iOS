@@ -16,6 +16,12 @@ final class ListViewController: BaseUIViewController {
     
     // MARK: - Properties
     
+    var flagId: Int = 0 {
+        didSet {
+            print("♥️\(flagId)listview")
+        }
+    }
+    
     var selectedCellIndex: Int? = nil
     weak var delegate: ListViewControllerDelegate?
     var numberFlagList: Int = 0
@@ -87,7 +93,7 @@ final class ListViewController: BaseUIViewController {
             let provider = MoyaProvider<FlagListAPI>()
             
         // Make the API request
-        provider.request(.showFlagList(flagId: progressViewController.flagId)) { result in
+        provider.request(.showFlagList(flagId: 63)) { result in
                 switch result {
                 case .success(let response):
                     // Handle successful response
@@ -119,9 +125,11 @@ final class ListViewController: BaseUIViewController {
             
             // Create a FlagPlus object with appropriate data
             let flagListIndex =  selectedCellIndex!
+        print("=========================")
+        print(progressViewController.flagId)
             
             // Make the API request
-        provider.request(.flagCandidateFix(flagId: progressViewController.flagId, requestBody: flagListIndex)) { result in
+        provider.request(.flagCandidateFix(flagId: 63, requestBody: selectedCellIndex!)) { result in
             switch result {
             case .success(let response):
                 // Handle successful response

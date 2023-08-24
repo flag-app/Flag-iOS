@@ -61,6 +61,7 @@ enum TextLiterals {
     static let flagConfirmText: String = "확인"
     static let flagCancelText: String = "취소"
     static let flagPossibleList: String = "가능한 일정 목록이에요!\n약속을 확정해 주세요."
+    static let flagPossibleTimeList: String = "현재 가능한 시간이에요."
     static let flagMinTimeOne: String = "최소 1시간"
     static let flagMinTimeTextOne: String = "최소 1시간은 만나야 해요"
     static let flagMinTimeTwo: String = "최소 2시간"
