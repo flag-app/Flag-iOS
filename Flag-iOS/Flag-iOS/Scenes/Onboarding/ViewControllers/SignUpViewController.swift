@@ -48,8 +48,8 @@ class SignUpViewController: BaseUIViewController {
     @objc
     func didTappedNextButton() {
         postSignUpRequest(userEmail: signUpView.emailTextField.text!,
-                          userPassword: signUpView.passwordTextField.text!,
-                          userNickname: signUpView.nicknameTextField.text!)
+                          userNickname: signUpView.nicknameTextField.text!,
+                          userPassword: signUpView.passwordTextField.text!)
       
         self.navigationController?.popViewController(animated: true)
     }
@@ -58,8 +58,8 @@ class SignUpViewController: BaseUIViewController {
 // MARK: - Network
 
 extension SignUpViewController {
-    func postSignUpRequest(userEmail: String, userPassword: String, userNickname: String) {
-        let param = SignUpRequest(userEmail, userPassword, userNickname)
+    func postSignUpRequest(userEmail: String, userNickname: String, userPassword: String) {
+        let param = SignUpRequest(email: userEmail, name: userNickname, password: userPassword)
         
         self.authProvider.request(.signUp(body: param)) { response in
             switch response {

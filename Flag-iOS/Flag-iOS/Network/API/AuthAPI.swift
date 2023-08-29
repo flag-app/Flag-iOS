@@ -14,11 +14,8 @@ enum AuthAPI {
     case signIn(body: SignInRequest)
 }
 
-extension AuthAPI: TargetType {
-    public var baseURL: URL {
-        return URL(string: Config.baseURL)!
-    }
-    
+extension AuthAPI: BaseTargetType {
+
     var path: String {
         switch self {
         case .signUp:
