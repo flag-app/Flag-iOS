@@ -4,7 +4,7 @@
 //
 //  Created by 최지우 on 2023/08/02.
 //
-import Foundation
+import UIKit
 
 import SnapKit
 
@@ -52,8 +52,8 @@ class OnboardingViewController: BaseUIViewController {
     @objc
     func didTappedTermsButton() {
         let termsViewController = TermsViewController()
-        self.navigationController?.pushViewController(termsViewController, animated: true)
+        termsViewController.modalPresentationStyle = .pageSheet
+        termsViewController.sheetPresentationController?.prefersGrabberVisible = true
+        present(termsViewController, animated: true)
     }
-
-    
 }

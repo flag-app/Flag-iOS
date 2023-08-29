@@ -38,7 +38,7 @@ class TermsView: BaseUIView {
             make.edges.equalToSuperview()
         }
         termsText.snp.makeConstraints { make in
-            make.top.bottom.equalTo(safeAreaLayoutGuide)
+            make.top.bottom.equalTo(safeAreaLayoutGuide).offset(25)
             make.horizontalEdges.equalToSuperview().inset(25)
         }
     }

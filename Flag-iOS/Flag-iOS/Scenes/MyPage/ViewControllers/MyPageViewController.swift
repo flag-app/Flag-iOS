@@ -13,7 +13,7 @@ final class MyPageViewController: BaseUIViewController {
     
     //MARK: - Properties
     
-    let myPageMenu = ["친구 목록" , "이용약관", "로그아웃" , "탈퇴하기"]
+    let myPageMenu = TextLiterals.mypageElements
     let realm = RealmService()
     private let provider = MoyaProvider<MyPageAPI>(plugins: [MoyaLoggerPlugin]())
     

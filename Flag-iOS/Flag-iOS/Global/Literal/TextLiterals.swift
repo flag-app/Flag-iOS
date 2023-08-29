@@ -111,6 +111,7 @@ enum TextLiterals {
     static let friendListText: String = "친구목록"
     static let addFriendText: String = "친구추가"
     static let termsTitleText: String = "이용약관"
+    static let mypageElements: [String] = ["친구 목록" , "이용약관", "로그아웃" , "탈퇴하기"]
     static let termsText: String = """
     “FLAG” 이용약관
     제1장 총칙

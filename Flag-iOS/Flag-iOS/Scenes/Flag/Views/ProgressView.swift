@@ -54,7 +54,7 @@ final class ProgressView: BaseUIView {
         return label
     }()
     
-    lazy var PrimaryUserLabel: UILabel = {
+    lazy var primaryUserLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.flagPrimaryUserText
         label.font = .body3
@@ -62,7 +62,7 @@ final class ProgressView: BaseUIView {
         return label
     }()
     
-    lazy var AllUserCountLabel: UILabel = {
+    lazy var allUserCountLabel: UILabel = {
         let label = UILabel()
         label.text = "14"
         label.font = .body3
@@ -135,8 +135,8 @@ final class ProgressView: BaseUIView {
                          modalButton,
                          scrollView,
                          indicatorImageView,
-                         PrimaryUserLabel,
-                         AllUserCountLabel)
+                         primaryUserLabel,
+                         allUserCountLabel)
         
         scrollView.addSubviews(friendDisplayLabel,
                                collectionView,
@@ -153,66 +153,66 @@ final class ProgressView: BaseUIView {
             $0.top.equalTo(safeAreaLayoutGuide).offset(40)
             $0.leading.equalToSuperview().offset(25)
         }
-        PrimaryUserLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).offset(40)
-            make.leading.equalTo(timeLabel.snp.trailing).offset(17)
+        primaryUserLabel.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide).offset(40)
+            $0.leading.equalTo(timeLabel.snp.trailing).offset(17)
         }
-        AllUserCountLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).offset(40)
-            make.leading.equalTo(indicatorImageView.snp.trailing).offset(4)
+        allUserCountLabel.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide).offset(40)
+            $0.leading.equalTo(indicatorImageView.snp.trailing).offset(4)
         }
         friendDisplayLabel.snp.makeConstraints {
             $0.top.equalTo(collectionView.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(25)
         }
-        modalButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide).inset(21)
-            make.horizontalEdges.equalToSuperview().inset(25)
-            make.height.equalTo(49)
+        modalButton.snp.makeConstraints {
+            $0.bottom.equalTo(safeAreaLayoutGuide).inset(21)
+            $0.horizontalEdges.equalToSuperview().inset(25)
+            $0.height.equalTo(49)
         }
-        collectionView.snp.makeConstraints { make in
-            make.trailing.equalTo(safeAreaLayoutGuide).inset(10)
-            make.leading.equalTo(safeAreaLayoutGuide).inset(20)
-            make.top.equalTo(scrollView).offset(22)
-            make.height.equalTo(475)
+        collectionView.snp.makeConstraints {
+            $0.trailing.equalTo(safeAreaLayoutGuide).inset(10)
+            $0.leading.equalTo(safeAreaLayoutGuide).inset(20)
+            $0.top.equalTo(scrollView).offset(22)
+            $0.height.equalTo(475)
         }
-        indicatorImageView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).offset(40)
-            make.height.equalTo(21)
-            make.leading.equalTo(PrimaryUserLabel.snp.trailing).offset(4)
+        indicatorImageView.snp.makeConstraints { 
+            $0.top.equalTo(safeAreaLayoutGuide).offset(40)
+            $0.height.equalTo(21)
+            $0.leading.equalTo(primaryUserLabel.snp.trailing).offset(4)
 //            make.trailing.equalTo(AllUserCountLabel.snp.leading).offset(4)
-            make.width.equalTo(109)
+            $0.width.equalTo(109)
         }
-        stackview.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(7)
-            make.top.equalTo(collectionView.snp.top).offset(29)
+        stackview.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(7)
+            $0.top.equalTo(collectionView.snp.top).offset(29)
         }
         
-        ableUserImageView.snp.makeConstraints { make in
-            make.top.equalTo(friendDisplayLabel.snp.bottom).offset(30)
-            make.leading.equalToSuperview().offset(25)
+        ableUserImageView.snp.makeConstraints {
+            $0.top.equalTo(friendDisplayLabel.snp.bottom).offset(30)
+            $0.leading.equalToSuperview().offset(25)
         }
        
-        scrollView.snp.makeConstraints { make in
-            make.top.equalTo(timeLabel.snp.bottom)
-            make.bottom.equalTo(modalButton.snp.top)
-            make.horizontalEdges.equalToSuperview()
+        scrollView.snp.makeConstraints {
+            $0.top.equalTo(timeLabel.snp.bottom)
+            $0.bottom.equalTo(modalButton.snp.top)
+            $0.horizontalEdges.equalToSuperview()
         }
-        acceptUsersLabel.snp.makeConstraints { make in
-            make.top.equalTo(friendDisplayLabel.snp.bottom).offset(85)
-            make.leading.equalToSuperview().offset(25)
+        acceptUsersLabel.snp.makeConstraints {
+            $0.top.equalTo(friendDisplayLabel.snp.bottom).offset(85)
+            $0.leading.equalToSuperview().offset(25)
         }
-        responseUserImageView.snp.makeConstraints { make in
-            make.top.equalTo(acceptUsersLabel.snp.bottom).offset(30)
-            make.leading.equalToSuperview().inset(25)
+        responseUserImageView.snp.makeConstraints {
+            $0.top.equalTo(acceptUsersLabel.snp.bottom).offset(30)
+            $0.leading.equalToSuperview().inset(25)
         }
-        nonResponseLabel.snp.makeConstraints { make in
-            make.top.equalTo(acceptUsersLabel.snp.bottom).offset(85)
-            make.leading.equalToSuperview().offset(25)
+        nonResponseLabel.snp.makeConstraints {
+            $0.top.equalTo(acceptUsersLabel.snp.bottom).offset(85)
+            $0.leading.equalToSuperview().offset(25)
         }
-        nonResponseUserImageView.snp.makeConstraints { make in
-            make.top.equalTo(nonResponseLabel.snp.bottom).offset(30)
-            make.leading.equalToSuperview().inset(25)
+        nonResponseUserImageView.snp.makeConstraints {
+            $0.top.equalTo(nonResponseLabel.snp.bottom).offset(30)
+            $0.leading.equalToSuperview().inset(25)
         }
     }
     

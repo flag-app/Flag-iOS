@@ -119,6 +119,7 @@
 		E547874D2A8AC5AC0097F2D2 /* FriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547874C2A8AC5AC0097F2D2 /* FriendListCell.swift */; };
 		E54787522A8BA5150097F2D2 /* ReadyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787512A8BA5150097F2D2 /* ReadyView.swift */; };
 		E54787542A8BA5250097F2D2 /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54787532A8BA5250097F2D2 /* ReadyViewController.swift */; };
+		E5484FB52A9E62710053201F /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5484FB42A9E62710053201F /* UILabel+.swift */; };
 		E5586CEF2A8E68AD00A66EA5 /* FriendsPlusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5586CEE2A8E68AD00A66EA5 /* FriendsPlusCell.swift */; };
 		E5586CF42A914CAF00A66EA5 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = E5586CF32A914CAF00A66EA5 /* RxRelay */; };
 		E5586CF62A914CAF00A66EA5 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E5586CF52A914CAF00A66EA5 /* RxSwift */; };
@@ -243,6 +244,7 @@
 		E547874C2A8AC5AC0097F2D2 /* FriendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCell.swift; sourceTree = "<group>"; };
 		E54787512A8BA5150097F2D2 /* ReadyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyView.swift; sourceTree = "<group>"; };
 		E54787532A8BA5250097F2D2 /* ReadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyViewController.swift; sourceTree = "<group>"; };
+		E5484FB42A9E62710053201F /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		E5586CEE2A8E68AD00A66EA5 /* FriendsPlusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPlusCell.swift; sourceTree = "<group>"; };
 		E593AA982A7E1F9500FC918A /* SetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameViewController.swift; sourceTree = "<group>"; };
 		E593AA9C2A7E299500FC918A /* FriendsPlusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPlusViewController.swift; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 				7B9999212A8ABB2B0043C592 /* UITextView+.swift */,
 				7B31F8032A923B5600D7D0CF /* UIViewController+.swift */,
 				7B31F8212A9419AC00D7D0CF /* UIWindow+.swift */,
+				E5484FB42A9E62710053201F /* UILabel+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -949,6 +952,7 @@
 				7B9998CB2A7A995D0043C592 /* BaseUIView.swift in Sources */,
 				7B9998D52A7B856E0043C592 /* BaseUITextField.swift in Sources */,
 				E53586A62A8201A1007D053D /* TimeScrollView.swift in Sources */,
+				E5484FB52A9E62710053201F /* UILabel+.swift in Sources */,
 				E511A2FB2A966F58002722A2 /* FlagGuestAPI.swift in Sources */,
 				E546EF162A95355A00B59FEA /* FriendDeleteDT0.swift in Sources */,
 				7B51C5B12A63F8120016B418 /* MyPageViewController.swift in Sources */,
