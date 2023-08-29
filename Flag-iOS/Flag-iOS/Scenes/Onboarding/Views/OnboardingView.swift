@@ -33,12 +33,24 @@ class OnboardingView: BaseUIView {
         return button
     }()
     
+    lazy var termsButton: UIButton = {
+        let button = UIButton()
+        let fullText = TextLiterals.termsCheckText
+        let coloredText = "서비스 이용약관" 
+        let attributedString = NSMutableAttributedString(string: fullText)
+        attributedString.addAttribute(.foregroundColor, value: UIColor.purple300, range: (fullText as NSString).range(of: coloredText))
+        button.setAttributedTitle(attributedString, for: .normal)
+        button.addTitleAttribute(title: fullText, titleColor: .black, fontName: .title3)
+        return button
+    }()
+    
     // MARK: - Custom Method
 
     override func setUI() {
         self.addSubviews(onboardingImageView,
                          signInButton,
-                         signUpButton)
+                         signUpButton,
+                         termsButton)
     }
     
     override func setLayout() {
@@ -55,6 +67,10 @@ class OnboardingView: BaseUIView {
             make.top.equalTo(signInButton.snp.bottom).offset(15)
             make.horizontalEdges.equalToSuperview().inset(25)
             make.height.equalTo(49)
+        }
+        termsButton.snp.makeConstraints { make in
+            make.top.equalTo(signUpButton.snp.bottom).offset(15)
+            make.centerX.equalToSuperview()
         }
     }
     

@@ -19,7 +19,7 @@ class TermsViewController: BaseUIViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        navigationItem.title = TextLiterals.signUpTitleText
+        navigationItem.title = TextLiterals.termsTitleText
     }
     
     override func setUI() {
