@@ -260,6 +260,7 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
                             let acceptUsers = responseData.acceptUsers
                             self.progressView.responseUserName = responseData.acceptUsers
                             self.progressView.nonResponseUserName = responseData.nonResponseUsers
+                            self.progressView.AllUserCountLabel.text = "\(responseData.userTotalCount)명\n가능"
                         } catch {
                             print("Response Parsing Error: \(error)")
                         }

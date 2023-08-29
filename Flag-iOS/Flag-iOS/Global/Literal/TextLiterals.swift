@@ -90,6 +90,7 @@ enum TextLiterals {
     static let flagFriendDisplayText: String = "시간대를 클릭하여 가능한 친구들을\n확인해 보세요!"
     static let flagAcceptUsersText: String = "현재 약속을 수락한 친구들"
     static let flagNonResponseUsersText: String = "아직 응답이 없는 친구들"
+    static let flagPrimaryUserText: String = "0명\n가능"
     
     
     //MARK: MyPage

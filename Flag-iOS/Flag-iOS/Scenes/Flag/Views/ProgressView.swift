@@ -54,6 +54,22 @@ final class ProgressView: BaseUIView {
         return label
     }()
     
+    lazy var PrimaryUserLabel: UILabel = {
+        let label = UILabel()
+        label.text = TextLiterals.flagPrimaryUserText
+        label.font = .body3
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var AllUserCountLabel: UILabel = {
+        let label = UILabel()
+        label.text = "14"
+        label.font = .body3
+        label.numberOfLines = 0
+        return label
+    }()
+    
     lazy var acceptUsersLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.flagAcceptUsersText
@@ -76,28 +92,10 @@ final class ProgressView: BaseUIView {
        return scrollView
     }()
     
-
-//    lazy var membersDisplayLabel: UILabel = {
-//        let label = UILabel()
-//        label.font = .title1
-//        label.numberOfLines = 0
-//        return label
-//    }()
     let ableUserImageView = AbleUsersView.renderStackViewWithUsers(userNames: [])
     
-//    lazy var acceptUsers: UILabel = {
-//        let label = UILabel()
-//        label.font = .title1
-//        label.numberOfLines = 0
-//        return label
-//    }()
     let responseUserImageView = AbleUsersView.renderStackViewWithUsers(userNames: ["최지우", "성현주"])
-//    lazy var nonResponseUsers: UILabel = {
-//        let label = UILabel()
-//        label.font = .title1
-//        label.numberOfLines = 0
-//        return label
-//    }()
+
     let nonResponseUserImageView = AbleUsersView.renderStackViewWithUsers(userNames: ["최지우", "성현주"])
     
     lazy var collectionView: UICollectionView = {
@@ -136,7 +134,9 @@ final class ProgressView: BaseUIView {
         self.addSubviews(timeLabel,
                          modalButton,
                          scrollView,
-                         indicatorImageView)
+                         indicatorImageView,
+                         PrimaryUserLabel,
+                         AllUserCountLabel)
         
         scrollView.addSubviews(friendDisplayLabel,
                                collectionView,
@@ -153,6 +153,14 @@ final class ProgressView: BaseUIView {
             $0.top.equalTo(safeAreaLayoutGuide).offset(40)
             $0.leading.equalToSuperview().offset(25)
         }
+        PrimaryUserLabel.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).offset(40)
+            make.leading.equalTo(timeLabel.snp.trailing).offset(17)
+        }
+        AllUserCountLabel.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).offset(40)
+            make.leading.equalTo(indicatorImageView.snp.trailing).offset(4)
+        }
         friendDisplayLabel.snp.makeConstraints {
             $0.top.equalTo(collectionView.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(25)
@@ -167,12 +175,12 @@ final class ProgressView: BaseUIView {
             make.leading.equalTo(safeAreaLayoutGuide).inset(20)
             make.top.equalTo(scrollView).offset(22)
             make.height.equalTo(475)
-            //make.bottom.equalTo(modalButton.snp.top).offset(-160)
         }
         indicatorImageView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(40)
-            make.left.equalTo(timeLabel.snp.right).offset(40)
             make.height.equalTo(21)
+            make.leading.equalTo(PrimaryUserLabel.snp.trailing).offset(4)
+//            make.trailing.equalTo(AllUserCountLabel.snp.leading).offset(4)
             make.width.equalTo(109)
         }
         stackview.snp.makeConstraints { make in
@@ -211,7 +219,6 @@ final class ProgressView: BaseUIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         stakcViewSpace = 31
-//        Int((collectionView.bounds.height / CGFloat(sectionCount) - 2))
         updateStackView()
 
     }
