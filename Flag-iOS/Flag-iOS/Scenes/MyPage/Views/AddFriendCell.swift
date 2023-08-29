@@ -46,7 +46,6 @@ class AddFriendCell: UITableViewCell {
         
         
         deleteButton.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(340)
             make.trailing.equalToSuperview().inset(27)
             make.centerY.equalToSuperview()
         }
