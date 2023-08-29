@@ -133,14 +133,31 @@ final class ProgressViewController: BaseUIViewController {
                 frequencyDict[element] = 1
             }
         }
-        let borderNumber = allUserNumber/5
-        for (element, count) in frequencyDict {
-            switch count{
-            case 0...borderNumber: one.append(element)
-            case borderNumber...borderNumber*2: two.append(element)
-            case borderNumber*2...borderNumber*3: three.append(element)
-            case borderNumber*3...borderNumber*4: four.append(element)
-            default: five.append(element)
+        if allUserNumber > 5 {
+            let borderNumber = allUserNumber/5
+            for (element, count) in frequencyDict {
+                switch count{
+                case 0...borderNumber: one.append(element)
+                case borderNumber...borderNumber*2: two.append(element)
+                case borderNumber*2...borderNumber*3: three.append(element)
+                case borderNumber*3...borderNumber*4: four.append(element)
+                case borderNumber*4...borderNumber*5 : five.append(element)
+                default: five.append(element)
+                }
+            }
+        } else {
+            for (element, count) in frequencyDict {
+                if count == 1 {
+                    one.append(element)
+                } else if count == 2 {
+                    two.append(element)
+                } else if count == 3 {
+                    three.append(element)
+                }else if count == 4 {
+                    four.append(element)
+                }else if count == 5 {
+                    five.append(element)
+                }
             }
         }
     }
@@ -274,8 +291,8 @@ extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDe
                 
                 selectedDates = dateArray // 변환된 날짜 배열 출력
             }
-            categorizeNumbers()
             allUserNumber = responseData.userTotalCount
+            categorizeNumbers()
             selcetedTime = responseData.timeSlot
             self.progressView.collectionView.reloadData()
             setStackView()
