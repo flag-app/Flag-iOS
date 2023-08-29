@@ -237,10 +237,10 @@ final class ProgressView: BaseUIView {
             AbleUsersView.updateStackViewWithUsers(ableUserImageView, userNames: ableUserName)
         }
         func updateNonResponseView() {
-            AbleUsersView.updateStackViewWithUsers(responseUserImageView, userNames: responseUserName)
+            AbleUsersView.updateStackViewWithUsers(nonResponseUserImageView, userNames: nonResponseUserName)
         }
         func updateResponseView() {
-            AbleUsersView.updateStackViewWithUsers(nonResponseUserImageView, userNames: nonResponseUserName)
+            AbleUsersView.updateStackViewWithUsers(responseUserImageView, userNames: responseUserName)
         }
         
     }
