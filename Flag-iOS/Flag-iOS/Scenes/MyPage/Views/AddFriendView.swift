@@ -19,6 +19,7 @@ final class AddFriendView: BaseUIView {
     
     lazy var friendSearchTextField: BaseUITextField = {
         let textField = BaseUITextField()
+        textField.addLeftImage(image: ImageLiterals.searchIcon)
         textField.placeholder = TextLiterals.flagFriendsHintText
         return textField
     }()

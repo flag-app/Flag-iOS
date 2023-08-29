@@ -20,6 +20,7 @@ final class FriendListView: BaseUIView {
     private let friendSearchTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.flagFriendsHintText
+        textField.addLeftImage(image: ImageLiterals.searchIcon)
         return textField
     }()
     
