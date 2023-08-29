@@ -32,13 +32,14 @@ enum TextLiterals {
     static let completeOnboardingText: String = "가입 완료하기"
     static let signUpAlertText: String = "안녕하세요 FLAG 입니다!\n가입 정보를 기입해 주세요."
     static let doubleCheck: String = "중복확인"
+    static let termsCheckText: String = "로그인 시 서비스 이용약관에 동의하게 됩니다."
     
     // MARK: FlagPlus
     
     static let flagNameText: String = "약속 이름을 정해 주세요."
     static let flagNameHintText: String = "최대 15자"
     static let flagFriendsText: String = "누구와 잡는 약속인가요?"
-    static let flagFriendsHintText: String = "🔍 검색"
+    static let flagFriendsHintText: String = "검색"
     static let flagDateText: String = "날짜를 선택해 주세요. (최대 5일 선택 가능)"
     static let flagTimeText: String = "약속 시간대를 설정해 주세요"
     static let flagMinimumTimeText: String = "약속 최소 시간을 설정해 주세요"
@@ -90,6 +91,7 @@ enum TextLiterals {
     static let flagFriendDisplayText: String = "시간대를 클릭하여 가능한 친구들을\n확인해 보세요!"
     static let flagAcceptUsersText: String = "현재 약속을 수락한 친구들"
     static let flagNonResponseUsersText: String = "아직 응답이 없는 친구들"
+    static let flagPrimaryUserText: String = "0명\n가능"
     
     
     //MARK: MyPage
@@ -108,6 +110,8 @@ enum TextLiterals {
     static let friendPlusText: String = "추가하기"
     static let friendListText: String = "친구목록"
     static let addFriendText: String = "친구추가"
+    static let termsTitleText: String = "이용약관"
+    static let mypageElements: [String] = ["친구 목록" , "이용약관", "로그아웃" , "탈퇴하기"]
     static let termsText: String = """
     “FLAG” 이용약관
     제1장 총칙
@@ -115,10 +119,10 @@ enum TextLiterals {
     이 약관은 팀 NAMA(이하 “나마”라 합니다)가 모바일 기기를 통해 제공하는 “FLAG”(이하 “서비스”라 합니다)의 이용에 대한 나마와 서비스 이용자의 권리ㆍ의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
     제2조 용어의 정의
     이 약관에서 사용하는 용어는 다음과 같습니다.
-    “나마”라 함은 “FLAG”를 제작하고 서비스를 제공하는 자를 말합니다.
-    “이용자”라 함은 “FLAG”의 웹페이지 또는 어플리케이션에 접속하여 이 약관에 따라 FLAG가 제공하는 서비스를 이용하는 자를 말합니다.
-    "계정"이란 나마가 “이용자”로부터 제공받은 이메일 등의 로그인 계정을 의미합니다. 일부 서비스를 이용하기 위해서는 계정이 반드시 필요할 수 있습니다.
-    “서비스”라 함은 이용자가 단말기 또는 기타 디바이스를 이용하여 “FLAG”에 자신의 정보를 텍스트로 입력 및 활용하는 것을 말합니다.
+    1. “나마”라 함은 “FLAG”를 제작하고 서비스를 제공하는 자를 말합니다.
+    2. “이용자”라 함은 “FLAG”의 웹페이지 또는 어플리케이션에 접속하여 이 약관에 따라 FLAG가 제공하는 서비스를 이용하는 자를 말합니다.
+    3. "계정"이란 나마가 “이용자”로부터 제공받은 이메일 등의 로그인 계정을 의미합니다. 일부 서비스를 이용하기 위해서는 계정이 반드시 필요할 수 있습니다.
+    4. “서비스”라 함은 이용자가 단말기 또는 기타 디바이스를 이용하여 “FLAG”에 자신의 정보를 텍스트로 입력 및 활용하는 것을 말합니다.
     이 약관에서 사용하는 용어의 정의는 본 조 제1항에서 정하는 것을 제외하고는 서비스 내 안내 문구 및 관계법령에서 정하는 바에 따르며, 그 외에는 일반 상 관례에 따릅니다.
     제3조 약관의 명시와 개정
     ① 나마는 이 약관의 내용을 이용자가 알 수 있도록 서비스 이용 화면에서 표시하는 방법과, 서비스의 메뉴 화면으로 연결하여 접속할 수 있는 이용약관 화면에 게시하는 방법으로 이용자에게 공지합니다. 이용자가 이용약관에 동의한 때부터 약관의 효력이 발생합니다.
@@ -140,13 +144,13 @@ enum TextLiterals {
     ③ 나마는 천재지변, 비상사태, 현재의 기술로 해결이 불가능한 장애나 결함 등 부득이한 사유가 없는 한 계속적이고 안정적인 서비스 제공을 위하여 최선의 노력을 다합니다.
     제8조 이용자 의무
     ① 이용자는 나마에서 제공하는 서비스의 이용과 관련하여 다음 각 호의 행위를 해서는 안 됩니다.
-    불법적인 목적으로 운영진, 타 이용자, 기타 타인의 정보 도용
-    서비스를 이용하여 도박 등 사행행위를 하거나 유도하는 행위, 음란/저속한 정보를 서비스 화면에 게재하는 행위, 수치심/혐오감 또는 공포심을 일으키는 글을 게재하거나 타인에게 전송 또는 유포하는 행위 등 서비스를 불건전하게 이용하는 행위
-    서비스를 무단으로 영리, 영업, 판매 등 본래의 용도 이외의 용도로 사용하는 행위
-    나마와 기타 제3자의 저작권 등 지적재산권에 대한 침해
-    나마 및 기타 제3자의 명예를 손상시키거나 업무를 방해하는 행위
-    외설 또는 폭력적인 말이나 글, 기타 공서양속에 반하는 정보를 서비스에 공개 또는 게재하는 행위
-    기타 불법적이거나 부당한 행위
+    1. 불법적인 목적으로 운영진, 타 이용자, 기타 타인의 정보 도용
+    2. 서비스를 이용하여 도박 등 사행행위를 하거나 유도하는 행위, 음란/저속한 정보를 서비스 화면에 게재하는 행위, 수치심/혐오감 또는 공포심을 일으키는 글을 게재하거나 타인에게 전송 또는 유포하는 행위 등 서비스를 불건전하게 이용하는 행위
+    3. 서비스를 무단으로 영리, 영업, 판매 등 본래의 용도 이외의 용도로 사용하는 행위
+    4. 나마와 기타 제3자의 저작권 등 지적재산권에 대한 침해
+    5. 나마 및 기타 제3자의 명예를 손상시키거나 업무를 방해하는 행위
+    6. 외설 또는 폭력적인 말이나 글, 기타 공서양속에 반하는 정보를 서비스에 공개 또는 게재하는 행위
+    7. 기타 불법적이거나 부당한 행위
     ② "이용자"는 관계법령, 이 약관의 규정, 이용안내 및 "서비스"와 관련하여 공지한 주의사항, 나마가 통지하는 사항 등을 준수하여야 합니다.
     제4장 서비스 이용
     제9조 서비스의 제공

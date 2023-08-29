@@ -171,7 +171,7 @@ extension ListViewController: UITableViewDataSource {
 //        cell.dateAndTimeLabel.text = "제목들어갈 자리, 셀번호 : \(indexPath.row + 1)"
         cell.dateAndTimeLabel.text = "\(flagListData[indexPath.row].date)     \(flagListData[indexPath.row].startTime)~\(flagListData[indexPath.row].endTime)"
         
-        cell.possibleUserLabel.text = "\(flagListData[indexPath.row].candidates)"
+        cell.ableUserName = flagListData[indexPath.row].candidates
         
         cell.selectButton.addTarget(self, action: #selector(didTappedSelectButton(_:)), for: .touchUpInside)
        cell.selectionStyle = .none

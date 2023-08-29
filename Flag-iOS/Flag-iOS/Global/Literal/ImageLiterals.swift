@@ -33,6 +33,7 @@ enum ImageLiterals {
     static var check: UIImage { .load(name: "check")}
     static var checkFill: UIImage { .load(name: "checkFill")}
     static var flagInfo: UIImage { .load(name: "flagInfo")}
+    static var searchIcon: UIImage { .load(name: "searchIcon")}
 
     //MARK: MyPage
     

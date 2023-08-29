@@ -31,6 +31,7 @@ final class FriendsPlusView: BaseUIView {
    
     private let nameTextField: BaseUITextField = {
         let textField = BaseUITextField()
+        textField.addLeftImage(image: ImageLiterals.searchIcon)
         textField.placeholder = TextLiterals.flagFriendsHintText
         return textField
     }()

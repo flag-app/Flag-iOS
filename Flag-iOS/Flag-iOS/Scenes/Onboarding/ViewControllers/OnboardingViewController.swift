@@ -4,7 +4,7 @@
 //
 //  Created by 최지우 on 2023/08/02.
 //
-import Foundation
+import UIKit
 
 import SnapKit
 
@@ -34,6 +34,7 @@ class OnboardingViewController: BaseUIViewController {
     override func addTarget() {
         onboardingView.signInButton.addTarget(self, action: #selector(didTappedSignInButton), for: .touchUpInside)
         onboardingView.signUpButton.addTarget(self, action: #selector(didTappedSignUpButton), for: .touchUpInside)
+        onboardingView.termsButton.addTarget(self, action: #selector(didTappedTermsButton), for: .touchUpInside)
     }
     
     @objc
@@ -48,4 +49,11 @@ class OnboardingViewController: BaseUIViewController {
         self.navigationController?.pushViewController(signUpViewController, animated: true)
     }
     
+    @objc
+    func didTappedTermsButton() {
+        let termsViewController = TermsViewController()
+        termsViewController.modalPresentationStyle = .pageSheet
+        termsViewController.sheetPresentationController?.prefersGrabberVisible = true
+        present(termsViewController, animated: true)
+    }
 }
