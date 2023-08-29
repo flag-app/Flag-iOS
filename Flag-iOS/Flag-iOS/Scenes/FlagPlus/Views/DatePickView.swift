@@ -121,6 +121,7 @@ final class DatePickView: BaseUIView {
     lazy var dateView: UICalendarView = {
         let view = UICalendarView()
         view.wantsDateDecorations = true
+        view.availableDateRange = DateInterval(start: .now, end: .distantFuture)
         return view
     }()
     
