@@ -92,7 +92,11 @@ enum TextLiterals {
     static let flagAcceptUsersText: String = "현재 약속을 수락한 친구들"
     static let flagNonResponseUsersText: String = "아직 응답이 없는 친구들"
     static let flagPrimaryUserText: String = "0명\n가능"
-    
+    static let flagNonExistText: String = "가능한 FLAG가 없어요🥺"
+    static let flagBackHomeText: String = "홈으로"
+    static let flagBackProgressText: String = "현황보기"
+
+
     
     //MARK: MyPage
     

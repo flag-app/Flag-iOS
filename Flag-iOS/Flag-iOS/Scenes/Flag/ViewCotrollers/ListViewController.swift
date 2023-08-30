@@ -107,6 +107,22 @@ final class ListViewController: BaseUIViewController {
                             print(self.numberFlagList)
                             self.flagListData = responseData
                             
+                            if responseData.isEmpty {
+                                let alertView = UIAlertController(title: "\(TextLiterals.flagNonExistText)", message: "", preferredStyle: .alert)
+                                let deleteAction = UIAlertAction(title: TextLiterals.flagBackHomeText, style: .default) { [self] _ in
+                                    delegate?.didDismissModal(with: -1)
+                                    dismiss(animated: true, completion: nil)
+                                }
+                                alertView.addAction(deleteAction)
+                                
+                                let cancelAction = UIAlertAction(title: TextLiterals.flagBackProgressText, style: .default){_ in
+                                    self.dismiss(animated: true, completion: nil)
+                                }
+                                alertView.addAction(cancelAction)
+                                
+                                self.present(alertView, animated: true, completion: nil)
+                                
+                            }
                             self.listView.tableView.reloadData()
                         } catch {
                             print("Response Parsing Error: \(error)")
@@ -185,14 +201,6 @@ extension ListViewController: UITableViewDataSource {
         }
         return cell
     }
-    
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return sections.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return sections[section]
-//    }
 }
 
 extension ListViewController: UITableViewDelegate {
