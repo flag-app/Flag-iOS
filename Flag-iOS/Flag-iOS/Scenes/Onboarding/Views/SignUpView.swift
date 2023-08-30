@@ -96,6 +96,7 @@ class SignUpView: BaseUIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addTarget()
+        setDelegate()
     }
     
     required init?(coder: NSCoder) {
@@ -177,6 +178,13 @@ class SignUpView: BaseUIView {
         nicknameTextField.addTarget(self, action: #selector(nicknameInputChanged), for: .editingChanged)
     }
     
+    func setDelegate() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        passwordCheckTextField.delegate = self
+        nicknameTextField.delegate = self
+    }
+    
     @objc
     func nicknameInputChanged(_ textField: UITextField) {
         if let userNickname = textField.text, (userNickname.count>1 && userNickname.count<6) {
@@ -193,6 +201,42 @@ class SignUpView: BaseUIView {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: testStr)
+    }
+    
+    func isFilledUserInfo() -> Bool {
+        if isFilledTextField(emailTextField.text) && isFilledTextField(passwordTextField.text) &&
+            isFilledTextField(passwordCheckTextField.text) &&
+            isFilledTextField(nicknameTextField.text) {
+            return true
+        }
+        return false
+    }
+    
+    func isFilledTextField(_ inputValue: String?) -> Bool {
+        if let value = inputValue {
+            if value != "" {
+                return true
+            }
+        }
+        return false
+    }
+    
+}
+
+extension SignUpView: UITextFieldDelegate {
+    
+    /// return 클릭 시, 키보드 내려감
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    /// 입력 완료시
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print(textField.text)
+        if isFilledUserInfo() {
+            print("♥️true")
+        }
     }
     
 }
