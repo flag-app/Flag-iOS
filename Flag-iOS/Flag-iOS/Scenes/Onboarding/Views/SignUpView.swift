@@ -57,14 +57,7 @@ class SignUpView: BaseUIView {
         textField.placeholder = TextLiterals.passwordHintText
         return textField
     }()
-    
-    private var passwordValidationMessageLabel: UILabel = {
-        let label = UILabel()
-        label.font = .subTitle3
-        label.textColor = .gray400
-        return label
-    }()
-    
+
     private let passwordCheckLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.doubleCheckPasswordText
@@ -80,9 +73,8 @@ class SignUpView: BaseUIView {
     
     private var passwordCheckValidationMessageLabel: UILabel = {
         let label = UILabel()
-        label.text = "이메일을 입력해주세요"
-        label.font = .subTitle3
-        label.textColor = .gray400
+        label.text = "비밀번호 일치합니다."
+        label.font = .title3
         return label
     }()
     
@@ -109,8 +101,7 @@ class SignUpView: BaseUIView {
     private var nicknameValidationMessageLabel: UILabel = {
         let label = UILabel()
         label.text = "사용 가능한 닉네임입니다"
-        label.font = .subTitle3
-        label.textColor = .gray400
+        label.font = .title3
         return label
     }()
     
@@ -143,9 +134,11 @@ class SignUpView: BaseUIView {
                          passwordTextField,
                          passwordCheckLabel,
                          passwordCheckTextField,
+                         passwordCheckValidationMessageLabel,
                          nicknameLabel,
                          nicknameTextField,
                          nicknameDoubleCheckButton,
+                         nicknameValidationMessageLabel,
                          signUpNextButton)
     }
     
@@ -185,8 +178,12 @@ class SignUpView: BaseUIView {
             $0.horizontalEdges.equalToSuperview().inset(leadingWidth)
             $0.height.equalTo(41)
         }
+        passwordCheckValidationMessageLabel.snp.makeConstraints {
+            $0.top.equalTo(passwordCheckTextField.snp.bottom).offset(8)
+            $0.leading.equalToSuperview().offset(leadingWidth)
+        }
         nicknameLabel.snp.makeConstraints {
-            $0.top.equalTo(passwordCheckTextField.snp.bottom).offset(30)
+            $0.top.equalTo(passwordCheckValidationMessageLabel.snp.bottom).offset(24)
             $0.leading.equalToSuperview().offset(leadingWidth)
         }
         nicknameTextField.snp.makeConstraints {
@@ -200,6 +197,10 @@ class SignUpView: BaseUIView {
             $0.leading.equalTo(nicknameTextField.snp.trailing).offset(12)
             $0.trailing.equalToSuperview().inset(leadingWidth)
             $0.height.equalTo(41)
+        }
+        nicknameValidationMessageLabel.snp.makeConstraints {
+            $0.top.equalTo(nicknameTextField.snp.bottom).offset(8)
+            $0.leading.equalToSuperview().offset(leadingWidth)
         }
         signUpNextButton.snp.makeConstraints {
             $0.bottom.equalTo(safeAreaLayoutGuide).inset(21)
@@ -286,7 +287,11 @@ extension SignUpView: UITextFieldDelegate {
         }
         switch textField {
         case emailTextField:
-            emailInputChanged(textField)
+            checkEmailValidation(textField)
+        case passwordCheckTextField:
+            checkPasswordValidation()
+//        case emailTextField:
+            
         default:
             return
         }
@@ -296,19 +301,35 @@ extension SignUpView: UITextFieldDelegate {
 
 private extension SignUpView {
     func textFieldSettingWhenEmpty() {
-        emailValidationMessageLabel.text = "필수 입력 사항입니다"
-        emailValidationMessageLabel.textColor = .red
+        emailValidationMessageLabel.text = OnboardingTextFieldResultType.textFieldEmpty.errorMessage
+        emailValidationMessageLabel.textColor = OnboardingTextFieldResultType.textFieldEmpty.textColor
     }
     
-    func emailInputChanged(_ textField: UITextField) {
+    func checkEmailValidation(_ textField: UITextField) {
         if let userEmail = textField.text {
             if isValidEmail(testStr: userEmail) {
-                emailValidationMessageLabel.text = "올바른 이메일 형식입니다"
-                emailValidationMessageLabel.textColor = .black
+                emailValidationMessageLabel.text = OnboardingTextFieldResultType.emailTextFieldValid.errorMessage
+                emailValidationMessageLabel.textColor = OnboardingTextFieldResultType.emailTextFieldValid.textColor
             } else {
-                emailValidationMessageLabel.text = "잘못된 이메일 형식입니다"
-                emailValidationMessageLabel.textColor = .red
+                emailValidationMessageLabel.text = OnboardingTextFieldResultType.emailTextFieldInvalid.errorMessage
+                emailValidationMessageLabel.textColor = OnboardingTextFieldResultType.emailTextFieldInvalid.textColor
             }
         }
     }
+    
+    func checkPasswordValidation() {
+        if let userPassword = passwordTextField.text, let userDoubleCheckPassword = passwordCheckTextField.text {
+            if userPassword != userDoubleCheckPassword {
+                passwordCheckValidationMessageLabel.text = OnboardingTextFieldResultType.passwordTextFieldDoubleCheckFalse.errorMessage
+                passwordCheckValidationMessageLabel.textColor = OnboardingTextFieldResultType.passwordTextFieldDoubleCheckFalse.textColor
+            } else {
+                passwordCheckValidationMessageLabel.text = ""
+            }
+        }
+    }
+    
+    func checkNicknameValidation() {
+        
+    }
+    
 }
