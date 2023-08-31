@@ -19,6 +19,7 @@ enum OnboardingTextFieldResultType {
     /// nickname
     case nicknameTextFieldOver
     case nicknameTextFieldDuplicated
+    case nicknameTextFieldDoubleCheck
     case nicknameTextFieldValid
     
     var errorMessage: String {
@@ -33,6 +34,8 @@ enum OnboardingTextFieldResultType {
             return "비밀번호가 일치하지 않습니다"
         case .nicknameTextFieldOver:
             return "2~5자내로 입력해주세요"
+        case .nicknameTextFieldDoubleCheck:
+            return "중복확인을 진행해주세요"
         case .nicknameTextFieldDuplicated:
             return "중복된 닉네임입니다."
         case .nicknameTextFieldValid:
@@ -42,7 +45,7 @@ enum OnboardingTextFieldResultType {
     
     var textColor: UIColor {
         switch self {
-        case .textFieldEmpty, .emailTextFieldInvalid, .passwordTextFieldDoubleCheckFalse, .nicknameTextFieldOver, .nicknameTextFieldDuplicated:
+        case .textFieldEmpty, .emailTextFieldInvalid, .passwordTextFieldDoubleCheckFalse, .nicknameTextFieldOver, .nicknameTextFieldDuplicated, .nicknameTextFieldDoubleCheck:
             return .red
         case .emailTextFieldValid, .nicknameTextFieldValid:
             return .gray400

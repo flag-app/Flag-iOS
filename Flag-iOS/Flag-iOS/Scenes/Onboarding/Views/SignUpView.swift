@@ -215,24 +215,7 @@ class SignUpView: BaseUIView {
     }
     
     
-    /// user Info Filled check
-    func isFilledUserInfo() -> Bool {
-        if isFilledTextField(emailTextField.text) && isFilledTextField(passwordTextField.text) &&
-            isFilledTextField(passwordCheckTextField.text) &&
-            isFilledTextField(nicknameTextField.text) {
-            return true
-        }
-        return false
-    }
-    
-    func isFilledTextField(_ inputValue: String?) -> Bool {
-        if let value = inputValue {
-            if value != "" {
-                return true
-            }
-        }
-        return false
-    }
+  
     
 }
 
@@ -275,6 +258,7 @@ extension SignUpView: UITextFieldDelegate {
 }
 
 private extension SignUpView {
+    
     func textFieldSettingWhenEmpty() {
         emailValidationMessageLabel.text = OnboardingTextFieldResultType.textFieldEmpty.errorMessage
         emailValidationMessageLabel.textColor = OnboardingTextFieldResultType.textFieldEmpty.textColor
@@ -318,8 +302,8 @@ private extension SignUpView {
     func checkNicknameValidation(_ textField: UITextField) {
         if let userNickname = textField.text {
             if nicknameInputChanged(nickname: userNickname) {
-                nicknameValidationMessageLabel.text = OnboardingTextFieldResultType.nicknameTextFieldValid.errorMessage
-                nicknameValidationMessageLabel.textColor = OnboardingTextFieldResultType.nicknameTextFieldValid.textColor
+                nicknameValidationMessageLabel.text = OnboardingTextFieldResultType.nicknameTextFieldDoubleCheck.errorMessage
+                nicknameValidationMessageLabel.textColor = OnboardingTextFieldResultType.nicknameTextFieldDoubleCheck.textColor
             } else {
                 nicknameValidationMessageLabel.text = OnboardingTextFieldResultType.nicknameTextFieldOver.errorMessage
                 nicknameValidationMessageLabel.textColor = OnboardingTextFieldResultType.nicknameTextFieldOver.textColor
@@ -335,6 +319,27 @@ private extension SignUpView {
             nicknameDoubleCheckButton.isEnabled = false
             return false
         }
+    }
+    
+    /// check userInfo Filled
+    
+    func isFilledUserInfo() -> Bool {
+        if isFilledTextField(emailTextField.text) &&
+            isFilledTextField(passwordTextField.text) &&
+            isFilledTextField(passwordCheckTextField.text) &&
+            isFilledTextField(nicknameTextField.text) {
+            return true
+        }
+        return false
+    }
+    
+    func isFilledTextField(_ inputValue: String?) -> Bool {
+        if let value = inputValue {
+            if value != "" {
+                return true
+            }
+        }
+        return false
     }
     
 }
