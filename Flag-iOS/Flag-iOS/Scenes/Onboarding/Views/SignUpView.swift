@@ -39,6 +39,14 @@ class SignUpView: BaseUIView {
         return textField
     }()
     
+    private var emailValidationMessageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "이메일을 입력해주세요"
+        label.font = .title3
+        label.textColor = .gray400
+        return label
+    }()
+    
     private let passwordLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.inputPasswordText
@@ -52,6 +60,14 @@ class SignUpView: BaseUIView {
         return textField
     }()
     
+    private var passwordValidationMessageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "이메일을 입력해주세요"
+        label.font = .subTitle3
+        label.textColor = .gray400
+        return label
+    }()
+    
     private let passwordCheckLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.doubleCheckPasswordText
@@ -63,6 +79,14 @@ class SignUpView: BaseUIView {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.passwordHintText
         return textField
+    }()
+    
+    private var passwordCheckValidationMessageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "이메일을 입력해주세요"
+        label.font = .subTitle3
+        label.textColor = .gray400
+        return label
     }()
     
     private let nicknameLabel: UILabel = {
@@ -83,6 +107,14 @@ class SignUpView: BaseUIView {
         button.addTitleAttribute(title: TextLiterals.doubleCheck, titleColor: .white, fontName: .subTitle3)
         button.layer.cornerRadius = 9.0
         return button
+    }()
+    
+    private var nicknameValidationMessageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "사용 가능한 닉네임입니다"
+        label.font = .subTitle3
+        label.textColor = .gray400
+        return label
     }()
     
     lazy var signUpNextButton: BaseFillButton = {
@@ -109,6 +141,7 @@ class SignUpView: BaseUIView {
         self.addSubviews(signUpTitleLabel,
                          emailLabel,
                          emailTextField,
+                         emailValidationMessageLabel,
                          passwordLabel,
                          passwordTextField,
                          passwordCheckLabel,
@@ -133,8 +166,12 @@ class SignUpView: BaseUIView {
             $0.horizontalEdges.equalToSuperview().inset(leadingWidth)
             $0.height.equalTo(41)
         }
+        emailValidationMessageLabel.snp.makeConstraints {
+            $0.top.equalTo(emailTextField.snp.bottom).offset(8)
+            $0.leading.equalToSuperview().offset(leadingWidth)
+        }
         passwordLabel.snp.makeConstraints {
-            $0.top.equalTo(emailTextField.snp.bottom).offset(30)
+            $0.top.equalTo(emailValidationMessageLabel.snp.bottom).offset(24)
             $0.leading.equalToSuperview().offset(leadingWidth)
         }
         passwordTextField.snp.makeConstraints {
@@ -196,13 +233,26 @@ class SignUpView: BaseUIView {
         }
     }
     
+    func emailInputChanged(_ textField: UITextField) {
+        if let userEmail = textField.text {
+            if isValidEmail(testStr: userEmail) {
+                emailValidationMessageLabel.text = "올바른 이메일 형식입니다"
+                emailValidationMessageLabel.textColor = .black
+            } else {
+                emailValidationMessageLabel.text = "잘못된 이메일 형식입니다"
+                emailValidationMessageLabel.textColor = .red
+            }
+        }
+    }
+    
     /// 이메일 형식 검사
-    func isValidEmail(testStr:String) -> Bool {
+    func isValidEmail(testStr: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: testStr)
     }
     
+    /// user Info Filled check
     func isFilledUserInfo() -> Bool {
         if isFilledTextField(emailTextField.text) && isFilledTextField(passwordTextField.text) &&
             isFilledTextField(passwordCheckTextField.text) &&
@@ -236,7 +286,29 @@ extension SignUpView: UITextFieldDelegate {
         print(textField.text)
         if isFilledUserInfo() {
             print("♥️true")
+            signUpNextButton.isEnabled = true
         }
     }
     
+    /// 각 textFiled 유효성 검사
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let inputValue = textField.text else { return }
+        if inputValue.count == 0 {
+            textFieldSettingWhenEmpty()
+        }
+        switch textField {
+        case emailTextField:
+            emailInputChanged(textField)
+        default:
+            return
+        }
+    }
+
+}
+
+private extension SignUpView {
+    func textFieldSettingWhenEmpty() {
+        emailValidationMessageLabel.text = "필수 입력 사항입니다."
+        emailValidationMessageLabel.textColor = .red
+    }
 }
