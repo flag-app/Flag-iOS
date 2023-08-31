@@ -55,6 +55,7 @@ class SignUpView: BaseUIView {
     let passwordTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.passwordHintText
+        textField.isSecureTextEntry = true
         return textField
     }()
 
@@ -68,12 +69,12 @@ class SignUpView: BaseUIView {
     private let passwordCheckTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.passwordHintText
+        textField.isSecureTextEntry = true
         return textField
     }()
     
     private var passwordCheckValidationMessageLabel: UILabel = {
         let label = UILabel()
-        label.text = "비밀번호 일치합니다."
         label.font = .title3
         return label
     }()
@@ -219,6 +220,8 @@ class SignUpView: BaseUIView {
     
 }
 
+// MARK: - UITextFieldDelegate
+
 extension SignUpView: UITextFieldDelegate {
     
     /// return 클릭 시, 키보드 내려감
@@ -240,7 +243,7 @@ extension SignUpView: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let inputValue = textField.text else { return }
         if inputValue.count == 0 {
-            textFieldSettingWhenEmpty()
+            textFieldSettingWhenEmpty(textField)
             return
         }
         switch textField {
@@ -257,11 +260,27 @@ extension SignUpView: UITextFieldDelegate {
 
 }
 
+// MARK: - Validation userInfo
+
 private extension SignUpView {
     
-    func textFieldSettingWhenEmpty() {
-        emailValidationMessageLabel.text = OnboardingTextFieldResultType.textFieldEmpty.errorMessage
-        emailValidationMessageLabel.textColor = OnboardingTextFieldResultType.textFieldEmpty.textColor
+    /// 입력 없는 경우
+    
+    func textFieldSettingWhenEmpty(_ textField: UITextField) {
+        switch textField {
+        case emailTextField:
+            emailValidationMessageLabel.text = OnboardingTextFieldResultType.textFieldEmpty.errorMessage
+            emailValidationMessageLabel.textColor = OnboardingTextFieldResultType.textFieldEmpty.textColor
+        case passwordCheckTextField:
+            passwordCheckValidationMessageLabel.text = OnboardingTextFieldResultType.textFieldEmpty.errorMessage
+            passwordCheckValidationMessageLabel.textColor = OnboardingTextFieldResultType.textFieldEmpty.textColor
+        case nicknameTextField:
+            nicknameValidationMessageLabel.text = OnboardingTextFieldResultType.textFieldEmpty.errorMessage
+            nicknameValidationMessageLabel.textColor = OnboardingTextFieldResultType.textFieldEmpty.textColor
+        default:
+            return
+        }
+        
     }
     
     /// 이메일 형식 검사
