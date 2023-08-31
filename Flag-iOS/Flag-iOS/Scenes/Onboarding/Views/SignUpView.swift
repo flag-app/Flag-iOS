@@ -100,7 +100,6 @@ class SignUpView: BaseUIView {
     
     private var nicknameValidationMessageLabel: UILabel = {
         let label = UILabel()
-        label.text = "사용 가능한 닉네임입니다"
         label.font = .title3
         return label
     }()
@@ -115,7 +114,6 @@ class SignUpView: BaseUIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addTarget()
         setDelegate()
     }
     
@@ -208,10 +206,6 @@ class SignUpView: BaseUIView {
             $0.height.equalTo(49)
         }
     }
- 
-    func addTarget() {
-        nicknameTextField.addTarget(self, action: #selector(nicknameInputChanged), for: .editingChanged)
-    }
     
     func setDelegate() {
         emailTextField.delegate = self
@@ -220,25 +214,6 @@ class SignUpView: BaseUIView {
         nicknameTextField.delegate = self
     }
     
-    @objc
-    func nicknameInputChanged(_ textField: UITextField) {
-        if let userNickname = textField.text, (userNickname.count>1 && userNickname.count<6) {
-            nicknameDoubleCheckButton.isEnabled = true
-            signUpNextButton.isEnabled = true
-        } else {
-            nicknameDoubleCheckButton.isEnabled = false
-            signUpNextButton.isEnabled = false
-        }
-    }
-    
-    
-    
-    /// 이메일 형식 검사
-    func isValidEmail(testStr: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: testStr)
-    }
     
     /// user Info Filled check
     func isFilledUserInfo() -> Bool {
@@ -290,8 +265,8 @@ extension SignUpView: UITextFieldDelegate {
             checkEmailValidation(textField)
         case passwordCheckTextField:
             checkPasswordValidation()
-//        case emailTextField:
-            
+        case nicknameTextField:
+            checkNicknameValidation(textField)
         default:
             return
         }
@@ -305,6 +280,8 @@ private extension SignUpView {
         emailValidationMessageLabel.textColor = OnboardingTextFieldResultType.textFieldEmpty.textColor
     }
     
+    /// 이메일 형식 검사
+
     func checkEmailValidation(_ textField: UITextField) {
         if let userEmail = textField.text {
             if isValidEmail(testStr: userEmail) {
@@ -317,6 +294,14 @@ private extension SignUpView {
         }
     }
     
+    func isValidEmail(testStr: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
+    
+    /// 비밀번호 형식 검사
+   
     func checkPasswordValidation() {
         if let userPassword = passwordTextField.text, let userDoubleCheckPassword = passwordCheckTextField.text {
             if userPassword != userDoubleCheckPassword {
@@ -328,8 +313,28 @@ private extension SignUpView {
         }
     }
     
-    func checkNicknameValidation() {
-        
+    /// 닉네임 형식 검사
+    
+    func checkNicknameValidation(_ textField: UITextField) {
+        if let userNickname = textField.text {
+            if nicknameInputChanged(nickname: userNickname) {
+                nicknameValidationMessageLabel.text = OnboardingTextFieldResultType.nicknameTextFieldValid.errorMessage
+                nicknameValidationMessageLabel.textColor = OnboardingTextFieldResultType.nicknameTextFieldValid.textColor
+            } else {
+                nicknameValidationMessageLabel.text = OnboardingTextFieldResultType.nicknameTextFieldOver.errorMessage
+                nicknameValidationMessageLabel.textColor = OnboardingTextFieldResultType.nicknameTextFieldOver.textColor
+            }
+        }
+    }
+    
+    func nicknameInputChanged(nickname: String) -> Bool {
+        if (nickname.count>1 && nickname.count<6) {
+            nicknameDoubleCheckButton.isEnabled = true
+            return true
+        } else {
+            nicknameDoubleCheckButton.isEnabled = false
+            return false
+        }
     }
     
 }
