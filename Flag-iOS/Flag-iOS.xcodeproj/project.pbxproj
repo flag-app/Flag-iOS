@@ -47,7 +47,7 @@
 		7B8969992A96360700C6DFD6 /* GuestTimeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8969982A96360700C6DFD6 /* GuestTimeScrollViewController.swift */; };
 		7B89699B2A96809B00C6DFD6 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */; };
 		7B89699E2A96844500C6DFD6 /* MyPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89699D2A96844500C6DFD6 /* MyPageResponse.swift */; };
-		7B9364002AA08DFE00D93518 /* OnboardingNicknameTextFieldResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9363FF2AA08DFE00D93518 /* OnboardingNicknameTextFieldResultType.swift */; };
+		7B9364002AA08DFE00D93518 /* OnboardingTextFieldResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9363FF2AA08DFE00D93518 /* OnboardingTextFieldResultType.swift */; };
 		7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */; };
 		7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */; };
 		7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C42A7A93B30043C592 /* UIButton+.swift */; };
@@ -172,7 +172,7 @@
 		7B8969982A96360700C6DFD6 /* GuestTimeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestTimeScrollViewController.swift; sourceTree = "<group>"; };
 		7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
 		7B89699D2A96844500C6DFD6 /* MyPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageResponse.swift; sourceTree = "<group>"; };
-		7B9363FF2AA08DFE00D93518 /* OnboardingNicknameTextFieldResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNicknameTextFieldResultType.swift; sourceTree = "<group>"; };
+		7B9363FF2AA08DFE00D93518 /* OnboardingTextFieldResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextFieldResultType.swift; sourceTree = "<group>"; };
 		7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		7B9998C42A7A93B30043C592 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
@@ -541,7 +541,7 @@
 		7B9363FE2AA08DB900D93518 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				7B9363FF2AA08DFE00D93518 /* OnboardingNicknameTextFieldResultType.swift */,
+				7B9363FF2AA08DFE00D93518 /* OnboardingTextFieldResultType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -993,7 +993,7 @@
 				7BC45F8C2A8E18DF00EAC144 /* Config.swift in Sources */,
 				E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */,
 				E546EEE42A926FAE00B59FEA /* FlagPlusInfo.swift in Sources */,
-				7B9364002AA08DFE00D93518 /* OnboardingNicknameTextFieldResultType.swift in Sources */,
+				7B9364002AA08DFE00D93518 /* OnboardingTextFieldResultType.swift in Sources */,
 				E54787472A88D00D0097F2D2 /* FriendListViewController.swift in Sources */,
 				7B31F8242A941D2500D7D0CF /* BaseTargetType.swift in Sources */,
 				7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */,

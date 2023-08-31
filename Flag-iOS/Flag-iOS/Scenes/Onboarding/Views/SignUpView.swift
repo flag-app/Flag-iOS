@@ -41,9 +41,7 @@ class SignUpView: BaseUIView {
     
     private var emailValidationMessageLabel: UILabel = {
         let label = UILabel()
-        label.text = "이메일을 입력해주세요"
         label.font = .title3
-        label.textColor = .gray400
         return label
     }()
     
@@ -62,7 +60,6 @@ class SignUpView: BaseUIView {
     
     private var passwordValidationMessageLabel: UILabel = {
         let label = UILabel()
-        label.text = "이메일을 입력해주세요"
         label.font = .subTitle3
         label.textColor = .gray400
         return label
@@ -233,17 +230,7 @@ class SignUpView: BaseUIView {
         }
     }
     
-    func emailInputChanged(_ textField: UITextField) {
-        if let userEmail = textField.text {
-            if isValidEmail(testStr: userEmail) {
-                emailValidationMessageLabel.text = "올바른 이메일 형식입니다"
-                emailValidationMessageLabel.textColor = .black
-            } else {
-                emailValidationMessageLabel.text = "잘못된 이메일 형식입니다"
-                emailValidationMessageLabel.textColor = .red
-            }
-        }
-    }
+    
     
     /// 이메일 형식 검사
     func isValidEmail(testStr: String) -> Bool {
@@ -295,6 +282,7 @@ extension SignUpView: UITextFieldDelegate {
         guard let inputValue = textField.text else { return }
         if inputValue.count == 0 {
             textFieldSettingWhenEmpty()
+            return
         }
         switch textField {
         case emailTextField:
@@ -308,7 +296,19 @@ extension SignUpView: UITextFieldDelegate {
 
 private extension SignUpView {
     func textFieldSettingWhenEmpty() {
-        emailValidationMessageLabel.text = "필수 입력 사항입니다."
+        emailValidationMessageLabel.text = "필수 입력 사항입니다"
         emailValidationMessageLabel.textColor = .red
+    }
+    
+    func emailInputChanged(_ textField: UITextField) {
+        if let userEmail = textField.text {
+            if isValidEmail(testStr: userEmail) {
+                emailValidationMessageLabel.text = "올바른 이메일 형식입니다"
+                emailValidationMessageLabel.textColor = .black
+            } else {
+                emailValidationMessageLabel.text = "잘못된 이메일 형식입니다"
+                emailValidationMessageLabel.textColor = .red
+            }
+        }
     }
 }
