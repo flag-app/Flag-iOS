@@ -17,6 +17,9 @@ enum TextLiterals {
     
     // MARK: Onboarding
     
+    static let makeFlagText: String = "약속 만들기"
+    static let registerTimeText: String = "시간 등록하기"
+    static let confirmedFlagText: String = "약속 확정하기"
     static let signIn: String = "로그인"
     static let signUp: String = "회원가입"
     static let inputEmailText: String = "이메일을 입력해 주세요"

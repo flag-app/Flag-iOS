@@ -49,6 +49,7 @@
 		7B89699E2A96844500C6DFD6 /* MyPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89699D2A96844500C6DFD6 /* MyPageResponse.swift */; };
 		7B9364042AA1E55C00D93518 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9364032AA1E55C00D93518 /* OnboardingViewController.swift */; };
 		7B9364062AA1E61500D93518 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9364052AA1E61500D93518 /* OnboardingView.swift */; };
+		7B9364092AA1E94300D93518 /* OnboardingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9364082AA1E94300D93518 /* OnboardingDataModel.swift */; };
 		7B9998C12A7A7E9C0043C592 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C02A7A7E9C0043C592 /* AuthViewController.swift */; };
 		7B9998C32A7A7FEF0043C592 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C22A7A7FEF0043C592 /* AuthView.swift */; };
 		7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C42A7A93B30043C592 /* UIButton+.swift */; };
@@ -175,6 +176,7 @@
 		7B89699D2A96844500C6DFD6 /* MyPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageResponse.swift; sourceTree = "<group>"; };
 		7B9364032AA1E55C00D93518 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		7B9364052AA1E61500D93518 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		7B9364082AA1E94300D93518 /* OnboardingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDataModel.swift; sourceTree = "<group>"; };
 		7B9998C02A7A7E9C0043C592 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		7B9998C22A7A7FEF0043C592 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		7B9998C42A7A93B30043C592 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
@@ -540,9 +542,18 @@
 			path = MypageDTO;
 			sourceTree = "<group>";
 		};
+		7B9364072AA1E93B00D93518 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7B9364082AA1E94300D93518 /* OnboardingDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7B9998BD2A7A7E2E0043C592 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				7B9364072AA1E93B00D93518 /* Model */,
 				7B9998BF2A7A7E6A0043C592 /* Views */,
 				7B9998BE2A7A7E630043C592 /* ViewControllers */,
 			);
@@ -895,6 +906,7 @@
 				7B9364042AA1E55C00D93518 /* OnboardingViewController.swift in Sources */,
 				7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */,
 				7B9998CD2A7A9B530043C592 /* BaseUIViewController.swift in Sources */,
+				7B9364092AA1E94300D93518 /* OnboardingDataModel.swift in Sources */,
 				E50CEE472A8768A000101E4B /* ListView.swift in Sources */,
 				7B9998C92A7A95F50043C592 /* BaseEmptyButton.swift in Sources */,
 				7B31F8272A950D8500D7D0CF /* FixedFlagListResponse.swift in Sources */,
