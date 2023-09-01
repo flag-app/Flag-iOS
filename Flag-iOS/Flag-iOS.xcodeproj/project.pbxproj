@@ -47,6 +47,8 @@
 		7B8969992A96360700C6DFD6 /* GuestTimeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8969982A96360700C6DFD6 /* GuestTimeScrollViewController.swift */; };
 		7B89699B2A96809B00C6DFD6 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */; };
 		7B89699E2A96844500C6DFD6 /* MyPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89699D2A96844500C6DFD6 /* MyPageResponse.swift */; };
+		7B9364042AA1E55C00D93518 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9364032AA1E55C00D93518 /* OnboardingViewController.swift */; };
+		7B9364062AA1E61500D93518 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9364052AA1E61500D93518 /* OnboardingView.swift */; };
 		7B9998C12A7A7E9C0043C592 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C02A7A7E9C0043C592 /* AuthViewController.swift */; };
 		7B9998C32A7A7FEF0043C592 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C22A7A7FEF0043C592 /* AuthView.swift */; };
 		7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C42A7A93B30043C592 /* UIButton+.swift */; };
@@ -171,6 +173,8 @@
 		7B8969982A96360700C6DFD6 /* GuestTimeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestTimeScrollViewController.swift; sourceTree = "<group>"; };
 		7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
 		7B89699D2A96844500C6DFD6 /* MyPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageResponse.swift; sourceTree = "<group>"; };
+		7B9364032AA1E55C00D93518 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		7B9364052AA1E61500D93518 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		7B9998C02A7A7E9C0043C592 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		7B9998C22A7A7FEF0043C592 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		7B9998C42A7A93B30043C592 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
@@ -551,6 +555,7 @@
 				7B9998C02A7A7E9C0043C592 /* AuthViewController.swift */,
 				7B9998CE2A7A9BEF0043C592 /* SignInViewController.swift */,
 				7B9998D82A7C56140043C592 /* SignUpViewController.swift */,
+				7B9364032AA1E55C00D93518 /* OnboardingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -561,6 +566,7 @@
 				7B9998C22A7A7FEF0043C592 /* AuthView.swift */,
 				7B9998D22A7AA0330043C592 /* SignInView.swift */,
 				7B9998DA2A7C562E0043C592 /* SignUpView.swift */,
+				7B9364052AA1E61500D93518 /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -886,6 +892,7 @@
 				7B9998D92A7C56140043C592 /* SignUpViewController.swift in Sources */,
 				E547874D2A8AC5AC0097F2D2 /* FriendListCell.swift in Sources */,
 				E546EF182A95359700B59FEA /* FriendDeleteAPI.swift in Sources */,
+				7B9364042AA1E55C00D93518 /* OnboardingViewController.swift in Sources */,
 				7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */,
 				7B9998CD2A7A9B530043C592 /* BaseUIViewController.swift in Sources */,
 				E50CEE472A8768A000101E4B /* ListView.swift in Sources */,
@@ -953,6 +960,7 @@
 				7B9998D52A7B856E0043C592 /* BaseUITextField.swift in Sources */,
 				E53586A62A8201A1007D053D /* TimeScrollView.swift in Sources */,
 				E5484FB52A9E62710053201F /* UILabel+.swift in Sources */,
+				7B9364062AA1E61500D93518 /* OnboardingView.swift in Sources */,
 				E511A2FB2A966F58002722A2 /* FlagGuestAPI.swift in Sources */,
 				E546EF162A95355A00B59FEA /* FriendDeleteDT0.swift in Sources */,
 				7B51C5B12A63F8120016B418 /* MyPageViewController.swift in Sources */,
