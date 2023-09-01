@@ -223,8 +223,11 @@ final class DatePickView: BaseUIView {
             } else {
                 self.selectedTime = -1
             }
+            self.minTimePopButton.isEnabled = true
             let endtime = self.selectedTime + 5
-            self.displayLabel.text = "\(self.selectedTime):00 ~ \(endtime):59"
+            let timeInterval = "\(self.selectedTime):00 ~ \(endtime):59"
+            self.displayLabel.text = timeInterval
+            self.timeText = timeInterval
         }
         let cancelAction = UIAlertAction(title: TextLiterals.flagCancelText, style: .cancel, handler: nil)
         alertController.addAction(confirmAction)
