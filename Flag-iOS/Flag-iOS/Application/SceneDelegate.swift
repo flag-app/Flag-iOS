@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if(realm.checkIsUserSignedIn()) {
             self.window?.rootViewController = BaseTabBarController()
         } else {
-            self.window?.rootViewController = UINavigationController(rootViewController: OnboardingViewController())
+            self.window?.rootViewController = UINavigationController(rootViewController: AuthViewController())
         }
 
         self.window?.makeKeyAndVisible()

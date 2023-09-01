@@ -1,5 +1,5 @@
 //
-//  OnboardingView.swift
+//  AuthView.swift
 //  Flag-iOS
 //
 //  Created by 최지우 on 2023/08/02.
@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-class OnboardingView: BaseUIView {
+class AuthView: BaseUIView {
     
     // MARK: - UI Components
     

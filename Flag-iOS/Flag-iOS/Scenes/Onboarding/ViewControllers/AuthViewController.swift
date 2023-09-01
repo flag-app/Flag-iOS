@@ -1,5 +1,5 @@
 //
-//  OnboardingViewController.swift
+//  AuthViewController.swift
 //  Flag-iOS
 //
 //  Created by 최지우 on 2023/08/02.
@@ -8,22 +8,22 @@ import UIKit
 
 import SnapKit
 
-class OnboardingViewController: BaseUIViewController {
+class AuthViewController: BaseUIViewController {
         
     private var realm = RealmService()
 
     // MARK: - UI Components
     
-    private let onboardingView = OnboardingView()
+    private let authView = AuthView()
         
     // MARK: - Custom Method
     
     override func setUI() {
-        view.addSubviews(onboardingView)
+        view.addSubviews(authView)
     }
     
     override func setLayout() {
-        onboardingView.snp.makeConstraints { make in
+        authView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
@@ -31,9 +31,9 @@ class OnboardingViewController: BaseUIViewController {
     // MARK: - Action Method
     
     override func addTarget() {
-        onboardingView.signInButton.addTarget(self, action: #selector(didTappedSignInButton), for: .touchUpInside)
-        onboardingView.signUpButton.addTarget(self, action: #selector(didTappedSignUpButton), for: .touchUpInside)
-        onboardingView.termsButton.addTarget(self, action: #selector(didTappedTermsButton), for: .touchUpInside)
+        authView.signInButton.addTarget(self, action: #selector(didTappedSignInButton), for: .touchUpInside)
+        authView.signUpButton.addTarget(self, action: #selector(didTappedSignUpButton), for: .touchUpInside)
+        authView.termsButton.addTarget(self, action: #selector(didTappedTermsButton), for: .touchUpInside)
     }
     
     @objc
