@@ -8,9 +8,10 @@ import Foundation
 
 import Moya
 import SnapKit
-import UIKit
 
 class SignUpViewController: BaseUIViewController {
+    
+    // MARK: - Properties
     
     private var realm = RealmService()
     let authProvider = MoyaProvider<AuthAPI>()
@@ -20,11 +21,6 @@ class SignUpViewController: BaseUIViewController {
     private let signUpView = SignUpView()
         
     // MARK: - Custom Method
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
