@@ -17,9 +17,17 @@ enum TextLiterals {
     
     // MARK: Onboarding
     
+    static let introFlagText: String = "빠르고 편리하게 약속 잡기\n플래그에서 경험해보세요!"
     static let makeFlagText: String = "약속 만들기"
     static let registerTimeText: String = "시간 등록하기"
     static let confirmedFlagText: String = "약속 확정하기"
+    static let introFlagSubtext: String = "모두가 가능한 약속 시간을 빠르게 정해드립니다."
+    static let makeFlagSubtext: String = "약속을 잡을 기간과 시간대, 친구들을 선택해주세요."
+    static let registerTimeSubtext: String = "가능한 시간을 스크롤하여 등록해주세요.\n참석자가 많을 수록 색이 진해집니다."
+    static let confirmedFlagSubtext: String = "플래그가 자동으로 가능한 시간대를 모아서 보여줘요!\n호스트가 약속 일정을 최종 확정합니다."
+    
+    // MARK: - Auth
+    
     static let signIn: String = "로그인"
     static let signUp: String = "회원가입"
     static let inputEmailText: String = "이메일을 입력해 주세요"

@@ -50,6 +50,7 @@
 		7B9364042AA1E55C00D93518 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9364032AA1E55C00D93518 /* OnboardingViewController.swift */; };
 		7B9364062AA1E61500D93518 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9364052AA1E61500D93518 /* OnboardingView.swift */; };
 		7B9364092AA1E94300D93518 /* OnboardingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9364082AA1E94300D93518 /* OnboardingDataModel.swift */; };
+		7B93640C2AA204E800D93518 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93640B2AA204E800D93518 /* OnboardingCollectionViewCell.swift */; };
 		7B9998C12A7A7E9C0043C592 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C02A7A7E9C0043C592 /* AuthViewController.swift */; };
 		7B9998C32A7A7FEF0043C592 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C22A7A7FEF0043C592 /* AuthView.swift */; };
 		7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C42A7A93B30043C592 /* UIButton+.swift */; };
@@ -177,6 +178,7 @@
 		7B9364032AA1E55C00D93518 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		7B9364052AA1E61500D93518 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		7B9364082AA1E94300D93518 /* OnboardingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDataModel.swift; sourceTree = "<group>"; };
+		7B93640B2AA204E800D93518 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		7B9998C02A7A7E9C0043C592 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		7B9998C22A7A7FEF0043C592 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		7B9998C42A7A93B30043C592 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
@@ -550,9 +552,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		7B93640A2AA204CB00D93518 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7B93640B2AA204E800D93518 /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		7B9998BD2A7A7E2E0043C592 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				7B93640A2AA204CB00D93518 /* Cell */,
 				7B9364072AA1E93B00D93518 /* Model */,
 				7B9998BF2A7A7E6A0043C592 /* Views */,
 				7B9998BE2A7A7E630043C592 /* ViewControllers */,
@@ -1008,6 +1019,7 @@
 				7B99991E2A8A97680043C592 /* FlagInfoView.swift in Sources */,
 				7B9998D12A7A9D9C0043C592 /* UITextField+.swift in Sources */,
 				7B31F81A2A93C36E00D7D0CF /* RealmService.swift in Sources */,
+				7B93640C2AA204E800D93518 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

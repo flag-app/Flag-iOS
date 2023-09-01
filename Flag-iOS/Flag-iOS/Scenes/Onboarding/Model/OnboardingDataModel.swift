@@ -5,10 +5,10 @@
 //  Created by 최지우 on 2023/09/01.
 //
 
-import Foundation
+import UIKit
 
 struct OnboardingDataModel {
     var title: String
     var description: String
-    var previewImageName: String
+    var previewImage: UIImage
 }
