@@ -59,6 +59,7 @@ final class DatePickViewController: BaseUIViewController {
         
         dateFormatter()
         let flagPlusInfo = FlagPlusInfo.shared
+        stringSelectedDates.sort()
         flagPlusInfo.dates = stringSelectedDates
         flagPlusInfo.timeSlot = datePickView.selectedTime
         flagPlusInfo.minTime = datePickView.minTime
