@@ -16,7 +16,6 @@ class OnboardingViewController: BaseUIViewController {
     var currentPage: Int = 0 {
         didSet {
             onboardingView.pageControl.currentPage = currentPage
-            print(currentPage)
         }
     }
     
