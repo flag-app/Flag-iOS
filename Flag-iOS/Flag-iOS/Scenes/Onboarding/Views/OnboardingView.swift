@@ -35,7 +35,7 @@ class OnboardingView: BaseUIView {
         return collectionView
     }()
     
-    private let skipButton: BaseFillButton = {
+    let skipButton: BaseFillButton = {
         let button = BaseFillButton()
         button.addTitleAttribute(title: TextLiterals.flagPassText, titleColor: .white, fontName: .title1)
         button.isEnabled = true

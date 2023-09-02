@@ -49,9 +49,19 @@ class OnboardingViewController: BaseUIViewController {
         onboardingView.onboardingCollectionView.delegate = self
     }
     
+    override func addTarget() {
+        onboardingView.skipButton.addTarget(self, action: #selector(didTappedAuthButton), for: .touchUpInside)
+    }
+    
     func setCollectionView() {
         onboardingView.onboardingCollectionView.register(OnboardingCollectionViewCell.self,
                                                          forCellWithReuseIdentifier: OnboardingCollectionViewCell.identifier)
+    }
+    
+    @objc
+    func didTappedAuthButton() {
+        let authViewController = AuthViewController()
+        self.navigationController?.pushViewController(authViewController, animated: true)
     }
     
 }
