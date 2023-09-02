@@ -30,8 +30,8 @@ enum TextLiterals {
     
     static let signIn: String = "로그인"
     static let signUp: String = "회원가입"
-    static let inputEmailText: String = "이메일을 입력해 주세요"
-    static let inputPasswordText: String = "비밀번호를 입력해 주세요"
+    static let inputEmailText: String = "이메일"
+    static let inputPasswordText: String = "비밀번호"
     static let signUpTitleText: String = "FLAG 가입하기"
     static let resetPassword: String = "비밀번호 재설정"
     static let doubleCheckPasswordText: String = "비밀번호 확인"
@@ -103,7 +103,11 @@ enum TextLiterals {
     static let flagAcceptUsersText: String = "현재 약속을 수락한 친구들"
     static let flagNonResponseUsersText: String = "아직 응답이 없는 친구들"
     static let flagPrimaryUserText: String = "0명\n가능"
-    
+    static let flagNonExistText: String = "가능한 FLAG가 없어요🥺"
+    static let flagBackHomeText: String = "홈으로"
+    static let flagBackProgressText: String = "현황보기"
+
+
     
     //MARK: MyPage
     

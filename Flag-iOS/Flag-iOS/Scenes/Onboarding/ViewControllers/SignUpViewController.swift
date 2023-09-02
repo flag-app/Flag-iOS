@@ -8,7 +8,6 @@ import Foundation
 
 import Moya
 import SnapKit
-import UIKit
 
 class SignUpViewController: BaseUIViewController {
     

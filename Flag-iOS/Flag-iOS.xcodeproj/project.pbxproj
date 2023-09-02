@@ -53,6 +53,9 @@
 		7B93640C2AA204E800D93518 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93640B2AA204E800D93518 /* OnboardingCollectionViewCell.swift */; };
 		7B9998C12A7A7E9C0043C592 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C02A7A7E9C0043C592 /* AuthViewController.swift */; };
 		7B9998C32A7A7FEF0043C592 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C22A7A7FEF0043C592 /* AuthView.swift */; };
+		7B9364002AA08DFE00D93518 /* OnboardingTextFieldResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9363FF2AA08DFE00D93518 /* OnboardingTextFieldResultType.swift */; };
+		7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */; };
+		7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */; };
 		7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C42A7A93B30043C592 /* UIButton+.swift */; };
 		7B9998C72A7A95930043C592 /* BaseFillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C62A7A95930043C592 /* BaseFillButton.swift */; };
 		7B9998C92A7A95F50043C592 /* BaseEmptyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C82A7A95F50043C592 /* BaseEmptyButton.swift */; };
@@ -181,6 +184,9 @@
 		7B93640B2AA204E800D93518 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		7B9998C02A7A7E9C0043C592 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		7B9998C22A7A7FEF0043C592 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		7B9363FF2AA08DFE00D93518 /* OnboardingTextFieldResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextFieldResultType.swift; sourceTree = "<group>"; };
+		7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		7B9998C42A7A93B30043C592 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		7B9998C62A7A95930043C592 /* BaseFillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFillButton.swift; sourceTree = "<group>"; };
 		7B9998C82A7A95F50043C592 /* BaseEmptyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEmptyButton.swift; sourceTree = "<group>"; };
@@ -558,6 +564,12 @@
 				7B93640B2AA204E800D93518 /* OnboardingCollectionViewCell.swift */,
 			);
 			path = Cell;
+		7B9363FE2AA08DB900D93518 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				7B9363FF2AA08DFE00D93518 /* OnboardingTextFieldResultType.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		7B9998BD2A7A7E2E0043C592 /* Onboarding */ = {
@@ -565,6 +577,7 @@
 			children = (
 				7B93640A2AA204CB00D93518 /* Cell */,
 				7B9364072AA1E93B00D93518 /* Model */,
+				7B9363FE2AA08DB900D93518 /* Enum */,
 				7B9998BF2A7A7E6A0043C592 /* Views */,
 				7B9998BE2A7A7E630043C592 /* ViewControllers */,
 			);
@@ -1013,6 +1026,7 @@
 				7BC45F8C2A8E18DF00EAC144 /* Config.swift in Sources */,
 				E593AA992A7E1F9500FC918A /* SetNameViewController.swift in Sources */,
 				E546EEE42A926FAE00B59FEA /* FlagPlusInfo.swift in Sources */,
+				7B9364002AA08DFE00D93518 /* OnboardingTextFieldResultType.swift in Sources */,
 				E54787472A88D00D0097F2D2 /* FriendListViewController.swift in Sources */,
 				7B31F8242A941D2500D7D0CF /* BaseTargetType.swift in Sources */,
 				7B51C5B72A6429B00016B418 /* UIColor+.swift in Sources */,

@@ -39,6 +39,12 @@ class SignUpView: BaseUIView {
         return textField
     }()
     
+    private var emailValidationMessageLabel: UILabel = {
+        let label = UILabel()
+        label.font = .title3
+        return label
+    }()
+    
     private let passwordLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.inputPasswordText
@@ -49,9 +55,10 @@ class SignUpView: BaseUIView {
     let passwordTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.passwordHintText
+        textField.isSecureTextEntry = true
         return textField
     }()
-    
+
     private let passwordCheckLabel: UILabel = {
         let label = UILabel()
         label.text = TextLiterals.doubleCheckPasswordText
@@ -62,7 +69,14 @@ class SignUpView: BaseUIView {
     private let passwordCheckTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.passwordHintText
+        textField.isSecureTextEntry = true
         return textField
+    }()
+    
+    private var passwordCheckValidationMessageLabel: UILabel = {
+        let label = UILabel()
+        label.font = .title3
+        return label
     }()
     
     private let nicknameLabel: UILabel = {
@@ -85,6 +99,12 @@ class SignUpView: BaseUIView {
         return button
     }()
     
+    private var nicknameValidationMessageLabel: UILabel = {
+        let label = UILabel()
+        label.font = .title3
+        return label
+    }()
+    
     lazy var signUpNextButton: BaseFillButton = {
         let button = BaseFillButton()
         button.setTitle(TextLiterals.nextText, for: .normal)
@@ -95,7 +115,7 @@ class SignUpView: BaseUIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addTarget()
+        setDelegate()
     }
     
     required init?(coder: NSCoder) {
@@ -108,13 +128,16 @@ class SignUpView: BaseUIView {
         self.addSubviews(signUpTitleLabel,
                          emailLabel,
                          emailTextField,
+                         emailValidationMessageLabel,
                          passwordLabel,
                          passwordTextField,
                          passwordCheckLabel,
                          passwordCheckTextField,
+                         passwordCheckValidationMessageLabel,
                          nicknameLabel,
                          nicknameTextField,
                          nicknameDoubleCheckButton,
+                         nicknameValidationMessageLabel,
                          signUpNextButton)
     }
     
@@ -132,8 +155,12 @@ class SignUpView: BaseUIView {
             $0.horizontalEdges.equalToSuperview().inset(leadingWidth)
             $0.height.equalTo(41)
         }
+        emailValidationMessageLabel.snp.makeConstraints {
+            $0.top.equalTo(emailTextField.snp.bottom).offset(8)
+            $0.leading.equalToSuperview().offset(leadingWidth)
+        }
         passwordLabel.snp.makeConstraints {
-            $0.top.equalTo(emailTextField.snp.bottom).offset(30)
+            $0.top.equalTo(emailValidationMessageLabel.snp.bottom).offset(24)
             $0.leading.equalToSuperview().offset(leadingWidth)
         }
         passwordTextField.snp.makeConstraints {
@@ -150,8 +177,12 @@ class SignUpView: BaseUIView {
             $0.horizontalEdges.equalToSuperview().inset(leadingWidth)
             $0.height.equalTo(41)
         }
+        passwordCheckValidationMessageLabel.snp.makeConstraints {
+            $0.top.equalTo(passwordCheckTextField.snp.bottom).offset(8)
+            $0.leading.equalToSuperview().offset(leadingWidth)
+        }
         nicknameLabel.snp.makeConstraints {
-            $0.top.equalTo(passwordCheckTextField.snp.bottom).offset(30)
+            $0.top.equalTo(passwordCheckValidationMessageLabel.snp.bottom).offset(24)
             $0.leading.equalToSuperview().offset(leadingWidth)
         }
         nicknameTextField.snp.makeConstraints {
@@ -166,33 +197,168 @@ class SignUpView: BaseUIView {
             $0.trailing.equalToSuperview().inset(leadingWidth)
             $0.height.equalTo(41)
         }
+        nicknameValidationMessageLabel.snp.makeConstraints {
+            $0.top.equalTo(nicknameTextField.snp.bottom).offset(8)
+            $0.leading.equalToSuperview().offset(leadingWidth)
+        }
         signUpNextButton.snp.makeConstraints {
             $0.bottom.equalTo(safeAreaLayoutGuide).inset(21)
             $0.horizontalEdges.equalToSuperview().inset(leadingWidth)
             $0.height.equalTo(49)
         }
     }
- 
-    func addTarget() {
-        nicknameTextField.addTarget(self, action: #selector(nicknameInputChanged), for: .editingChanged)
+    
+    func setDelegate() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        passwordCheckTextField.delegate = self
+        nicknameTextField.delegate = self
     }
     
-    @objc
-    func nicknameInputChanged(_ textField: UITextField) {
-        if let userNickname = textField.text, (userNickname.count>1 && userNickname.count<6) {
-            nicknameDoubleCheckButton.isEnabled = true
+    
+  
+    
+}
+
+// MARK: - UITextFieldDelegate
+
+extension SignUpView: UITextFieldDelegate {
+    
+    /// return 클릭 시, 키보드 내려감
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    /// 입력 완료시
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print(textField.text)
+        if isFilledUserInfo() {
+            print("♥️true")
             signUpNextButton.isEnabled = true
-        } else {
-            nicknameDoubleCheckButton.isEnabled = false
-            signUpNextButton.isEnabled = false
         }
     }
     
+    /// 각 textFiled 유효성 검사
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let inputValue = textField.text else { return }
+        if inputValue.count == 0 {
+            textFieldSettingWhenEmpty(textField)
+            return
+        }
+        switch textField {
+        case emailTextField:
+            checkEmailValidation(textField)
+        case passwordCheckTextField:
+            checkPasswordValidation()
+        case nicknameTextField:
+            checkNicknameValidation(textField)
+        default:
+            return
+        }
+    }
+
+}
+
+// MARK: - Validation userInfo
+
+private extension SignUpView {
+    
+    /// 입력 없는 경우
+    
+    func textFieldSettingWhenEmpty(_ textField: UITextField) {
+        switch textField {
+        case emailTextField:
+            emailValidationMessageLabel.text = OnboardingTextFieldResultType.textFieldEmpty.errorMessage
+            emailValidationMessageLabel.textColor = OnboardingTextFieldResultType.textFieldEmpty.textColor
+        case passwordCheckTextField:
+            passwordCheckValidationMessageLabel.text = OnboardingTextFieldResultType.textFieldEmpty.errorMessage
+            passwordCheckValidationMessageLabel.textColor = OnboardingTextFieldResultType.textFieldEmpty.textColor
+        case nicknameTextField:
+            nicknameValidationMessageLabel.text = OnboardingTextFieldResultType.textFieldEmpty.errorMessage
+            nicknameValidationMessageLabel.textColor = OnboardingTextFieldResultType.textFieldEmpty.textColor
+        default:
+            return
+        }
+        
+    }
+    
     /// 이메일 형식 검사
-    func isValidEmail(testStr:String) -> Bool {
+
+    func checkEmailValidation(_ textField: UITextField) {
+        if let userEmail = textField.text {
+            if isValidEmail(testStr: userEmail) {
+                emailValidationMessageLabel.text = OnboardingTextFieldResultType.emailTextFieldValid.errorMessage
+                emailValidationMessageLabel.textColor = OnboardingTextFieldResultType.emailTextFieldValid.textColor
+            } else {
+                emailValidationMessageLabel.text = OnboardingTextFieldResultType.emailTextFieldInvalid.errorMessage
+                emailValidationMessageLabel.textColor = OnboardingTextFieldResultType.emailTextFieldInvalid.textColor
+            }
+        }
+    }
+    
+    func isValidEmail(testStr: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: testStr)
+    }
+    
+    /// 비밀번호 형식 검사
+   
+    func checkPasswordValidation() {
+        if let userPassword = passwordTextField.text, let userDoubleCheckPassword = passwordCheckTextField.text {
+            if userPassword != userDoubleCheckPassword {
+                passwordCheckValidationMessageLabel.text = OnboardingTextFieldResultType.passwordTextFieldDoubleCheckFalse.errorMessage
+                passwordCheckValidationMessageLabel.textColor = OnboardingTextFieldResultType.passwordTextFieldDoubleCheckFalse.textColor
+            } else {
+                passwordCheckValidationMessageLabel.text = ""
+            }
+        }
+    }
+    
+    /// 닉네임 형식 검사
+    
+    func checkNicknameValidation(_ textField: UITextField) {
+        if let userNickname = textField.text {
+            if nicknameInputChanged(nickname: userNickname) {
+                nicknameValidationMessageLabel.text = OnboardingTextFieldResultType.nicknameTextFieldDoubleCheck.errorMessage
+                nicknameValidationMessageLabel.textColor = OnboardingTextFieldResultType.nicknameTextFieldDoubleCheck.textColor
+            } else {
+                nicknameValidationMessageLabel.text = OnboardingTextFieldResultType.nicknameTextFieldOver.errorMessage
+                nicknameValidationMessageLabel.textColor = OnboardingTextFieldResultType.nicknameTextFieldOver.textColor
+            }
+        }
+    }
+    
+    func nicknameInputChanged(nickname: String) -> Bool {
+        if (nickname.count>1 && nickname.count<6) {
+            nicknameDoubleCheckButton.isEnabled = true
+            return true
+        } else {
+            nicknameDoubleCheckButton.isEnabled = false
+            return false
+        }
+    }
+    
+    /// check userInfo Filled
+    
+    func isFilledUserInfo() -> Bool {
+        if isFilledTextField(emailTextField.text) &&
+            isFilledTextField(passwordTextField.text) &&
+            isFilledTextField(passwordCheckTextField.text) &&
+            isFilledTextField(nicknameTextField.text) {
+            return true
+        }
+        return false
+    }
+    
+    func isFilledTextField(_ inputValue: String?) -> Bool {
+        if let value = inputValue {
+            if value != "" {
+                return true
+            }
+        }
+        return false
     }
     
 }

@@ -37,7 +37,7 @@ class LoactionView: BaseUIView {
         return label
     }()
     
-     lazy var memoTextView: UITextView = {
+    lazy var memoTextView: UITextView = {
         let textview = UITextView()
         textview.backgroundColor = .gray100
         textview.layer.cornerRadius = 9
@@ -48,7 +48,7 @@ class LoactionView: BaseUIView {
     
     lazy var nextButton: BaseFillButton = {
         let button = BaseFillButton()
-        button.setTitle(TextLiterals.flagPassText, for: .normal)
+        button.setTitle(TextLiterals.nextText, for: .normal)
         button.isEnabled = true
         return button
     }()
