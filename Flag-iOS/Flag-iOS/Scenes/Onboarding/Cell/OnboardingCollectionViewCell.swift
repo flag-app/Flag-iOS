@@ -54,7 +54,7 @@ class OnboardingCollectionViewCell: BaseCollectionViewCell {
     
     override func setLayout() {
         onboardingTitleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(35)
+            $0.top.equalToSuperview().offset(20)
             $0.centerX.equalToSuperview()
         }
         onboardingDescriptionLabel.snp.makeConstraints {
@@ -62,7 +62,7 @@ class OnboardingCollectionViewCell: BaseCollectionViewCell {
             $0.centerX.equalToSuperview()
         }
         onboardingPreviewImage.snp.makeConstraints {
-            $0.top.equalTo(onboardingDescriptionLabel.snp.bottom).offset(58)
+            $0.top.equalTo(onboardingDescriptionLabel.snp.bottom).offset(55)
             $0.centerX.equalToSuperview()
         }
     }

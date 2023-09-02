@@ -19,10 +19,10 @@ class OnboardingView: BaseUIView {
         
      lazy var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
-        pageControl.pageIndicatorTintColor = .gray200
-         pageControl.currentPageIndicatorTintColor = .gray400
+         pageControl.pageIndicatorTintColor = .gray200
+         pageControl.currentPageIndicatorTintColor = .purple200
          pageControl.numberOfPages = 4
-
+         pageControl.isHidden = false
         return pageControl
     }()
     
@@ -69,13 +69,13 @@ class OnboardingView: BaseUIView {
             $0.height.equalTo(49)
         }
         onboardingCollectionView.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(35)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(15)
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(550)
+            $0.height.equalTo(515)
         }
         pageControl.snp.makeConstraints {
             $0.top.equalTo(onboardingCollectionView.snp.bottom).offset(10)
-            $0.horizontalEdges.equalToSuperview().inset(150)
+            $0.centerX.equalToSuperview()
             $0.height.equalTo(30)
         }
         

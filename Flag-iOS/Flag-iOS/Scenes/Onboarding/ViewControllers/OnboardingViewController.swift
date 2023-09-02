@@ -76,7 +76,6 @@ extension OnboardingViewController: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingCollectionViewCell.identifier, for: indexPath) as? OnboardingCollectionViewCell else { return UICollectionViewCell() }
         cell.setOnboardingSlides(onboardingView.onboardingData[indexPath.row])
-        print(onboardingView.onboardingData[indexPath.row])
         return cell
     }
     
@@ -92,7 +91,7 @@ extension OnboardingViewController: UICollectionViewDelegate {
 
 extension OnboardingViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 600)
+        return CGSize(width: view.frame.width, height: 515)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
