@@ -16,9 +16,7 @@ class OnboardingView: BaseUIView {
     var onboardingData: [OnboardingDataModel] = []
     
     // MARK: - UI Components
-    
-//    var pageControl = UIPageControl()
-    
+        
      lazy var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.pageIndicatorTintColor = .gray200
@@ -32,8 +30,8 @@ class OnboardingView: BaseUIView {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        collectionView.backgroundColor = .purple200
         collectionView.isPagingEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
     
@@ -50,8 +48,6 @@ class OnboardingView: BaseUIView {
         super.init(frame: frame)
         
         setOnboardingData()
-//        pageControl.backgroundColor = .systemPink
-//        onboardingCollectionView.register(UICollectionViewCell(), forCellWithReuseIdentifier: <#T##String#>)
     }
     
     required init?(coder: NSCoder) {
@@ -75,8 +71,7 @@ class OnboardingView: BaseUIView {
         onboardingCollectionView.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).offset(35)
             $0.horizontalEdges.equalToSuperview()
-//            $0.bottom.equalTo(skipButton.snp.top).offset(300)
-            $0.height.equalTo(400)
+            $0.height.equalTo(550)
         }
         pageControl.snp.makeConstraints {
             $0.top.equalTo(onboardingCollectionView.snp.bottom).offset(10)
@@ -102,7 +97,5 @@ class OnboardingView: BaseUIView {
                                 previewImage: ImageLiterals.onboarding4)])
             pageControl.numberOfPages = onboardingData.count
     }
-    
-    
     
 }
