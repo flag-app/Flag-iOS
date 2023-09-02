@@ -21,6 +21,7 @@ class OnboardingCollectionViewCell: BaseCollectionViewCell {
         let label = UILabel()
         label.font = .head1
         label.textAlignment = .center
+        label.numberOfLines = 0
         return label
     }()
     
@@ -28,6 +29,7 @@ class OnboardingCollectionViewCell: BaseCollectionViewCell {
         let label = UILabel()
         label.font = .subTitle3
         label.textAlignment = .center
+        label.numberOfLines = 0
         return label
     }()
     
