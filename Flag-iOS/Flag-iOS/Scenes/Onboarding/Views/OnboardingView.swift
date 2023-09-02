@@ -2,7 +2,7 @@
 //  OnboardingView.swift
 //  Flag-iOS
 //
-//  Created by 최지우 on 2023/08/02.
+//  Created by 최지우 on 2023/09/01.
 //
 
 import UIKit
@@ -11,67 +11,91 @@ import SnapKit
 
 class OnboardingView: BaseUIView {
     
+    // MARK: - Properties
+    
+    var onboardingData: [OnboardingDataModel] = []
+    
     // MARK: - UI Components
-    
-    private let onboardingImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = ImageLiterals.onboardingLogo
-        return imageView
+        
+     lazy var pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+         pageControl.pageIndicatorTintColor = .gray200
+         pageControl.currentPageIndicatorTintColor = .purple200
+         pageControl.numberOfPages = 4
+         pageControl.isHidden = false
+        return pageControl
     }()
     
-    lazy var signInButton: BaseFillButton = {
+    var onboardingCollectionView: UICollectionView = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.isPagingEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
+        return collectionView
+    }()
+    
+    let skipButton: BaseFillButton = {
         let button = BaseFillButton()
-        button.setTitle(TextLiterals.signIn, for: .normal)
+        button.addTitleAttribute(title: TextLiterals.flagPassText, titleColor: .white, fontName: .title1)
         button.isEnabled = true
         return button
     }()
     
-    lazy var signUpButton: BaseEmptyButton = {
-        let button = BaseEmptyButton()
-        button.setTitle(TextLiterals.signUp, for: .normal)
-        button.isEnabled = true
-        return button
-    }()
+    // MARK: - Life Cycle
     
-    lazy var termsButton: UIButton = {
-        let button = UIButton()
-        let fullText = TextLiterals.termsCheckText
-        let coloredText = "서비스 이용약관" 
-        let attributedString = NSMutableAttributedString(string: fullText)
-        attributedString.addAttribute(.foregroundColor, value: UIColor.purple300, range: (fullText as NSString).range(of: coloredText))
-        button.setAttributedTitle(attributedString, for: .normal)
-        button.addTitleAttribute(title: fullText, titleColor: .black, fontName: .title3)
-        return button
-    }()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setOnboardingData()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Custom Method
-
+    
     override func setUI() {
-        self.addSubviews(onboardingImageView,
-                         signInButton,
-                         signUpButton,
-                         termsButton)
+        addSubviews(onboardingCollectionView,
+                    pageControl,
+                    skipButton)
     }
     
     override func setLayout() {
-        onboardingImageView.snp.makeConstraints { make in
-            make.top.equalTo(self.safeAreaLayoutGuide).inset(139)
-            make.centerX.equalToSuperview()
+        skipButton.snp.makeConstraints {
+            $0.horizontalEdges.equalToSuperview().inset(25)
+            $0.bottom.equalTo(safeAreaLayoutGuide).inset(21)
+            $0.height.equalTo(49)
         }
-        signInButton.snp.makeConstraints { make in
-            make.top.equalTo(onboardingImageView.snp.bottom).offset(148)
-            make.horizontalEdges.equalToSuperview().inset(25)
-            make.height.equalTo(49)
+        onboardingCollectionView.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide).offset(15)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(515)
         }
-        signUpButton.snp.makeConstraints { make in
-            make.top.equalTo(signInButton.snp.bottom).offset(15)
-            make.horizontalEdges.equalToSuperview().inset(25)
-            make.height.equalTo(49)
+        pageControl.snp.makeConstraints {
+            $0.top.equalTo(onboardingCollectionView.snp.bottom).offset(10)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(30)
         }
-        termsButton.snp.makeConstraints { make in
-            make.top.equalTo(signUpButton.snp.bottom).offset(15)
-            make.centerX.equalToSuperview()
-        }
+        
+    }
+    
+    private func setOnboardingData() {
+        onboardingData.append(contentsOf: [
+            OnboardingDataModel(title: TextLiterals.introFlagText,
+                                description: TextLiterals.introFlagSubtext,
+                                previewImage: ImageLiterals.onboarding1),
+            OnboardingDataModel(title: TextLiterals.makeFlagText,
+                                description: TextLiterals.makeFlagSubtext,
+                                previewImage: ImageLiterals.onboarding2),
+            OnboardingDataModel(title: TextLiterals.registerTimeText,
+                                description: TextLiterals.registerTimeSubtext,
+                                previewImage: ImageLiterals.onboarding3),
+            OnboardingDataModel(title: TextLiterals.confirmedFlagText,
+                                description: TextLiterals.confirmedFlagSubtext,
+                                previewImage: ImageLiterals.onboarding4)])
+            pageControl.numberOfPages = onboardingData.count
     }
     
 }

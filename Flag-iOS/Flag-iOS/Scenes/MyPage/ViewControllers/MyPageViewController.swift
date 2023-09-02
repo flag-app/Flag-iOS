@@ -67,7 +67,7 @@ final class MyPageViewController: BaseUIViewController {
         
         let deleteAction = UIAlertAction(title: TextLiterals.yesText, style: .default) { _ in
             // rootView 변경
-            let onboardingViewController = OnboardingViewController()
+            let onboardingViewController = AuthViewController()
             UIApplication.shared.keyWindow?.replaceRootViewController(onboardingViewController, animated: true, completion: nil)
 //            self.navigationController?.popToRootViewController(animated: true)
             self.realm.deleteAllRealmData()

@@ -2,58 +2,98 @@
 //  OnboardingViewController.swift
 //  Flag-iOS
 //
-//  Created by 최지우 on 2023/08/02.
+//  Created by 최지우 on 2023/09/01.
 //
+
 import UIKit
 
 import SnapKit
 
 class OnboardingViewController: BaseUIViewController {
-        
-    private var realm = RealmService()
-
-    // MARK: - UI Components
     
-    private let onboardingView = OnboardingView()
-        
-    // MARK: - Custom Method
+    // MARK: - Properties
     
-    override func setUI() {
-//        realm.deleteAllRealmData()
-        view.addSubviews(onboardingView)
-    }
-    
-    override func setLayout() {
-        onboardingView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+    var currentPage: Int = 0 {
+        didSet {
+            onboardingView.pageControl.currentPage = currentPage
         }
     }
     
-    // MARK: - Action Method
+    // MARK: - UI Components
+    
+    let onboardingView = OnboardingView()
+    
+    // MARK: - Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setCollectionView()
+    }
+    
+    // MARK: - Custom Method
+    
+    override func setUI() {
+        view.addSubview(onboardingView)
+    }
+    
+    override func setLayout() {
+        onboardingView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+    }
+    
+    override func setDelegate() {
+        onboardingView.onboardingCollectionView.dataSource = self
+        onboardingView.onboardingCollectionView.delegate = self
+    }
     
     override func addTarget() {
-        onboardingView.signInButton.addTarget(self, action: #selector(didTappedSignInButton), for: .touchUpInside)
-        onboardingView.signUpButton.addTarget(self, action: #selector(didTappedSignUpButton), for: .touchUpInside)
-        onboardingView.termsButton.addTarget(self, action: #selector(didTappedTermsButton), for: .touchUpInside)
+        onboardingView.skipButton.addTarget(self, action: #selector(didTappedAuthButton), for: .touchUpInside)
+    }
+    
+    func setCollectionView() {
+        onboardingView.onboardingCollectionView.register(OnboardingCollectionViewCell.self,
+                                                         forCellWithReuseIdentifier: OnboardingCollectionViewCell.identifier)
     }
     
     @objc
-    func didTappedSignInButton() {
-        let signInViewController = SignInViewController()
-        self.navigationController?.pushViewController(signInViewController, animated: true)
+    func didTappedAuthButton() {
+        let authViewController = AuthViewController()
+        self.navigationController?.pushViewController(authViewController, animated: true)
     }
     
-    @objc
-    func didTappedSignUpButton() {
-        let signUpViewController = SignUpViewController()
-        self.navigationController?.pushViewController(signUpViewController, animated: true)
+}
+
+extension OnboardingViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        return 4    
     }
     
-    @objc
-    func didTappedTermsButton() {
-        let termsViewController = TermsViewController()
-        termsViewController.modalPresentationStyle = .pageSheet
-        termsViewController.sheetPresentationController?.prefersGrabberVisible = true
-        present(termsViewController, animated: true)
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingCollectionViewCell.identifier, for: indexPath) as? OnboardingCollectionViewCell else { return UICollectionViewCell() }
+        cell.setOnboardingSlides(onboardingView.onboardingData[indexPath.row])
+        return cell
+    }
+    
+}
+
+extension OnboardingViewController: UICollectionViewDelegate {
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let page = Int(targetContentOffset.pointee.x / view.frame.width)
+        currentPage = page
+    }
+}
+
+extension OnboardingViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 515)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }

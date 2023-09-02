@@ -47,6 +47,12 @@
 		7B8969992A96360700C6DFD6 /* GuestTimeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8969982A96360700C6DFD6 /* GuestTimeScrollViewController.swift */; };
 		7B89699B2A96809B00C6DFD6 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */; };
 		7B89699E2A96844500C6DFD6 /* MyPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89699D2A96844500C6DFD6 /* MyPageResponse.swift */; };
+		7B9364042AA1E55C00D93518 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9364032AA1E55C00D93518 /* OnboardingViewController.swift */; };
+		7B9364062AA1E61500D93518 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9364052AA1E61500D93518 /* OnboardingView.swift */; };
+		7B9364092AA1E94300D93518 /* OnboardingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9364082AA1E94300D93518 /* OnboardingDataModel.swift */; };
+		7B93640C2AA204E800D93518 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93640B2AA204E800D93518 /* OnboardingCollectionViewCell.swift */; };
+		7B9998C12A7A7E9C0043C592 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C02A7A7E9C0043C592 /* AuthViewController.swift */; };
+		7B9998C32A7A7FEF0043C592 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C22A7A7FEF0043C592 /* AuthView.swift */; };
 		7B9364002AA08DFE00D93518 /* OnboardingTextFieldResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9363FF2AA08DFE00D93518 /* OnboardingTextFieldResultType.swift */; };
 		7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */; };
 		7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */; };
@@ -172,6 +178,12 @@
 		7B8969982A96360700C6DFD6 /* GuestTimeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestTimeScrollViewController.swift; sourceTree = "<group>"; };
 		7B89699A2A96809B00C6DFD6 /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
 		7B89699D2A96844500C6DFD6 /* MyPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageResponse.swift; sourceTree = "<group>"; };
+		7B9364032AA1E55C00D93518 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		7B9364052AA1E61500D93518 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		7B9364082AA1E94300D93518 /* OnboardingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDataModel.swift; sourceTree = "<group>"; };
+		7B93640B2AA204E800D93518 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		7B9998C02A7A7E9C0043C592 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		7B9998C22A7A7FEF0043C592 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		7B9363FF2AA08DFE00D93518 /* OnboardingTextFieldResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextFieldResultType.swift; sourceTree = "<group>"; };
 		7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -538,6 +550,20 @@
 			path = MypageDTO;
 			sourceTree = "<group>";
 		};
+		7B9364072AA1E93B00D93518 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7B9364082AA1E94300D93518 /* OnboardingDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B93640A2AA204CB00D93518 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7B93640B2AA204E800D93518 /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Cell;
 		7B9363FE2AA08DB900D93518 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,6 +575,8 @@
 		7B9998BD2A7A7E2E0043C592 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				7B93640A2AA204CB00D93518 /* Cell */,
+				7B9364072AA1E93B00D93518 /* Model */,
 				7B9363FE2AA08DB900D93518 /* Enum */,
 				7B9998BF2A7A7E6A0043C592 /* Views */,
 				7B9998BE2A7A7E630043C592 /* ViewControllers */,
@@ -559,9 +587,10 @@
 		7B9998BE2A7A7E630043C592 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7B9998C02A7A7E9C0043C592 /* OnboardingViewController.swift */,
+				7B9998C02A7A7E9C0043C592 /* AuthViewController.swift */,
 				7B9998CE2A7A9BEF0043C592 /* SignInViewController.swift */,
 				7B9998D82A7C56140043C592 /* SignUpViewController.swift */,
+				7B9364032AA1E55C00D93518 /* OnboardingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -569,9 +598,10 @@
 		7B9998BF2A7A7E6A0043C592 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7B9998C22A7A7FEF0043C592 /* OnboardingView.swift */,
+				7B9998C22A7A7FEF0043C592 /* AuthView.swift */,
 				7B9998D22A7AA0330043C592 /* SignInView.swift */,
 				7B9998DA2A7C562E0043C592 /* SignUpView.swift */,
+				7B9364052AA1E61500D93518 /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -897,8 +927,10 @@
 				7B9998D92A7C56140043C592 /* SignUpViewController.swift in Sources */,
 				E547874D2A8AC5AC0097F2D2 /* FriendListCell.swift in Sources */,
 				E546EF182A95359700B59FEA /* FriendDeleteAPI.swift in Sources */,
+				7B9364042AA1E55C00D93518 /* OnboardingViewController.swift in Sources */,
 				7B9998C52A7A93B30043C592 /* UIButton+.swift in Sources */,
 				7B9998CD2A7A9B530043C592 /* BaseUIViewController.swift in Sources */,
+				7B9364092AA1E94300D93518 /* OnboardingDataModel.swift in Sources */,
 				E50CEE472A8768A000101E4B /* ListView.swift in Sources */,
 				7B9998C92A7A95F50043C592 /* BaseEmptyButton.swift in Sources */,
 				7B31F8272A950D8500D7D0CF /* FixedFlagListResponse.swift in Sources */,
@@ -921,7 +953,7 @@
 				7B9999202A8AB6F50043C592 /* UserProfileView.swift in Sources */,
 				E546EEE12A92485800B59FEA /* NicknameChangeViewController.swift in Sources */,
 				E511A2F92A965D6F002722A2 /* GuestTimeScrollView.swift in Sources */,
-				7B9998C12A7A7E9C0043C592 /* OnboardingViewController.swift in Sources */,
+				7B9998C12A7A7E9C0043C592 /* AuthViewController.swift in Sources */,
 				E546EF012A93A28F00B59FEA /* SelectTimeCellResponseDTO.swift in Sources */,
 				E5586CEF2A8E68AD00A66EA5 /* FriendsPlusCell.swift in Sources */,
 				E546EEDF2A92484100B59FEA /* NicknameChangeView.swift in Sources */,
@@ -964,6 +996,7 @@
 				7B9998D52A7B856E0043C592 /* BaseUITextField.swift in Sources */,
 				E53586A62A8201A1007D053D /* TimeScrollView.swift in Sources */,
 				E5484FB52A9E62710053201F /* UILabel+.swift in Sources */,
+				7B9364062AA1E61500D93518 /* OnboardingView.swift in Sources */,
 				E511A2FB2A966F58002722A2 /* FlagGuestAPI.swift in Sources */,
 				E546EF162A95355A00B59FEA /* FriendDeleteDT0.swift in Sources */,
 				7B51C5B12A63F8120016B418 /* MyPageViewController.swift in Sources */,
@@ -978,7 +1011,7 @@
 				E593AAAB2A7EA0AD00FC918A /* TimeScrollViewController.swift in Sources */,
 				7B8969992A96360700C6DFD6 /* GuestTimeScrollViewController.swift in Sources */,
 				E54787492A88D0160097F2D2 /* TermsViewController.swift in Sources */,
-				7B9998C32A7A7FEF0043C592 /* OnboardingView.swift in Sources */,
+				7B9998C32A7A7FEF0043C592 /* AuthView.swift in Sources */,
 				E593AA9D2A7E299500FC918A /* FriendsPlusViewController.swift in Sources */,
 				E546EF252A95476800B59FEA /* FriendsSearchAPI.swift in Sources */,
 				E53586A02A82017E007D053D /* FreindsPlusView.swift in Sources */,
@@ -1000,6 +1033,7 @@
 				7B99991E2A8A97680043C592 /* FlagInfoView.swift in Sources */,
 				7B9998D12A7A9D9C0043C592 /* UITextField+.swift in Sources */,
 				7B31F81A2A93C36E00D7D0CF /* RealmService.swift in Sources */,
+				7B93640C2AA204E800D93518 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

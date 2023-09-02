@@ -107,7 +107,7 @@ extension FlagViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FlagCollectionViewCell.identifier,
-                                                      for: indexPath) as! FlagCollectionViewCell
+                                                     for: indexPath) as! FlagCollectionViewCell
         cell.delegate = self
         cell.section = indexPath.item
         cell.flagTableView.reloadData()
