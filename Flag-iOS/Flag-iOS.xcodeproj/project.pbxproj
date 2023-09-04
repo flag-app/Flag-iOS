@@ -564,6 +564,7 @@
 				7B93640B2AA204E800D93518 /* OnboardingCollectionViewCell.swift */,
 			);
 			path = Cell;
+		};
 		7B9363FE2AA08DB900D93518 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
