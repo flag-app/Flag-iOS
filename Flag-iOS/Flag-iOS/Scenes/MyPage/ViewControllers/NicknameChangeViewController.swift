@@ -7,9 +7,13 @@
 
 import Foundation
 
+import Moya
+
 final class NicknameChangeViewController: BaseUIViewController {
     
     // MARK: - Properties
+    
+    //let newUserNickname: String = ""
     
     // MARK: - UI Components
    
@@ -39,7 +43,42 @@ final class NicknameChangeViewController: BaseUIViewController {
     
     @objc
     func didTappedNextButton() {
+        changeUserNickname()
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    //MARK: - NetWork
+    
+    func changeUserNickname() {
+        let provider = MoyaProvider<MyPageAPI>()
+        
+        let newUserNickname = nicknameChangeView.nameTextField.text ?? ""
+        // Make the API request
+    provider.request(.changeNickname(requestBody: newUserNickname)) { result in
+        switch result {
+        case .success(let response):
+            // Handle successful response
+            let statusCode = response.statusCode
+            print("Status Code: \(statusCode)")
+            
+            // Access response data
+            let responseData = response.data
+            if let dataString = String(data: responseData, encoding: .utf8) {
+                print("Response Data: \(dataString)")
+            }
+            
+            // Access response headers
+            let responseHeaders = response.response?.allHeaderFields
+            print("Response Headers: \(responseHeaders)")
+            
+            // Access the entire response object
+            print("Entire Response: \(response)")
+                
+            case .failure(let error):
+                // Handle network error
+                print("Network Error: \(error)")
+            }
+        }
     }
     
 }

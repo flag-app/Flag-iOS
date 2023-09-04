@@ -86,6 +86,7 @@ final class FriendsPlusViewController: BaseUIViewController {
         
        
         let guestName = cell.userNicknameLabel.text ?? "닉네임 없음"
+        //지우는 코드 추가
         guestNames.append(guestName)
     }
     

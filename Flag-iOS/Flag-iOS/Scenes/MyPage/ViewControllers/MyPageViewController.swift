@@ -29,6 +29,11 @@ final class MyPageViewController: BaseUIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getNickname()
+    }
+    
     override func setupNavigationBar() {
         super.setupNavigationBar()
         navigationItem.title = TextLiterals.myPage

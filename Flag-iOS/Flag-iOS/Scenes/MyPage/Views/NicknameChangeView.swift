@@ -24,7 +24,7 @@ final class NicknameChangeView: BaseUIView {
         return label
     }()
     
-    private let nameTextField: BaseUITextField = {
+    lazy var nameTextField: BaseUITextField = {
         let textField = BaseUITextField()
         textField.placeholder = TextLiterals.newNicknameTextHint
         return textField
@@ -72,7 +72,7 @@ final class NicknameChangeView: BaseUIView {
     
     @objc
         func isChangedValue(_ textField: UITextField) {
-            if let flagName = nameTextField.text,(flagName.count > 2 && flagName.count < 15) {
+            if let nickName = nameTextField.text,(nickName.count > 1 && nickName.count < 15) {
                 nextButton.isEnabled = true
             } else {
                 nextButton.isEnabled = false

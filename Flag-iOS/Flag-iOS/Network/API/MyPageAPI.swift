@@ -11,6 +11,7 @@ import Moya
 
 enum MyPageAPI {
     case getNickname
+    case changeNickname(requestBody: String)
 }
 
 extension MyPageAPI: BaseTargetType {
@@ -19,6 +20,8 @@ extension MyPageAPI: BaseTargetType {
         switch self {
         case .getNickname:
             return "/user/mypage"
+        case .changeNickname:
+            return "/user/nickname"
         }
     }
     
@@ -26,6 +29,8 @@ extension MyPageAPI: BaseTargetType {
         switch self {
         case .getNickname:
             return .get
+        case .changeNickname:
+            return .patch
         }
     }
     
@@ -33,6 +38,8 @@ extension MyPageAPI: BaseTargetType {
         switch self {
         case .getNickname:
             return .requestPlain
+        case .changeNickname(let requestBody):
+            return .requestJSONEncodable(requestBody)
         }
     }
 }
